@@ -1,0 +1,30 @@
+# if you want to see what this all evaluates to, you can run
+# `require 'erb'; puts ERB.new(File.read(".rubocop.yml")).result(binding)` from IRB
+
+inherit_from:
+  - .rubocop.common.yml
+
+<%=
+
+# disable auto-correct on all non-explicitly-configured cops
+unless ENV['RUBOCOP_INCLUDE_AUTOCORRECTS']
+  require 'yaml'
+
+  require 'rubocop'
+  common_config = YAML.safe_load(File.read(".rubocop.common.yml"))
+  common_config["require"].each { |f| require f }
+  already_configured_cops = common_config.keys.select { |k| k.include?("/") && !common_config[k]['Exclude'] }.to_set
+  already_configured_departments = common_config.keys.select { |k| !k.include?("/") }.map(&:to_sym).to_set
+
+  config = {}
+  RuboCop::Cop::Registry.all.each do |cop|
+    next if already_configured_departments.include?(cop.department)
+    next if already_configured_cops.include?(cop.cop_name)
+    next unless cop.support_autocorrect?
+
+    config[cop.cop_name] = { "AutoCorrect" => false }
+  end
+
+  config.to_yaml.sub(/^---\n/, "")
+end
+%>
