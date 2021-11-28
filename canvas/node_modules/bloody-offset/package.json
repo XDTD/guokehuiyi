@@ -1,0 +1,35 @@
+{
+  "name": "bloody-offset",
+  "version": "0.0.0",
+  "description": "gets an element's offset",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/**.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bloodyowl/offset.git"
+  },
+  "author": "bloodyowl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bloodyowl/offset/issues"
+  },
+  "homepage": "https://github.com/bloodyowl/offset",
+  "devDependencies": {
+    "tape": "^2.13.3"
+  },
+  "testling": {
+    "files": "test/**.js",
+    "browsers": [
+      "ie/8..latest",
+      "chrome/22..latest",
+      "firefox/16..latest",
+      "safari/6..latest",
+      "opera/11.0..latest",
+      "iphone/6..latest",
+      "ipad/6..latest",
+      "android-browser/latest"
+    ]
+  }
+}
