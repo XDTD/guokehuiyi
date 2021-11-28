@@ -1,0 +1,4 @@
+2021-11-08 19:36:49.220 CST [6579] LOG:  starting PostgreSQL 12.8 (Ubuntu 12.8-1.pgdg18.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit
+2021-11-08 19:36:49.221 CST [6579] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-11-08 19:36:49.222 CST [6579] FATAL:  could not create lock file "/var/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2021-11-08 19:36:49.222 CST [6579] LOG:  database system is shut down
