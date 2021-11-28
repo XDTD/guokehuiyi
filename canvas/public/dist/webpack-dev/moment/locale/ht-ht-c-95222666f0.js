@@ -1,0 +1,15 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([["moment/locale/ht-ht"],{
+
+/***/ "oMFp":
+/*!***********************************************!*\
+  !*** ./ui/ext/custom_moment_locales/ht_ht.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ \"wd/R\");\n/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);\n/*\n * Copyright (C) 2016 - present Instructure, Inc.\n *\n * This file is part of Canvas.\n *\n * Canvas is free software: you can redistribute it and/or modify it under\n * the terms of the GNU Affero General Public License as published by the Free\n * Software Foundation, version 3 of the License.\n *\n * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\n * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more\n * details.\n *\n * You should have received a copy of the GNU Affero General Public License along\n * with this program. If not, see <http://www.gnu.org/licenses/>.\n */\n// Custom moment.js locale for Haitian Creole\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (moment__WEBPACK_IMPORTED_MODULE_0___default.a.defineLocale('ht-ht', {\n  months: 'janvye_fevriye_mas_avril_me_jen_jiyè_out_septanm_oktòb_novanm_desanm'.split('_'),\n  monthsShort: 'jan_fev_mas_avr_me_jen_jiy_out_sep_okt_nov_des'.split('_'),\n  weekdays: 'dimanch_lendi_madi_mèkredi_jedi_vandredi_samdi'.split('_'),\n  weekdaysShort: 'dim_len_mad_mèk_jed_van_sam'.split('_'),\n  weekdaysMin: 'di_le_ma_mè_je_va_sa'.split('_'),\n  longDateFormat: {\n    LT: 'HH:mm',\n    LTS: 'HH:mm:ss',\n    L: 'DD/MM/YYYY',\n    LL: 'D MMMM YYYY',\n    LLL: 'D MMMM YYYY HH:mm',\n    LLLL: 'dddd, D MMMM YYYY HH:mm'\n  },\n  calendar: {\n    sameDay: '[Today at] LT',\n    nextDay: '[Tomorrow at] LT',\n    nextWeek: 'dddd [at] LT',\n    lastDay: '[Yesterday at] LT',\n    lastWeek: '[Last] dddd [at] LT',\n    sameElse: 'L'\n  },\n  relativeTime: {\n    future: 'in %s',\n    past: '%s ago',\n    s: 'a few seconds',\n    m: 'a minute',\n    mm: '%d minutes',\n    h: 'an hour',\n    hh: '%d hours',\n    d: 'a day',\n    dd: '%d days',\n    M: 'a month',\n    MM: '%d months',\n    y: 'a year',\n    yy: '%d years'\n  },\n  ordinalParse: /\\d{1,2}º/,\n  ordinal: '%dº',\n  week: {\n    dow: 1 // Monday is the first day of the week.\n\n  }\n}));\n\n//# sourceURL=webpack:///./ui/ext/custom_moment_locales/ht_ht.js?");
+
+/***/ })
+
+}]);

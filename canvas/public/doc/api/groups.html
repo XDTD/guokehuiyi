@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Groups - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="current" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Groups API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>Groups serve as the data for a few different ideas in Canvas.  The first is
+that they can be a community in the canvas network.  The second is that they
+can be organized by students in a course, for study or communication (but not
+grading).  The third is that they can be organized by teachers or account
+administrators for the purpose of projects, assignments, and grading.  This
+last kind of group is always part of a group category, which adds the
+restriction that a user may only be a member of one group per category.</p>
+
+<p>All of these types of groups function similarly, and can be the parent
+context for many other types of functionality and interaction, such as
+collections, discussions, wikis, and shared files.</p>
+
+<p>Group memberships are the objects that tie users and groups together.</p>
+
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Group">A Group object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // The ID of the group.
+  &quot;id&quot;: 17,
+  // The display name of the group.
+  &quot;name&quot;: &quot;Math Group 1&quot;,
+  // A description of the group. This is plain text.
+  &quot;description&quot;: null,
+  // Whether or not the group is public.  Currently only community groups can be
+  // made public.  Also, once a group has been set to public, it cannot be changed
+  // back to private.
+  &quot;is_public&quot;: false,
+  // Whether or not the current user is following this group.
+  &quot;followed_by_user&quot;: false,
+  // How people are allowed to join the group.  For all groups except for
+  // community groups, the user must share the group&#39;s parent course or account. 
+  // For student organized or community groups, where a user can be a member of as
+  // many or few as they want, the applicable levels are
+  // &#39;parent_context_auto_join&#39;, &#39;parent_context_request&#39;, and &#39;invitation_only&#39;. 
+  // For class groups, where students are divided up and should only be part of
+  // one group of the category, this value will always be &#39;invitation_only&#39;, and
+  // is not relevant. * If &#39;parent_context_auto_join&#39;, anyone can join and will be
+  // automatically accepted. * If &#39;parent_context_request&#39;, anyone  can request to
+  // join, which must be approved by a group moderator. * If &#39;invitation_only&#39;,
+  // only those how have received an invitation my join the group, by accepting
+  // that invitation.
+  &quot;join_level&quot;: &quot;invitation_only&quot;,
+  // The number of members currently in the group
+  &quot;members_count&quot;: 0,
+  // The url of the group&#39;s avatar
+  &quot;avatar_url&quot;: &quot;https://&lt;canvas&gt;/files/avatar_image.png&quot;,
+  // The course or account that the group belongs to. The pattern here is that
+  // whatever the context_type is, there will be an _id field named after that
+  // type. So if instead context_type was &#39;account&#39;, the course_id field would be
+  // replaced by an account_id field.
+  &quot;context_type&quot;: &quot;Course&quot;,
+  &quot;course_id&quot;: 3,
+  // Certain types of groups have special role designations. Currently, these
+  // include: &#39;communities&#39;, &#39;student_organized&#39;, and &#39;imported&#39;. Regular
+  // course/account groups have a role of null.
+  &quot;role&quot;: null,
+  // The ID of the group&#39;s category.
+  &quot;group_category_id&quot;: 4,
+  // The SIS ID of the group. Only included if the user has permission to view SIS
+  // information.
+  &quot;sis_group_id&quot;: &quot;group4a&quot;,
+  // The id of the SIS import if created through SIS. Only included if the user
+  // has permission to manage SIS information.
+  &quot;sis_import_id&quot;: 14,
+  // the storage quota for the group, in megabytes
+  &quot;storage_quota_mb&quot;: 50,
+  // optional: the permissions the user has for the group. returned only for a
+  // single group and include[]=permissions
+  &quot;permissions&quot;: {&quot;create_discussion_topic&quot;:true,&quot;create_announcement&quot;:true},
+  // optional: A list of users that are members in the group. Returned only if
+  // include[]=users. WARNING: this collection&#39;s size is capped (if there are an
+  // extremely large number of users in the group (thousands) not all of them will
+  // be returned).  If you need to capture all the users in a group with certainty
+  // consider using the paginated /api/v1/groups/&lt;group_id&gt;/memberships endpoint.
+  &quot;users&quot;: null
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="GroupMembership">A GroupMembership object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // The id of the membership object
+  &quot;id&quot;: 92,
+  // The id of the group object to which the membership belongs
+  &quot;group_id&quot;: 17,
+  // The id of the user object to which the membership belongs
+  &quot;user_id&quot;: 3,
+  // The current state of the membership. Current possible values are &#39;accepted&#39;,
+  // &#39;invited&#39;, and &#39;requested&#39;
+  &quot;workflow_state&quot;: &quot;accepted&quot;,
+  // Whether or not the user is a moderator of the group (the must also be an
+  // active member of the group to moderate)
+  &quot;moderator&quot;: true,
+  // optional: whether or not the record was just created on a create call (POST),
+  // i.e. was the user just added to the group, or was the user already a member
+  &quot;just_created&quot;: true,
+  // The id of the SIS import if created through SIS. Only included if the user
+  // has permission to manage SIS information.
+  &quot;sis_import_id&quot;: 4
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.groups.index' data-subtopic='Groups'>
+    <a name='method.groups.index' href='#method.groups.index'>
+      List your groups
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/self/groups
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/self/groups</code>
+  </div>
+
+
+<p>Returns a paginated list of active groups for the current user.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>context_type</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Only include groups that are in this type of context.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>Account</code>, <code class=enum>Course</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        <ul><li>
+<p>“tabs”: Include the list of tabs configured for each group.  See the <a href="tabs.html#method.tabs.index" title="List available tabs API">List available tabs API</a> for more information.</p>
+</li></ul>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>tabs</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/users/self/groups?context_type=Account \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='groups.html#Group'>Groups</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.context_index' data-subtopic='Groups'>
+    <a name='method.groups.context_index' href='#method.groups.context_index'>
+      List the groups available in a context.
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#context_index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/groups
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/groups</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/groups
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/groups</code>
+  </div>
+
+
+<p>Returns the paginated list of active groups in the given context that are visible to user.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>only_own_groups</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Will only include groups that the user belongs to if this is set</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        <ul><li>
+<p>“tabs”: Include the list of tabs configured for each group.  See the <a href="tabs.html#method.tabs.index" title="List available tabs API">List available tabs API</a> for more information.</p>
+</li></ul>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>tabs</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/1/groups \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='groups.html#Group'>Groups</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.show' data-subtopic='Groups'>
+    <a name='method.groups.show' href='#method.groups.show'>
+      Get a single group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id</code>
+  </div>
+
+
+<p>Returns the data for a single group, or a 401 if the caller doesn&#39;t have the rights to see it.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        <ul><li>
+<p>“permissions”: Include permissions the current user has for the group.</p>
+</li><li>
+<p>“tabs”: Include the list of tabs configured for each group.  See the <a href="tabs.html#method.tabs.index" title="List available tabs API">List available tabs API</a> for more information.</p>
+</li></ul>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>permissions</code>, <code class=enum>tabs</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='groups.html#Group'>Group</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.create' data-subtopic='Groups'>
+    <a name='method.groups.create' href='#method.groups.create'>
+      Create a group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/groups</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/group_categories/:group_category_id/groups
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/group_categories/:group_category_id/groups</code>
+  </div>
+
+
+<p>Creates a new group. Groups created using the “/api/v1/groups/” endpoint will be community groups.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>name</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name of the group</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>description</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>A description of the group</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>is_public</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>whether the group is public (applies only to community groups)</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>join_level</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>parent_context_auto_join</code>, <code class=enum>parent_context_request</code>, <code class=enum>invitation_only</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>storage_quota_mb</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The allowed file storage for the group, in megabytes. This parameter is ignored if the caller does not have the manage_storage_quotas permission.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>sis_group_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The sis ID of the group. Must have manage_sis permission to set.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups \
+     -F &#39;name=Math Teachers&#39; \
+     -F &#39;description=A place to gather resources for our classes.&#39; \
+     -F &#39;is_public=true&#39; \
+     -F &#39;join_level=parent_context_auto_join&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='groups.html#Group'>Group</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.update' data-subtopic='Groups'>
+    <a name='method.groups.update' href='#method.groups.update'>
+      Edit a group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/groups/:group_id</code>
+  </div>
+
+
+<p>Modifies an existing group.  Note that to set an avatar image for the group, you must first upload the image file to the group, and the use the id in the response as the argument to this function.  See the <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a> for details on the file upload workflow.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>name</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name of the group</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>description</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>A description of the group</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>is_public</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether the group is public (applies only to community groups). Currently you cannot set a group back to private once it has been made public.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>join_level</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>parent_context_auto_join</code>, <code class=enum>parent_context_request</code>, <code class=enum>invitation_only</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>avatar_id</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the attachment previously uploaded to the group that you would like to use as the avatar image for this group.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>storage_quota_mb</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The allowed file storage for the group, in megabytes. This parameter is ignored if the caller does not have the manage_storage_quotas permission.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>members[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>An array of user ids for users you would like in the group. Users not in the group will be sent invitations. Existing group members who aren&#39;t in the list will be removed from the group.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>sis_group_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The sis ID of the group. Must have manage_sis permission to set.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt; \
+     -X PUT \
+     -F &#39;name=Algebra Teachers&#39; \
+     -F &#39;join_level=parent_context_request&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='groups.html#Group'>Group</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.destroy' data-subtopic='Groups'>
+    <a name='method.groups.destroy' href='#method.groups.destroy'>
+      Delete a group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/groups/:group_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/groups/:group_id</code>
+  </div>
+
+
+<p>Deletes a group and removes all members.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt; \
+     -X DELETE \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='groups.html#Group'>Group</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.invite' data-subtopic='Group Memberships'>
+    <a name='method.groups.invite' href='#method.groups.invite'>
+      Invite others to a group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#invite</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups/:group_id/invite
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/groups/:group_id/invite</code>
+  </div>
+
+
+<p>Sends an invitation to all supplied email addresses which will allow the receivers to join the group.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>invitees[]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>An array of email addresses to be sent invitations.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/invite \
+     -F &#39;invitees[]=leonard@example.com&#39; \
+     -F &#39;invitees[]=sheldon@example.com&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.users' data-subtopic='Groups'>
+    <a name='method.groups.users' href='#method.groups.users'>
+      List group's users
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#users</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/users
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/users</code>
+  </div>
+
+
+<p>Returns a paginated list of users in the group.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>search_term</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The partial name or full ID of the users to match and return in the results list. Must be at least 3 characters.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>“avatar_url”: Include users&#39; avatar_urls.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>avatar_url</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>exclude_inactive</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether to filter out inactive users from the results. Defaults to false unless explicitly provided.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/1/users \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='users.html#User'>Users</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.create_file' data-subtopic='Groups'>
+    <a name='method.groups.create_file' href='#method.groups.create_file'>
+      Upload a file
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#create_file</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups/:group_id/files
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/groups/:group_id/files</code>
+  </div>
+
+
+<p>Upload a file to the group.</p>
+
+<p>This API endpoint is the first step in uploading a file to a group. See the <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a> for details on the file upload workflow.</p>
+
+<p>Only those with the “Manage Files” permission on a group can upload files to the group. By default, this is anybody participating in the group, or any admin over the group.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.preview_html' data-subtopic='Groups'>
+    <a name='method.groups.preview_html' href='#method.groups.preview_html'>
+      Preview processed html
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#preview_html</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups/:group_id/preview_html
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/groups/:group_id/preview_html</code>
+  </div>
+
+
+<p>Preview html content processed for this group</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>html</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The html content to process</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/preview_html \
+     -F &#39;html=&lt;p&gt;&lt;badhtml&gt;&lt;/badhtml&gt;processed html&lt;/p&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;html&quot;: &quot;&lt;p&gt;processed html&lt;/p&gt;&quot;
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.activity_stream' data-subtopic='Groups'>
+    <a name='method.groups.activity_stream' href='#method.groups.activity_stream'>
+      Group activity stream
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#activity_stream</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/activity_stream
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/activity_stream</code>
+  </div>
+
+
+<p>Returns the current user&#39;s group-specific activity stream, paginated.</p>
+
+<p>For full documentation, see the API documentation for the user activity stream, in the user api.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.activity_stream_summary' data-subtopic='Groups'>
+    <a name='method.groups.activity_stream_summary' href='#method.groups.activity_stream_summary'>
+      Group activity stream summary
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#activity_stream_summary</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/activity_stream/summary
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/activity_stream/summary</code>
+  </div>
+
+
+<p>Returns a summary of the current user&#39;s group-specific activity stream.</p>
+
+<p>For full documentation, see the API documentation for the user activity stream summary, in the user api.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.groups.permissions' data-subtopic='Groups'>
+    <a name='method.groups.permissions' href='#method.groups.permissions'>
+      Permissions
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/groups_controller.rb">GroupsController#permissions</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/permissions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/permissions</code>
+  </div>
+
+
+<p>Returns permission information for the calling user in the given group. See also the <a href="accounts.html#method.accounts.permissions" title="Account">Account</a> and <a href="courses.html#method.courses.permissions" title="Course">Course</a> counterparts.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>permissions[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>List of permissions to check against the authenticated user. Permission names are documented in the <a href="roles.html#method.role_overrides.add_role" title="Create a role">Create a role</a> endpoint.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/permissions \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+  -d &#39;permissions[]=read_roster&#39;
+  -d &#39;permissions[]=send_messages_all&#39;</code></pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{&#39;read_roster&#39;: &#39;true&#39;, &#39;send_messages_all&#39;: &#39;false&#39;}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.group_memberships.index' data-subtopic='Group Memberships'>
+    <a name='method.group_memberships.index' href='#method.group_memberships.index'>
+      List group memberships
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_memberships_controller.rb">GroupMembershipsController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/memberships
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/memberships</code>
+  </div>
+
+
+<p>A paginated list of the members of a group.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>filter_states[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Only list memberships with the given workflow_states. By default it will return all memberships.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>accepted</code>, <code class=enum>invited</code>, <code class=enum>requested</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/memberships \
+     -F &#39;filter_states[]=invited&amp;filter_states[]=requested&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='groups.html#GroupMembership'>GroupMemberships</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.group_memberships.show' data-subtopic='Group Memberships'>
+    <a name='method.group_memberships.show' href='#method.group_memberships.show'>
+      Get a single group membership
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_memberships_controller.rb">GroupMembershipsController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/memberships/:membership_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/memberships/:membership_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/users/:user_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/users/:user_id</code>
+  </div>
+
+
+<p>Returns the group membership with the given membership id or user id.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/memberships/&lt;membership_id&gt; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/users/&lt;user_id&gt; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='groups.html#GroupMembership'>GroupMembership</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.group_memberships.create' data-subtopic='Group Memberships'>
+    <a name='method.group_memberships.create' href='#method.group_memberships.create'>
+      Create a membership
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_memberships_controller.rb">GroupMembershipsController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups/:group_id/memberships
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/groups/:group_id/memberships</code>
+  </div>
+
+
+<p>Join, or request to join, a group, depending on the join_level of the group.  If the membership or join request already exists, then it is simply returned</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>user_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/memberships \
+     -F &#39;user_id=self&#39;
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='groups.html#GroupMembership'>GroupMembership</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.group_memberships.update' data-subtopic='Group Memberships'>
+    <a name='method.group_memberships.update' href='#method.group_memberships.update'>
+      Update a membership
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_memberships_controller.rb">GroupMembershipsController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id/memberships/:membership_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/groups/:group_id/memberships/:membership_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id/users/:user_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/groups/:group_id/users/:user_id</code>
+  </div>
+
+
+<p>Accept a membership request, or add/remove moderator rights.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>workflow_state</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Currently, the only allowed value is “accepted”</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>accepted</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>moderator</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/memberships/&lt;membership_id&gt; \
+     -F &#39;moderator=true&#39;
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/users/&lt;user_id&gt; \
+     -F &#39;moderator=true&#39;
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='groups.html#GroupMembership'>GroupMembership</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.group_memberships.destroy' data-subtopic='Group Memberships'>
+    <a name='method.group_memberships.destroy' href='#method.group_memberships.destroy'>
+      Leave a group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/group_memberships_controller.rb">GroupMembershipsController#destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/groups/:group_id/memberships/:membership_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/groups/:group_id/memberships/:membership_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/groups/:group_id/users/:user_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/groups/:group_id/users/:user_id</code>
+  </div>
+
+
+<p>Leave a group if you are allowed to leave (some groups, such as sets of course groups created by teachers, cannot be left). You may also use &#39;self&#39; in place of a membership_id.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/memberships/&lt;membership_id&gt; \
+     -X DELETE \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/groups/&lt;group_id&gt;/users/&lt;user_id&gt; \
+     -X DELETE \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:10 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

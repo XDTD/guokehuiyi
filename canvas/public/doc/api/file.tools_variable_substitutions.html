@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title><!--
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="" class="current">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><!--
+  DONT EDIT THIS FILE DIRECTLY
+  Update:
+    - doc/api/tools_variable_substitutions.head.md
+    - lib/lti/variable_expander.rb
+
+  then run `script/generate_lti_variable_substitution_markdown`
+-->
+
+<h1 id="lti-variable-substitutions">LTI Variable Substitutions</h1>
+
+<p>Variable substitution (aka variable expansion) is where custom variables really start to
+shine.  They provide a mechanism for tool providers to request that specific, contextual
+information be sent across in the launch.  When the tool consumer processes the launch request,
+it detects requested variable substitutions and sends the appropriate data where possible.
+Adding variable substitutions is exactly the same as adding custom variables, except the values
+are variables instead of constants.  This is denoted by prefixing the value with a $.  If the
+tool consumer doesn&#39;t recognize, or can&#39;t substitute, the value it will just send the variable
+as if it were are regular custom variable (i.e. the name of the substitution variable will be
+sent rather than the value).</p>
+
+<p>This allows Canvas to expose data as LTI launch parameters during the LTI launch rather than
+requiring access to the Canvas API, which can be expensive for Canvas and the tool.  It allows
+tool providers to be much more surgical when requesting user data, and it paves the way for us
+to be more transparent to tool installers, by showing them exactly what data the LTI tool will
+be given access to. Additionally, variable substitutions are generally simple to add to Canvas
+relative to gaining API access.</p>
+
+<p>There are currently over 80 substitutions available.  Many of the substitutions simply
+give access to additional user and context information.  An LTI tool can request things
+like SIS ids, names, an avatar image, and an email address.  Other variable substitutions
+assist tools with accessibility (prefersHighContrast), course copy (previousCourseIds), and
+masquerading users.  Additionally, when we don&#39;t provide enough information or customization
+directly through LTI, tools can request everything they need to use the Canvas API for an even
+richer experience.</p>
+
+<p>Some substitutions may be used as &#39;enabled_capabilities&#39; for LTI2 tools. These substitutions have a
+&#39;Launch Parameter&#39; label indicating the parameter name that will be sent in the tool launch if enabled.</p>
+
+<p>For more information on variable substitution, see the <a href="https://www.imsglobal.org/specs/ltiv1p1p1/implementation-guide#toc-9">IMS LTI specification</a>.</p>
+
+<h1 id="usage-configuration">Usage/Configuration</h1>
+
+<p>Variable substitutions can be configured for a tool in 3 ways:</p>
+
+<h2 id="via-ui">Via UI</h2>
+
+<p>Custom fields can be <a href="https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-a-manual-entry-external-app-for-an-account/ta-p/219">configured via UI</a> by editing the tool configuration and adding the
+desired variable to the Custom Fields text box.</p>
+
+<p>The following would add the domain as a launch parameter called custom_arbitrary_name:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_arbitrary_name'>arbitrary_name</span><span class='op'>=</span><span class='gvar'>$Canvas</span><span class='period'>.</span><span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_domain'>domain</span>
+</code></pre>
+
+<h2 id="via-api">Via API</h2>
+
+<p>Custom fields can also be <a href="/doc/api/external_tools.html#method.external_tools.create">configured via API</a>.</p>
+
+<p>This would install a course-level tool with domain as a custom field:</p>
+
+<pre class="code"><code class="">curl &#39;https://&lt;domain&gt;.instructure.com/api/v1/courses/&lt;course_id&gt;/external_tools&#39; \
+  -X POST \
+  -H &quot;Authorization: Bearer &lt;token&gt;;&quot; \
+  -F &#39;name=LTI Example&#39; \
+  -F &#39;consumer_key=some_key&#39; \
+  -F &#39;shared_secret=some_secret&#39; \
+  -F &#39;url=https://example.com/ims/lti&#39; \
+  -F &#39;privacy_level=name_only&#39; \
+  -F &#39;custom_fields[domain]=$Canvas.api.domain&#39;
+</code></pre>
+
+<h2 id="via-json-configuration-lti-1-3">Via JSON Configuration (LTI 1.3)</h2>
+
+<p>JSON can be used to <a href="https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-LTI-key-for-an-account/ta-p/140" target="_blank">configure an LTI 1.3 Developer Key</a>.</p>
+
+<p>The following JSON would create a developer key with the a placement specfic custom field and a tool-level custom field:</p>
+
+<pre class="code"><code class=""><span class='lbrace'>{</span>  
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>title</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Variable Expansion Tool</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>scopes</span><span class='label_end'>&quot;:</span><span class='lbracket'>[</span>  
+
+   <span class='rbracket'>]</span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>extensions</span><span class='label_end'>&quot;:</span><span class='lbracket'>[</span>  
+      <span class='lbrace'>{</span>  
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>domain</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>variableexpander.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tool_id</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>variable-expansion-example</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>platform</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>canvas.instructure.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>settings</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span>  
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>text</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Variation Expansion Tool Text</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon_url</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://some.icon.url</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>placements</span><span class='label_end'>&quot;:</span><span class='lbracket'>[</span>  
+               <span class='lbrace'>{</span>  
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>text</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User Navigation Placement</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>enabled</span><span class='label_end'>&quot;:</span><span class='kw'>true</span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon_url</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://static.thenounproject.com/png/131630-200.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>placement</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>user_navigation</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>message_type</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LtiResourceLinkRequest</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>target_link_uri</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://lti-ri.imsglobal.org/lti/tools/281/launches</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>canvas_icon_class</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon-lti</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>custom_fields</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span>  
+                     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foo</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$Canvas.user.id</span><span class='tstring_end'>&quot;</span></span>
+                  <span class='rbrace'>}</span>
+               <span class='rbrace'>}</span>
+            <span class='rbracket'>]</span>
+         <span class='rbrace'>}</span>
+      <span class='rbrace'>}</span>
+   <span class='rbracket'>]</span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>public_jwk</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span>  
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kty</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RSA</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>alg</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RS256</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AQAB</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kid</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>8f796169-0ac4-48a3-a202-fa4f3d814fcd</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>n</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nZD7QWmIwj-3N_RZ1qJjX6CdibU87y2l02yMay4KunambalP9g0fU9yZLwLX9WYJINcXZDUf6QeZ-SSbblET-h8Q4OvfSQ7iuu0WqcvBGy8M0qoZ7I-NiChw8dyybMJHgpiP_AyxpCQnp3bQ6829kb3fopbb4cAkOilwVRBYPhRLboXma0cwcllJHPLvMp1oGa7Ad8osmmJhXhM9qdFFASg_OCQdPnYVzp8gOFeOGwlXfSFEgt5vgeU25E-ycUOREcnP7BnMUk7wpwYqlE537LWGOV5z_1Dqcqc9LmN-z4HmNV7b23QZW4_mzKIOY4IqjmnUGgLU9ycFj5YGDCts7Q</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>use</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sig</span><span class='tstring_end'>&quot;</span></span>
+   <span class='rbrace'>}</span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>description</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1.3 Test Tool</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>custom_fields</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span>  
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bar</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$Canvas.user.sisid</span><span class='tstring_end'>&quot;</span></span>
+   <span class='rbrace'>}</span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>target_link_uri</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://your.target_link_uri</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>oidc_initiation_url</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://your.oidc_initiation_url</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span>
+</code></pre>
+
+<h2 id="via-xml-configuration-lti-1-1">Via XML Configuration (LTI 1.1)</h2>
+
+<p>Custom fields can also be <a href="/doc/api/file.tools_xml.html">configured via XML</a>.</p>
+
+<p>This would create a tool in a course with custom fields, some of which are specific for a
+particular placement:</p>
+
+<pre class="code"><code class="">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+   &lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+       xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+       xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+       xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+       xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+       http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+       http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+       http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+     &lt;blti:title&gt;Wikipedia&lt;/blti:title&gt;
+     &lt;blti:launch_url&gt;https://www.wikipedia.org/&lt;/blti:launch_url&gt;
+     &lt;blti:custom&gt;
+       &lt;lticm:property name=&quot;user_sis_id&quot;&gt;$Person.sourcedId&lt;/lticm:property&gt;
+     &lt;/blti:custom&gt;
+     &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+       &lt;lticm:property name=&quot;domain&quot;&gt;wikipedia.org&lt;/lticm:property&gt;
+       &lt;lticm:options name=&quot;custom_fields&quot;&gt;
+           &lt;lticm:property name=&quot;canvas_api_domain&quot;&gt;$Canvas.api.domain&lt;/lticm:property&gt;
+           &lt;lticm:property name=&quot;canvas_user_id&quot;&gt;$Canvas.user.id&lt;/lticm:property&gt;
+       &lt;/lticm:options&gt;
+       &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+         &lt;lticm:property name=&quot;url&quot;&gt;https://en.wikipedia.org/wiki/Wikipedia:Unusual_articles#mediaviewer/File:Cow-on_pole,_with_antlers.jpeg&lt;/lticm:property&gt;
+         &lt;lticm:property name=&quot;text&quot;&gt;Cow With Antlers&lt;/lticm:property&gt;
+         &lt;lticm:options name=&quot;custom_fields&quot;&gt;
+           &lt;lticm:property name=&quot;concluded_roles&quot;&gt;$Canvas.membership.concludedRoles&lt;/lticm:property&gt;
+         &lt;/lticm:options&gt;
+       &lt;/lticm:options&gt;
+     &lt;/blti:extensions&gt;
+   &lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h1 id="supported-substitutions">Supported Substitutions</h1>
+
+<h2 id="com-instructure-user-observees">com.instructure.User.observees</h2>
+
+<p>If the current user is an observer in the launch
+context, this substitution returns a comma-separated
+list of user IDs linked to the current user for
+observing. For LTI 1.3 tools, the user IDs will
+correspond to the &quot;sub&quot; claim made in LTI 1.3 launches
+(a UUIDv4), while for all other tools, the user IDs will
+be the user&#39;s typical LTI ID.</p>
+
+<p>Returns an empty string otherwise.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_user_observees</em>  </p>
+
+<pre class="code"><code class=""> LTI 1.3: &quot;a6e2e413-4afb-4b60-90d1-8b0344df3e91&quot;,
+ All Others: &quot;c0ddd6c90cbe1ef0f32fbce5c3bf654204be186c&quot;
+</code></pre>
+
+<h2 id="com-instructure-user-sectionnames">com.instructure.User.sectionNames</h2>
+
+<p>Returns an array of the section names that the user is enrolled in, if the
+context of the tool launch is within a course.</p>
+
+<p><strong>Availability</strong>: <em>when launched from a course</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_user_section_names</em>  </p>
+
+<pre class="code"><code class=""><span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Section 1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Section 5</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TA Section</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+</code></pre>
+
+<h2 id="com-instructure-observee-sisids">com.instructure.Observee.sisIds</h2>
+
+<p>returns all observee ids linked to this observer as an String separated by <code>,</code>.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_observee_sis_ids</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A123,B456,...</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="context-title">Context.title</h2>
+
+<p>The title of the context.</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>context_title</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Example Course</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-editor-contents">com.instructure.Editor.contents</h2>
+
+<p>The contents of the text editor associated with the content item launch.</p>
+
+<p><strong>Availability</strong>: <em>when the tool is launched from the editor_button placement</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_editor_contents</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This text was in the editor</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-editor-selection">com.instructure.Editor.selection</h2>
+
+<p>The contents the user has selected in the text editor associated
+with the content item launch.</p>
+
+<p><strong>Availability</strong>: <em>when the tool is launched from the editor_button placement</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_editor_selection</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>this text was selected by the user</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-postmessagetoken">com.instructure.PostMessageToken</h2>
+
+<p>A token that can be used for frontend communication between an LTI tool
+and Canvas via the Window.postMessage API.</p>
+
+<p><strong>Availability</strong>: **<br>
+<strong>Launch Parameter</strong>: <em>com_instructure_post_message_token</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>9ae4170c-6b64-444d-9246-0b7dedd5f560</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-assignment-lti-id">com.instructure.Assignment.lti.id</h2>
+
+<p>The LTI assignment id of an assignment. This value corresponds with
+the <code>ext_lti_assignment_id</code> send in various launches and webhooks.</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_assignment_lti_id</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>9ae4170c-6b64-444d-9246-0b7dedd5f560</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-assignment-allowedfileextensions">com.instructure.Assignment.allowedFileExtensions</h2>
+
+<p>A comma separated list of the file extensions that are allowed for submitting to this
+assignment. If there are no limits on what files can be uploaded, an empty string will be
+returned. If the assignment does not allow file uploads as a submission type, then no
+substitution will be performed.</p>
+
+<p><strong>Availability</strong>: <em>when the tool is used to upload a file as an assignment submission</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_assignment_allowed_file_extensions</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>docx,pdf,txt</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-originalityreport-id">com.instructure.OriginalityReport.id</h2>
+
+<p>The Canvas id of the Originality Report associated
+with the launch.</p>
+
+<p><strong>Availability</strong>: **<br>
+<strong>Launch Parameter</strong>: <em>com_instructure_originality_report_id</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>23</span>
+</code></pre>
+
+<h2 id="com-instructure-submission-id">com.instructure.Submission.id</h2>
+
+<p>The Canvas id of the submission associated with the
+launch.</p>
+
+<p><strong>Availability</strong>: **<br>
+<strong>Launch Parameter</strong>: <em>com_instructure_submission_id</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>23</span>
+</code></pre>
+
+<h2 id="com-instructure-file-id">com.instructure.File.id</h2>
+
+<p>The Canvas id of the file associated with the submission
+in the launch.</p>
+
+<p><strong>Availability</strong>: **<br>
+<strong>Launch Parameter</strong>: <em>com_instructure_file_id</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>23</span>
+</code></pre>
+
+<h2 id="courseoffering-sourcedid">CourseOffering.sourcedId</h2>
+
+<p>the LIS identifier for the course offering.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em><br>
+<strong>Launch Parameter</strong>: <em>lis_course_offering_sourcedid</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="context-id">Context.id</h2>
+
+<p>an opaque identifier that uniquely identifies the context of the tool launch.</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>context_id</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cdca1fe2c392a208bd8a657f8865ddb9ca359534</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="context-sourcedid">Context.sourcedId</h2>
+
+<p>The sourced Id of the context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="context-id-history">Context.id.history</h2>
+
+<p>Returns a string with a comma-separated list of the context ids of the
+courses in reverse chronological order from which content has been copied.
+Will show a limit of 1000 context ids.  When the number passes 1000,
+&#39;truncated&#39; will show at the end of the list.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>789,456,123</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="message-documenttarget">Message.documentTarget</h2>
+
+<p>communicates the kind of browser window/frame where the Canvas has launched a tool.</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>launch_presentation_document_target</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>iframe</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="message-locale">Message.locale</h2>
+
+<p>returns the current locale.</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>launch_presentation_locale</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>de</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="toolconsumerinstance-guid">ToolConsumerInstance.guid</h2>
+
+<p>returns a unique identifier for the Tool Consumer (Canvas).</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>tool_consumer_instance_guid</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0dWtgJjjFWRNT41WdQMvrleejGgv7AynCVm3lmZ2:canvas-lms</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-api-domain">Canvas.api.domain</h2>
+
+<p>returns the canvas domain for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>canvas.instructure.com</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-api-collaborationmembers-url">Canvas.api.collaborationMembers.url</h2>
+
+<p>returns the api url for the members of the collaboration.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://canvas.instructure.com/api/v1/collaborations/1/members</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-api-baseurl">Canvas.api.baseUrl</h2>
+
+<p>returns the base URL for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://canvas.instructure.com</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="toolproxybinding-memberships-url">ToolProxyBinding.memberships.url</h2>
+
+<p>returns the URL for the membership service associated with the current context.</p>
+
+<p>This variable is for future use only. Complete support for the IMS Membership Service has not been added to Canvas. This will be updated when we fully support and certify the IMS Membership Service.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://canvas.instructure.com/api/lti/courses/1/membership_service</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-account-id">Canvas.account.id</h2>
+
+<p>returns the account id for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="canvas-account-name">Canvas.account.name</h2>
+
+<p>returns the account name for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>School Name</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-account-sissourceid">Canvas.account.sisSourceId</h2>
+
+<p>returns the account&#39;s sis source id for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sis_account_id_1234</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-rootaccount-id">Canvas.rootAccount.id</h2>
+
+<p>returns the Root Account ID for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="canvas-rootaccount-sissourceid">Canvas.rootAccount.sisSourceId</h2>
+
+<p>returns the root account&#39;s sis source id for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sis_account_id_1234</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-externaltool-url">Canvas.externalTool.url</h2>
+
+<p>returns the URL for the external tool that was launched. Only available for LTI 1.</p>
+
+<p><strong>Availability</strong>: <em>always and when in an LTI 1</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://example.url/path</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-brandconfigjson-url">com.instructure.brandConfigJSON.url</h2>
+
+<p>returns the URL to retrieve the brand config JSON for the launching context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://example.url/path.json</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-brandconfigjson">com.instructure.brandConfigJSON</h2>
+
+<p>returns the brand config JSON itself for the launching context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ic-brand-primary-darkened-5</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#0087D7</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+</code></pre>
+
+<h2 id="com-instructure-brandconfigjs-url">com.instructure.brandConfigJS.url</h2>
+
+<p>returns the URL to retrieve the brand config javascript for the launching context.
+This URL should be used as the src attribute for a script tag on the external tool
+provider&#39;s web page. It is configured to be used with the <a href="https://github.com/instructure/instructure-ui">instructure-ui node module</a>.
+More information on on how to use instructure ui react components can be found <a href="http://instructure.github.io/instructure-ui/">here</a>.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://example.url/path.js</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-css-common">Canvas.css.common</h2>
+
+<p>returns the URL for the common css file.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://example.url/path.css</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-shard-id">Canvas.shard.id</h2>
+
+<p>returns the shard id for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="canvas-root_account-global_id-duplicates-canvas-user-globalid">Canvas.root_account.global_id [duplicates Canvas.user.globalId]</h2>
+
+<p>returns the root account&#39;s global id for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>123400000000123</span>
+</code></pre>
+
+<h2 id="canvas-root_account-id-deprecated">Canvas.root_account.id <em>[deprecated]</em></h2>
+
+<p>returns the root account id for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="vnd-canvas-root_account-uuid">vnd.Canvas.root_account.uuid</h2>
+
+<p>returns the account uuid for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>vnd_canvas_root_account_uuid</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ioe3sJPt0KZp9Pw6xAvcHuLCl0z4TvPKP0iIOLbo</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-root_account-sissourceid-deprecated">Canvas.root_account.sisSourceId <em>[deprecated]</em></h2>
+
+<p>returns the root account sis source id for the current context.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="canvas-course-id">Canvas.course.id</h2>
+
+<p>returns the current course id.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="vnd-instructure-course-uuid">vnd.instructure.Course.uuid</h2>
+
+<p>returns the current course uuid.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>S3vhRY2pBzG8iPdZ3OBPsPrEnqn5sdRoJOLXGbwc</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-course-name">Canvas.course.name</h2>
+
+<p>returns the current course name.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Course Name</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-course-sissourceid">Canvas.course.sisSourceId</h2>
+
+<p>returns the current course sis source id.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="com-instructure-course-integrationid">com.instructure.Course.integrationId</h2>
+
+<p>returns the current course integration id.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="canvas-course-startat">Canvas.course.startAt</h2>
+
+<p>returns the current course start date.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class="">2018-01-15 00:00:00 -0700
+</code></pre>
+
+<h2 id="canvas-course-endat">Canvas.course.endAt</h2>
+
+<p>returns the current course end date.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class="">2018-05-01 00:00:00 -0700
+</code></pre>
+
+<h2 id="canvas-course-workflowstate">Canvas.course.workflowState</h2>
+
+<p>returns the current course workflow state. Workflow states of &quot;claimed&quot; or &quot;created&quot;
+indicate an unpublished course.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-term-startat">Canvas.term.startAt</h2>
+
+<p>returns the current course&#39;s term start date.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course that has a term with a start date</em>  </p>
+
+<pre class="code"><code class="">2018-01-12 00:00:00 -0700
+</code></pre>
+
+<h2 id="canvas-term-name">Canvas.term.name</h2>
+
+<p>returns the current course&#39;s term name.</p>
+
+<p><strong>Availability</strong>: **<br>
+<strong>Launch Parameter</strong>: <em>canvas_term_name</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>W1 2017</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="coursesection-sourcedid">CourseSection.sourcedId</h2>
+
+<p>returns the current course sis source id
+to return the section source id use Canvas.course.sectionIds.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em><br>
+<strong>Launch Parameter</strong>: <em>lis_course_section_sourcedid</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="canvas-enrollment-enrollmentstate">Canvas.enrollment.enrollmentState</h2>
+
+<p>returns the current course enrollment state.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-assignment-anonymous_grading">com.instructure.Assignment.anonymous_grading</h2>
+
+<p>returns true if the assignment has anonymous grading
+enabled.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_assignment_anonymous_grading</em>  </p>
+
+<pre class="code"><code class=""><span class='kw'>true</span>
+</code></pre>
+
+<h2 id="com-instructure-membership-roles">com.Instructure.membership.roles</h2>
+
+<p>returns the current course membership roles
+using the LIS v2 vocabulary.</p>
+
+<p><strong>Availability</strong>: <em>when launched from a course or an account</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_membership_roles</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://purl.imsglobal.org/vocab/lis/v2/institution/person#Student</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-membership-roles">Canvas.membership.roles</h2>
+
+<p>returns the current course membership roles.</p>
+
+<p><strong>Availability</strong>: <em>when launched from a course or an account</em><br>
+<strong>Launch Parameter</strong>: <em>canvas_membership_roles</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>StudentEnrollment</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-membership-concludedroles">Canvas.membership.concludedRoles</h2>
+
+<p>This is a list of IMS LIS roles should have a different key.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>urn:lti:sysrole:ims/lis/None</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-course-previouscontextids">Canvas.course.previousContextIds</h2>
+
+<p>With respect to the current course, returns the context ids of the courses from which content has been copied (excludes cartridge imports).</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1234,4567</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-course-previouscontextids-recursive">Canvas.course.previousContextIds.recursive</h2>
+
+<p>With respect to the current course, recursively returns the context ids of the courses from which content has been copied (excludes cartridge imports).
+Will show a limit of 1000 context ids.  When the number passes 1000, &#39;truncated&#39; will show at the end of the list.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1234,4567</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-course-previouscourseids">Canvas.course.previousCourseIds</h2>
+
+<p>With respect to the current course, returns the course ids of the courses from which content has been copied (excludes cartridge imports).</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="person-name-full">Person.name.full</h2>
+
+<p>Returns the full name of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>lis_person_name_full</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>John Doe</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="person-name-display">Person.name.display</h2>
+
+<p>Returns the display name of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>person_name_display</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>John Doe</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="person-name-family">Person.name.family</h2>
+
+<p>Returns the last name of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>lis_person_name_family</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Doe</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="person-name-given">Person.name.given</h2>
+
+<p>Returns the first name of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>lis_person_name_given</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>John</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-person-name_sortable">com.instructure.Person.name_sortable</h2>
+
+<p>Returns the sortable name of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_person_name_sortable</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Doe, John</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="person-email-primary">Person.email.primary</h2>
+
+<p>Returns the primary email of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>lis_person_contact_email_primary</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>john.doe@example.com</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-person-pronouns">com.instructure.Person.pronouns</h2>
+
+<p>Returns pronouns for the current user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_person_pronouns</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>She/Her</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="vnd-canvas-person-email-sis">vnd.Canvas.Person.email.sis</h2>
+
+<p>Returns the institution assigned email of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user that was added via SIS</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>john.doe@example.com</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="person-address-timezone">Person.address.timezone</h2>
+
+<p>Returns the name of the timezone of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>America/Denver</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="user-image">User.image</h2>
+
+<p>Returns the profile picture URL of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>user_image</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://example.com/picture.jpg</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="user-id-duplicates-canvas-user-id">User.id [duplicates Canvas.user.id]</h2>
+
+<p>Returns the Canvas user_id of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>user_id</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>420000000000042</span>
+</code></pre>
+
+<h2 id="canvas-user-id-duplicates-user-id">Canvas.user.id [duplicates User.id]</h2>
+
+<p>Returns the Canvas user_id of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>420000000000042</span>
+</code></pre>
+
+<h2 id="vnd-instructure-user-uuid-duplicates-user-uuid">vnd.instructure.User.uuid [duplicates User.uuid]</h2>
+
+<p>Returns the Canvas user_uuid of the launching user for the context.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>N2ST123dQ9zyhurykTkBfXFa3Vn1RVyaw9Os6vu3</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="vnd-instructure-user-current_uuid-duplicates-user-uuid">vnd.instructure.User.current_uuid [duplicates User.uuid]</h2>
+
+<p>Returns the current Canvas user_uuid of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>N2ST123dQ9zyhurykTkBfXFa3Vn1RVyaw9Os6vu3</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-user-prefershighcontrast">Canvas.user.prefersHighContrast</h2>
+
+<p>Returns the users preference for high contrast colors (an accessibility feature).</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em>  </p>
+
+<pre class="code"><code class=""><span class='kw'>false</span>
+</code></pre>
+
+<h2 id="com-instructure-course-groupids">com.instructure.Course.groupIds</h2>
+
+<p>returns the Canvas ids of all active groups in the current course.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em><br>
+<strong>Launch Parameter</strong>: <em>com_instructure_course_groupids</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>23,24,...</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-group-contextids">Canvas.group.contextIds</h2>
+
+<p>returns the context ids for the groups the user belongs to in the course.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1c16f0de65a080803785ecb3097da99872616f0d,d4d8d6ae1611e2c7581ce1b2f5c58019d928b79d,...</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="membership-role">Membership.role</h2>
+
+<p>Returns the <a href="https://www.imsglobal.org/specs/ltimemv1p0/specification-3">IMS LTI membership service</a> roles for filtering via query parameters.
+Or, for LTI 1.3 tools, returns the <a href="https://www.imsglobal.org/spec/lti-nrps/v2p0">IMS LTI Names and Role Provisioning Service</a> roles for filtering via query parameters.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em><br>
+<strong>Launch Parameter</strong>: <em>roles</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://purl.imsglobal.org/vocab/lis/v2/institution/person#Administrator</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-xuser-allroles-duplicates-ext_roles-which-is-sent-by-default">Canvas.xuser.allRoles [duplicates ext_roles which is sent by default]</h2>
+
+<p>Returns list of <a href="https://www.imsglobal.org/specs/ltiv1p0/implementation-guide#toc-16">LIS role full URNs</a>.
+Note that this will include all roles the user has.
+There are 3 different levels of roles defined: Context, Institution, System.
+Context role urns start with &quot;urn:lti:ims&quot; and include roles for the context where the launch occurred.
+Institution role urns start with &quot;urn:lti:instrole&quot; and include roles the user has in the institution. This
+will include roles they have in other courses or at the account level. Note that there is not a TA role at the
+Institution level. Instead Users with a TA enrollment will have an institution role of Instructor.
+System role urns start with &quot;urn:lti:sysrole&quot; and include roles for the entire system.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>urn:lti:instrole:ims/lis/Administrator,urn:lti:instrole:ims/lis/Instructor,urn:lti:sysrole:ims/lis/SysAdmin,urn:lti:sysrole:ims/lis/User</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-user-allroles">com.instructure.User.allRoles</h2>
+
+<p>Same as &quot;Canvas.xuser.allRoles&quot;, but uses roles formatted for LTI Advantage.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""> &quot;http://purl.imsglobal.org/vocab/lis/v2/institution/person#Student&quot;,
+ &quot;http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor&quot;,
+ &quot;http://purl.imsglobal.org/vocab/lis/v2/system/person#User&quot;
+</code></pre>
+
+<h2 id="canvas-user-globalid-duplicates-canvas-root_account-global_id">Canvas.user.globalId [duplicates Canvas.root_account.global_id]</h2>
+
+<p>Returns the Canvas global user_id of the launching user.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>420000000000042</span>
+</code></pre>
+
+<h2 id="canvas-user-isrootaccountadmin">Canvas.user.isRootAccountAdmin</h2>
+
+<p>Returns true for root account admins and false for all other roles.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user</em>  </p>
+
+<pre class="code"><code class=""><span class='kw'>true</span>
+</code></pre>
+
+<h2 id="user-username-duplicates-canvas-user-loginid">User.username [duplicates Canvas.user.loginId]</h2>
+
+<p>Username/Login ID for the primary pseudonym for the user for the account.
+This may not be the pseudonym the user is actually logged in with.</p>
+
+<p><strong>Availability</strong>: <em>when pseudonym is in use</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>jdoe</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-user-loginid-duplicates-user-username">Canvas.user.loginId [duplicates User.username]</h2>
+
+<p>Username/Login ID for the primary pseudonym for the user for the account.
+This may not be the pseudonym the user is actually logged in with.</p>
+
+<p><strong>Availability</strong>: <em>when pseudonym is in use</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>jdoe</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-user-sissourceid-duplicates-person-sourcedid">Canvas.user.sisSourceId [duplicates Person.sourcedId]</h2>
+
+<p>Returns the sis source id for the primary pseudonym for the user for the account
+This may not be the pseudonym the user is actually logged in with.</p>
+
+<p><strong>Availability</strong>: <em>when pseudonym is in use</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sis_user_42</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-user-sisintegrationid">Canvas.user.sisIntegrationId</h2>
+
+<p>Returns the integration id for the primary pseudonym for the user for the account
+This may not be the pseudonym the user is actually logged in with.</p>
+
+<p><strong>Availability</strong>: <em>when pseudonym is in use</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>integration_user_42</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="person-sourcedid-duplicates-canvas-user-sissourceid">Person.sourcedId [duplicates Canvas.user.sisSourceId]</h2>
+
+<p>Returns the sis source id for the primary pseudonym for the user for the account
+This may not be the pseudonym the user is actually logged in with.</p>
+
+<p><strong>Availability</strong>: <em>when pseudonym is in use</em><br>
+<strong>Launch Parameter</strong>: <em>lis_person_sourcedid</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sis_user_42</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-logoutservice-url">Canvas.logoutService.url</h2>
+
+<p>Returns the logout service url for the user.
+This is the pseudonym the user is actually logged in as.
+It may not hold all the sis info needed in other launch substitutions.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://&lt;domain&gt;.instructure.com/api/lti/v1/logout_service/&lt;external_tool_id&gt;-&lt;user_id&gt;-&lt;current_unix_timestamp&gt;-&lt;opaque_string&gt;</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-masqueradinguser-id">Canvas.masqueradingUser.id</h2>
+
+<p>Returns the Canvas user_id for the masquerading user.
+This is the pseudonym the user is actually logged in as.
+It may not hold all the sis info needed in other launch substitutions.</p>
+
+<p><strong>Availability</strong>: <em>when the user is being masqueraded</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>420000000000042</span>
+</code></pre>
+
+<h2 id="canvas-masqueradinguser-userid">Canvas.masqueradingUser.userId</h2>
+
+<p>Returns the 40 character opaque user_id for masquerading user.
+This is the pseudonym the user is actually logged in as.
+It may not hold all the sis info needed in other launch substitutions.</p>
+
+<p><strong>Availability</strong>: <em>when the user is being masqueraded</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>da12345678cb37ba1e522fc7c5ef086b7704eff9</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-xapi-url">Canvas.xapi.url</h2>
+
+<p>Returns the xapi url for the user.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://&lt;domain&gt;.instructure.com/api/lti/v1/xapi/&lt;external_tool_id&gt;-&lt;user_id&gt;-&lt;course_id&gt;-&lt;current_unix_timestamp&gt;-&lt;opaque_id&gt;</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="caliper-url">Caliper.url</h2>
+
+<p>Returns the caliper url for the user.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://&lt;domain&gt;.instructure.com/api/lti/v1/caliper/&lt;external_tool_id&gt;-&lt;user_id&gt;-&lt;course_id&gt;-&lt;current_unix_timestamp&gt;-&lt;opaque_id&gt;</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-course-sectionids">Canvas.course.sectionIds</h2>
+
+<p>Returns a comma separated list of section_id&#39;s that the user is enrolled in.</p>
+
+<p><strong>Availability</strong>: <em>when launched from a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>42, 43</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-course-sectionrestricted">Canvas.course.sectionRestricted</h2>
+
+<p>Returns true if the user can only view and interact with users in their own sections.</p>
+
+<p><strong>Availability</strong>: <em>when launched from a course</em>  </p>
+
+<pre class="code"><code class=""><span class='kw'>true</span>
+</code></pre>
+
+<h2 id="canvas-course-sectionsissourceids">Canvas.course.sectionSisSourceIds</h2>
+
+<p>Returns a comma separated list of section sis_id&#39;s that the user is enrolled in.</p>
+
+<p><strong>Availability</strong>: <em>when launched from a course</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>section_sis_id_1, section_sis_id_2</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-contextlabel">com.instructure.contextLabel</h2>
+
+<p>Returns the course code.</p>
+
+<p><strong>Availability</strong>: <em>when launched in a course</em><br>
+<strong>Launch Parameter</strong>: <em>context_label</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CS 124</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-module-id">Canvas.module.id</h2>
+
+<p>Returns the module_id that the module item was launched from.</p>
+
+<p><strong>Availability</strong>: <em>when content tag is present</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="canvas-moduleitem-id">Canvas.moduleItem.id</h2>
+
+<p>Returns the module_item_id of the module item that was launched.</p>
+
+<p><strong>Availability</strong>: <em>when content tag is present</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="canvas-assignment-id">Canvas.assignment.id</h2>
+
+<p>Returns the assignment_id of the assignment that was launched.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>1234</span>
+</code></pre>
+
+<h2 id="com-instructure-group-id">com.instructure.Group.id</h2>
+
+<p>Returns the Canvas id of the group the current user is in if launching
+from a group assignment.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user and when launched as an assignment</em><br>
+<strong>Launch Parameter</strong>: <em>vnd_canvas_group_id</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>481</span>
+</code></pre>
+
+<h2 id="com-instructure-group-name">com.instructure.Group.name</h2>
+
+<p>Returns the name of the group the current user is in if launching
+from a group assignment.</p>
+
+<p><strong>Availability</strong>: <em>when launched by a logged in user and when launched as an assignment</em><br>
+<strong>Launch Parameter</strong>: <em>vnd_canvas_group_name</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Group One</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-assignment-title">Canvas.assignment.title</h2>
+
+<p>Returns the title of the assignment that was launched.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Deep thought experiment</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-assignment-pointspossible">Canvas.assignment.pointsPossible</h2>
+
+<p>Returns the points possible of the assignment that was launched.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>100</span>
+</code></pre>
+
+<h2 id="canvas-assignment-unlockat-deprecated">Canvas.assignment.unlockAt <em>[deprecated]</em></h2>
+
+<p>deprecated in favor of ISO8601.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em>  </p>
+
+<h2 id="canvas-assignment-lockat-deprecated">Canvas.assignment.lockAt <em>[deprecated]</em></h2>
+
+<p>deprecated in favor of ISO8601.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em>  </p>
+
+<h2 id="canvas-assignment-dueat-deprecated">Canvas.assignment.dueAt <em>[deprecated]</em></h2>
+
+<p>deprecated in favor of ISO8601.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em>  </p>
+
+<h2 id="canvas-assignment-unlockat-iso8601">Canvas.assignment.unlockAt.iso8601</h2>
+
+<p>Returns the <code>unlock_at</code> date of the assignment that was launched.
+Only available when launched as an assignment with an <code>unlock_at</code> set.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class="">2018-02-18T00:00:00Z
+</code></pre>
+
+<h2 id="canvas-assignment-lockat-iso8601">Canvas.assignment.lockAt.iso8601</h2>
+
+<p>Returns the <code>lock_at</code> date of the assignment that was launched.
+Only available when launched as an assignment with a <code>lock_at</code> set.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class="">2018-02-20:00:00Z
+</code></pre>
+
+<h2 id="canvas-assignment-dueat-iso8601">Canvas.assignment.dueAt.iso8601</h2>
+
+<p>Returns the <code>due_at</code> date of the assignment that was launched.
+Only available when launched as an assignment with a <code>due_at</code> set.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class="">2018-02-19:00:00Z
+</code></pre>
+
+<h2 id="canvas-assignment-published">Canvas.assignment.published</h2>
+
+<p>Returns true if the assignment that was launched is published.
+Only available when launched as an assignment.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em>  </p>
+
+<pre class="code"><code class=""><span class='kw'>true</span>
+</code></pre>
+
+<h2 id="canvas-assignment-lockdownenabled">Canvas.assignment.lockdownEnabled</h2>
+
+<p>Returns true if the assignment is LDB enabled.
+Only available when launched as an assignment.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em>  </p>
+
+<pre class="code"><code class=""><span class='kw'>true</span>
+</code></pre>
+
+<h2 id="canvas-assignment-allowedattempts">Canvas.assignment.allowedAttempts</h2>
+
+<p>Returns the allowed number of submission attempts.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>5</span>
+</code></pre>
+
+<h2 id="canvas-assignment-submission-studentattempts">Canvas.assignment.submission.studentAttempts</h2>
+
+<p>Returns the number of submission attempts which the student did.</p>
+
+<p><strong>Availability</strong>: <em>when launched as an assignment by a student</em>  </p>
+
+<pre class="code"><code class=""><span class='int'>2</span>
+</code></pre>
+
+<h2 id="ltilink-custom-url">LtiLink.custom.url</h2>
+
+<p>Returns the endpoint url for accessing link-level tool settings
+Only available for LTI 2.0.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://&lt;domain&gt;.instructure.com/api/lti/tool_settings/&lt;link_id&gt;</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="toolproxybinding-custom-url">ToolProxyBinding.custom.url</h2>
+
+<p>Returns the endpoint url for accessing context-level tool settings
+Only available for LTI 2.0.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://&lt;domain&gt;.instructure.com/api/lti/tool_settings/&lt;binding_id&gt;</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="toolproxy-custom-url">ToolProxy.custom.url</h2>
+
+<p>Returns the endpoint url for accessing system-wide tool settings
+Only available for LTI 2.0.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://&lt;domain&gt;.instructure.com/api/lti/tool_settings/&lt;proxy_id&gt;</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="toolconsumerprofile-url">ToolConsumerProfile.url</h2>
+
+<p>Returns the <a href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide#toc-46">Tool Consumer Profile</a> url for the tool.
+Only available for LTI 2.0.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://&lt;domain&gt;.instructure.com/api/lti/courses/&lt;course_id&gt;/tool_consumer_profile/&lt;opaque_id&gt;</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://&lt;domain&gt;.instructure.com/api/lti/accounts/&lt;account_id&gt;/tool_consumer_profile/&lt;opaque_id&gt;</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="vnd-canvas-originalityreport-url">vnd.Canvas.OriginalityReport.url</h2>
+
+<p>The originality report LTI2 service endpoint.</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>vnd_canvas_originality_report_url</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>api/lti/assignments/{assignment_id}/submissions/{submission_id}/originality_report</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="vnd-canvas-submission-url">vnd.Canvas.submission.url</h2>
+
+<p>The submission LTI2 service endpoint.</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>vnd_canvas_submission_url</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>api/lti/assignments/{assignment_id}/submissions/{submission_id}</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="vnd-canvas-submission-history-url">vnd.Canvas.submission.history.url</h2>
+
+<p>The submission history LTI2 service endpoint.</p>
+
+<p><strong>Availability</strong>: <em>always</em><br>
+<strong>Launch Parameter</strong>: <em>vnd_canvas_submission_history_url</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>api/lti/assignments/{assignment_id}/submissions/{submission_id}/history</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="canvas-file-media-id">Canvas.file.media.id</h2>
+
+<p><strong>Availability</strong>: <em>when an attachment is present and it has either a media object or media entry id defined</em>  </p>
+
+<h2 id="canvas-file-media-type">Canvas.file.media.type</h2>
+
+<p><strong>Availability</strong>: <em>when an attachment is present and has a media object defined</em>  </p>
+
+<h2 id="canvas-file-media-duration">Canvas.file.media.duration</h2>
+
+<p><strong>Availability</strong>: <em>when an attachment is present and has a media object defined</em>  </p>
+
+<h2 id="canvas-file-media-size">Canvas.file.media.size</h2>
+
+<p><strong>Availability</strong>: <em>when an attachment is present and has a media object defined</em>  </p>
+
+<h2 id="canvas-file-media-title">Canvas.file.media.title</h2>
+
+<p><strong>Availability</strong>: <em>when an attachment is present and has a media object defined</em>  </p>
+
+<h2 id="canvas-file-usagerights-name">Canvas.file.usageRights.name</h2>
+
+<p><strong>Availability</strong>: <em>when an attachment is present and has usage rights defined</em>  </p>
+
+<h2 id="canvas-file-usagerights-url">Canvas.file.usageRights.url</h2>
+
+<p><strong>Availability</strong>: <em>when an attachment is present and has usage rights defined</em>  </p>
+
+<h2 id="canvas-file-usagerights-copyrighttext">Canvas.file.usageRights.copyrightText</h2>
+
+<p><strong>Availability</strong>: <em>when an attachment is present and has usage rights defined</em>  </p>
+
+<h2 id="com-instructure-course-accept_canvas_resource_types">com.instructure.Course.accept_canvas_resource_types</h2>
+
+<p>Returns the types of resources that can be imported to the current page, forwarded from the request.
+Value is a comma-separated array of one or more values of: [&quot;assignment&quot;, &quot;assignment_group&quot;, &quot;audio&quot;,
+&quot;discussion_topic&quot;, &quot;document&quot;, &quot;image&quot;, &quot;module&quot;, &quot;quiz&quot;, &quot;page&quot;, &quot;video&quot;]</p>
+
+<p>Only functional when <code>com_instructure_course_accept_canvas_resource_types</code> is included as a query param
+in Canvas-side GET request that triggers the LTI launch.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>page</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>module</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>assignment,discussion_topic,page,quiz,module</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h2 id="com-instructure-course-canvas_resource_type">com.instructure.Course.canvas_resource_type</h2>
+
+<p>Returns the target resource type for the current page, forwarded from the request.
+Value is the largest logical unit of the page. Possible values are: [&quot;assignment&quot;, &quot;assignment_group&quot;,
+&quot;audio&quot;, &quot;discussion_topic&quot;, &quot;document&quot;, &quot;image&quot;, &quot;module&quot;, &quot;quiz&quot;, &quot;page&quot;, &quot;video&quot;]
+  on Pages Index -&gt; &#39;page&#39;
+  on Modules -&gt; &#39;module&#39;
+  and so on.</p>
+
+<p>Only functional when <code>com_instructure_course_canvas_resource_type</code> is included as a query param
+in Canvas-side GET request that triggers the LTI launch.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_page'>page</span>
+</code></pre>
+
+<h2 id="com-instructure-course-allow_canvas_resource_selection">com.instructure.Course.allow_canvas_resource_selection</h2>
+
+<p>Returns whether a content can be imported into a specific group on the page, forwarded from the request.
+True for Modules page and Assignment Groups page. False for other content index pages.</p>
+
+<p>Only functional when <code>com_instructure_course_allow_canvas_resource_selection</code> is included as a query param
+in Canvas-side GET request that triggers the LTI launch.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='kw'>true</span>
+</code></pre>
+
+<h2 id="com-instructure-course-available_canvas_resources">com.instructure.Course.available_canvas_resources</h2>
+
+<p>Returns a JSON-encoded list of content groups which can be selected, providing ID and name of each group,
+forwarded from the request.
+Empty value if com.instructure.Course.allow_canvas_resource_selection is false.</p>
+
+<p>Only functional when <code>com_instructure_course_available_canvas_resources</code> is included as a query param
+in Canvas-side GET request that triggers the LTI launch.</p>
+
+<p><strong>Availability</strong>: <em>always</em>  </p>
+
+<pre class="code"><code class=""><span class='lbracket'>[</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>3</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>First Module</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>5</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Second Module</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rbracket'>]</span>
+</code></pre>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

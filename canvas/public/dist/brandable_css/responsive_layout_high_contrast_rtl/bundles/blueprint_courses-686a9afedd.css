@@ -1,0 +1,599 @@
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/* Legacy variables. Discontinue to use these: */
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
+ * Convert font-size from px to rem with px fallback
+ * @param $size - the value in pixel you want to convert
+ * e.g. p {@include fontSize(12px);}
+ * courtesy of https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_fontSize.scss
+ */
+.bcs__trigger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 10px;
+  border-bottom-right-radius: 5px;
+  background-color: #0770A3;
+  box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.bcs__trigger:after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 58px;
+  left: 0;
+  bottom: 0;
+  width: 8px;
+  background-color: #0770A3;
+  box-shadow: -1px 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bcs__content {
+  border-bottom: 2px solid #C7CDD1;
+}
+.bcs__content .bcs__body {
+  margin: 0 1.5em;
+}
+
+.bcs__history-item {
+  margin-bottom: 3em;
+}
+
+.bcs__history-item__title, .bcs__unsynced-item__title {
+  border-bottom: 2px solid #556572;
+  padding-bottom: 0.5em;
+  margin-bottom: 1.5em;
+}
+.bcs__history-item__title > *, .bcs__unsynced-item__title > * {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.bcs__history-item__change {
+  padding: 1em;
+  border: 1px solid #C7CDD1;
+}
+.bcs__history-item__change.bcs__history-item__change-log-row {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding: 0.8em 0;
+}
+.bcs__history-item__change.bcs__history-item__change-log-row.bcs__history-item__change-log-row__heading {
+  padding-bottom: 0.5em;
+}
+.bcs__history-item__change.bcs__history-item__change-log-row .bcs__history-item__content-grid {
+  right: 0;
+}
+.bcs__history-item__change.bcs__history-item__change-log-row .bcs__history-item__content-grid > span > span > span:first-child {
+  padding-right: 30px;
+}
+.bcs__history-item__change.bcs__history-item__change-log-row .bcs__history-item__lock-icon {
+  right: 0;
+}
+.bcs__history-item__change + .bcs__history-item__change {
+  border-top: none;
+}
+.bcs__history-item__change:first-of-type {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.bcs__history-item__change:last-of-type {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.bcs__history-item__content {
+  min-height: 1.5em;
+  position: relative;
+}
+
+.bcs__history-item__content-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 50px;
+}
+
+.bcs__history-item__change-exceps {
+  margin: 0 1.125em;
+  list-style: none;
+}
+
+.bcs__history-item__change-exceps__group {
+  margin: 1.5em 0 1em;
+}
+
+.bcs__history-item__change-exceps__courses {
+  margin: 0.5em 0 0;
+  list-style: none;
+}
+.bcs__history-item__change-exceps__courses > li {
+  margin-bottom: 5px;
+}
+
+.bcs__history-item__lock-icon {
+  position: absolute;
+  top: -5px;
+  right: 36px;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.bcs__sync-btn-icon {
+  position: relative;
+  top: 2px;
+}
+.bcs__sync-btn-icon.bcs__sync-btn-icon__active svg {
+  animation: spinning 1.5s infinite linear;
+}
+
+.bcs__sync-btn-text {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+.bcs__row {
+  padding: 0.5em 0;
+  border-top: 1px solid #C7CDD1;
+}
+.bcs__row > button:first-child {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.bcs__row.bcs__row__associations {
+  border: none;
+}
+.bcs__row .bcs__row-right-content {
+  float: left;
+  line-height: 2.5em;
+  vertical-align: middle;
+}
+
+.bcs__header {
+  background: #0770A3;
+  position: relative;
+  text-align: center;
+  padding: 1.2em 0 1.2em 1.75em;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bcs__close-wrapper {
+  float: right;
+}
+.bcs__close-wrapper button {
+  position: relative;
+  top: -0.25em;
+  right: 0.5em;
+}
+
+.bcs__modal-content-wrapper {
+  margin: 0 auto;
+  max-width: 850px;
+  position: relative;
+}
+.bcs__modal-content-wrapper.bcs__modal-content-wrapper__wide {
+  max-width: 1200px;
+}
+
+.bca__overlay {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+.bca__overlay__save-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bca__footer {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+
+.bca-course-details__wrapper {
+  margin-top: 1em;
+  position: relative;
+}
+.bca-course-details__wrapper > div > div {
+  padding-right: 0 !important;
+}
+
+.bca-course-picker__loading {
+  position: absolute;
+  z-index: 10;
+  top: 28px;
+  right: 1px;
+  left: 1px;
+  bottom: 1px;
+  background: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  padding-top: 100px;
+  border-radius: 6px;
+}
+
+.bca-table__wrapper {
+  border: 1px solid #C7CDD1;
+  border-radius: 6px;
+  padding: 78px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.bca-table__wrapper .btps-table__header-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.bca-table__wrapper .btps-table__header-wrapper .bca-table__head {
+  background: #FFFFFF;
+}
+.bca-table__wrapper .btps-table__header-wrapper .bca-table__head th {
+  line-height: 180%;
+}
+.bca-table__wrapper .bca-table__select-all {
+  padding: 8px 2px;
+  border-bottom: 1px solid #C7CDD1;
+  margin: 0 10px;
+}
+.bca-table__wrapper .bca-table__select-all label > span > span:last-child {
+  margin-right: 22px;
+}
+.bca-table__wrapper .bca-table__content-wrapper {
+  height: 270px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 30px;
+}
+.bca-table__wrapper .bca-table__content-wrapper .bca-table__body tr {
+  border-right: none !important;
+}
+.bca-table__wrapper .bca-table__content-wrapper .bca-table__body tr td:first-child {
+  border-bottom: none !important;
+  box-shadow: -42px 1px 0 0 #FFFFFF, 0 1px 0 0 #C7CDD1;
+}
+.bca-table__wrapper .bca-table__content-wrapper .bca-table__body tr.bca-table__no-results td {
+  box-shadow: none;
+}
+
+.bca-associations-table {
+  padding-right: 10px;
+  margin-bottom: 40px;
+  position: relative;
+  min-height: 75px;
+}
+.bca-associations-table .bca-associations__course-row form {
+  margin: 0;
+}
+.bca-associations-table .bca-associations__x-col {
+  text-align: left;
+}
+
+.bcs__migration-sync__button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bcs__row-sync-holder .bcs__migration-sync__button button {
+  padding: 22px 15px;
+}
+
+.bcs__row.bcs__row-sync-holder {
+  margin: 0 0 1.5em;
+  padding-top: 0;
+  border: none;
+}
+
+.bcs__migration-sync .bcs__migration-sync__loading {
+  margin-bottom: 2em;
+}
+
+/* MigrationOptions component styles */
+.bcs__history-settings > label,
+.bcs__history-notification__add-message,
+.bcs__history-notification__message {
+  margin-bottom: 0.5em;
+}
+
+.bcs__history-notification__add-message {
+  margin-right: 1.5em;
+}
+.bcs__history-notification__add-message label {
+  margin-left: 0.5em;
+}
+
+.bcc__master-child-stack {
+  position: relative;
+  padding-left: 2em;
+}
+.bcc__master-child-stack:before {
+  content: "";
+  background: #556572;
+  width: 1px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  bottom: 100px;
+  right: 50%;
+}
+
+.bcc__master-child-stack__box {
+  padding: 1em;
+  background: #FFFFFF;
+  width: 235px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.bcc__master-child-stack__box header {
+  text-transform: uppercase;
+}
+.bcc__master-child-stack__box.bcc__master-child-stack__box__master {
+  background: #0770A3;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+.bcc__master-child-stack__box p {
+  margin: 0;
+}
+
+.bcc__master-child-stack__box__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.bpc__lock-no__toggle {
+  padding-left: 12px;
+  position: relative;
+  top: 2px;
+  font-size: 1.25em;
+}
+.bpc__lock-no__toggle .bpc__lock-no__toggle-icon {
+  position: relative;
+  top: 4px;
+  margin-left: 6px;
+}
+
+.bcs__unsynced-item__table table {
+  border-collapse: separate;
+}
+.bcs__unsynced-item__table table .bcs__unsynced-item td {
+  width: 17%;
+  vertical-align: middle;
+}
+.bcs__unsynced-item__table table .bcs__unsynced-item td:first-child {
+  width: 66%;
+}
+.bcs__unsynced-item__table table .bcs__unsynced-item td:last-child {
+  text-align: left;
+}
+.bcs__unsynced-item__table table .bcs__unsynced-item .bcs__unsynced-item__name {
+  display: flex;
+  align-items: center;
+}
+
+/* Move easy student view button to the left when the document body uses the full screen to avoid the button being overlapped by blueprint icon */
+body.outcomes #easy_student_view.mr3 {
+  margin-right: 3rem;
+}
+
+/* Make sure the Easy Student button is not overlapped by the blueprint icon when screen width is equal or less than 1500px */
+@media (max-width: 1500px) {
+  #easy_student_view.mr3 {
+    margin-right: 1rem;
+  }
+}
+@media (max-width: 1500px) and (max-width: 1480px) {
+  #easy_student_view.mr3 {
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 1500px) and (max-width: 1480px) and (max-width: 1460px) {
+  #easy_student_view.mr3 {
+    margin-right: 3rem;
+  }
+}
+.bpc-lock-toggle-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}

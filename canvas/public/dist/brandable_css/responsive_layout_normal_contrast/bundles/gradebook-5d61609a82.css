@@ -1,0 +1,1345 @@
+/*
+ * Copyright (C) 2016 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/* Legacy variables. Discontinue to use these: */
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
+ * Convert font-size from px to rem with px fallback
+ * @param $size - the value in pixel you want to convert
+ * e.g. p {@include fontSize(12px);}
+ * courtesy of https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_fontSize.scss
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+#message_students_dialog .button-container {
+  text-align: right;
+}
+#message_students_dialog .student_list {
+  max-height: 100px;
+  overflow: auto;
+  font-size: 0.8em;
+  padding: 5px 0;
+  margin: 0;
+  list-style-type: none;
+}
+#message_students_dialog .student_list li {
+  float: left;
+  padding: 2px 4px;
+  margin: 1px 2px;
+  background-color: #cdf;
+  border: 1px solid #aaa;
+}
+#message_students_dialog .student_list li .score {
+  display: none;
+  padding-left: 5px;
+  font-size: 0.9em;
+  color: #444;
+}
+#message_students_dialog .student_list li:hover .remove-button {
+  color: #444;
+}
+#message_students_dialog .student_list li .remove-button {
+  padding: 0px;
+  color: #9ac;
+}
+#message_students_dialog .student_list li .remove-button:focus {
+  color: #444;
+}
+#message_students_dialog .student_list.show_score li .score {
+  display: inline;
+}
+
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+a#accessibility_warning {
+  padding: 4px 8px;
+  background: var(--ic-link-color);
+  background-clip: border-box;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px dashed rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+a#accessibility_warning:focus {
+  color: #fff;
+}
+a#accessibility_warning:focus {
+  text-decoration: underline;
+}
+
+#footer {
+  display: none;
+}
+
+#keyboard-shortcuts:focus {
+  margin: -1px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--ic-link-color-lightened-10);
+  outline: 0;
+}
+
+/* GridSupport Styles */
+.slick-row .slick-cell.active.primary-column {
+  border: 1px solid #1790df;
+  height: 33px;
+}
+
+.slick-row .slick-cell.active:not(.primary-column) {
+  border: 2px solid #1790df;
+  height: 31px;
+}
+
+.container_0 .slick-header.ui-state-default,
+.container_1 .slick-header.ui-state-default {
+  background: transparent;
+  border: none;
+}
+.container_0 .slick-cell,
+.container_1 .slick-cell {
+  border-bottom: 1px solid #c7cdd1;
+  border-right: 1px solid #c7cdd1;
+  padding: 0;
+  overflow: visible;
+}
+.container_0 .slick-cell.editable,
+.container_1 .slick-cell.editable {
+  background: transparent;
+}
+
+.container_0 .slick-header-column:first-child {
+  border-left: 1px solid #c7cdd1;
+  padding-left: 0px;
+}
+.container_0 .slick-cell:first-child {
+  border-left: 1px solid #c7cdd1;
+}
+
+.slick-cell.active {
+  box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.1), 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16);
+  z-index: 5;
+}
+.slick-cell.active.assignment-group-cell .gradebook-cell {
+  padding-top: 7px;
+}
+.slick-cell.active.total_grade .gradebook-cell {
+  padding-top: 7px;
+}
+.slick-cell.active.assignment .gradebook-cell:not(.Grid__GradeCell) {
+  padding-top: 6px;
+  height: 24px;
+}
+.slick-cell:not(.active).assignment .gradebook-cell:not(.Grid__GradeCell) {
+  padding: 1px;
+}
+.slick-cell:not(.active).assignment .gradebook-cell:not(.Grid__GradeCell) {
+  padding-top: 7px;
+}
+.slick-cell.custom_column {
+  color: #333333;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-align: center;
+  line-height: 35px;
+}
+.slick-cell.custom_column:not(.active) {
+  border-top: 0;
+  height: 31px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+
+.slick-row.active .slick-cell:not(.active).custom_column {
+  height: 31px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.slick-cell.meta-cell {
+  padding: 0;
+}
+
+.gradebook .ic-Layout-contentMain {
+  position: relative;
+  padding: 0 24px;
+}
+
+#gradebook-grid-wrapper {
+  position: relative;
+}
+
+.student-name {
+  color: #1b7eda;
+  text-shadow: #fbf8f8 0 0 1px;
+  padding-left: 2px;
+}
+
+.student-placeholder {
+  display: none;
+}
+
+.secondary-info {
+  margin-top: -5px;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+.student-name,
+.secondary-info,
+.student-section,
+.student-placeholder,
+.Gradebook__ColumnHeaderDetail--secondary {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slick-header.ui-state-default {
+  border-top: 0;
+}
+
+.slick-header-column {
+  background-color: #F5F5F5;
+  background-image: none;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-align: center;
+  font-weight: normal;
+}
+.slick-header-column.ui-state-default {
+  border-top: 1px solid #c7cdd1;
+  border-right: 1px solid #c7cdd1;
+  border-bottom: 1px solid #c7cdd1;
+  border-left: none;
+  height: 36px;
+  padding-bottom: 0;
+  padding-left: 1px;
+  padding-right: 0;
+  padding-top: 0;
+}
+.slick-header-column .assignment-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.slick-header-column .assignment-name a {
+  color: var(--ic-link-color);
+}
+.slick-header-column .Gradebook__ColumnHeaderContent {
+  align-items: center;
+  display: flex;
+  height: 36px;
+  overflow: hidden;
+  width: 100%;
+}
+.slick-header-column .Gradebook__ColumnHeaderIndicators,
+.slick-header-column .Gradebook__ColumnHeaderAction {
+  text-align: center;
+  width: 34px;
+}
+.slick-header-column .Gradebook__ColumnHeaderIndicators {
+  padding: 0 0 0 2px;
+}
+.slick-header-column .Gradebook__ColumnHeaderAction {
+  padding: 0 2px 0 0;
+}
+.slick-header-column .Gradebook__ColumnHeaderDetail {
+  display: block;
+  height: 36px;
+  line-height: 36px;
+}
+.slick-header-column .Gradebook__ColumnHeaderDetail--OneLine {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.slick-header-column .Gradebook__ColumnHeaderDetailLine {
+  display: block;
+  height: 18px;
+  line-height: 18px;
+}
+.slick-header-column .Gradebook__ColumnHeaderAction button {
+  opacity: 0;
+}
+.slick-header-column .Gradebook__ColumnHeaderAction button:focus, .slick-header-column .Gradebook__ColumnHeaderAction button:hover {
+  opacity: 1;
+}
+.slick-header-column .Gradebook__ColumnHeaderAction.menuShown button {
+  opacity: 1;
+}
+.slick-header-column:hover .Gradebook__ColumnHeaderAction button {
+  opacity: 1;
+}
+.slick-header-column .Gradebook__ColumnHeaderContent.focused .Gradebook__ColumnHeaderAction button {
+  opacity: 1;
+}
+
+.odd .slick-cell {
+  background-color: #F5F5F5;
+}
+.odd .slick-cell.minimized {
+  background-color: #ebebeb;
+}
+
+.even .slick-cell {
+  background-color: #ffffff;
+}
+.even .slick-cell.minimized {
+  background-color: whitesmoke;
+}
+
+.slick-row.ui-state-active {
+  color: inherit;
+  background-image: none;
+  font-weight: normal;
+  border: none;
+}
+
+.slick-row.active .slick-cell:not(.active) {
+  border-bottom: 1px solid #1790df;
+  border-top: 1px solid #1790df;
+  height: 33px;
+}
+.slick-row.active .slick-cell.primary-column {
+  border-left: 1px solid #1790df;
+  border-right: 1px solid #1790df;
+  height: 33px;
+}
+
+.container_1 .slick-row.active .slick-cell:not(.active):last-child {
+  border-right: 1px solid #1790df;
+}
+
+.slick-row.ui-state-active .slick-cell {
+  background-color: #dfe9f2;
+}
+
+.slick-cell.editable {
+  border-color: #1790df;
+}
+
+.slick-cell.ungraded {
+  background-image: url("/dist/images/4_percent_opacity-c554512ede.png");
+  background-repeat: repeat;
+}
+
+.gradebook-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #444444;
+  color: white;
+  border-radius: 3px;
+  padding: 5px 10px;
+  z-index: 7;
+  position: absolute;
+  font-size: 0.8em;
+  left: 0;
+  top: -30px;
+  line-height: 1rem;
+}
+.gradebook-tooltip:after {
+  border-color: #444444 transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  position: absolute;
+  bottom: -5px;
+  width: 0;
+  left: 15px;
+  content: "";
+}
+.slick-cell.hover .gradebook-tooltip, .slick-cell.focus .gradebook-tooltip, .slick-cell.selected .gradebook-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.slick-cell.active .gradebook-tooltip, .slick-cell.editable .gradebook-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.gradebook-tooltip.first-row {
+  top: 35px;
+}
+.gradebook-tooltip.first-row:after {
+  display: none;
+}
+.gradebook-tooltip.first-row:before {
+  border-color: #444444 transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  position: absolute;
+  width: 0;
+  left: 15px;
+  content: "";
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: 5px solid #444444;
+  top: -10px;
+}
+
+.slick-row.first-row .gradebook-tooltip {
+  top: 35px;
+}
+.slick-row.first-row .gradebook-tooltip:after {
+  display: none;
+}
+.slick-row.first-row .gradebook-tooltip:before {
+  border-color: #444444 transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  position: absolute;
+  width: 0;
+  left: 15px;
+  content: "";
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: 5px solid #444444;
+  top: -10px;
+}
+
+.total-column-tooltip {
+  width: 250px;
+  height: 60px;
+  white-space: pre-line;
+  padding-top: 5px;
+  padding-bottom: 55px;
+  margin-bottom: -50px;
+}
+
+.container_1 .slick-cell:last-child .gradebook-tooltip {
+  left: auto;
+  right: 0;
+}
+.container_1 .slick-cell:last-child .gradebook-tooltip:after {
+  left: auto;
+  right: 15px;
+}
+
+.gradebook-cell:not(.Grid__GradeCell) {
+  border: none;
+  height: 25px;
+  padding-top: 8px;
+  position: relative;
+  text-align: center;
+}
+.gradebook-cell.grayed-out {
+  background-color: #eee;
+}
+
+.gradebook-cell-turnitin {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+  width: 20px;
+  height: 16px;
+}
+.gradebook-cell-turnitin.no-score {
+  background-image: url(/dist/images/turnitin_no_score-24e398e208.png);
+}
+.gradebook-cell-turnitin.none-score {
+  background-image: url(/dist/images/turnitin_none_score-bb4dfb593c.png);
+}
+.gradebook-cell-turnitin.acceptable-score {
+  background-image: url(/dist/images/turnitin_acceptable_score-c89bd64eea.png);
+}
+.gradebook-cell-turnitin.warning-score {
+  background-image: url(/dist/images/turnitin_warning_score-7650b2ca85.png);
+}
+.gradebook-cell-turnitin.problem-score {
+  background-image: url(/dist/images/turnitin_problem_score-3e63b3489a.png);
+}
+.gradebook-cell-turnitin.failure-score {
+  background-image: url(/dist/images/turnitin_failure_score-052c4d35a6.png);
+}
+.gradebook-cell-turnitin.pending-score {
+  background-image: url(/dist/images/turnitin_submission_pending-010535f0b1.png);
+}
+.gradebook-cell-turnitin.error-score {
+  background-image: url(/dist/images/turnitin_submission_error-3da959ec16.png);
+}
+
+.gradebook-cell-editable {
+  height: 25px;
+  padding-top: 8px;
+  margin: 0;
+  background-color: white;
+}
+
+.slick-cell {
+  z-index: auto;
+}
+.slick-cell.custom_column {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.slick-cell.assignment .gradebook-cell,
+.slick-cell.assignment .Grid__GradeCell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.slick-cell.assignment-group-cell .gradebook-cell .percentage {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.slick-cell.total_grade .gradebook-cell .grades {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.slick-cell.total-grade-override {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.slick-cell.active {
+  background-color: inherit;
+  z-index: 5;
+}
+.slick-cell.active.editable {
+  top: 0;
+}
+
+/* Assignment Cell */
+.slick-cell.assignment .Grid__GradeCell, .slick-cell.total-grade-override .Grid__GradeCell {
+  height: 31px;
+}
+.slick-cell.assignment:not(.active) .Grid__GradeCell, .slick-cell.total-grade-override:not(.active) .Grid__GradeCell {
+  padding: 1px;
+  height: 31px;
+}
+.slick-cell.assignment:not(.editable) .Grid__GradeCell__OriginalityScore, .slick-cell.total-grade-override:not(.editable) .Grid__GradeCell__OriginalityScore {
+  padding-bottom: 2px;
+}
+
+.Grid__GradeCell {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 33px;
+  justify-content: space-between;
+}
+
+.Grid__GradeCell__InvalidGrade,
+.Grid__GradeCell__OriginalityScore {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 32px;
+}
+
+.Grid__GradeCell__InvalidGrade i {
+  padding-bottom: 2px;
+}
+.Grid__GradeCell__InvalidGrade i.icon-warning {
+  color: #EE0612;
+}
+
+.Grid__GradeCell__OriginalityScore i.icon-empty, .Grid__GradeCell__OriginalityScore i.icon-oval-half {
+  color: #EE0612;
+}
+.Grid__GradeCell__OriginalityScore i.icon-certified {
+  color: #00AC18;
+}
+
+.Grid__GradeCell__UnpostedGrade {
+  background-color: #FC5E13;
+  border-radius: 50%;
+  height: 0.4rem;
+  position: absolute;
+  width: 0.4rem;
+}
+
+.Grid__GradeCell__StartContainer,
+.Grid__GradeCell__EndContainer {
+  display: flex;
+  flex-basis: 64px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 100%;
+  white-space: nowrap;
+}
+
+.Grid__GradeCell__EndContainer {
+  justify-content: flex-end;
+}
+
+.Grid__GradeCell__Content {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.Grid__GradeCell__Content .Grade {
+  display: flex;
+}
+.Grid__GradeCell__Content .Grade--complete {
+  color: #00AC18;
+}
+
+.Grid__GradeCell.gradingScheme .Grid__GradeCell__EndContainer, .Grid__GradeCell.passFail .Grid__GradeCell__EndContainer {
+  flex-basis: 32px;
+}
+
+.Grid__GradeCell .Grid__GradeCell__PercentInput,
+.Grid__GradeCell .Grid__GradeCell__PointsInput {
+  width: 78px;
+}
+.Grid__GradeCell .Grid__GradeCell__GradingSchemeInput {
+  width: 110px;
+}
+.Grid__GradeCell .Grid__GradeCell__CompleteIncompleteInput {
+  width: 96px;
+}
+.Grid__GradeCell .HorizontalFlex {
+  align-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.Grid__GradeCell .Grid__GradeCell__PercentInput span > span,
+.Grid__GradeCell .Grid__GradeCell__PointsInput span > span,
+.Grid__GradeCell .Grid__GradeCell__GradingSchemeInput span > span {
+  margin-bottom: 0;
+}
+.Grid__GradeCell .Grid__GradeCell__PercentInput label > span > span + span,
+.Grid__GradeCell .Grid__GradeCell__PointsInput label > span > span + span,
+.Grid__GradeCell .Grid__GradeCell__GradingSchemeInput label > span > span + span {
+  display: none;
+}
+
+.Grid__GradeCell__CompleteIncompleteValue {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  overflow: hidden;
+}
+.Grid__GradeCell__CompleteIncompleteValue > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.Grid__GradeCell__CompleteIncompleteValue svg {
+  display: flex;
+}
+
+.Grid__GradeCell__EndText {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  min-width: 32px;
+  overflow: hidden;
+  padding-left: 2px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.Grid__GradeCell__CompleteIncompleteMenu,
+.Grid__GradeCell__GradingSchemeMenu,
+.Grid__GradeCell__Options {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 31px;
+  justify-content: center;
+  width: 32px;
+}
+
+.Grid__GradeCell__CompleteIncompleteMenu,
+.Grid__GradeCell__GradingSchemeMenu {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* End Styles for Assignment Cells */
+.gradebook-cell .grade {
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 12px;
+  font-size: 0.75rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none !important;
+}
+.gradebook-cell .grade::-webkit-outer-spin-button {
+  display: none;
+}
+.gradebook-cell .grade::-ms-clear {
+  display: none;
+}
+
+.gradebook-checkbox {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -12px;
+  margin-left: -8px;
+}
+
+#hide_warning {
+  vertical-align: top;
+}
+
+.minimized {
+  background-color: #ebebeb;
+}
+.minimized .gradebook-cell,
+.minimized .Gradebook__ColumnHeaderContent {
+  display: none;
+}
+
+/* Total Grade Override Cell START */
+.slick-cell.total-grade-override .gradebook-cell {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+  padding: 0;
+}
+.slick-cell.total-grade-override .gradebook-cell .grade {
+  flex: 1 1;
+  text-align: center;
+}
+
+/* Total Grade Override Cell END */
+#gradebook-toolbar {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 12px 0;
+  border-top: none;
+}
+@media only screen and (min-width: 992px) {
+  #gradebook-toolbar {
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 767px) {
+  #gradebook-toolbar {
+    flex-direction: column;
+  }
+}
+
+.section-button-placeholder {
+  display: inline-block;
+}
+
+.gradebook-menus {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+#gradebook-actions {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.gradebook-filter-container {
+  display: inline-block;
+  flex: 0 1 auto;
+  margin-left: 6px;
+}
+
+.gradebook_filter {
+  display: inline-block;
+  margin-left: 6px;
+}
+@media (min-width: 768px) {
+  .gradebook_filter input {
+    width: 248px;
+  }
+}
+@media (max-width: 767px) {
+  .gradebook_filter input {
+    padding-right: 0;
+  }
+}
+
+.gradebook_menu {
+  display: inline-block;
+  margin-left: 6px;
+}
+
+#section-to-show-menu {
+  width: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 275px;
+}
+#section-to-show-menu label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0;
+  vertical-align: 0px !important;
+  position: relative;
+  line-height: 1.5;
+}
+#section-to-show-menu .ui-state-focus:last-child {
+  margin: 0 !important;
+}
+
+.post-grades-placeholder {
+  display: inline-block;
+}
+
+.letter-grade-points,
+.gpa-scale-points {
+  position: absolute;
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding-left: 8px;
+  line-height: 19px;
+  color: #3d505e;
+}
+.muted .letter-grade-points,
+.muted .gpa-scale-points {
+  color: var(--ic-brand-font-color-dark-lightened-30);
+}
+.total_grade .letter-grade-points,
+.total_grade .gpa-scale-points {
+  position: static;
+}
+
+.final-warning {
+  margin-left: -16px;
+}
+
+.gradebook_dropdown li, .gradebook_dropdown label, .export_dropdown li, .export_dropdown label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 0;
+  vertical-align: 0px !important;
+  position: relative;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.ui-menu .ui-menu-item.ui-state-disabled {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.ui-menu-item.ui-state-disabled label {
+  margin-bottom: 0;
+  vertical-align: 0;
+}
+
+.post-grades-menu li.external-tools-dialog,
+.post-grades-menu li.post-grades-placeholder {
+  cursor: pointer;
+}
+.post-grades-menu li.external-tools-dialog.ellip {
+  cursor: default;
+}
+
+.ui-dialog.post-grades-frame-dialog .ui-dialog-content {
+  padding: 0;
+  overflow: hidden;
+}
+
+#export_progress {
+  background-color: gray;
+  width: 100px;
+  height: 8px;
+  margin: auto;
+}
+#export_progress div {
+  position: relative;
+  left: 0;
+  width: 20px;
+  height: 8px;
+  background: blue;
+}
+
+#section-to-show-menu li:first-of-type.ui-state-disabled {
+  opacity: 0.8;
+}
+
+.Gradebook__StatusModalListItem {
+  padding: 7px;
+  margin-bottom: 5px;
+  border: 1px solid #C7CDD1;
+  border-radius: 3px;
+}
+
+.Gradebook__StatusModalList {
+  margin: 0px;
+  list-style-type: none;
+}
+
+#LatePoliciesTabPanel__Container-noContent {
+  text-align: center;
+  min-height: 30rem;
+}
+
+#LatePoliciesTabPanel__Container {
+  min-height: 30rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+#LatePoliciesTabPanel__Container input[type=text] {
+  line-height: 1;
+  margin: 0;
+  padding: auto;
+  box-shadow: none;
+  border: none;
+}
+
+.NumberInput__Container {
+  display: flex;
+  align-items: center;
+}
+
+.NumberInput__Container-LeftIndent {
+  margin-left: 1.5rem;
+}
+
+.SubmissionTray__Container {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 1.5rem;
+}
+.SubmissionTray__Container input[type=text] {
+  height: auto;
+  line-height: 1;
+  margin: 0;
+  padding: auto;
+  box-shadow: none;
+  border: none;
+}
+
+.with-fixed-bottom #SubmissionTray__Content::after {
+  content: " ";
+  height: 60px;
+  display: block;
+}
+
+.SubmissionTray__RadioInput {
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.SubmissionTray__RadioInput-WithBackground {
+  border: 1px solid #C7CDD1;
+  border-radius: 0.25rem;
+}
+
+#SubmissionTray__Content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#SubmissionTray__Avatar {
+  min-height: 2rem;
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 1.375rem;
+}
+
+#SubmissionTray__Comments {
+  line-height: 1;
+}
+
+#SubmissionTray__StudentName {
+  text-align: center;
+  padding: 0.7rem;
+}
+
+#anonymous-speed-grader-alert-container {
+  min-width: 35rem;
+}
+
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/* Red circle next to input fields indicating an error */
+.error-circle {
+  position: absolute;
+  z-index: 10;
+  margin-left: -15px;
+  margin-top: 11px;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  background: #f00;
+  border: 1px solid #f00;
+}
+
+/* For green check mark when row is valid */
+.success-mark {
+  color: #33802a;
+  position: absolute;
+  margin-left: -35px;
+  margin-top: 7px;
+}
+
+/* When a row is ignored, dim it */
+.ignore-row {
+  opacity: 0.5;
+}
+
+/* NeedsGrading page has clickable table rows */
+.clickable-row {
+  cursor: pointer;
+}
+
+/* Link buttons are blue by default, make the ignore icon gray */
+.btn-ignore {
+  color: #c5c5c5;
+  position: absolute;
+  margin-left: 208px;
+  margin-top: -38px;
+}
+
+.name-span3 {
+  margin-left: 5px;
+}
+
+.date-span2 {
+  margin-left: 5px;
+}
+
+/* Provide enough extra space on bottom of row for hints and datefields */
+.correction-row {
+  margin-left: 14px;
+  margin-bottom: 10px;
+}
+
+.title-row {
+  margin-left: 14px;
+}
+
+/* Used as the header 'lead' text on each dialog page */
+.lead {
+  margin-bottom: 20px;
+  font-weight: 200;
+  line-height: 30px;
+}
+
+/* Need an input that is a little smaller than input-xlarge */
+.input-mlarge {
+  width: 250px;
+}
+
+/* Without this, hint-text overlaps the input slightly */
+input + .hint-text {
+  margin-top: 0;
+}
+
+.post-summary {
+  margin-top: 120px;
+}
+
+.post-summary h1 {
+  color: #aaaaaa;
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+
+.assignments-to-post-count {
+  padding: 0 10px;
+  color: #000;
+}
+
+.assignment_correction_input {
+  position: relative;
+}
+
+.assignment_correction_ignore {
+  top: 38px;
+  right: -83px;
+}
+
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+.carousel {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.carousel .left-arrow-button-container,
+.carousel .right-arrow-button-container {
+  width: 2rem;
+}
+
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+.hr {
+  border-bottom: 1px solid #C7CDD1;
+}

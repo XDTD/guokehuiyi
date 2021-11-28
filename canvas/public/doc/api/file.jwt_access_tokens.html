@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>### JWT Access Tokens for LTI2 Tools
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="" class="current">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><h3 id="jwt-access-tokens-for-lti2-tools">JWT Access Tokens for LTI2 Tools</h3>
+
+<p>Canvas JWT access tokens allow Tool Providers (TPs) to make Canvas API calls on behalf of a tool itself rather than a specific Canvas user. They can also be used to retrieve custom Tool Consumer Profiles (TCP) with restricted capabilities and register Tool Proxies with those restricted capabilities enabled.</p>
+
+<p>Section 1.0 of this document describes how to retrieve a JWT access token for fetching custom TCPs and registering tools. Section 2.0 describes how to retrieve a JWT access token for use with LTI2 API. (such as the originality reports API).</p>
+
+<p><strong>Note:</strong> <em>to retrieve a custom Tool Consumer Profile an Instructure employee must first create the tool consumer profile and associate it with your developer key. Please contact us for assistance with this process.</em></p>
+
+<p>For more information on JWTs see <a href="https://tools.ietf.org/html/rfc7519">https://tools.ietf.org/html/rfc7519</a></p>
+
+<h4 id="1-0-jwt-access-tokens-for-custom-tcps-and-tool-proxy-registration">1.0 JWT Access Tokens for Custom TCPs and Tool Proxy Registration</h4>
+
+<p>JWT access tokens can be used to request custom Tool Consumer Profiles (TCP) with restricted capabilities/services and register Tool Proxies with those capabilities enabled.</p>
+
+<p>To retrieve a JWT access token for this purpose first build a JWT using the following JWT as a template:</p>
+
+<pre class="code javascript"><code class="javascript">my_jwt = {
+  &quot;sub&quot;: 10000000000003, // Canvas developer key global id
+  // This URL is sent in the initial registration request as a param named &#39;oauth2_access_token_url&#39;.
+  &quot;aud&quot;: &quot;http://my.canvas.com/api/lti/accounts/1/authorize&quot;,
+  &quot;exp&quot;: 1486393868, // expiration time
+  &quot;iat&quot;: 1486393800, // issued at
+  &quot;jti&quot;: &quot;688700c2-4bc1-40b7-83e5-7cbf54f93335&quot; // Random UUID for request (must be unique for each request)
+}
+</code></pre>
+
+<p>Next, sign the JWT using the developer key associated with the global ID used as the <code>sub</code> of the JWT that was just created. The HS256 algorithm should be used for signing.</p>
+
+<pre class="code javascript"><code class="javascript">signed_jwt = my_jwt.sign(&lt;my_dev_key_secret&gt;).to_string
+&gt; &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwMDAwMDAwMDAwMDAzLCJhdWQiOiJodHRwOi8vbXkuY2FudmFzLmNvbS9hcGkvbHRpL2FjY291bnRzLzEvYXV0aG9yaXplIiwiZXhwIjoxNDg2MzkzODY4LCJJYXQiOjE0ODYzOTM4MDAsImp0aSI6IjY4ODcwMGMyLTRiYzEtNDBiNy04M2U1LTdjYmY1NGY5MzMzNSJ9.L0QxWtUIzEE8rpVHhPn5-K3MmadW46pMrnPPZ7CSJwg&quot;
+</code></pre>
+
+<p>We highly recommend using a library to create and sign these tokens.</p>
+
+<p>Then, make a request to the authorization endpoint to retrieve your JWT access token. The URL you should use to make this request is sent in the initial registration request sent from Canvas as a parameter named oauth2_access_token_url.</p>
+
+<p>The signed JWT should be used as the <code>assertion</code> parameter, the <code>grant_type</code> parameter should be set to <code>authorization_code</code>, and the <code>code</code> parameter should be set to the value of the <code>reg_key</code> received from the registration message sent by the tool consumer.</p>
+
+<p><strong>Example request:</strong></p>
+
+<pre class="code"><code class="">curl https://&lt;canvas&gt;/api/lti/accounts/1/authorize \
+       -F &#39;grant_type=authorization_code&#39; \
+       -F&#39;assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwMDAwMDAwMDAwMyIsImF1ZCI6Imh0dHA6Ly9jYW52YXMuZG9ja2VyL2FwaS9sdGkvYXV0aG9yaXplIiwiZXhwIjoxNDg5Njc0NTAyLCJpYXQiOjE0ODk2NzQ0NDIsImp0aSI6ImQ4MjA0NDBjLTI3YzMtNDg2YS1hZjM5LWQzZDQxOGI4ZDNkYSJ9.S3SxxsSKAKhT8ViHuCDBxp9fbzdYGKJEBftftJMX4-E&#39; \
+       -F &#39;code=&lt;reg_key&gt;&#39;
+</code></pre>
+
+<p><strong>Example response:</strong></p>
+
+<pre class="code json"><code class="json">{
+  &quot;access_token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDYW52YXMiLCJzdWIiOjEwMDAwMDAwMDAwMDAzLCJleHAiOjE0ODk2Nzc5NzcsImF1ZCI6ImNhbnZhcy5kb2NrZXIiLCJpYXQiOjE0ODk2NzQzNzcsIm5iZiI6MTQ4OTY3NDM0NywianRpIjoiMjI0OTQyNjAtMGE5Ni00NjhlLWFjZGYtMmIzOWYwNjI5NmE1IiwicmVnX2tleSI6IjkzNTllMGNkLTZhNjktNGNhOS05MWI2LTE2MmNmMDcxMWE1YiJ9.7nQ1g0-FpIMWn5kTWcf0M0D2zqENs_my-3iLuHUr5k0&quot;,
+  &quot;token_type&quot;: &quot;bearer&quot;,
+  &quot;expires_in&quot;: &quot;3600&quot;
+}
+
+</code></pre>
+
+<p>This token may be used in retrieving a custom TCP and registering a Tool Proxy with restricted capabilities if included in the authorization header:</p>
+
+<pre class="code"><code class="">Authorization Bearer &lt;JWT access_token&gt;
+</code></pre>
+
+<h4 id="2-0-jwt-access-tokens-for-lti2-apis">2.0 JWT Access Tokens for LTI2 APIs</h4>
+
+<p>Use of JWT access tokens with the Canvas API is restricted to a set of endpoints which currently includes Originality Report and Subscription create, edit, and update. JWT access tokens are only valid for tools who register as described in section 1 of this document.</p>
+
+<p>To retrieve a JWT access token first build a JWT using the following JWT as a template:</p>
+
+<pre class="code javascript"><code class="javascript">my_jwt = {
+  &quot;sub&quot;: &quot;123123-ad13-ac233&quot;, // tool proxy guid
+  &quot;aud&quot;: &quot;https://my.canvas-domain.com/api/lti/accounts/1/authorize&quot;, // authorization URL used for authorization request
+  &quot;exp&quot;: 1486393868, // expiration time
+  &quot;iat&quot;: 1486393800, // issued at
+  &quot;jti&quot;: &quot;688700c2-4bc1-40b7-83e5-7cbf54f93305&quot; // Random UUID for request
+}
+</code></pre>
+
+<p>Next, sign the JWT using the tool proxy shared secret and HS256:</p>
+
+<pre class="code javascript"><code class="javascript">signed_jwt = my_jwt.sign(&quot;tool-proxy-shared-secret&quot;).to_string
+&gt; &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjMxMjMtYWQxMy1hYzIzMyIsImF1ZCI6Imh0dHBzOi8vbXkuY2FudmFzLWRvbWFpbi5jb20vYXBpL2x0aS9hY2NvdW50cy8xL2F1dGhvcml6ZSIsImV4cCI6MTQ4NjM5Mzg2OCwiaWF0IjoxNDg2MzkzODAwLCJqdGkiOiI2ODg3MDBjMi00YmMxLTQwYjctODNlNS03Y2JmNTRmOTMzMDUifQ.IJ4ROoH8GxwWr_a-YNSvWGd3NeYLg0q9fOZCCLUaa4Q&quot;
+</code></pre>
+
+<p>We highly recommend using a library to create and sign these tokens.</p>
+
+<p>Next make a request to the authorization endpoint to retrieve your JWT access token. The URL you should use to make this request if sent in the initial registration request sent from Canvas as a parameter named <code>oauth2_access_token_url</code>.</p>
+
+<p>This signed JWT should be used as the <code>assertion</code> parameter and the <code>grant_type</code> parameter  should be set to <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code></p>
+
+<p><strong>Example request:</strong></p>
+
+<pre class="code"><code class="">curl https://&lt;canvas&gt;/api/lti/accounts/1/authorize \
+       -F &#39;grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&#39; \
+       -F &#39;assertion=&lt;signed_jwt&gt;&#39;
+</code></pre>
+
+<p><strong>Example response</strong></p>
+
+<pre class="code json"><code class="json">{
+  &quot;access_token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDYW52YXMiLCJzdWIiOiIxMjMxMjMtYWQxMy1hYzIzMyIsImV4cCI6MTQ4NjM5ODQwMiwiYXVkIjoibXkuY2FudmFzLWRvbWFpbi5jb20iLCJpYXQiOjE0ODYzOTQ4MDIsIm5iZiI6MTQ4NjM5NDc3MiwianRpIjoiYTMwMGFmMWMtOTliOS00MDk4LThhZTQtNzE5MDlhNDVkZjYyIn0.qcpgVNVcThwwMMWVarflUPYbyIH70-yvClbPkjbAADs&quot;,
+  &quot;token_type&quot;: &quot;bearer&quot;,
+  &quot;expires_in&quot;: &quot;3600&quot;
+}
+</code></pre>
+
+<p>The access token in the response can then be used in an API request to Originality Report and Submission endpoints.</p>
+
+<p><strong>Example request</strong></p>
+
+<pre class="code"><code class="">curl https://&lt;canvas&gt;/api/lti/assignments/25/submissions/6/originality_report/71 \
+       -F &#39;Authorization=Bearer &lt;access_token from the authorize endpoint response&gt;&#39;
+</code></pre>
+
+<p><strong>Example response</strong></p>
+
+<pre class="code json"><code class="json">{
+   &quot;id&quot;: 4,
+   &quot;file_id&quot;: 71,
+   &quot;originality_score&quot;: 25.2,
+   &quot;originality_report_file_id&quot;: 17,
+   &quot;originality_report_url&quot;: &quot;http://www.example.com/report&quot;
+}
+</code></pre>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

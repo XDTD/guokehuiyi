@@ -1,0 +1,2371 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Asset
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="" class="current">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><h1 id="asset">Asset</h1>
+
+<h2 id="asset_accessed">asset_accessed</h2>
+
+<p><strong>Definition:</strong> <code>asset_accessed</code> events are triggered for viewing various objects in Canvas. Viewing a quiz, a wiki page, the list of quizzes, etc, all generate <code>asset_access</code> events. The item being accessed is identified by <code>asset_type</code>, <code>asset_id</code>, and <code>asset_subtype</code>. If <code>asset_subtype</code> is set, then it refers to a list of items in the asset. For example, if <code>asset_type</code> is <code>course</code>, and <code>asset_subtype</code> is <code>quizzes</code>, then this is referring to viewing the list of quizzes in the course.</p>
+
+<p>If <code>asset_subtype</code> is not set, then the access is on the asset described by <code>asset_type</code> and <code>asset_id</code>.</p>
+
+<p><strong>Trigger:</strong> Triggered when a variety of assets are viewed.</p>
+
+<p><strong>Description:</strong> type=group, subtype=conferences</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;context_type&quot;: &quot;Group&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;GroupMembership&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/groups/144/conferences&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/144/conferences&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:07.150Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+    &quot;asset_type&quot;: &quot;group&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;conferences&quot;,
+    &quot;category&quot;: &quot;conferences&quot;,
+    &quot;role&quot;: &quot;GroupMembership&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=assignments</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Los_Angeles&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/144/assignments&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/assignments/64541?module_item_id=313255&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.753Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;assignments&quot;,
+    &quot;category&quot;: &quot;assignments&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=enrollment</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Los_Angeles&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000001234&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/1234/users/14320&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/1234/users&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:30.201Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: null,
+    &quot;asset_type&quot;: &quot;enrollment&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;roster&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=files</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144/files?sort=updated_at&amp;order=desc&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:07.907Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;files&quot;,
+    &quot;category&quot;: &quot;files&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=user, subtype=calendar_feed</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/feeds/calendars/user_ABdASKrt432fdKSDALhGDSL83423kFDRK32.ics&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.718Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Sally Student&quot;,
+    &quot;asset_type&quot;: &quot;user&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;calendar_feed&quot;,
+    &quot;category&quot;: &quot;calendar&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=collaboration</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000008346&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/8346/collaborations/144&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/8346/collaborations&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:35:15.069Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Example Collaboration&quot;,
+    &quot;asset_type&quot;: &quot;collaboration&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;collaborations&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: &quot;participate&quot;
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=user, subtype=files</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;context_type&quot;: &quot;User&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/users/144/files?sort=updated_at&amp;order=desc&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:23.214Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Sally Student&quot;,
+    &quot;asset_type&quot;: &quot;user&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;files&quot;,
+    &quot;category&quot;: &quot;files&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=account, subtype=outcomes</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;context_type&quot;: &quot;Account&quot;,
+    &quot;context_id&quot;: &quot;21070000000000001&quot;,
+    &quot;context_sis_source_id&quot;: null,
+    &quot;context_account_id&quot;: &quot;210700000000000001&quot;,
+    &quot;context_role&quot;: &quot;AccountAdmin&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/accounts/1/outcomes&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/accounts/1/outcomes&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-04T14:46:31.249Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Canvas County School District&quot;,
+    &quot;asset_type&quot;: &quot;account&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000001&quot;,
+    &quot;asset_subtype&quot;: &quot;outcomes&quot;,
+    &quot;category&quot;: &quot;outcomes&quot;,
+    &quot;role&quot;: &quot;AccountUser&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=grades</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/144/grades&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.918Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Complex Analysis&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;grades&quot;,
+    &quot;category&quot;: &quot;grades&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=conferences</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/144/conferences&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/grades&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:27.252Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Mathematics for Engineers 1&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;conferences&quot;,
+    &quot;category&quot;: &quot;conferences&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=syllabus</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Los_Angeles&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/144/assignments/syllabus&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/101/pages/the-bbc-reports-on-shakespeare?module_item_id=457878&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:07.844Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;syllabus&quot;,
+    &quot;category&quot;: &quot;syllabus&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=pages</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144/pages?sort=updated_at&amp;order=desc&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:08.823Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;pages&quot;,
+    &quot;category&quot;: &quot;pages&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=quizzes:quiz</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000565&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/565/quizzes/144&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/quizzes&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-08T19:56:55.781Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;A very special quiz&quot;,
+    &quot;asset_type&quot;: &quot;quizzes:quiz&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;quizzes&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=context_external_tool (this type is used to identify all LTI versions except LTI 2.0 launches)</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000020572&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;TeacherEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/20572/modules/items/44&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/20572&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:08.825Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;External tool modules&quot;,
+    &quot;asset_type&quot;: &quot;context_external_tool&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;external_tools&quot;,
+    &quot;role&quot;: &quot;TeacherEnrollment&quot;,
+    &quot;level&quot;: null,
+    &quot;url&quot;: &quot;https://externaltool.example.com/lti/&quot;,
+    &quot;domain&quot;: &quot;externaltool.example.com&quot;
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=modules</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: null,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/144/modules&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/discussion_topics/89887?module_item_id=219850&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.796Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Complex Analysis&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;modules&quot;,
+    &quot;category&quot;: &quot;modules&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=lti/tool_proxy (this type is used to identify LTI 2.0 launches)</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000565&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/565/assignments/5606488/lti/resource/29600186-1937-4bb2-a68-54fe40eff21?display=borderless&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/grades&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:15.799Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Some LTI Tool&quot;,
+    &quot;asset_type&quot;: &quot;lti/tool_proxy&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;external_tools&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=roster</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144/users?per_page=100&amp;include[]=email&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:08.177Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;roster&quot;,
+    &quot;category&quot;: &quot;roster&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=calendar_feed</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/feeds/calendars/user_abcdeadsadsX3jd93E2134431dasf3214123rf321231.ics&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.874Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;6th Grade History&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;calendar_feed&quot;,
+    &quot;category&quot;: &quot;calendar&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=assignment</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000565&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/565/assignments/31468&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.700Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Week 5 Math Homework&quot;,
+    &quot;asset_type&quot;: &quot;assignment&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;assignments&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=home</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.697Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Complex Analysis&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;home&quot;,
+    &quot;category&quot;: &quot;home&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=calendar_feed</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/feeds/calendars/user_AbcDeFGhIJkL123412312312312312.ics&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:07.987Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Session 1 (Apr 1, 2019)&quot;,
+    &quot;asset_type&quot;: &quot;group&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;calendar_feed&quot;,
+    &quot;category&quot;: &quot;calendar&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=files</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;context_type&quot;: &quot;Group&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/groups/144/files?sort=updated_at&amp;order=desc&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:58.002Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+    &quot;asset_type&quot;: &quot;group&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;files&quot;,
+    &quot;category&quot;: &quot;files&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=pages</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Los_Angeles&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;context_type&quot;: &quot;Group&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;GroupMembership&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/groups/144/pages?sort=title&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:34:51.407Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+    &quot;asset_type&quot;: &quot;group&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;pages&quot;,
+    &quot;category&quot;: &quot;pages&quot;,
+    &quot;role&quot;: &quot;GroupMembership&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=calendar_event</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;context_type&quot;: &quot;Group&quot;,
+    &quot;context_id&quot;: &quot;21070000000004820&quot;,
+    &quot;context_sis_source_id&quot;: null,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;GroupMembership&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/groups/4820/calendar_events/144?return_to=https%3A%2F%2Futpl.instructure.com%2Fcalendar%4view_name%3Dmonth%10view_start%3D348-0-10&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/calendar&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:11.076Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Class end of year party&quot;,
+    &quot;asset_type&quot;: &quot;calendar_event&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;calendar&quot;,
+    &quot;role&quot;: &quot;GroupMembership&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=outcomes</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;TeacherEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/144/outcomes&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/modules&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-03T19:01:11.198Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;outcomes&quot;,
+    &quot;category&quot;: &quot;outcomes&quot;,
+    &quot;role&quot;: &quot;TeacherEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=announcements</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;context_type&quot;: &quot;Group&quot;,
+    &quot;context_id&quot;: &quot;21070000000006296&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;GroupMembership&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/groups/6296/announcements&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/6296/discussion_topics/724641&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T02:35:16.059Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Group 2&quot;,
+    &quot;asset_type&quot;: &quot;group&quot;,
+    &quot;asset_id&quot;: &quot;21070000000006296&quot;,
+    &quot;asset_subtype&quot;: &quot;announcements&quot;,
+    &quot;category&quot;: &quot;announcements&quot;,
+    &quot;role&quot;: &quot;GroupMembership&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=speed_grader</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;TeacherEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/144/gradebook/speed_grader?assignment_id=62969&amp;student_id=1830&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:07.276Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;speed_grader&quot;,
+    &quot;category&quot;: &quot;grades&quot;,
+    &quot;role&quot;: &quot;TeacherEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=topics</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;context_type&quot;: &quot;Group&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;GroupMembership&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/groups/144/discussion_topics&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/144/discussion_topics/1434696?module_item_id=5629142&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:16.679Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+    &quot;asset_type&quot;: &quot;group&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;topics&quot;,
+    &quot;category&quot;: &quot;topics&quot;,
+    &quot;role&quot;: &quot;GroupMembership&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=announcements</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Los_Angeles&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000123&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/123/announcements&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.956Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;2107000000000123&quot;,
+    &quot;asset_subtype&quot;: &quot;announcements&quot;,
+    &quot;category&quot;: &quot;announcements&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=topics</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: null,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/144/discussion_topics&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/announcements&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:07.373Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;topics&quot;,
+    &quot;category&quot;: &quot;topics&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=web_conference</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000565&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;2107000000000007&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/565/conferences/144/join&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/conferences&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-02T01:27:38.610Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Basic Math Conference&quot;,
+    &quot;asset_type&quot;: &quot;web_conference&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;conferences&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: &quot;participate&quot;
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=content_tag</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Chicago&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000014855&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/14855/modules/items/144&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/14855/modules/items/143&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.871Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Article: How to learn a foreign language&quot;,
+    &quot;asset_type&quot;: &quot;content_tag&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;external_urls&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=learning_outcome</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;context_type&quot;: &quot;Account&quot;,
+    &quot;context_id&quot;: &quot;21070000000000001&quot;,
+    &quot;context_sis_source_id&quot;: null,
+    &quot;context_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;context_role&quot;: &quot;AccountAdmin&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/accounts/1/outcomes/4764&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/accounts/1/outcomes&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-08T19:53:07.183Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Outcome Test 1&quot;,
+    &quot;asset_type&quot;: &quot;learning_outcome&quot;,
+    &quot;asset_id&quot;: &quot;21070000000004764&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;outcomes&quot;,
+    &quot;role&quot;: &quot;AccountUser&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=wiki_page</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000565&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/565/pages/week-2-introduction?module_item_id=4635203&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/discussion_topics/1072925?module_item_id=4635201&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.878Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Week 1: Intro&quot;,
+    &quot;asset_type&quot;: &quot;wiki_page&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;wiki&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=discussion_topic</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;context_type&quot;: &quot;Group&quot;,
+    &quot;context_id&quot;: &quot;21070000000001234&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;GroupMembership&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/groups/1234/discussion_topics/144/view?include_new_entries=1&amp;include_enrollment_state=1&amp;include_context_card_info=1&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/1234/discussion_topics/144?module_item_id=457151&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.666Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Week 1 Journal&quot;,
+    &quot;asset_type&quot;: &quot;discussion_topic&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;topics&quot;,
+    &quot;role&quot;: &quot;GroupMembership&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=attachment</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000565&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000001963&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/412~17342/files/474~958001/course%20files/CourseResources/Week1/My%20Attachments.htm?download=1&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/1963/files/12345?module_item_id=123&amp;fd_cookie_set=1&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:06.655Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;My Attachment.html&quot;,
+    &quot;asset_type&quot;: &quot;attachment&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: null,
+    &quot;category&quot;: &quot;files&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null,
+    &quot;filename&quot;: &quot;My+Attachment.html&quot;,
+    &quot;display_name&quot;: &quot;My+Attachment.html&quot;
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=roster</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;context_type&quot;: &quot;Group&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;GroupMembership&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/groups/144/users&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/144&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:10:04.255Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+    &quot;asset_type&quot;: &quot;group&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;roster&quot;,
+    &quot;category&quot;: &quot;roster&quot;,
+    &quot;role&quot;: &quot;GroupMembership&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=collaborations</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Los_Angeles&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000012345&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/courses/12345/collaborations&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/12345/external_tools/25&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:35:04.235Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Perspectives on Linguistic Science&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000012345&quot;,
+    &quot;asset_subtype&quot;: &quot;collaborations&quot;,
+    &quot;category&quot;: &quot;collaborations&quot;,
+    &quot;role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=quizzes</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/Los_Angeles&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144/quizzes?page=1&amp;per_page=100&quot;,
+    &quot;referrer&quot;: null,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T00:09:07.636Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+    &quot;asset_type&quot;: &quot;course&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;quizzes&quot;,
+    &quot;category&quot;: &quot;quizzes&quot;,
+    &quot;role&quot;: null,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=collaborations</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;context_type&quot;: &quot;Group&quot;,
+    &quot;context_id&quot;: &quot;21070000000000144&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_role&quot;: &quot;GroupMembership&quot;,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/groups/144/collaborations&quot;,
+    &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/1444/users&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;event_name&quot;: &quot;asset_accessed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T03:08:58.218Z&quot;
+  },
+  &quot;body&quot;: {
+    &quot;asset_name&quot;: &quot;Example Name&quot;,
+    &quot;asset_type&quot;: &quot;group&quot;,
+    &quot;asset_id&quot;: &quot;21070000000000144&quot;,
+    &quot;asset_subtype&quot;: &quot;collaborations&quot;,
+    &quot;category&quot;: &quot;collaborations&quot;,
+    &quot;role&quot;: &quot;GroupMembership&quot;,
+    &quot;level&quot;: null
+  }
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>asset_id</strong></td>
+<td>The Canvas id of the asset.</td>
+</tr>
+<tr>
+<td><strong>asset_name</strong></td>
+<td>The title of a course, page, module, assignment, LTI, attachment etc.</td>
+</tr>
+<tr>
+<td><strong>asset_subtype</strong></td>
+<td>The sub type of asset being accessed.</td>
+</tr>
+<tr>
+<td><strong>asset_type</strong></td>
+<td>The type of asset being accessed.</td>
+</tr>
+<tr>
+<td><strong>category</strong></td>
+<td>A categorized list of values based on the asset or asset subtype accessed. (announcements, assignments, calendar, collaborations, conferences, external_tools, external_urls, files, grades, home, modules, outcomes, pages, quizzes, roster, syllabus, topics, wiki)</td>
+</tr>
+<tr>
+<td><strong>display_name</strong></td>
+<td>The display name of the attachment, possibly truncated.</td>
+</tr>
+<tr>
+<td><strong>domain</strong></td>
+<td>The domain of the LTI tool, when subtype is context_external_tool.</td>
+</tr>
+<tr>
+<td><strong>filename</strong></td>
+<td>The file name of the attachment, possibly truncated.</td>
+</tr>
+<tr>
+<td><strong>level</strong></td>
+<td>Usually null, can be used to indicate a deeper level of access. Can be &quot;submit&quot; for assignments. Can be &quot;participate&quot; for collaboration, calendar, discussion_topic (user posts to topic), quizzes:quiz, web_conference, or wiki_page (page created or edited).</td>
+</tr>
+<tr>
+<td><strong>role</strong></td>
+<td>The role of the user accessing the asset. (AccountUser, DesignerEnrollment, GroupMembership, ObserverEnrollment, StudentEnrollment, StudentViewEnrollment, TaEnrollment, TeacherEnrollment, User)</td>
+</tr>
+<tr>
+<td><strong>url</strong></td>
+<td>The URL of the LTI tool, when subtype is context_external_tool.</td>
+</tr>
+</tbody></table>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

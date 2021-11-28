@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Uploading Files
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="" class="current">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><h1 id="uploading-files">Uploading Files</h1>
+
+<p>There are two ways to upload a file to Canvas: either by sending the
+file data in a POST request, or by sending Canvas a publicly
+accessible HTTP or HTTPS URL to the file.</p>
+
+<table id='quicklinks'>
+</table>
+
+<h2 class='api_method_name' name='method.file_uploads.post' data-subtopic="Uploading Files">
+<a name="method.file_uploads.post" href="#method.file_uploads.post">Uploading via POST</a>
+</h2>
+
+<p>There are three steps to uploading a file directly via POST:</p>
+
+<ol>
+<li>Notify Canvas that you are uploading a file with a POST to the file
+creation endpoint. This POST will include the file name and file size,
+along with information about what context the file is being created in.</li>
+<li>Upload the file using the information returned in the first POST request.</li>
+<li>On successful upload, the API will respond with a redirect. This
+redirect needs to be followed to complete the upload, or the file may not appear.</li>
+</ol>
+
+<h3 id="step-1-telling-canvas-about-the-file-upload-and-getting-a-token">Step 1: Telling Canvas about the file upload and getting a token</h3>
+
+<p>The first step is to POST to the relevant API endpoint, depending on where
+you want to create the file. For example, to <a href="courses.html">add a file to a course</a>, you&#39;d
+POST to <code>/api/v1/courses/:course_id/files</code>. Or to <a href="submissions.html">upload a file as part of a student homework submission</a>, as the student you&#39;d POST to
+<code>/api/v1/courses/:course_id/assignments/:assignment_id/submissions/self/files</code> or <code>/api/v1/courses/:course_id/assignments/:assignment_id/submissions/comments/self/files</code> for submission comments.</p>
+
+<p>Note* The endpoint you choose to post files to will change the permissions set on the file. i.e. only files posted to the submissions comments endpoint can be attached to a submissions comment.</p>
+
+<p>Arguments:</p>
+
+<dl>
+  <dt>name</dt> <dd>The filename of the file. Any UTF-8 name is allowed. Path components such as `/` and `\` will be treated as part of the filename, not a path to a sub-folder.</dd>
+  <dt>size</dt> <dd>The size of the file, in bytes. This field is recommended, as it will let you find out if there's a quota issue before uploading the raw file.</dd>
+  <dt>content_type</dt> <dd>The content type of the file. If not given, it will be guessed based on the file extension.</dd>
+  <dt>parent_folder_id</dt><dd>The id of the folder to store the file in. If this and parent_folder_path are sent an error will be returned. If neither is given, a default folder will be used.</dd>
+  <dt>parent_folder_path</dt> <dd>The path of the folder to store the file in. The path separator is the forward slash `/`, never a back slash. The folder will be created if it does not already exist. This parameter only applies to file uploads in a context that has folders, such as a user, a course, or a group. If this and parent_folder_id are sent an error will be returned. If neither is given, a default folder will be used.</dd>
+  <dt>folder</dt> <dd>[deprecated] Use parent_folder_path instead.</dd>
+  <dt>on_duplicate</dt> <dd>How to handle duplicate filenames. If `overwrite`, then this file upload will overwrite any other file in the folder with the same name. If `rename`, then this file will be renamed if another file in the folder exists with the given name. If no parameter is given, the default is `overwrite`. This doesn't apply to file uploads in a context that doesn't have folders.</dd>
+  <dt>success_include[]</dt> <dd>An array of additional information to include in the upload success response. See <a href="files.html#method.files.api_show">Files API</a> for more information.</dd>
+</dl>
+
+<p>Example Request:</p>
+
+<pre class="code bash"><code class="bash">curl &#39;https://&lt;canvas&gt;/api/v1/users/self/files&#39; \
+     -F &#39;name=profile_pic.jpg&#39; \
+     -F &#39;size=302185&#39; \
+     -F &#39;content_type=image/jpeg&#39; \
+     -F &#39;parent_folder_path=my_files/section1&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;
+</code></pre>
+
+<p>Example Response:</p>
+
+<pre class="code json"><code class="json">{
+  &quot;upload_url&quot;: &quot;https://some-bucket.s3.amazonaws.com/&quot;,
+  &quot;upload_params&quot;: {
+    &quot;key&quot;: &quot;/users/1234/files/profile_pic.jpg&quot;,
+    &lt;unspecified parameters; key above will not necesarily be present either&gt;
+  }
+}
+</code></pre>
+
+<p>At this point, the file object has been created in Canvas in a &quot;pending&quot;
+state, with no content. It will not appear in any listings in the UI until
+the next two steps are completed. The returned Signature is valid for 30
+minutes.</p>
+
+<h3 id="step-2-upload-the-file-data-to-the-url-given-in-the-previous-response">Step 2: Upload the file data to the URL given in the previous response</h3>
+
+<p>Using the data in the JSON response from Step 1, the application can now
+upload the actual file data, by POSTing a specially formulated request to
+the URL given in the <code>upload_url</code> field of the response.</p>
+
+<p>Depending on how Canvas is configured, this upload URL might be another URL
+in the same domain, or a Amazon S3 bucket, or some other URL. In order to
+work with all Canvas installations, applications should be very careful to
+follow this documentation and not make any undocumented assumptions about
+the upload workflow.</p>
+
+<p>This second request must be POSTed as a multipart/form-data request to
+accomodate the file data. The parameters POSTed with this request come
+directly from the <code>upload_params</code> part of the JSON response in Step 1.</p>
+
+<p>The only addition is the <code>file</code> parameter which <em>must</em> be posted as the
+last parameter following all the others.</p>
+
+<p>Example Request:</p>
+
+<pre class="code bash"><code class="bash">curl &#39;&lt;upload_url&gt;&#39; \
+     -F &#39;key=/users/1234/files/profile_pic.jpg&#39; \
+     &lt;any other parameters specified in the upload_params response&gt;
+     -F &#39;file=@my_local_file.jpg&#39;
+</code></pre>
+
+<p>The access token is not sent with this request.</p>
+
+<p>Example Response:</p>
+
+<pre class="code"><code class="">HTTP/1.1 301 Moved Permanently
+Location: https://&lt;canvas&gt;/api/v1/files/1234/create_success?uuid=ABCDE
+</code></pre>
+
+<p>IMPORTANT:  The request is signed, and will be denied if any parameters
+from the <code>upload_params</code> response are added, removed or modified.  The
+parameters in <code>upload_params</code> may vary over time, and between Canvas
+installs. It&#39;s important for the application to copy over all of the
+parameters, and not rely on the names or values of the params for any
+functionality.</p>
+
+<p>This example assumes there is a file called <code>my_local_file.jpg</code> in the
+current directory.</p>
+
+<h3 id="step-3-confirm-the-uploads-success">Step 3: Confirm the upload&#39;s success</h3>
+
+<p>If Step 2 is successful, the response will be either a 3XX redirect or
+201 Created with a Location header set as normal.</p>
+
+<p>In the case of a 3XX redirect, the application needs to perform a GET to
+this location in order to complete the upload, otherwise the new file
+may not be marked as available. (Note: While a POST would be truer to
+REST semantics, a GET is required for forwards compatibility with the
+201 Created response described below.) This request is back against
+Canvas again, and needs to be authenticated using the normal API access
+token authentication.</p>
+
+<p>In the case of a 201 Created, the upload has been complete and the
+Canvas JSON representation of the file can be retrieved with a GET from
+the provided Location.</p>
+
+<p>Example Request:</p>
+
+<pre class="code bash"><code class="bash">curl -X POST &#39;&lt;Location&gt;&#39; \
+     -H &#39;Content-Length: 0&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;
+</code></pre>
+
+<p>Example Response:</p>
+
+<pre class="code json"><code class="json">{
+  &quot;id&quot;: 1234,
+  &quot;url&quot;: &quot;...url to download the file...&quot;,
+  &quot;content-type&quot;: &quot;image/jpeg&quot;,
+  &quot;display_name&quot;: &quot;profile_pic.jpg&quot;,
+  &quot;size&quot;: 302185
+}
+</code></pre>
+
+<h2 class='api_method_name' name='method.file_uploads.url' data-subtopic="Uploading Files">
+<a name="method.file_uploads.url" href="#method.file_uploads.url">Uploading via URL</a>
+</h2>
+
+<p>Instead of uploading a file directly, you can also provide Canvas a
+public HTTP or HTTPS URL from which to retrieve the file.</p>
+
+<h3 id="step-1a-posting-the-file-url-to-canvas">Step 1a: Posting the file URL to Canvas</h3>
+
+<p>The first step is the same as with the &quot;Uploading via POST&quot; flow above,
+with the addition of a few new parameters:</p>
+
+<dl>
+  <dt>url</dt>
+  <dd>The full URL to the file to be uploaded. This URL must be publicly accessible.</dd>
+  <dt>submit_assignment</dt>
+  <dd>A boolean to indicate whether or not to automatically submit the assignment the file is associated with if it is associated with an assignment. Defaults to true.</dd>
+</dl>
+
+<p>Example Request:</p>
+
+<pre class="code bash"><code class="bash">curl &#39;https://&lt;canvas&gt;/api/v1/users/self/files&#39; \
+     -F &#39;url=http://example.com/my_pic.jpg&#39; \
+     -F &#39;name=profile_pic.jpg&#39; \
+     -F &#39;size=302185&#39; \
+     -F &#39;content_type=image/jpeg&#39; \
+     -F &#39;parent_folder_path=my_files/section1&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;
+</code></pre>
+
+<p>Example Response:</p>
+
+<pre class="code json"><code class="json">{
+  &quot;upload_url&quot;: &quot;https://file-service.url/opaque&quot;,
+  &quot;upload_params&quot;: {
+    /* unspecified parameters; contents should be treated as opaque */
+  },
+  &quot;progress&quot;: {
+    /* amongst other tags, see the Progress API... */
+    &quot;url&quot;: &quot;https://canvas.example.edu/api/v1/progress/1&quot;
+    &quot;workflow_state&quot;: &quot;running&quot;
+  }
+}
+</code></pre>
+
+<h3 id="step-1b-understanding-the-response">Step 1b: Understanding the response</h3>
+
+<p>Canvas&#39; file management is in a moment of transition. For the duration
+of this transition, there are two possible behaviors. The newer behavior
+includes additional fields in the response to the first request and
+expects an additional action from the application.</p>
+
+<p>In the deprecated behavior, Canvas will initiate a &quot;cloning&quot; of the
+provided URL by downloading it via Canvas servers. The initial POST was
+sufficient to start this and no other action is necessary from the
+application.</p>
+
+<p>In the newer behavior, Canvas delegates the cloning of the URL to the
+same service that accepts direct uploads. The cloning is kicked off by a
+POST by the application to the provided <code>upload_url</code> with the provided
+<code>upload_params</code>, in parallel with a direct upload. The service then
+informs Canvas directly when it is complete.</p>
+
+<p>In either case, the cloning of the URL will be performed in the background,
+and the file will not necessarily be immediately available when the API
+calls complete. Instead, a <code>progress</code> object is provided which can be
+periodically polled to check the status of the upload.</p>
+
+<p>You can distinguish the new behavior (and expected follow up)
+from the old behavior precisely by the presence or absence of the
+<code>upload_url</code> key.</p>
+
+<h3 id="step-2-post-to-the-url-given-in-the-previous-response">Step 2: POST to the URL given in the previous response</h3>
+
+<p>If the response to the initial POST includes an <code>upload_url</code>, you must
+POST to it with the <code>upload_params</code> just as if you were performing a
+direct upload. The only exception is that the <code>file</code> parameter is
+omitted. The <code>Content-Type</code> is still expected to be multipart/form-data.</p>
+
+<p>Example Request:</p>
+
+<pre class="code bash"><code class="bash">curl &#39;&lt;upload_url&gt;&#39; \
+     -F &#39;target_url=http://example.com/my_pic.jpg&#39; \
+     &lt;any other parameters specified in the upload_params response&gt;
+</code></pre>
+
+<p>Example Response:</p>
+
+<pre class="code"><code class="">HTTP/1.1 201 Created
+</code></pre>
+
+<p>This step is not necessary with the old behavior.</p>
+
+<h3 id="step-3-check-to-see-when-the-upload-is-complete">Step 3: Check to see when the upload is complete</h3>
+
+<p>If the application needs to know the outcome of the upload, it can use
+the file.file_uploads.html to query the status.
+On success, the created attachment&#39;s id will be returned in the results
+of the Progress object as <code>id</code>.</p>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,453 @@
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/* Legacy variables. Discontinue to use these: */
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
+ * Convert font-size from px to rem with px fallback
+ * @param $size - the value in pixel you want to convert
+ * e.g. p {@include fontSize(12px);}
+ * courtesy of https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_fontSize.scss
+ */
+/*
+ * Copyright (C) 2013 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+.registration-dialog {
+  margin: 2em 0;
+  font-size: 1.1em;
+}
+.registration-dialog .registration-dialog .spinner {
+  width: 100px;
+}
+.registration-dialog .ic-Label {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.terms-of-service__register {
+  display: flex;
+  flex-direction: row;
+  line-height: 1;
+}
+.terms-of-service__register .terms-of-service__link {
+  button: 14px !important;
+}
+
+.terms-of-service__link {
+  padding-left: 4px;
+}
+
+.pairing-code-text {
+  display: flex;
+  justify-content: space-between;
+}
+.pairing-code-text a {
+  font-size: 14px;
+}
+
+body {
+  background: #333;
+}
+
+a {
+  color: #2ca4e9;
+}
+a:hover {
+  color: #1873c8;
+}
+
+.registration-content {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#registration_header {
+  background: #fff;
+  height: 122px;
+  padding-top: 12px;
+}
+#registration_header h1, #registration_header .h1 {
+  padding: 50px 0 0 0px;
+}
+#registration_header h1 a, #registration_header .h1 a {
+  display: block;
+  width: 175px;
+  height: 44px;
+  background: transparent url(/dist/images/registration/logo-07c93fe63c.png) 0 0 no-repeat;
+  text-indent: -9999em;
+}
+#registration_header #registration_login {
+  color: #30536e;
+  position: absolute;
+  right: 73px;
+  top: 55px;
+  padding: 0 22px 0 0;
+  border: 5px solid transparent;
+  font-size: 1.1em;
+  background: transparent url(/dist/images/registration/down-arrow-5498cd28da.png) right center no-repeat;
+}
+
+#registration_video {
+  margin: 0;
+}
+#registration_video a {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  display: block;
+  width: 300px;
+  height: 200px;
+  background: transparent url(/dist/images/registration/watch-video-ribbon-2228fd29cf.png) 0 -18px no-repeat;
+  text-indent: -9999em;
+}
+
+#registration_options {
+  margin: 20px auto 0;
+  width: 495px;
+  text-align: center;
+  padding-top: 200px;
+  height: 90px;
+  background: transparent url(/dist/images/registration/signup_bg-188ee24527.png) 0 0 no-repeat;
+  position: relative;
+}
+#registration_options h2, #registration_options .h2 {
+  text-indent: -9999em;
+  margin: 0;
+  height: 30px;
+}
+
+#registration_content:before {
+  display: block;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  content: " ";
+  background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.5;
+}
+
+#registration_content {
+  background: #fff url(/dist/images/registration/page-background-b76ad77a8f.png) 0 0 repeat;
+  padding-bottom: 40px;
+}
+
+#registration_footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  min-height: 30px;
+  padding: 10px 0 40px;
+  color: #999;
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
+#registration_footer a {
+  margin-left: 5px;
+  color: #999;
+}
+#registration_footer a:hover, #registration_footer a:active {
+  color: #2ca4e9;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+#terms_link {
+  outline-width: 0.125rem;
+  outline-color: transparent;
+  outline-style: solid;
+}
+#terms_link:focus {
+  outline-offset: 0;
+  outline-color: var(--ic-link-color);
+}
+
+#signup_teacher, #signup_student {
+  outline-width: 0.125rem;
+  outline-color: transparent;
+  outline-style: solid;
+  position: absolute;
+  background-image: url(/dist/images/registration/landing_buttons-9a92dc98e8.png);
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
+  position: absolute;
+  top: 157px;
+  width: 180px;
+  height: 65px;
+  text-indent: -9999em;
+}
+#signup_teacher:focus, #signup_student:focus {
+  outline-offset: 0;
+  outline-color: var(--ic-link-color);
+}
+
+#signup_teacher {
+  left: 67px;
+}
+#signup_teacher:hover, #signup_teacher:focus {
+  background-position: 5px -60px;
+  outline: none;
+}
+
+#signup_student {
+  right: 67px;
+  background-position: 5px -125px;
+}
+#signup_student:hover, #signup_student:focus {
+  background-position: 5px -190px;
+  outline: none;
+}
+
+#login_form {
+  position: absolute;
+  right: 0;
+  top: 95px;
+  background: #fff;
+  border: 1px solid #bbb;
+  padding: 11px 11px 8px;
+  z-index: 2;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+#login_form .login-input {
+  width: 125px;
+  position: relative;
+  /* so that it's over the caret */
+}
+#login_form button {
+  width: 100%;
+  display: block;
+  line-height: 1.75em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1em;
+  background: linear-gradient(to bottom, #0abcfe 0%, #0090d7 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0abcfe #238fe4 #1974c9;
+  border-radius: 3px;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+#login_form button:hover, #login_form button:focus {
+  background: linear-gradient(to bottom, #09aae5 0%, #0080c0 100%);
+  outline: none;
+}
+#login_form:before {
+  content: " ";
+  display: block;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -11px;
+  transform: rotate(45deg);
+  border: 1px solid #bbb;
+  border-right: none;
+  border-bottom: none;
+  background: #fff;
+}

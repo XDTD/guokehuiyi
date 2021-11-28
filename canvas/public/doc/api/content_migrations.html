@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Content Migrations - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="current" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Content Migrations API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for accessing content migrations and migration issues</p>
+
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="MigrationIssue">A MigrationIssue object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // the unique identifier for the issue
+  &quot;id&quot;: 370663,
+  // API url to the content migration
+  &quot;content_migration_url&quot;: &quot;https://example.com/api/v1/courses/1/content_migrations/1&quot;,
+  // Description of the issue for the end-user
+  &quot;description&quot;: &quot;Questions in this quiz couldn&#39;t be converted&quot;,
+  // Current state of the issue: active, resolved
+  &quot;workflow_state&quot;: &quot;active&quot;,
+  // HTML Url to the Canvas page to investigate the issue
+  &quot;fix_issue_html_url&quot;: &quot;https://example.com/courses/1/quizzes/2&quot;,
+  // Severity of the issue: todo, warning, error
+  &quot;issue_type&quot;: &quot;warning&quot;,
+  // Link to a Canvas error report if present (If the requesting user has
+  // permissions)
+  &quot;error_report_html_url&quot;: &quot;https://example.com/error_reports/3&quot;,
+  // Site administrator error message (If the requesting user has permissions)
+  &quot;error_message&quot;: &quot;admin only message&quot;,
+  // timestamp
+  &quot;created_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;,
+  // timestamp
+  &quot;updated_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="ContentMigration">A ContentMigration object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // the unique identifier for the migration
+  &quot;id&quot;: 370663,
+  // the type of content migration
+  &quot;migration_type&quot;: &quot;common_cartridge_importer&quot;,
+  // the name of the content migration type
+  &quot;migration_type_title&quot;: &quot;Canvas Cartridge Importer&quot;,
+  // API url to the content migration&#39;s issues
+  &quot;migration_issues_url&quot;: &quot;https://example.com/api/v1/courses/1/content_migrations/1/migration_issues&quot;,
+  // attachment api object for the uploaded file may not be present for all
+  // migrations
+  &quot;attachment&quot;: &quot;{&quot;url&quot;=&gt;&quot;https://example.com/api/v1/courses/1/content_migrations/1/download_archive&quot;}&quot;,
+  // The api endpoint for polling the current progress
+  &quot;progress_url&quot;: &quot;https://example.com/api/v1/progress/4&quot;,
+  // The user who started the migration
+  &quot;user_id&quot;: 4,
+  // Current state of the content migration: pre_processing, pre_processed,
+  // running, waiting_for_select, completed, failed
+  &quot;workflow_state&quot;: &quot;running&quot;,
+  // timestamp
+  &quot;started_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;,
+  // timestamp
+  &quot;finished_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;,
+  // file uploading data, see {file:file_uploads.html File Upload Documentation}
+  // for file upload workflow This works a little differently in that all the file
+  // data is in the pre_attachment hash if there is no upload_url then there was
+  // an attachment pre-processing error, the error message will be in the message
+  // key This data will only be here after a create or update call
+  &quot;pre_attachment&quot;: &quot;{&quot;upload_url&quot;=&gt;&quot;&quot;, &quot;message&quot;=&gt;&quot;file exceeded quota&quot;, &quot;upload_params&quot;=&gt;{}}&quot;
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Migrator">A Migrator object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // The value to pass to the create endpoint
+  &quot;type&quot;: &quot;common_cartridge_importer&quot;,
+  // Whether this endpoint requires a file upload
+  &quot;requires_file_upload&quot;: true,
+  // Description of the package type expected
+  &quot;name&quot;: &quot;Common Cartridge 1.0/1.1/1.2 Package&quot;,
+  // A list of fields this system requires
+  &quot;required_settings&quot;: [&quot;source_course_id&quot;]
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.migration_issues.index' data-subtopic='Migration Issues'>
+    <a name='method.migration_issues.index' href='#method.migration_issues.index'>
+      List migration issues
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/migration_issues_controller.rb">MigrationIssuesController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations/:content_migration_id/migration_issues
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/content_migrations/:content_migration_id/migration_issues</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations/:content_migration_id/migration_issues
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/content_migrations/:content_migration_id/migration_issues</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations/:content_migration_id/migration_issues
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/content_migrations/:content_migration_id/migration_issues</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations/:content_migration_id/migration_issues
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/content_migrations/:content_migration_id/migration_issues</code>
+  </div>
+
+
+<p>Returns paginated migration issues</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations/&lt;content_migration_id&gt;/migration_issues \
+    -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='content_migrations.html#MigrationIssue'>MigrationIssues</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.migration_issues.show' data-subtopic='Migration Issues'>
+    <a name='method.migration_issues.show' href='#method.migration_issues.show'>
+      Get a migration issue
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/migration_issues_controller.rb">MigrationIssuesController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/content_migrations/:content_migration_id/migration_issues/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/content_migrations/:content_migration_id/migration_issues/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/content_migrations/:content_migration_id/migration_issues/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/content_migrations/:content_migration_id/migration_issues/:id</code>
+  </div>
+
+
+<p>Returns data on an individual migration issue</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations/&lt;content_migration_id&gt;/migration_issues/&lt;id&gt; \
+    -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#MigrationIssue'>MigrationIssue</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.migration_issues.update' data-subtopic='Migration Issues'>
+    <a name='method.migration_issues.update' href='#method.migration_issues.update'>
+      Update a migration issue
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/migration_issues_controller.rb">MigrationIssuesController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/accounts/:account_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/accounts/:account_id/content_migrations/:content_migration_id/migration_issues/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/content_migrations/:content_migration_id/migration_issues/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/groups/:group_id/content_migrations/:content_migration_id/migration_issues/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/users/:user_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/users/:user_id/content_migrations/:content_migration_id/migration_issues/:id</code>
+  </div>
+
+
+<p>Update the workflow_state of a migration issue</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>workflow_state</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set the workflow_state of the issue.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>active</code>, <code class=enum>resolved</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X PUT https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations/&lt;content_migration_id&gt;/migration_issues/&lt;id&gt; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+     -F &#39;workflow_state=resolved&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#MigrationIssue'>MigrationIssue</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.index' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.index' href='#method.content_migrations.index'>
+      List content migrations
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/content_migrations</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/content_migrations</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/content_migrations</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/content_migrations</code>
+  </div>
+
+
+<p>Returns paginated content migrations</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations \
+    -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='content_migrations.html#ContentMigration'>ContentMigrations</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.show' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.show' href='#method.content_migrations.show'>
+      Get a content migration
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/content_migrations/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/content_migrations/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/content_migrations/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/content_migrations/:id</code>
+  </div>
+
+
+<p>Returns data on an individual content migration</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations/&lt;id&gt; \
+    -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#ContentMigration'>ContentMigration</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.create' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.create' href='#method.content_migrations.create'>
+      Create a content migration
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/accounts/:account_id/content_migrations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/accounts/:account_id/content_migrations</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/content_migrations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/content_migrations</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups/:group_id/content_migrations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/groups/:group_id/content_migrations</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/users/:user_id/content_migrations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/users/:user_id/content_migrations</code>
+  </div>
+
+
+<p>Create a content migration. If the migration requires a file to be uploaded the actual processing of the file will start once the file upload process is completed. File uploading works as described in the <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a> except that the values are set on a <strong>pre_attachment</strong> sub-hash.</p>
+
+<p>For migrations that don&#39;t require a file to be uploaded, like course copy, the processing will begin as soon as the migration is created.</p>
+
+<p>You can use the <a href="progress.html#method.progress.show" title="Progress API">Progress API</a> to track the progress of the migration. The migration&#39;s progress is linked to with the <em>progress_url</em> value.</p>
+
+<p>The two general workflows are:</p>
+
+<p>If no file upload is needed:</p>
+<ol><li>
+<p>POST to create</p>
+</li><li>
+<p>Use the <a href="progress.html#method.progress.show" title="Progress">Progress</a> specified in <em>progress_url</em> to monitor progress</p>
+</li></ol>
+
+<p>For file uploading:</p>
+<ol><li>
+<p>POST to create with file info in <strong>pre_attachment</strong></p>
+</li><li>
+<p>Do <a href="file_uploads.html" title="file upload processing">file upload processing</a> using the data in the <strong>pre_attachment</strong> data</p>
+</li><li>
+<p><a href="content_migrations.html#method.content_migrations.show" title="GET">GET</a> the ContentMigration</p>
+</li><li>
+<p>Use the <a href="progress.html#method.progress.show" title="Progress">Progress</a> specified in <em>progress_url</em> to monitor progress</p>
+</li></ol>
+
+<pre class="code ruby"><code class="ruby"><span class='lparen'>(</span><span class='id identifier rubyid_required'>required</span> <span class='kw'>if</span> <span class='id identifier rubyid_doing'>doing</span> <span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span> <span class='id identifier rubyid_file'>file</span> <span class='id identifier rubyid_upload'>upload</span><span class='rparen'>)</span>
+</code></pre>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>migration_type</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The type of the migration. Use the <a href="content_migrations.html#method.content_migrations.available_migrators" title="Migrator">Migrator</a> endpoint to see all available migrators. Default allowed values: canvas_cartridge_importer, common_cartridge_importer, course_copy_importer, zip_file_importer, qti_converter, moodle_converter</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>pre_attachment[name]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Required if uploading a file. This is the first step in uploading a file to the content migration. See the <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a> for details on the file upload workflow.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>pre_attachment[*]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Other file upload properties, See <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[file_url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>A URL to download the file from. Must not require authentication.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[content_export_id]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of a ContentExport to import. This allows you to import content previously exported from Canvas without needing to download and re-upload it.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[source_course_id]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The course to copy from for a course copy migration. (required if doing course copy)</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[folder_id]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The folder to unzip the .zip file into for a zip_file_import.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[overwrite_quizzes]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether to overwrite quizzes with the same identifiers between content packages.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[question_bank_id]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The existing question bank ID to import questions into if not specified in the content package.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[question_bank_name]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The question bank to import questions into if not specified in the content package, if both bank id and name are set, id will take precedence.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[insert_into_module_id]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of a module in the target course. This will add all imported items (that can be added to a module) to the given module.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[insert_into_module_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If provided (and <code>insert_into_module_id</code> is supplied), only add objects of the specified type to the module.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>assignment</code>, <code class=enum>discussion_topic</code>, <code class=enum>file</code>, <code class=enum>page</code>, <code class=enum>quiz</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[insert_into_module_position]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The (1-based) position to insert the imported items into the course (if <code>insert_into_module_id</code> is supplied). If this parameter is omitted, items will be added to the end of the module.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>settings[move_to_assignment_group_id]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of an assignment group in the target course. If provided, all imported assignments will be moved to the given assignment group.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>date_shift_options[shift_dates]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether to shift dates in the copied course</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>date_shift_options[old_start_date]</td>
+      <td>
+        
+      </td>
+      <td>Date</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The original start date of the source content/course</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>date_shift_options[old_end_date]</td>
+      <td>
+        
+      </td>
+      <td>Date</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The original end date of the source content/course</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>date_shift_options[new_start_date]</td>
+      <td>
+        
+      </td>
+      <td>Date</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The new start date for the content/course</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>date_shift_options[new_end_date]</td>
+      <td>
+        
+      </td>
+      <td>Date</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The new end date for the source content/course</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>date_shift_options[day_substitutions][X]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Move anything scheduled for day &#39;X&#39; to the specified day. (0-Sunday, 1-Monday, 2-Tuesday, 3-Wednesday, 4-Thursday, 5-Friday, 6-Saturday)</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>date_shift_options[remove_dates]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether to remove dates in the copied course. Cannot be used in conjunction with <strong>shift_dates</strong>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>selective_import</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If set, perform a selective import instead of importing all content. The migration will identify the contents of the package and then stop in the <code>waiting_for_select</code> workflow state. At this point, use the <a href="content_migrations.html#method.content_migrations.content_list" title="List items endpoint">List items endpoint</a> to enumerate the contents of the package, identifying the copy parameters for the desired content. Then call the <a href="content_migrations.html#method.content_migrations.update" title="Update endpoint">Update endpoint</a> and provide these copy parameters to start the import.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>select</td>
+      <td>
+        
+      </td>
+      <td>Hash</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>For <code>course_copy_importer</code> migrations, this parameter allows you to select the objects to copy without using the <code>selective_import</code> argument and <code>waiting_for_select</code> state as is required for uploaded imports (though that workflow is also supported for course copy migrations). The keys are object types like &#39;files&#39;, &#39;folders&#39;, &#39;pages&#39;, etc. The value for each key is a list of object ids. An id can be an integer or a string. Multiple object types can be selected in the same call.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>folders</code>, <code class=enum>files</code>, <code class=enum>attachments</code>, <code class=enum>quizzes</code>, <code class=enum>assignments</code>, <code class=enum>announcements</code>, <code class=enum>calendar_events</code>, <code class=enum>discussion_topics</code>, <code class=enum>modules</code>, <code class=enum>module_items</code>, <code class=enum>pages</code>, <code class=enum>rubrics</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations&#39; \
+     -F &#39;migration_type=common_cartridge_importer&#39; \
+     -F &#39;settings[question_bank_name]=importquestions&#39; \
+     -F &#39;date_shift_options[old_start_date]=1999-01-01&#39; \
+     -F &#39;date_shift_options[new_start_date]=2013-09-01&#39; \
+     -F &#39;date_shift_options[old_end_date]=1999-04-15&#39; \
+     -F &#39;date_shift_options[new_end_date]=2013-12-15&#39; \
+     -F &#39;date_shift_options[day_substitutions][1]=2&#39; \
+     -F &#39;date_shift_options[day_substitutions][2]=3&#39; \
+     -F &#39;date_shift_options[shift_dates]=true&#39; \
+     -F &#39;pre_attachment[name]=mycourse.imscc&#39; \
+     -F &#39;pre_attachment[size]=12345&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#ContentMigration'>ContentMigration</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.update' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.update' href='#method.content_migrations.update'>
+      Update a content migration
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/accounts/:account_id/content_migrations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/accounts/:account_id/content_migrations/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/content_migrations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/content_migrations/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id/content_migrations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/groups/:group_id/content_migrations/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/users/:user_id/content_migrations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/users/:user_id/content_migrations/:id</code>
+  </div>
+
+
+<p>Update a content migration. Takes same arguments as <a href="content_migrations.html#method.content_migrations.create" title="create">create</a> except that you can&#39;t change the migration type. However, changing most settings after the migration process has started will not do anything. Generally updating the content migration will be used when there is a file upload problem, or when importing content selectively. If the first upload has a problem you can supply new <em>pre_attachment</em> values to start the process again.</p>
+
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#ContentMigration'>ContentMigration</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.available_migrators' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.available_migrators' href='#method.content_migrations.available_migrators'>
+      List Migration Systems
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#available_migrators</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations/migrators
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/content_migrations/migrators</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations/migrators
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/content_migrations/migrators</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations/migrators
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/content_migrations/migrators</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations/migrators
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/content_migrations/migrators</code>
+  </div>
+
+
+<p>Lists the currently available migration types. These values may change.</p>
+
+
+
+
+  Returns a list of 
+
+<a href='content_migrations.html#Migrator'>Migrators</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.content_list' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.content_list' href='#method.content_migrations.content_list'>
+      List items for selective import
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#content_list</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations/:id/selective_data
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/content_migrations/:id/selective_data</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations/:id/selective_data
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/content_migrations/:id/selective_data</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations/:id/selective_data
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/content_migrations/:id/selective_data</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations/:id/selective_data
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/content_migrations/:id/selective_data</code>
+  </div>
+
+
+<p>Enumerates the content available for selective import in a tree structure. Each node provides a <code>property</code> copy argument that can be supplied to the <a href="content_migrations.html#method.content_migrations.update" title="Update endpoint">Update endpoint</a> to selectively copy the content associated with that tree node and its children. Each node may also provide a <code>sub_items_url</code> or an array of <code>sub_items</code> which you can use to obtain copy parameters for a subset of the resources in a given node.</p>
+
+<p>If no <code>type</code> is sent you will get a list of the top-level sections in the content. It will look something like this:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='lbracket'>[</span><span class='lbrace'>{</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>course_settings</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>property</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>copy[all_course_settings]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>title</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Course Settings</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span><span class='comma'>,</span>
+<span class='lbrace'>{</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>context_modules</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>property</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>copy[all_context_modules]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>title</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Modules</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>count</span><span class='label_end'>&quot;:</span> <span class='int'>5</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sub_items_url</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://example.com/api/v1/courses/22/content_migrations/77/selective_data?type=context_modules</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span><span class='comma'>,</span>
+<span class='lbrace'>{</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>assignments</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>property</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>copy[all_assignments]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>title</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Assignments</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>count</span><span class='label_end'>&quot;:</span> <span class='int'>2</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sub_items_url</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:3000/api/v1/courses/22/content_migrations/77/selective_data?type=assignments</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span><span class='rbracket'>]</span>
+</code></pre>
+
+<p>When a <code>type</code> is provided, nodes may be further divided via <code>sub_items</code>. For example, using <tt>type=assignments</tt> results in a node for each assignment group and a sub_item for each assignment, like this:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='lbracket'>[</span><span class='lbrace'>{</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>assignment_groups</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>title</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>An Assignment Group</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>property</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>copy[assignment_groups][id_i855cf145e5acc7435e1bf1c6e2126e5f]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sub_items</span><span class='label_end'>&quot;:</span> <span class='lbracket'>[</span><span class='lbrace'>{</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>assignments</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>title</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Assignment 1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>property</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>copy[assignments][id_i2102a7fa93b29226774949298626719d]</span><span class='tstring_end'>&quot;</span></span>
+  <span class='rbrace'>}</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>assignments</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>title</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Assignment 2</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>property</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>copy[assignments][id_i310cba275dc3f4aa8a3306bbbe380979]</span><span class='tstring_end'>&quot;</span></span>
+  <span class='rbrace'>}</span><span class='rbracket'>]</span>
+<span class='rbrace'>}</span><span class='rbracket'>]</span>
+</code></pre>
+
+<p>To import the items corresponding to a particular tree node, use the <code>property</code> as a parameter to the <a href="content_migrations.html#method.content_migrations.update" title="Update endpoint">Update endpoint</a> and assign a value of 1, for example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_copy'>copy</span><span class='lbracket'>[</span><span class='id identifier rubyid_assignments'>assignments</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_id_i310cba275dc3f4aa8a3306bbbe380979'>id_i310cba275dc3f4aa8a3306bbbe380979</span><span class='rbracket'>]</span><span class='op'>=</span><span class='int'>1</span>
+</code></pre>
+
+<p>You can include multiple copy parameters to selectively import multiple items or groups of items.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>type</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The type of content to enumerate.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>context_modules</code>, <code class=enum>assignments</code>, <code class=enum>quizzes</code>, <code class=enum>assessment_question_banks</code>, <code class=enum>discussion_topics</code>, <code class=enum>wiki_pages</code>, <code class=enum>context_external_tools</code>, <code class=enum>tool_profiles</code>, <code class=enum>announcements</code>, <code class=enum>calendar_events</code>, <code class=enum>rubrics</code>, <code class=enum>groups</code>, <code class=enum>learning_outcomes</code>, <code class=enum>attachments</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:08 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

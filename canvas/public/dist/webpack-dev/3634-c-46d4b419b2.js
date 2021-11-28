@@ -1,0 +1,14 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3634],{
+
+/***/ "x7au":
+/*!*******************************************************************!*\
+  !*** ./node_modules/mediaelement/build/lang/me-i18n-locale-pl.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/*!\n * This is a i18n.locale language object.\n *\n * Polish\n *\n * @author\n *   Jalios (Twitter: @Jalios)\n *   Sascha Greuel (Twitter: @SoftCreatR)\n *\n * @see\n *   me-i18n.js\n *\n * @params\n *  - exports - CommonJS, window ..\n */\n(function (exports) {\n    \"use strict\";\n\n    if (exports.pl === undefined) {\n        exports.pl = {\n            \"mejs.plural-form\": 9,\n\n            // me-shim\n            \"mejs.download-file\": \"Pobierz plik\",\n\n            // mep-feature-contextmenu\n            \"mejs.fullscreen-off\": \"Wyłącz pełny ekran\",\n            \"mejs.fullscreen-on\": \"Przejdź na pełny ekran\",\n            \"mejs.download-video\": \"Pobierz wideo\",\n\n            // mep-feature-fullscreen\n            \"mejs.fullscreen\": \"Pełny ekran\",\n\n            // mep-feature-jumpforward\n            //\"mejs.time-jump-forward\": \"Jump forward %1 second(s)\",\n\n            // mep-feature-playpause\n            \"mejs.play\": \"Odtwarzaj\",\n            \"mejs.pause\": \"Wstrzymaj\",\n\n            // mep-feature-postroll\n            \"mejs.close\": \"Zamknij\",\n\n            // mep-feature-progress\n            \"mejs.time-slider\": \"Suwak czasu\",\n            \"mejs.time-help-text\": \"Strzałki w lewo/w prawo powodują przewijanie o sekundę, strzałki w górę/w dół o dziesięć sekund.\",\n\n            // mep-feature-skipback\n            \"mejs.time-skip-back\": \"Cofnij o %1 sek.\",\n\n            // mep-feature-tracks\n            \"mejs.captions-subtitles\": \"Podpisy/napisy\",\n            \"mejs.none\": \"Brak\",\n\n            // mep-feature-volume\n            \"mejs.mute-toggle\": \"Przełączanie wyciszania\",\n            \"mejs.volume-help-text\": \"Aby zwiększyć lub zmniejszyć głośność, użyj strzałek w górę/w dół.\",\n            \"mejs.unmute\": \"Wyłącz wyciszenie\",\n            \"mejs.mute\": \"Wycisz\",\n            \"mejs.volume-slider\": \"Suwak głośności\",\n\n            // mep-player\n            \"mejs.video-player\": \"Odtwarzacz wideo\",\n            \"mejs.audio-player\": \"Odtwarzacz audio\",\n\n            // mep-feature-ads\n            //\"mejs.ad-skip\": \"Skip ad\",\n            //\"mejs.ad-skip-info\": \"Skip in %1 second(s)\",\n\n            // mep-feature-sourcechooser\n            //\"mejs.source-chooser\": \"Source Chooser\"\n        };\n    }\n}(mejs.i18n.locale.strings));\n\n\n//# sourceURL=webpack:///./node_modules/mediaelement/build/lang/me-i18n-locale-pl.js?");
+
+/***/ })
+
+}]);

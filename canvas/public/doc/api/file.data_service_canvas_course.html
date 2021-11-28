@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Course
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="" class="current">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><h1 id="course">Course</h1>
+
+<h2 id="course_completed">course_completed</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a course module&#39;s completion requirements are met.</p>
+
+<p><strong>Trigger:</strong> Triggered when all the module requirements of a course have been met. Also gets triggered when a module has a set completion time or when the completion time gets updated.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_id&quot;: &quot;21070000000000565&quot;,
+    &quot;context_role&quot;: &quot;StudentEnrollment&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;event_name&quot;: &quot;course_completed&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T19:11:26.615Z&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;GET&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;referrer&quot;: null,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/565/modules?include%5B%5D=items&amp;per_page=99&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;user_id&quot;: &quot;21070000000000123&quot;,
+    &quot;user_login&quot;: &quot;inewton@example.com&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;
+  },
+  &quot;body&quot;: {
+    &quot;course&quot;: {
+      &quot;account_id&quot;: &quot;79&quot;,
+      &quot;id&quot;: &quot;565&quot;,
+      &quot;name&quot;: &quot;Computer Science I&quot;,
+      &quot;sis_source_id&quot;: &quot;2017.100.101.101-1&quot;
+    },
+    &quot;progress&quot;: {
+      &quot;completed_at&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+      &quot;next_requirement_url&quot;: &quot;http://oxana.instructure.com/courses/565/modules/items/12345&quot;,
+      &quot;requirement_completed_count&quot;: 6,
+      &quot;requirement_count&quot;: 6
+    },
+    &quot;user&quot;: {
+      &quot;email&quot;: &quot;inewton@example.com&quot;,
+      &quot;id&quot;: &quot;123&quot;,
+      &quot;name&quot;: &quot;Isaac Newton&quot;
+    }
+  }
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>course</strong></td>
+<td>file.data_service_canvas_course.html</td>
+</tr>
+<tr>
+<td><strong>progress</strong></td>
+<td>file.data_service_canvas_course.html</td>
+</tr>
+<tr>
+<td><strong>user</strong></td>
+<td>file.data_service_canvas_course.html</td>
+</tr>
+</tbody></table>
+
+<h2 id="course_created">course_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new course is created by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new course is created (or copied).</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;event_name&quot;: &quot;course_created&quot;,
+    &quot;event_time&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;POST&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;referrer&quot;: null,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/accounts/438/courses&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;
+  },
+  &quot;body&quot;: {
+    &quot;account_id&quot;: &quot;21070000000000438&quot;,
+    &quot;course_id&quot;: &quot;21070000000000056&quot;,
+    &quot;created_at&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+    &quot;name&quot;: &quot;Linear Algebra&quot;,
+    &quot;updated_at&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+    &quot;uuid&quot;: &quot;a1b2c3c4z9x8a1s2q5w6p9o8i7u6y5t6a2s3d4f5&quot;,
+    &quot;workflow_state&quot;: &quot;available&quot;
+  }
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>account_id</strong></td>
+<td>The Account id of the updated course.</td>
+</tr>
+<tr>
+<td><strong>course_id</strong></td>
+<td>The Canvas id of the updated course.</td>
+</tr>
+<tr>
+<td><strong>created_at</strong></td>
+<td>The time at which this course was created.</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>The name the updated course.</td>
+</tr>
+<tr>
+<td><strong>updated_at</strong></td>
+<td>The time at which this course was last modified in any way.</td>
+</tr>
+<tr>
+<td><strong>uuid</strong></td>
+<td>The unique id of the course.</td>
+</tr>
+<tr>
+<td><strong>workflow_state</strong></td>
+<td>The state of the course (available, claimed, completed, created, deleted).</td>
+</tr>
+</tbody></table>
+
+<h2 id="course_progress">course_progress</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a course module progression requirements are met.</p>
+
+<p><strong>Trigger:</strong> Triggered when a user makes progress in a course by completing a module requirement. The following setup should be enabled in Canvas in order for this event to get triggered:</p>
+
+<ol>
+<li>Module is set to be published</li>
+<li>Module has at least one requirement enabled</li>
+<li>Student completed at least one requirement in Module</li>
+</ol>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;event_name&quot;: &quot;course_progress&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T19:11:13.590Z&quot;,
+    &quot;job_id&quot;: &quot;1020020528469291&quot;,
+    &quot;job_tag&quot;: &quot;ContextModuleProgression#evaluate!&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;
+  },
+  &quot;body&quot;: {
+    &quot;course&quot;: {
+      &quot;account_id&quot;: &quot;1&quot;,
+      &quot;id&quot;: &quot;1234567&quot;,
+      &quot;name&quot;: &quot;Diff Equations&quot;,
+      &quot;sis_source_id&quot;: &quot;2017.102.102.102-2&quot;
+    },
+    &quot;progress&quot;: {
+      &quot;completed_at&quot;: null,
+      &quot;next_requirement_url&quot;: &quot;http:/oxana.instructure.com/courses/1234567/modules/items/12345&quot;,
+      &quot;requirement_completed_count&quot;: 101,
+      &quot;requirement_count&quot;: 123
+    },
+    &quot;user&quot;: {
+      &quot;email&quot;: &quot;user@domain.tld&quot;,
+      &quot;id&quot;: &quot;1122&quot;,
+      &quot;name&quot;: &quot;Gottfried Leibniz&quot;
+    }
+  }
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>course</strong></td>
+<td>file.data_service_canvas_course.html</td>
+</tr>
+<tr>
+<td><strong>progress</strong></td>
+<td>file.data_service_canvas_course.html</td>
+</tr>
+<tr>
+<td><strong>user</strong></td>
+<td>file.data_service_canvas_course.html</td>
+</tr>
+</tbody></table>
+
+<h2 id="course_section_created">course_section_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new course section is created by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new section is created in a course.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_id&quot;: &quot;21070000000000565&quot;,
+    &quot;context_sis_source_id&quot;: &quot;2017.100.101.101-1&quot;,
+    &quot;context_type&quot;: &quot;Course&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;event_name&quot;: &quot;course_section_created&quot;,
+    &quot;event_time&quot;: &quot;2019-11-05T20:42:54.587Z&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;POST&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;referrer&quot;: null,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000011&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;time_zone&quot;: &quot;America/New_York&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/2198496/sections?grant_type=authorization_code&amp;access_token=111~sGvKF4Yzr2AqdwShKj7CwwopgwJuMFONBqWu44Upk1F4jgkFvpXc9HY20PCU5r0&amp;course_section%5Bname%5D=Winter%185572%4Business%1Writing&amp;course_section%5Bsis_section_id%5D=WRIT-684-L0_16169&amp;course_section%5Bstart_at%5D=1326-0-2T0.15510549083388048%3A0.38873681067928767%3A0.039724554014499924&amp;course_section%5Bend_at%5D=766-2-2T0.7605609524181581%3A0.995511619163594%3A0.013954836230862355&amp;course_section%5Brestrict_enrollments_to_section_dates%5D=true&amp;enable_sis_reactivation=false&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000011&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;
+  },
+  &quot;body&quot;: {
+    &quot;accepting_enrollments&quot;: true,
+    &quot;can_manually_enroll&quot;: null,
+    &quot;course_id&quot;: &quot;565&quot;,
+    &quot;course_section_id&quot;: &quot;1234567&quot;,
+    &quot;default_section&quot;: true,
+    &quot;end_at&quot;: &quot;2020-06-17T04:00:00Z&quot;,
+    &quot;enrollment_term_id&quot;: &quot;1234&quot;,
+    &quot;integration_id&quot;: &quot;1234&quot;,
+    &quot;name&quot;: &quot;Winter 2020 Linear Algebra&quot;,
+    &quot;nonxlist_course_id&quot;: &quot;1234&quot;,
+    &quot;restrict_enrollments_to_section_dates&quot;: true,
+    &quot;root_account_id&quot;: &quot;121&quot;,
+    &quot;sis_batch_id&quot;: &quot;1234&quot;,
+    &quot;sis_source_id&quot;: &quot;MATH-123-A12_12345&quot;,
+    &quot;start_at&quot;: &quot;2020-01-03T05:00:00Z&quot;,
+    &quot;stuck_sis_fields&quot;: [
+      &quot;[\&quot;course_id\&quot;&quot;,
+      &quot; \&quot;name\&quot;]&quot;
+    ],
+    &quot;workflow_state&quot;: &quot;active&quot;
+  }
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>accepting_enrollments</strong></td>
+<td>True if this section is open for enrollment. False or null otherwise.</td>
+</tr>
+<tr>
+<td><strong>can_manually_enroll</strong></td>
+<td>Deprecated, will always be null.</td>
+</tr>
+<tr>
+<td><strong>course_id</strong></td>
+<td>The Canvas id of the course that this section belongs to.</td>
+</tr>
+<tr>
+<td><strong>course_section_id</strong></td>
+<td>The local Canvas id of the created course section.</td>
+</tr>
+<tr>
+<td><strong>default_section</strong></td>
+<td>True if this is the default section for the course. False or null otherwise.</td>
+</tr>
+<tr>
+<td><strong>end_at</strong></td>
+<td>Section end date in ISO8601 format.</td>
+</tr>
+<tr>
+<td><strong>enrollment_term_id</strong></td>
+<td>The Canvas id of the enrollment term.</td>
+</tr>
+<tr>
+<td><strong>integration_id</strong></td>
+<td>The integration id of the section.</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>The name of this section.</td>
+</tr>
+<tr>
+<td><strong>nonxlist_course_id</strong></td>
+<td>The unique identifier of the original course of a cross-listed section.</td>
+</tr>
+<tr>
+<td><strong>restrict_enrollments_to_section_dates</strong></td>
+<td>True when &#39;Users can only participate in the course between these dates&#39; is checked.</td>
+</tr>
+<tr>
+<td><strong>root_account_id</strong></td>
+<td>Canvas id of the root account that this section is in.</td>
+</tr>
+<tr>
+<td><strong>sis_batch_id</strong></td>
+<td>The SIS Batch id of the section.</td>
+</tr>
+<tr>
+<td><strong>sis_source_id</strong></td>
+<td>Correlated id for the record for this course in the SIS system (assuming SIS integration is configured).</td>
+</tr>
+<tr>
+<td><strong>start_at</strong></td>
+<td>Section start date in ISO8601 format.</td>
+</tr>
+<tr>
+<td><strong>stuck_sis_fields</strong></td>
+<td>Array of strings of field names with the SIS stickiness field set, indicating they will not be replaced by SIS imports.</td>
+</tr>
+<tr>
+<td><strong>workflow_state</strong></td>
+<td>The workflow state of the section.</td>
+</tr>
+</tbody></table>
+
+<h2 id="course_section_updated">course_section_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a course section is updated by an end user or API request. Only changes to the fields included in the body of the event payload will emit the <code>updated</code> event.</p>
+
+<p><strong>Trigger:</strong> Triggered when a course section has been modified.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+    &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+    &quot;context_id&quot;: &quot;21070000001234567&quot;,
+    &quot;context_sis_source_id&quot;: &quot;MATH-123-A12_12345&quot;,
+    &quot;context_type&quot;: &quot;CourseSection&quot;,
+    &quot;developer_key_id&quot;: &quot;170000000056&quot;,
+    &quot;event_name&quot;: &quot;course_section_updated&quot;,
+    &quot;event_time&quot;: &quot;2019-11-01T19:11:15.599Z&quot;,
+    &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+    &quot;http_method&quot;: &quot;POST&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;referrer&quot;: null,
+    &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+    &quot;session_id&quot;: &quot;ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+    &quot;time_zone&quot;: &quot;America/Denver&quot;,
+    &quot;url&quot;: &quot;https://oxana.instructure.com/api/v1/sections/sis_section_id:MATH-123-A12_12345/crosslist/sis_course_id:AAOE190823&quot;,
+    &quot;user_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+    &quot;user_id&quot;: &quot;21070000000000001&quot;,
+    &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+    &quot;user_sis_id&quot;: &quot;456-T45&quot;
+  },
+  &quot;body&quot;: {
+    &quot;accepting_enrollments&quot;: true,
+    &quot;can_manually_enroll&quot;: null,
+    &quot;course_id&quot;: &quot;1234560&quot;,
+    &quot;course_section_id&quot;: &quot;1234567&quot;,
+    &quot;default_section&quot;: true,
+    &quot;end_at&quot;: &quot;2020-06-17T04:00:00Z&quot;,
+    &quot;enrollment_term_id&quot;: &quot;1234&quot;,
+    &quot;integration_id&quot;: &quot;1234&quot;,
+    &quot;name&quot;: &quot;Winter 2020 Linear Algebra&quot;,
+    &quot;nonxlist_course_id&quot;: &quot;1234&quot;,
+    &quot;restrict_enrollments_to_section_dates&quot;: true,
+    &quot;root_account_id&quot;: &quot;1&quot;,
+    &quot;sis_batch_id&quot;: &quot;1234&quot;,
+    &quot;sis_source_id&quot;: &quot;MATH-123-A12_12345&quot;,
+    &quot;start_at&quot;: &quot;2020-01-03T05:00:00Z&quot;,
+    &quot;stuck_sis_fields&quot;: [
+      &quot;course_id&quot;,
+      &quot;name&quot;
+    ],
+    &quot;workflow_state&quot;: &quot;active&quot;
+  }
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>accepting_enrollments</strong></td>
+<td>True if this section is open for enrollment. False or null otherwise.</td>
+</tr>
+<tr>
+<td><strong>can_manually_enroll</strong></td>
+<td>Deprecated, will always be null.</td>
+</tr>
+<tr>
+<td><strong>course_id</strong></td>
+<td>The Canvas id of the course that this section belongs to.</td>
+</tr>
+<tr>
+<td><strong>course_section_id</strong></td>
+<td>The local Canvas id of the created course section.</td>
+</tr>
+<tr>
+<td><strong>default_section</strong></td>
+<td>True if this is the default section for the course.</td>
+</tr>
+<tr>
+<td><strong>end_at</strong></td>
+<td>Section end date in ISO8601 format.</td>
+</tr>
+<tr>
+<td><strong>enrollment_term_id</strong></td>
+<td>The Canvas id of the enrollment term.</td>
+</tr>
+<tr>
+<td><strong>integration_id</strong></td>
+<td>The integration id of the section.</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>The name of this section.</td>
+</tr>
+<tr>
+<td><strong>nonxlist_course_id</strong></td>
+<td>The unique identifier of the original course of a cross-listed section.</td>
+</tr>
+<tr>
+<td><strong>restrict_enrollments_to_section_dates</strong></td>
+<td>True when &#39;Users can only participate in the course between these dates&#39; is checked.</td>
+</tr>
+<tr>
+<td><strong>root_account_id</strong></td>
+<td>Canvas id of the root account that this section is in.</td>
+</tr>
+<tr>
+<td><strong>sis_batch_id</strong></td>
+<td>The SIS Batch id of the section.</td>
+</tr>
+<tr>
+<td><strong>sis_source_id</strong></td>
+<td>Correlated id for the record for this course in the SIS system (assuming SIS integration is configured).</td>
+</tr>
+<tr>
+<td><strong>start_at</strong></td>
+<td>Section start date in ISO8601 format.</td>
+</tr>
+<tr>
+<td><strong>stuck_sis_fields</strong></td>
+<td>Array of strings of field names with the SIS stickiness field set, indicating they will not be replaced by SIS imports.</td>
+</tr>
+<tr>
+<td><strong>workflow_state</strong></td>
+<td>The workflow state of the section.</td>
+</tr>
+</tbody></table>
+
+<h2 id="course_updated">course_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a course is updated by an end user or API request. Only changes to the fields included in the body of the event payload will emit the <code>updated</code> event.</p>
+
+<p><strong>Trigger:</strong> Triggered when the course is renamed, deleted, or other properties (except for syllabus) of a course are modified.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;metadata&quot;: {
+    &quot;event_name&quot;: &quot;course_updated&quot;,
+    &quot;event_time&quot;: &quot;2019-11-05 07:38:00 -0800&quot;,
+    &quot;job_id&quot;: &quot;1020020528469291&quot;,
+    &quot;job_tag&quot;: &quot;SIS::CSV::ImportRefactored#run_parallel_importer&quot;,
+    &quot;producer&quot;: &quot;canvas&quot;,
+    &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+    &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+    &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;
+  },
+  &quot;body&quot;: {
+    &quot;account_id&quot;: &quot;12340000000012&quot;,
+    &quot;course_id&quot;: &quot;12340000000056&quot;,
+    &quot;created_at&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+    &quot;name&quot;: &quot;Linear Algebra&quot;,
+    &quot;updated_at&quot;: &quot;2019-11-05 07:38:00 -0800&quot;,
+    &quot;uuid&quot;: &quot;a1b2c3c4z9x8a1s2q5w6p9o8i7u6y5t6a2s3d4f5&quot;,
+    &quot;workflow_state&quot;: &quot;available&quot;
+  }
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>account_id</strong></td>
+<td>The Account id of the updated course.</td>
+</tr>
+<tr>
+<td><strong>course_id</strong></td>
+<td>The Canvas id of the updated course.</td>
+</tr>
+<tr>
+<td><strong>created_at</strong></td>
+<td>The time at which this course was created.</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>The name the updated course.</td>
+</tr>
+<tr>
+<td><strong>updated_at</strong></td>
+<td>The time at which this course was last modified in any way.</td>
+</tr>
+<tr>
+<td><strong>uuid</strong></td>
+<td>The unique id of the course.</td>
+</tr>
+<tr>
+<td><strong>workflow_state</strong></td>
+<td>The state of the course (available, claimed, completed, created, deleted).</td>
+</tr>
+</tbody></table>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

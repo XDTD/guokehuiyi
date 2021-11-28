@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Using Deep Linking to Select Resources
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="" class="current">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><h1 id="using-deep-linking-to-select-resources">Using Deep Linking to Select Resources</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Deep Linking (formerly named Content-Item) is an extension to LTI that allows
+data to be passed back to the Tool Consumer (i.e., Canvas) in context of an LTI
+Launch. A few common use cases are:</p>
+
+<ul>
+<li><p>Providing a teacher the ability to select a customized LTI launch link from
+the tool provider to be placed in the tool consumer.</p></li>
+<li><p>Allowing a student to submit an attachment for an assignment that is
+provided by a tool provider (i.e., the external tool).</p></li>
+<li><p>Embedding custom content into a rich text editor from a tool provider.</p></li>
+</ul>
+
+<p>Deep Linking is supported in the LTI 1.1 Outcomes Service and LTI Advantage
+specifications. To see the full spec for content item and other code examples
+see these documents:</p>
+
+<ul>
+<li><p><a href="https://www.imsglobal.org/specs/lticiv1p0" target="_blank">IMS LTI
+1.1 Deep Linking v1.0 Documentation</a></p></li>
+<li><p><a href="https://www.imsglobal.org/spec/lti-dl/v2p0" target="_blank">IMS LTI
+Advantage Deep Linking v2.0 Documentation (For LTI Advantage)</a></p></li>
+</ul>
+
+<p>Deep Linking is not applicable to all placements in Canvas, but can be used with
+ the following placements:</p>
+
+<ul>
+<li><p><a href="file.editor_button_placement.html" target="_blank">editor_button</a>:
+Allows users that have access to the Canvas Rich Content
+Editor to select a variety of content types from the tool and embed them
+directly in the editor.</p></li>
+<li><p><a href="file.homework_submission_placement.html" target="_blank">homework_submission</a>:
+Allows students to select a resource from the
+external tool for assignments that are set up as File Upload submission types.</p></li>
+<li><p><a href="file.migration_selection_placement.html" target="_blank">migration_selection</a>:
+Allows users that have permission to import course
+content to launch to a tool to select a file (ex:
+<a href="https://www.imsglobal.org/activity/common-cartridge" target="_blank">a
+common cartridge file</a>) from a tool and have it imported into the course.</p></li>
+<li><p><a href="file.assignment_selection_placement.html" target="_blank">assignment_selection</a>:
+Allows users that have permission to create
+assignments to launch to a tool, select a deep link, and return it as an
+External Tool submission type.</p></li>
+<li><p><a href="file.link_selection_placement.html" target="_blank">link_selection</a>:
+Allows users that have permission to create module items to
+launch to a tool, select a deep link, and return it as a module item.</p></li>
+</ul>
+
+<p>This document will continue referring to this process as &quot;Content-Item&quot; for LTI
+1.1 and Deep Linking for LTI Advantage.</p>
+
+<h1 id="lti-advantage-deep-linking-process">LTI Advantage Deep Linking Process</h1>
+
+<p>LTI Advantage tools can be configured in Canvas to send an LTI launch request
+with a deep linking message type for certain placements. The specific details of
+ a deep linking interaction are best presented in the <a
+ href="https://www.imsglobal.org/spec/lti-dl/v2p0#lti-deep-linking-interaction"
+ target="_blank">IMS LTI Deep Linking specification</a>.
+ Instead this section will focus on tool configuration.</p>
+
+<h2 id="supported-content-item-types">Supported Content Item Types</h2>
+
+<p>The IMS LTI Deep Linking specification <a href="https://www.imsglobal.org/spec/lti-dl/v2p0#content-item-types">defines several content items types</a> that a tool may return to the platform via Deep linking. Canvas supports all of these
+content item types and their respective required properties with additional support for the optional properties listed here:</p>
+
+<h3 id="link">Link</h3>
+
+<p>Full support for required properties.</p>
+
+<p>Support for the following optional properties:</p>
+
+<ul>
+<li>title</li>
+<li>text</li>
+<li>icon</li>
+<li>thumbnail</li>
+<li>iframe</li>
+</ul>
+
+<h3 id="lti-resource-link">LTI Resource Link</h3>
+
+<p>Full support for required properties.</p>
+
+<p>Support for the following optional properties:</p>
+
+<ul>
+<li>url</li>
+<li>title</li>
+<li>text</li>
+<li>icon</li>
+<li>thumbnail</li>
+<li>iframe</li>
+<li>custom (allows for setting link-specific LTI launch parameters. See documentation <a href="https://www.imsglobal.org/spec/lti-dl/v2p0#lti-resource-link">here</a>.)</li>
+</ul>
+
+<h3 id="html-fragment">HTML fragment</h3>
+
+<p>Full support for required properties.</p>
+
+<p>Full support for all optional properties.</p>
+
+<h3 id="image">Image</h3>
+
+<p>Full support for required properties.</p>
+
+<p>Support for the following optional properties:</p>
+
+<ul>
+<li>title</li>
+<li>text</li>
+<li>thumbnail</li>
+<li>width</li>
+<li>height</li>
+</ul>
+
+<h2 id="configuring-deep-linking">Configuring Deep Linking</h2>
+
+<p>Deep linking is configured by <a
+href="https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-LTI-key-for-an-account/ta-p/140"
+target="_blank">creating a Canvas LTI Developer Key</a> with a
+<code>LtiDeepLinkingRequest</code> message type set on a supported placement. This can be
+done via the UI, or by supplying Canvas with JSON.</p>
+
+<p>For example, the following JSON would allow an LTI Advantage tool to be
+installed that uses deep linking return items back to Canvas as an assignment or
+within the canvas Rich Content Editor:</p>
+
+<pre class="code"><code class=""><span class='lbrace'>{</span>  
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>title</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cool Deep Linking Tool </span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>scopes</span><span class='label_end'>&quot;:</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>extensions</span><span class='label_end'>&quot;:</span><span class='lbracket'>[</span>  
+      <span class='lbrace'>{</span>  
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>domain</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>deeplinkexample.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tool_id</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>deep-linky</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>platform</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>canvas.instructure.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>settings</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span>  
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>text</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cool Deep Linking Text</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon_url</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://some.icon.url</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>placements</span><span class='label_end'>&quot;:</span><span class='lbracket'>[</span>                 
+               <span class='lbrace'>{</span>  
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>text</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Embed Tool Content in Canvas RCE</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>enabled</span><span class='label_end'>&quot;:</span><span class='kw'>true</span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon_url</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://some.icon.url</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>placement</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>editor_button</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>message_type</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LtiDeepLinkingRequest</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>target_link_uri</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://your.target_link_uri/deeplinkexample</span><span class='tstring_end'>&quot;</span></span>
+               <span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span>  
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>text</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Embed Tool Content as a Canvas Assignment</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>enabled</span><span class='label_end'>&quot;:</span><span class='kw'>true</span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon_url</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://some.icon.url</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>placement</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>assignment_selection</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>message_type</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LtiDeepLinkingRequest</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>target_link_uri</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://your.target_link_uri/deeplinkexample</span><span class='tstring_end'>&quot;</span></span>
+               <span class='rbrace'>}</span>
+            <span class='rbracket'>]</span>
+         <span class='rbrace'>}</span>
+      <span class='rbrace'>}</span>
+   <span class='rbracket'>]</span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>public_jwk</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span>  
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kty</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RSA</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>alg</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RS256</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AQAB</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kid</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>8f796169-0ac4-48a3-a202-fa4f3d814fcd</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>n</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nZD7QWmIwj-3N_RZ1qJjX6CdibU87y2l02yMay4KunambalP9g0fU9yZLwLX9WYJINcXZDUf6QeZ-SSbblET-h8Q4OvfSQ7iuu0WqcvBGy8M0qoZ7I-NiChw8dyybMJHgpiP_AyxpCQnp3bQ6829kb3fopbb4cAkOilwVRBYPhRLboXma0cwcllJHPLvMp1oGa7Ad8osmmJhXhM9qdFFASg_OCQdPnYVzp8gOFeOGwlXfSFEgt5vgeU25E-ycUOREcnP7BnMUk7wpwYqlE537LWGOV5z_1Dqcqc9LmN-z4HmNV7b23QZW4_mzKIOY4IqjmnUGgLU9ycFj5YGDCts7Q</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>use</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sig</span><span class='tstring_end'>&quot;</span></span>
+   <span class='rbrace'>}</span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>description</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1.3 Test Tool</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>target_link_uri</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://your.target_link_uri</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>oidc_initiation_url</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://your.oidc_initiation_url</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span>
+</code></pre>
+
+<p>Once the developer key is configured, it can then be used to
+<a href="https://community.canvaslms.com/t5/Admin-Guide/How-do-I-configure-an-external-app-for-an-account-using-a-client/ta-p/202"
+target="_blank">install the LTI tool</a>. Links will then be exposed in the
+Canvas Rich Content Editor toolbar and Assignment edit view. Clicking the links
+will then initiate a deep linking LTI workflow to allow the user to select a
+resource from the tool and have them embedded in Canvas.</p>
+
+<h1 id="lti-1-1-content-item-process">LTI 1.1 Content-Item Process</h1>
+
+<p>The first step in the content-item process is the sending of the
+<code>ContentItemSelectionRequest</code> message from the Tool Consumer to
+the Tool Provider. An example message is included
+below:</p>
+
+<h3 id="contentitemrequest-tool-consumer-tool-provider">ContentItemRequest: Tool Consumer -&gt; Tool Provider</h3>
+
+<pre class="code"><code class="">
+    lti_message_type: ContentItemSelectionRequest
+    lti_version: LTI-1p0
+    accept_media_types: application/vnd.ims.lti.v1.ltilink
+    accept_presentation_document_targets: frame,window
+    content_item_return_url:
+    http://lms.example/courses/5/external_content/success/external_tool_dialog
+
+</code></pre>
+
+<p>Some of the important parameters are: <strong>accept_media_types</strong>,
+<strong>accept_presentation_document_targets</strong>, and <strong>content_item_return_url</strong>.</p>
+
+<p><strong>accept_media_types</strong> is a comma separated list of MIME types the Tool Consumer
+ supports.</p>
+
+<p><strong>accept_presentation_document_targets</strong> is a comma separated list of
+presentation formats the Tool Consumer supports.</p>
+
+<p><strong>content_item_return_url</strong> is where the tool provider should redirect to at the
+ end of the content-item process.</p>
+
+<p>After the Tool Provider receives the <code>ContentItemSelectionRequest</code> message it
+will need to send back a <code>ContentItemSelection</code> message that includes the
+<code>content-items</code> they wish to send back. An example of this message is shown
+below:</p>
+
+<h3 id="contentitemselection-tool-consumer-tool-provider">ContentItemSelection: Tool Consumer &lt;- Tool Provider</h3>
+
+<pre class="code"><code class="">
+    lti_message_type: ContentItemSelection
+    lti_version: LTI-1p0
+    content_items: {
+                     &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/lti/v1/ContentItem&quot;,
+                     &quot;@graph&quot;: [
+                       {
+                         &quot;@type&quot;: &quot;LtiLinkItem&quot;,
+                         &quot;@id&quot;: &quot;http://example.com/messages/launch&quot;,
+                         &quot;url&quot;: &quot;http://example.com/messages/launch&quot;,
+                         &quot;title&quot;: &quot;test&quot;,
+                         &quot;text&quot;: &quot;text&quot;,
+                         &quot;mediaType&quot;: &quot;application/vnd.ims.lti.v1.ltilink&quot;,
+                         &quot;placementAdvice&quot;: {
+                           &quot;presentationDocumentTarget&quot;: &quot;frame&quot;
+                         }
+                       }
+                     ]
+                   }
+
+</code></pre>
+
+<p>The main points of interest here is the <code>content_items</code> parameter. It contains a
+ JSON object that includes an array of content-item objects. Inside the JSON
+ object, the <code>@graph</code> object contains an array that holds all of the
+ content-item objects.</p>
+
+<p>The content-item object in this example is sending back a single LTI link that
+is to be launched in the current frame. the <code>url</code> specifies the lti launch point
+, and the <code>mediaType</code> specifies that it is an lti launch.</p>
+
+<h2 id="configuring-content-item">Configuring Content-item</h2>
+
+<p>To use content-item, the tool provider must be configured correctly. The
+following is an overview of how to configure the tool provider to use
+content-item.</p>
+
+<h3 id="lti-tool-xml-configuration">LTI Tool XML Configuration</h3>
+
+<p>Below is an example of a bare-bones tool provider LTI configuration that
+<em>does not</em> use content-item:</p>
+
+<pre class="code"><code class="">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot; xmlns:blti=&quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot; xmlns:lticm=&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot; xmlns:lticp=&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0p1.xsd http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+      &lt;blti:title&gt;Example Tool Provider&lt;/blti:title&gt;
+      &lt;blti:description&gt;This is a Sample Tool Provider.&lt;/blti:description&gt;
+      &lt;blti:launch_url&gt;http://localhost:4040/messages/blti&lt;/blti:launch_url&gt;
+      &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+        &lt;lticm:property name=&quot;selection_height&quot;&gt;500&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_width&quot;&gt;500&lt;/lticm:property&gt;
+      &lt;/blti:extensions&gt;
+    &lt;/cartridge_basiclti_link&gt;
+
+</code></pre>
+
+<p><strong>Note:</strong> for more on the basics of LTI tool configuration see
+<a href="https://canvas.instructure.com/doc/api/file.tools_xml.html">external tools documentation</a>.</p>
+
+<p>To begin using content-item we need to specify at least one valid placement for
+Canvas to use. Placements are used to help the tool consumer (Canvas in this
+case) know where the tool should be placed within the LMS. For example, adding
+the following node as a child of the <strong>blti:extensions</strong> element in the above
+XML would tell Canvas to add a link in the course navigation to the LTI tool:</p>
+
+<pre class="code"><code class="">    &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+      &lt;lticm:property name=&quot;url&quot;&gt;http://localhost:4040/messages/blti&lt;/lticm:property&gt;
+    &lt;/lticm:options&gt;
+</code></pre>
+
+<p>For our example we will use <strong>assignment_selection</strong>.</p>
+
+<p>To enable content-item with the <strong>assignment_selection</strong> placement, we add lines
+ 6-9 to the example from above:</p>
+
+<pre class="code"><code class="">     1 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot; xmlns:blti=&quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot; xmlns:lticm=&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot; xmlns:lticp=&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0p1.xsd http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+     2   &lt;blti:title&gt;Example Tool Provider&lt;/blti:title&gt;
+     3   &lt;blti:description&gt;This is a Sample Tool Provider.&lt;/blti:description&gt;
+     4   &lt;blti:launch_url&gt;http://localhost:4040/messages/blti&lt;/blti:launch_url&gt;
+     5   &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+     6     &lt;lticm:options name=&quot;assignment_selection&quot;&gt;
+     7       &lt;lticm:property name=&quot;message_type&quot;&gt;ContentItemSelectionRequest&lt;/lticm:property&gt;
+     8       &lt;lticm:property name=&quot;url&quot;&gt;http://localhost:4040/messages/blti&lt;/lticm:property&gt;
+     9     &lt;/lticm:options&gt;
+    10     &lt;lticm:property name=&quot;icon_url&quot;&gt;http://localhost:4040/selector.png&lt;/lticm:property&gt;
+    11     &lt;lticm:property name=&quot;selection_height&quot;&gt;500&lt;/lticm:property&gt;
+    12     &lt;lticm:property name=&quot;selection_width&quot;&gt;500&lt;/lticm:property&gt;
+    13   &lt;/blti:extensions&gt;
+    14 &lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<p>Adding the element on line 6 lets Canvas know the tool should be placed in the
+assignments menu. Line 7 tells Canvas the tool is using content-item, and line 8
+ provides Canvas the launch URL.</p>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

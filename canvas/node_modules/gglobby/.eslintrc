@@ -1,0 +1,24 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "classes": true,
+    "templateStrings": true,
+    "destructuring": true,
+    "objectLiteralShorthandMethods": true,
+    "spread": true,
+    "restParams": true,
+    "modules": true
+  },
+  "rules": {
+    "indent": [2, 2],
+    "quotes": 0,
+    "strict": 0,
+    "curly": 0,
+    "no-multi-spaces": 0,
+    "no-unused-vars": 0 // enable once https://github.com/eslint/eslint/issues/1903 lands
+  }
+}

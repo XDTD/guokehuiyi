@@ -1,0 +1,15 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3779],{
+
+/***/ "Ymis":
+/*!***************************************************!*\
+  !*** ./packages/canvas-media/es/MediaRecorder.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return MediaRecorder; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"q1tI\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _instructure_ui_alerts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @instructure/ui-alerts */ \"spba\");\n/* harmony import */ var _instructure_media_capture__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @instructure/media-capture */ \"8MW4\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ \"17x9\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);\n/*\n * Copyright (C) 2019 - present Instructure, Inc.\n *\n * This file is part of Canvas.\n *\n * Canvas is free software: you can redistribute it and/or modify it under\n * the terms of the GNU Affero General Public License as published by the Free\n * Software Foundation, version 3 of the License.\n *\n * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\n * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more\n * details.\n *\n * You should have received a copy of the GNU Affero General Public License along\n * with this program. If not, see <http://www.gnu.org/licenses/>.\n */\n\n\n\n\nfunction MediaRecorder(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, Object(_instructure_media_capture__WEBPACK_IMPORTED_MODULE_2__[\"canUseMediaCapture\"])() ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_instructure_media_capture__WEBPACK_IMPORTED_MODULE_2__[\"MediaCapture\"], {\n    translations: props.MediaCaptureStrings,\n    onCompleted: props.onSave\n  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_instructure_ui_alerts__WEBPACK_IMPORTED_MODULE_1__[\"Alert\"], {\n    variant: \"info\",\n    margin: \"small\"\n  }, props.errorMessage));\n}\nMediaRecorder.propTypes = {\n  onSave: prop_types__WEBPACK_IMPORTED_MODULE_3__[\"func\"].isRequired,\n  errorMessage: prop_types__WEBPACK_IMPORTED_MODULE_3__[\"string\"].isRequired,\n  MediaCaptureStrings: prop_types__WEBPACK_IMPORTED_MODULE_3__[\"object\"]\n};\n\n//# sourceURL=webpack:///./packages/canvas-media/es/MediaRecorder.js?");
+
+/***/ })
+
+}]);

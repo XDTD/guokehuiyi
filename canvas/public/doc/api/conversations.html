@@ -1,0 +1,2624 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Conversations - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="current" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Conversations API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for creating, accessing and updating user conversations.</p>
+
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Conversation">A Conversation object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // the unique identifier for the conversation.
+  &quot;id&quot;: 2,
+  // the subject of the conversation.
+  &quot;subject&quot;: &quot;2&quot;,
+  // The current state of the conversation (read, unread or archived).
+  &quot;workflow_state&quot;: &quot;unread&quot;,
+  // A &lt;=100 character preview from the most recent message.
+  &quot;last_message&quot;: &quot;sure thing, here&#39;s the file&quot;,
+  // the date and time at which the last message was sent.
+  &quot;start_at&quot;: &quot;2011-09-02T12:00:00Z&quot;,
+  // the number of messages in the conversation.
+  &quot;message_count&quot;: 2,
+  // whether the current user is subscribed to the conversation.
+  &quot;subscribed&quot;: true,
+  // whether the conversation is private.
+  &quot;private&quot;: true,
+  // whether the conversation is starred.
+  &quot;starred&quot;: true,
+  // Additional conversation flags (last_author, attachments, media_objects). Each
+  // listed property means the flag is set to true (i.e. the current user is the
+  // most recent author, there are attachments, or there are media objects)
+  &quot;properties&quot;: null,
+  // Array of user ids who are involved in the conversation, ordered by
+  // participation level, then alphabetical. Excludes current user, unless this is
+  // a monologue.
+  &quot;audience&quot;: null,
+  // Most relevant shared contexts (courses and groups) between current user and
+  // other participants. If there is only one participant, it will also include
+  // that user&#39;s enrollment(s)/ membership type(s) in each course/group.
+  &quot;audience_contexts&quot;: null,
+  // URL to appropriate icon for this conversation (custom, individual or group
+  // avatar, depending on audience).
+  &quot;avatar_url&quot;: &quot;https://canvas.instructure.com/images/messages/avatar-group-50.png&quot;,
+  // Array of users participating in the conversation. Includes current user.
+  &quot;participants&quot;: null,
+  // indicates whether the conversation is visible under the current scope and
+  // filter. This attribute is always true in the index API response, and is
+  // primarily useful in create/update responses so that you can know if the
+  // record should be displayed in the UI. The default scope is assumed, unless a
+  // scope or filter is passed to the create/update API call.
+  &quot;visible&quot;: true,
+  // Name of the course or group in which the conversation is occurring.
+  &quot;context_name&quot;: &quot;Canvas 101&quot;
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="ConversationParticipant">A ConversationParticipant object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // The user ID for the participant.
+  &quot;id&quot;: 2,
+  // A short name the user has selected, for use in conversations or other less
+  // formal places through the site.
+  &quot;name&quot;: &quot;Shelly&quot;,
+  // The full name of the user.
+  &quot;full_name&quot;: &quot;Sheldon Cooper&quot;,
+  // If requested, this field will be included and contain a url to retrieve the
+  // user&#39;s avatar.
+  &quot;avatar_url&quot;: &quot;https://canvas.instructure.com/images/messages/avatar-50.png&quot;
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.conversations.index' data-subtopic='Conversations'>
+    <a name='method.conversations.index' href='#method.conversations.index'>
+      List conversations
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/conversations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/conversations</code>
+  </div>
+
+
+<p>Returns the paginated list of conversations for the current user, most recent ones first.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>scope</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>When set, only return conversations of the specified type. For example, set to “unread” to return only conversations that haven&#39;t been read. The default behavior is to return all non-archived conversations (i.e. read and unread).</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>unread</code>, <code class=enum>starred</code>, <code class=enum>archived</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>filter[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>When set, only return conversations for the specified courses, groups or users. The id should be prefixed with its type, e.g. “user_123” or “course_456”. Can be an array (by setting “filter[]”) or single value (by setting “filter”)</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>filter_mode</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>When filter[] contains multiple filters, combine them with this mode, filtering conversations that at have at least all of the contexts (“and”) or at least one of the contexts (“or”)</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>and</code>, <code class=enum>or</code>, <code class=enum>default or</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>interleave_submissions</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>(Obsolete) Submissions are no longer linked to conversations. This parameter is ignored.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include_all_conversation_ids</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Default is false. If true, the top-level element of the response will be an object rather than an array, and will have the keys “conversations” which will contain the paged conversation data, and “conversation_ids” which will contain the ids of all conversations under this scope/filter in the same order.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        <dl class="rdoc-list note-list"><dt>“participant_avatars”
+<dd>
+<p>Optionally include an “avatar_url” key for each user participanting in the conversation</p>
+</dd></dl>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>participant_avatars</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<h4>API response field:</h4>
+<ul class="response_field">
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>id</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The unique identifier for the conversation.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>subject</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The subject of the conversation.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>workflow_state</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The current state of the conversation (read, unread or archived)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>last_message</span>
+
+      
+
+      
+        <div class='inline'>
+<p>A &lt;=100 character preview from the most recent message</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>last_message_at</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The timestamp of the latest message</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>message_count</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The number of messages in this conversation</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>subscribed</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Indicates whether the user is actively subscribed to the conversation</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>private</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Indicates whether this is a private conversation (i.e. audience of one)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>starred</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Whether the conversation is starred</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>properties</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Additional conversation flags (last_author, attachments, media_objects). Each listed property means the flag is set to true (i.e. the current user is the most recent author, there are attachments, or there are media objects)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>audience</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Array of user ids who are involved in the conversation, ordered by participation level, then alphabetical. Excludes current user, unless this is a monologue.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>audience_contexts</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Most relevant shared contexts (courses and groups) between current user and other participants. If there is only one participant, it will also include that user&#39;s enrollment(s)/ membership type(s) in each course/group</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>avatar_url</span>
+
+      
+
+      
+        <div class='inline'>
+<p>URL to appropriate icon for this conversation (custom, individual or group avatar, depending on audience)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>participants</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Array of users (id, name, full_name) participating in the conversation. Includes current user. If `include[]=participant_avatars` was passed as an argument, each user in the array will also have an “avatar_url” field</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>visible</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Boolean, indicates whether the conversation is visible under the current scope and filter. This attribute is always true in the index API response, and is primarily useful in create/update responses so that you can know if the record should be displayed in the UI. The default scope is assumed, unless a scope or filter is passed to the create/update API call.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">[
+  {
+    &quot;id&quot;: 2,
+    &quot;subject&quot;: &quot;conversations api example&quot;,
+    &quot;workflow_state&quot;: &quot;unread&quot;,
+    &quot;last_message&quot;: &quot;sure thing, here&#39;s the file&quot;,
+    &quot;last_message_at&quot;: &quot;2011-09-02T12:00:00Z&quot;,
+    &quot;message_count&quot;: 2,
+    &quot;subscribed&quot;: true,
+    &quot;private&quot;: true,
+    &quot;starred&quot;: false,
+    &quot;properties&quot;: [&quot;attachments&quot;],
+    &quot;audience&quot;: [2],
+    &quot;audience_contexts&quot;: {&quot;courses&quot;: {&quot;1&quot;: [&quot;StudentEnrollment&quot;]}, &quot;groups&quot;: {}},
+    &quot;avatar_url&quot;: &quot;https://canvas.instructure.com/images/messages/avatar-group-50.png&quot;,
+    &quot;participants&quot;: [
+      {&quot;id&quot;: 1, &quot;name&quot;: &quot;Joe&quot;, &quot;full_name&quot;: &quot;Joe TA&quot;},
+      {&quot;id&quot;: 2, &quot;name&quot;: &quot;Jane&quot;, &quot;full_name&quot;: &quot;Jane Teacher&quot;}
+    ],
+    &quot;visible&quot;: true,
+    &quot;context_name&quot;: &quot;Canvas 101&quot;
+  }
+]</code></pre>
+    
+  </div>
+
+
+  Returns a list of 
+
+<a href='conversations.html#Conversation'>Conversations</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.create' data-subtopic='Conversations'>
+    <a name='method.conversations.create' href='#method.conversations.create'>
+      Create a conversation
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/conversations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/conversations</code>
+  </div>
+
+
+<p>Create a new conversation with one or more recipients. If there is already an existing private conversation with the given recipients, it will be reused.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>recipients[]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>An array of recipient ids. These may be user ids or course/group ids prefixed with “course_” or “group_” respectively, e.g. <a href="">recipients[]=1&recipients</a>=2&amp;recipients[]=course_3. If the course/group has over 100 enrollments, &#39;bulk_message&#39; and &#39;group_conversation&#39; must be set to true.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>subject</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The subject of the conversation. This is ignored when reusing a conversation. Maximum length is 255 characters.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>body</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The message to be sent</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>force_new</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Forces a new message to be created, even if there is an existing private conversation.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>group_conversation</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Defaults to false.  When false, individual private conversations will be created with each recipient. If true, this will be a group conversation (i.e. all recipients may see all messages and replies). Must be set true if the number of recipients is over the set maximum (default is 100).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>attachment_ids[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>An array of attachments ids. These must be files that have been previously uploaded to the sender&#39;s “conversation attachments” folder.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>media_comment_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Media comment id of an audio of video file to be associated with this message.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>media_comment_type</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Type of the associated media file</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>audio</code>, <code class=enum>video</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>user_note</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Will add a faculty journal entry for each recipient as long as the user making the api call has permission, the recipient is a student and faculty journals are enabled in the account.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>mode</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Determines whether the messages will be created/sent synchronously or asynchronously. Defaults to sync, and this option is ignored if this is a group conversation or there is just one recipient (i.e. it must be a bulk private message). When sent async, the response will be an empty array (batch status can be queried via the <a href="conversations.html#method.conversations.batches" title="batches API">batches API</a>)</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>sync</code>, <code class=enum>async</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>scope</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Used when generating “visible” in the API response. See the explanation under the <a href="conversations.html#method.conversations.index" title="index API action">index API action</a></p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>unread</code>, <code class=enum>starred</code>, <code class=enum>archived</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>filter[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Used when generating “visible” in the API response. See the explanation under the <a href="conversations.html#method.conversations.index" title="index API action">index API action</a></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>filter_mode</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Used when generating “visible” in the API response. See the explanation under the <a href="conversations.html#method.conversations.index" title="index API action">index API action</a></p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>and</code>, <code class=enum>or</code>, <code class=enum>default or</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>context_code</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The course or group that is the context for this conversation. Same format as courses or groups in the recipients argument.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.batches' data-subtopic='Conversations'>
+    <a name='method.conversations.batches' href='#method.conversations.batches'>
+      Get running batches
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#batches</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/conversations/batches
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/conversations/batches</code>
+  </div>
+
+
+<p>Returns any currently running conversation batches for the current user. Conversation batches are created when a bulk private message is sent asynchronously (see the mode argument to the <a href="conversations.html#method.conversations.create" title="create API action">create API action</a>).</p>
+
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">[
+  {
+    &quot;id&quot;: 1,
+    &quot;subject&quot;: &quot;conversations api example&quot;,
+    &quot;workflow_state&quot;: &quot;created&quot;,
+    &quot;completion&quot;: 0.1234,
+    &quot;tags&quot;: [],
+    &quot;message&quot;:
+    {
+      &quot;id&quot;: 1,
+      &quot;created_at&quot;: &quot;2011-09-02T10:00:00Z&quot;,
+      &quot;body&quot;: &quot;quick reminder, no class tomorrow&quot;,
+      &quot;author_id&quot;: 1,
+      &quot;generated&quot;: false,
+      &quot;media_comment&quot;: null,
+      &quot;forwarded_messages&quot;: [],
+      &quot;attachments&quot;: []
+    }
+  }
+]</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.show' data-subtopic='Conversations'>
+    <a name='method.conversations.show' href='#method.conversations.show'>
+      Get a single conversation
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/conversations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/conversations/:id</code>
+  </div>
+
+
+<p>Returns information for a single conversation for the current user. Response includes all fields that are present in the list/index action as well as messages and extended participant information.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>interleave_submissions</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>(Obsolete) Submissions are no longer linked to conversations. This parameter is ignored.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>scope</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Used when generating “visible” in the API response. See the explanation under the <a href="conversations.html#method.conversations.index" title="index API action">index API action</a></p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>unread</code>, <code class=enum>starred</code>, <code class=enum>archived</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>filter[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Used when generating “visible” in the API response. See the explanation under the <a href="conversations.html#method.conversations.index" title="index API action">index API action</a></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>filter_mode</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Used when generating “visible” in the API response. See the explanation under the <a href="conversations.html#method.conversations.index" title="index API action">index API action</a></p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>and</code>, <code class=enum>or</code>, <code class=enum>default or</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>auto_mark_as_read</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Default true. If true, unread conversations will be automatically marked as read. This will default to false in a future API release, so clients should explicitly send true if that is the desired behavior.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<h4>API response field:</h4>
+<ul class="response_field">
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>participants</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Array of relevant users. Includes current user. If there are forwarded messages in this conversation, the authors of those messages will also be included, even if they are not participating in this conversation. Fields include:</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>messages</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Array of messages, newest first. Fields include:</p>
+<dl class="rdoc-list note-list"><dt>id
+<dd>
+<p>The unique identifier for the message</p>
+</dd><dt>created_at
+<dd>
+<p>The timestamp of the message</p>
+</dd><dt>body
+<dd>
+<p>The actual message body</p>
+</dd><dt>author_id
+<dd>
+<p>The id of the user who sent the message (see audience, participants)</p>
+</dd><dt>generated
+<dd>
+<p>If true, indicates this is a system-generated message (e.g. “Bob added Alice to the conversation”)</p>
+</dd><dt>media_comment
+<dd>
+<p>Audio/video comment data for this message (if applicable). Fields include: display_name, content-type, media_id, media_type, url</p>
+</dd><dt>forwarded_messages
+<dd>
+<p>If this message contains forwarded messages, they will be included here (same format as this list). Note that those messages may have forwarded messages of their own, etc.</p>
+</dd><dt>attachments
+<dd>
+<p>Array of attachments for this message. Fields include: display_name, content-type, filename, url</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>submissions</span>
+
+      
+
+      
+        <div class='inline'>
+<p>(Obsolete) Array of assignment submissions having comments relevant to this conversation. Submissions are no longer linked to conversations. This field will always be nil or empty.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;id&quot;: 2,
+  &quot;subject&quot;: &quot;conversations api example&quot;,
+  &quot;workflow_state&quot;: &quot;unread&quot;,
+  &quot;last_message&quot;: &quot;sure thing, here&#39;s the file&quot;,
+  &quot;last_message_at&quot;: &quot;2011-09-02T12:00:00-06:00&quot;,
+  &quot;message_count&quot;: 2,
+  &quot;subscribed&quot;: true,
+  &quot;private&quot;: true,
+  &quot;starred&quot;: false,
+  &quot;properties&quot;: [&quot;attachments&quot;],
+  &quot;audience&quot;: [2],
+  &quot;audience_contexts&quot;: {&quot;courses&quot;: {&quot;1&quot;: []}, &quot;groups&quot;: {}},
+  &quot;avatar_url&quot;: &quot;https://canvas.instructure.com/images/messages/avatar-50.png&quot;,
+  &quot;participants&quot;: [
+    {&quot;id&quot;: 1, &quot;name&quot;: &quot;Joe&quot;, &quot;full_name&quot;: &quot;Joe TA&quot;},
+    {&quot;id&quot;: 2, &quot;name&quot;: &quot;Jane&quot;, &quot;full_name&quot;: &quot;Jane Teacher&quot;},
+    {&quot;id&quot;: 3, &quot;name&quot;: &quot;Bob&quot;, &quot;full_name&quot;: &quot;Bob Student&quot;}
+  ],
+  &quot;messages&quot;:
+    [
+      {
+        &quot;id&quot;: 3,
+        &quot;created_at&quot;: &quot;2011-09-02T12:00:00Z&quot;,
+        &quot;body&quot;: &quot;sure thing, here&#39;s the file&quot;,
+        &quot;author_id&quot;: 2,
+        &quot;generated&quot;: false,
+        &quot;media_comment&quot;: null,
+        &quot;forwarded_messages&quot;: [],
+        &quot;attachments&quot;: [{&quot;id&quot;: 1, &quot;display_name&quot;: &quot;notes.doc&quot;, &quot;uuid&quot;: &quot;abcdefabcdefabcdefabcdefabcdef&quot;}]
+      },
+      {
+        &quot;id&quot;: 2,
+        &quot;created_at&quot;: &quot;2011-09-02T11:00:00Z&quot;,
+        &quot;body&quot;: &quot;hey, bob didn&#39;t get the notes. do you have a copy i can give him?&quot;,
+        &quot;author_id&quot;: 2,
+        &quot;generated&quot;: false,
+        &quot;media_comment&quot;: null,
+        &quot;forwarded_messages&quot;:
+          [
+            {
+              &quot;id&quot;: 1,
+              &quot;created_at&quot;: &quot;2011-09-02T10:00:00Z&quot;,
+              &quot;body&quot;: &quot;can i get a copy of the notes? i was out&quot;,
+              &quot;author_id&quot;: 3,
+              &quot;generated&quot;: false,
+              &quot;media_comment&quot;: null,
+              &quot;forwarded_messages&quot;: [],
+              &quot;attachments&quot;: []
+            }
+          ],
+        &quot;attachments&quot;: []
+      }
+    ],
+  &quot;submissions&quot;: []
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.update' data-subtopic='Conversations'>
+    <a name='method.conversations.update' href='#method.conversations.update'>
+      Edit a conversation
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/conversations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/conversations/:id</code>
+  </div>
+
+
+<p>Updates attributes for a single conversation.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>conversation[workflow_state]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Change the state of this conversation</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>read</code>, <code class=enum>unread</code>, <code class=enum>archived</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>conversation[subscribed]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Toggle the current user&#39;s subscription to the conversation (only valid for group conversations). If unsubscribed, the user will still have access to the latest messages, but the conversation won&#39;t be automatically flagged as unread, nor will it jump to the top of the inbox.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>conversation[starred]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Toggle the starred state of the current user&#39;s view of the conversation.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>scope</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Used when generating “visible” in the API response. See the explanation under the <a href="conversations.html#method.conversations.index" title="index API action">index API action</a></p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>unread</code>, <code class=enum>starred</code>, <code class=enum>archived</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>filter[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Used when generating “visible” in the API response. See the explanation under the <a href="conversations.html#method.conversations.index" title="index API action">index API action</a></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>filter_mode</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Used when generating “visible” in the API response. See the explanation under the <a href="conversations.html#method.conversations.index" title="index API action">index API action</a></p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>and</code>, <code class=enum>or</code>, <code class=enum>default or</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;id&quot;: 2,
+  &quot;subject&quot;: &quot;conversations api example&quot;,
+  &quot;workflow_state&quot;: &quot;read&quot;,
+  &quot;last_message&quot;: &quot;sure thing, here&#39;s the file&quot;,
+  &quot;last_message_at&quot;: &quot;2011-09-02T12:00:00-06:00&quot;,
+  &quot;message_count&quot;: 2,
+  &quot;subscribed&quot;: true,
+  &quot;private&quot;: true,
+  &quot;starred&quot;: false,
+  &quot;properties&quot;: [&quot;attachments&quot;],
+  &quot;audience&quot;: [2],
+  &quot;audience_contexts&quot;: {&quot;courses&quot;: {&quot;1&quot;: []}, &quot;groups&quot;: {}},
+  &quot;avatar_url&quot;: &quot;https://canvas.instructure.com/images/messages/avatar-50.png&quot;,
+  &quot;participants&quot;: [{&quot;id&quot;: 1, &quot;name&quot;: &quot;Joe&quot;, &quot;full_name&quot;: &quot;Joe TA&quot;}]
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.mark_all_as_read' data-subtopic='Conversations'>
+    <a name='method.conversations.mark_all_as_read' href='#method.conversations.mark_all_as_read'>
+      Mark all as read
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#mark_all_as_read</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/conversations/mark_all_as_read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/conversations/mark_all_as_read</code>
+  </div>
+
+
+<p>Mark all conversations as read.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.destroy' data-subtopic='Conversations'>
+    <a name='method.conversations.destroy' href='#method.conversations.destroy'>
+      Delete a conversation
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/conversations/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/conversations/:id</code>
+  </div>
+
+
+<p>Delete this conversation and its messages. Note that this only deletes this user&#39;s view of the conversation.</p>
+
+<p>Response includes same fields as UPDATE action</p>
+
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;id&quot;: 2,
+  &quot;subject&quot;: &quot;conversations api example&quot;,
+  &quot;workflow_state&quot;: &quot;read&quot;,
+  &quot;last_message&quot;: null,
+  &quot;last_message_at&quot;: null,
+  &quot;message_count&quot;: 0,
+  &quot;subscribed&quot;: true,
+  &quot;private&quot;: true,
+  &quot;starred&quot;: false,
+  &quot;properties&quot;: []
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.add_recipients' data-subtopic='Conversations'>
+    <a name='method.conversations.add_recipients' href='#method.conversations.add_recipients'>
+      Add recipients
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#add_recipients</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/conversations/:id/add_recipients
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/conversations/:id/add_recipients</code>
+  </div>
+
+
+<p>Add recipients to an existing group conversation. Response is similar to the GET/show action, except that only includes the latest message (e.g. “joe was added to the conversation by bob”)</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>recipients[]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>An array of recipient ids. These may be user ids or course/group ids prefixed with “course_” or “group_” respectively, e.g. <a href="">recipients[]=1&recipients</a>=2&amp;recipients[]=course_3</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;id&quot;: 2,
+  &quot;subject&quot;: &quot;conversations api example&quot;,
+  &quot;workflow_state&quot;: &quot;read&quot;,
+  &quot;last_message&quot;: &quot;let&#39;s talk this over with jim&quot;,
+  &quot;last_message_at&quot;: &quot;2011-09-02T12:00:00-06:00&quot;,
+  &quot;message_count&quot;: 2,
+  &quot;subscribed&quot;: true,
+  &quot;private&quot;: false,
+  &quot;starred&quot;: null,
+  &quot;properties&quot;: [],
+  &quot;audience&quot;: [2, 3, 4],
+  &quot;audience_contexts&quot;: {&quot;courses&quot;: {&quot;1&quot;: []}, &quot;groups&quot;: {}},
+  &quot;avatar_url&quot;: &quot;https://canvas.instructure.com/images/messages/avatar-group-50.png&quot;,
+  &quot;participants&quot;: [
+    {&quot;id&quot;: 1, &quot;name&quot;: &quot;Joe&quot;, &quot;full_name&quot;: &quot;Joe TA&quot;},
+    {&quot;id&quot;: 2, &quot;name&quot;: &quot;Jane&quot;, &quot;full_name&quot;: &quot;Jane Teacher&quot;},
+    {&quot;id&quot;: 3, &quot;name&quot;: &quot;Bob&quot;, &quot;full_name&quot;: &quot;Bob Student&quot;},
+    {&quot;id&quot;: 4, &quot;name&quot;: &quot;Jim&quot;, &quot;full_name&quot;: &quot;Jim Admin&quot;}
+  ],
+  &quot;messages&quot;:
+    [
+      {
+        &quot;id&quot;: 4,
+        &quot;created_at&quot;: &quot;2011-09-02T12:10:00Z&quot;,
+        &quot;body&quot;: &quot;Jim was added to the conversation by Joe TA&quot;,
+        &quot;author_id&quot;: 1,
+        &quot;generated&quot;: true,
+        &quot;media_comment&quot;: null,
+        &quot;forwarded_messages&quot;: [],
+        &quot;attachments&quot;: []
+      }
+    ]
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.add_message' data-subtopic='Conversations'>
+    <a name='method.conversations.add_message' href='#method.conversations.add_message'>
+      Add a message
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#add_message</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/conversations/:id/add_message
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/conversations/:id/add_message</code>
+  </div>
+
+
+<p>Add a message to an existing conversation. Response is similar to the GET/show action, except that only includes the latest message (i.e. what we just sent)</p>
+
+<p>An array of user ids. Defaults to all of the current conversation recipients. To explicitly send a message to no other recipients, this array should consist of the logged-in user id.</p>
+
+<p>An array of message ids from this conversation to send to recipients of the new message. Recipients who already had a copy of included messages will not be affected.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>body</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The message to be sent.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>attachment_ids[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>An array of attachments ids. These must be files that have been previously uploaded to the sender&#39;s “conversation attachments” folder.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>media_comment_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Media comment id of an audio of video file to be associated with this message.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>media_comment_type</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Type of the associated media file.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>audio</code>, <code class=enum>video</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>recipients[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>included_messages[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>user_note</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Will add a faculty journal entry for each recipient as long as the user making the api call has permission, the recipient is a student and faculty journals are enabled in the account.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;id&quot;: 2,
+  &quot;subject&quot;: &quot;conversations api example&quot;,
+  &quot;workflow_state&quot;: &quot;unread&quot;,
+  &quot;last_message&quot;: &quot;let&#39;s talk this over with jim&quot;,
+  &quot;last_message_at&quot;: &quot;2011-09-02T12:00:00-06:00&quot;,
+  &quot;message_count&quot;: 2,
+  &quot;subscribed&quot;: true,
+  &quot;private&quot;: false,
+  &quot;starred&quot;: null,
+  &quot;properties&quot;: [],
+  &quot;audience&quot;: [2, 3],
+  &quot;audience_contexts&quot;: {&quot;courses&quot;: {&quot;1&quot;: []}, &quot;groups&quot;: {}},
+  &quot;avatar_url&quot;: &quot;https://canvas.instructure.com/images/messages/avatar-group-50.png&quot;,
+  &quot;participants&quot;: [
+    {&quot;id&quot;: 1, &quot;name&quot;: &quot;Joe&quot;, &quot;full_name&quot;: &quot;Joe TA&quot;},
+    {&quot;id&quot;: 2, &quot;name&quot;: &quot;Jane&quot;, &quot;full_name&quot;: &quot;Jane Teacher&quot;},
+    {&quot;id&quot;: 3, &quot;name&quot;: &quot;Bob&quot;, &quot;full_name&quot;: &quot;Bob Student&quot;}
+  ],
+  &quot;messages&quot;:
+    [
+      {
+        &quot;id&quot;: 3,
+        &quot;created_at&quot;: &quot;2011-09-02T12:00:00Z&quot;,
+        &quot;body&quot;: &quot;let&#39;s talk this over with jim&quot;,
+        &quot;author_id&quot;: 2,
+        &quot;generated&quot;: false,
+        &quot;media_comment&quot;: null,
+        &quot;forwarded_messages&quot;: [],
+        &quot;attachments&quot;: []
+      }
+    ]
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.remove_messages' data-subtopic='Conversations'>
+    <a name='method.conversations.remove_messages' href='#method.conversations.remove_messages'>
+      Delete a message
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#remove_messages</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/conversations/:id/remove_messages
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/conversations/:id/remove_messages</code>
+  </div>
+
+
+<p>Delete messages from this conversation. Note that this only affects this user&#39;s view of the conversation. If all messages are deleted, the conversation will be as well (equivalent to DELETE)</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>remove[]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Array of message ids to be deleted</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;id&quot;: 2,
+  &quot;subject&quot;: &quot;conversations api example&quot;,
+  &quot;workflow_state&quot;: &quot;read&quot;,
+  &quot;last_message&quot;: &quot;sure thing, here&#39;s the file&quot;,
+  &quot;last_message_at&quot;: &quot;2011-09-02T12:00:00-06:00&quot;,
+  &quot;message_count&quot;: 1,
+  &quot;subscribed&quot;: true,
+  &quot;private&quot;: true,
+  &quot;starred&quot;: null,
+  &quot;properties&quot;: [&quot;attachments&quot;]
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.batch_update' data-subtopic='Conversations'>
+    <a name='method.conversations.batch_update' href='#method.conversations.batch_update'>
+      Batch update conversations
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#batch_update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/conversations
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/conversations</code>
+  </div>
+
+
+<p>Perform a change on a set of conversations. Operates asynchronously; use the <a href="progress.html#method.progress.show" title="progress endpoint">progress endpoint</a> to query the status of an operation.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>conversation_ids[]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>List of conversations to update. Limited to 500 conversations.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>event</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The action to take on each conversation.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>mark_as_read</code>, <code class=enum>mark_as_unread</code>, <code class=enum>star</code>, <code class=enum>unstar</code>, <code class=enum>archive</code>, <code class=enum>destroy</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/conversations \
+  -X PUT \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+  -d &#39;event=mark_as_read&#39; \
+  -d &#39;conversation_ids[]=1&#39; \
+  -d &#39;conversation_ids[]=2&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='progress.html#Progress'>Progress</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.find_recipients' data-subtopic='Conversations'>
+    <a name='method.conversations.find_recipients' href='#method.conversations.find_recipients'>
+      Find recipients
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#find_recipients</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/conversations/find_recipients
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/conversations/find_recipients</code>
+  </div>
+
+
+<p>Deprecated, see the <a href="search.html#method.search.recipients" title="Find recipients endpoint">Find recipients endpoint</a> in the Search API</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.conversations.unread_count' data-subtopic='Conversations'>
+    <a name='method.conversations.unread_count' href='#method.conversations.unread_count'>
+      Unread count
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/conversations_controller.rb">ConversationsController#unread_count</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/conversations/unread_count
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/conversations/unread_count</code>
+  </div>
+
+
+<p>Get the number of unread conversations for the current user</p>
+
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{&#39;unread_count&#39;: &#39;7&#39;}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:08 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

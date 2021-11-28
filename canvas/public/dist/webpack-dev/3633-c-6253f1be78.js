@@ -1,0 +1,14 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3633],{
+
+/***/ "GE+S":
+/*!*******************************************************************!*\
+  !*** ./node_modules/mediaelement/build/lang/me-i18n-locale-nl.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/*!\n * This is a i18n.locale language object.\n *\n * Dutch\n *\n * @author\n *   Leonard de Ruijter, Twitter: @LeonarddR\n *   Jalios (Twitter: @Jalios)\n *   Sascha \"SoftCreatR\" Greuel\n *\n * @see\n *   me-i18n.js\n *\n * @params\n *  - exports - CommonJS, window ..\n */\n(function (exports) {\n    \"use strict\";\n\n    if (exports.nl === undefined) {\n        exports.nl = {\n            \"mejs.plural-form\": 1,\n\n            // me-shim\n            \"mejs.download-file\": \"Bestand downloaden\",\n\n            // mep-feature-contextmenu\n            \"mejs.fullscreen-off\": \"Volledig scherm uitschakelen\",\n            \"mejs.fullscreen-on\": \"Volledig scherm\",\n            \"mejs.download-video\": \"Video downloaden\",\n\n            // mep-feature-fullscreen\n            \"mejs.fullscreen\": \"Volledig scherm\",\n\n            // mep-feature-jumpforward\n            \"mejs.time-jump-forward\": \"%1 seconden vooruit springen\",\n\n            // mep-feature-playpause\n            \"mejs.play\": \"Afspelen\",\n            \"mejs.pause\": \"Pauzeren\",\n\n            // mep-feature-postroll\n            \"mejs.close\": \"Sluiten\",\n\n            // mep-feature-progress\n            \"mejs.time-slider\": \"Tijd schuifbalk\",\n            \"mejs.time-help-text\": \"Gebruik pijl naar links/rechts om per seconde te springen, pijl omhoog/omlaag om per tien seconden te springen.\",\n\n            // mep-feature-skipback\n            \"mejs.time-skip-back\": \"%1 seconden terug springen\",\n\n            // mep-feature-tracks\n            \"mejs.captions-subtitles\": \"Bijschriften/ondertiteling\",\n            \"mejs.none\": \"Geen\",\n\n            // mep-feature-volume\n            \"mejs.mute-toggle\": \"Dempen schakelen\",\n            \"mejs.volume-help-text\": \"Gebruik pijl omhoog/omlaag om het volume te verhogen/verlagen.\",\n            \"mejs.unmute\": \"Dempen opheffen\",\n            \"mejs.mute\": \"Dempen\",\n            \"mejs.volume-slider\": \"Volume schuifbalk\",\n\n            // mep-player\n            \"mejs.video-player\": \"Videospeler\",\n            \"mejs.audio-player\": \"Audiospeler\",\n\n            // mep-feature-ads\n            \"mejs.ad-skip\": \"Ad overslaan\",\n            \"mejs.ad-skip-info\": \"Overslaan in %1 seconden\",\n\n            // mep-feature-sourcechooser\n            \"mejs.source-chooser\": \"Bronkeuze\"\n        };\n    }\n}(mejs.i18n.locale.strings));\n\n\n//# sourceURL=webpack:///./node_modules/mediaelement/build/lang/me-i18n-locale-nl.js?");
+
+/***/ })
+
+}]);

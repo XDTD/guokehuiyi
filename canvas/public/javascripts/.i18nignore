@@ -1,0 +1,7 @@
+bower/**/*
+compiled/**/*
+i18nObj.js
+plugins/**/*
+symlink_to_node_modules/**/*
+translations/**/*
+vendor/**/*

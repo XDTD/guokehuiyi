@@ -1,0 +1,3358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Submissions - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="current" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Submissions API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for accessing and updating submissions for an assignment. The submission
+id in these URLs is the id of the student in the course, there is no separate
+submission id exposed in these APIs.</p>
+
+<p>All submission actions can be performed with either the course id, or the
+course section id. SIS ids can be used, prefixed by &quot;sis_course_id:&quot; or
+&quot;sis_section_id:&quot; as described in the API documentation on SIS IDs.</p>
+
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="MediaComment">A MediaComment object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  &quot;content-type&quot;: &quot;audio/mp4&quot;,
+  &quot;display_name&quot;: &quot;something&quot;,
+  &quot;media_id&quot;: &quot;3232&quot;,
+  &quot;media_type&quot;: &quot;audio&quot;,
+  &quot;url&quot;: &quot;http://example.com/media_url&quot;
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="SubmissionComment">A SubmissionComment object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  &quot;id&quot;: 37,
+  &quot;author_id&quot;: 134,
+  &quot;author_name&quot;: &quot;Toph Beifong&quot;,
+  // Abbreviated user object UserDisplay (see users API).
+  &quot;author&quot;: &quot;{}&quot;,
+  &quot;comment&quot;: &quot;Well here&#39;s the thing...&quot;,
+  &quot;created_at&quot;: &quot;2012-01-01T01:00:00Z&quot;,
+  &quot;edited_at&quot;: &quot;2012-01-02T01:00:00Z&quot;,
+  &quot;media_comment&quot;: null
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Submission">A Submission object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // The submission&#39;s assignment id
+  &quot;assignment_id&quot;: 23,
+  // The submission&#39;s assignment (see the assignments API) (optional)
+  &quot;assignment&quot;: null,
+  // The submission&#39;s course (see the course API) (optional)
+  &quot;course&quot;: null,
+  // This is the submission attempt number.
+  &quot;attempt&quot;: 1,
+  // The content of the submission, if it was submitted directly in a text field.
+  &quot;body&quot;: &quot;There are three factors too...&quot;,
+  // The grade for the submission, translated into the assignment grading scheme
+  // (so a letter grade, for example).
+  &quot;grade&quot;: &quot;A-&quot;,
+  // A boolean flag which is false if the student has re-submitted since the
+  // submission was last graded.
+  &quot;grade_matches_current_submission&quot;: true,
+  // URL to the submission. This will require the user to log in.
+  &quot;html_url&quot;: &quot;http://example.com/courses/255/assignments/543/submissions/134&quot;,
+  // URL to the submission preview. This will require the user to log in.
+  &quot;preview_url&quot;: &quot;http://example.com/courses/255/assignments/543/submissions/134?preview=1&quot;,
+  // The raw score
+  &quot;score&quot;: 13.5,
+  // Associated comments for a submission (optional)
+  &quot;submission_comments&quot;: null,
+  // The types of submission ex:
+  // (&#39;online_text_entry&#39;|&#39;online_url&#39;|&#39;online_upload&#39;|&#39;media_recording&#39;|&#39;student_
+  // annotation&#39;)
+  &quot;submission_type&quot;: &quot;online_text_entry&quot;,
+  // The timestamp when the assignment was submitted
+  &quot;submitted_at&quot;: &quot;2012-01-01T01:00:00Z&quot;,
+  // The URL of the submission (for &#39;online_url&#39; submissions).
+  &quot;url&quot;: null,
+  // The id of the user who created the submission
+  &quot;user_id&quot;: 134,
+  // The id of the user who graded the submission. This will be null for
+  // submissions that haven&#39;t been graded yet. It will be a positive number if a
+  // real user has graded the submission and a negative number if the submission
+  // was graded by a process (e.g. Quiz autograder and autograding LTI tools). 
+  // Specifically autograded quizzes set grader_id to the negative of the quiz id.
+  // Submissions autograded by LTI tools set grader_id to the negative of the tool
+  // id.
+  &quot;grader_id&quot;: 86,
+  &quot;graded_at&quot;: &quot;2012-01-02T03:05:34Z&quot;,
+  // The submissions user (see user API) (optional)
+  &quot;user&quot;: null,
+  // Whether the submission was made after the applicable due date
+  &quot;late&quot;: false,
+  // Whether the assignment is visible to the user who submitted the assignment.
+  // Submissions where `assignment_visible` is false no longer count towards the
+  // student&#39;s grade and the assignment can no longer be accessed by the student.
+  // `assignment_visible` becomes false for submissions that do not have a grade
+  // and whose assignment is no longer assigned to the student&#39;s section.
+  &quot;assignment_visible&quot;: true,
+  // Whether the assignment is excused.  Excused assignments have no impact on a
+  // user&#39;s grade.
+  &quot;excused&quot;: true,
+  // Whether the assignment is missing.
+  &quot;missing&quot;: true,
+  // The status of the submission in relation to the late policy. Can be late,
+  // missing, none, or null.
+  &quot;late_policy_status&quot;: &quot;missing&quot;,
+  // The amount of points automatically deducted from the score by the
+  // missing/late policy for a late or missing assignment.
+  &quot;points_deducted&quot;: 12.3,
+  // The amount of time, in seconds, that an submission is late by.
+  &quot;seconds_late&quot;: 300,
+  // The current state of the submission
+  &quot;workflow_state&quot;: &quot;submitted&quot;,
+  // Extra submission attempts allowed for the given user and assignment.
+  &quot;extra_attempts&quot;: 10,
+  // A unique short ID identifying this submission without reference to the owning
+  // user. Only included if the caller has administrator access for the current
+  // account.
+  &quot;anonymous_id&quot;: &quot;acJ4Q&quot;,
+  // The date this submission was posted to the student, or nil if it has not been
+  // posted.
+  &quot;posted_at&quot;: &quot;2020-01-02T11:10:30Z&quot;,
+  // The read status of this submission for the given user (optional). Including
+  // read_status will mark submission(s) as read.
+  &quot;read_status&quot;: &quot;read&quot;
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.submissions.create' data-subtopic='Submissions'>
+    <a name='method.submissions.create' href='#method.submissions.create'>
+      Submit an assignment
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_controller.rb">SubmissionsController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/assignments/:assignment_id/submissions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/assignments/:assignment_id/submissions</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/sections/:section_id/assignments/:assignment_id/submissions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/sections/:section_id/assignments/:assignment_id/submissions</code>
+  </div>
+
+
+<p>Make a submission for an assignment. You must be enrolled as a student in the course/section to do this.</p>
+
+<p>All online turn-in submission types are supported in this API. However, there are a few things that are not yet supported:</p>
+<ul><li>
+<p>Files can be submitted based on a file ID of a user or group file or through the <a href="submissions.html#method.submissions_api.create_file" title="file upload API">file upload API</a>. However, there is no API yet for listing the user and group files.</p>
+</li><li>
+<p>Media comments can be submitted, however, there is no API yet for creating a media comment to submit.</p>
+</li><li>
+<p>Integration with Google Docs is not yet supported.</p>
+</li></ul>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>comment[text_comment]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Include a textual comment with the submission.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[submission_type]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The type of submission being made. The assignment submission_types must include this submission type as an allowed option, or the submission will be rejected with a 400 error.</p>
+
+<p>The submission_type given determines which of the following parameters is used. For instance, to submit a URL, submission [submission_type] must be set to “online_url”, otherwise the submission [url] parameter will be ignored.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>online_text_entry</code>, <code class=enum>online_url</code>, <code class=enum>online_upload</code>, <code class=enum>media_recording</code>, <code class=enum>basic_lti_launch</code>, <code class=enum>student_annotation</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[body]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Submit the assignment as an HTML document snippet. Note this HTML snippet will be sanitized using the same ruleset as a submission made from the Canvas web UI. The sanitized HTML will be returned in the response as the submission body. Requires a submission_type of “online_text_entry”.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Submit the assignment as a URL. The URL scheme must be “http” or “https”, no “ftp” or other URL schemes are allowed. If no scheme is given (e.g. “<a href="www.example.com">www.example.com</a>”) then “http” will be assumed. Requires a submission_type of “online_url” or “basic_lti_launch”.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[file_ids][]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Submit the assignment as a set of one or more previously uploaded files residing in the submitting user&#39;s files section (or the group&#39;s files section, for group assignments).</p>
+
+<p>To upload a new file to submit, see the submissions <a href="submissions.html#method.submissions_api.create_file" title="Upload a file API">Upload a file API</a>.</p>
+
+<p>Requires a submission_type of “online_upload”.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[media_comment_id]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The media comment id to submit. Media comment ids can be submitted via this API, however, note that there is not yet an API to generate or list existing media comments, so this functionality is currently of limited use.</p>
+
+<p>Requires a submission_type of “media_recording”.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[media_comment_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The type of media comment being submitted.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>audio</code>, <code class=enum>video</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[user_id]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Submit on behalf of the given user. Requires grading permission.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[annotatable_attachment_id]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The Attachment ID of the document being annotated. This should match the annotatable_attachment_id on the assignment.</p>
+
+<p>Requires a submission_type of “student_annotation”.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[submitted_at]</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Choose the time the submission is listed as submitted at.  Requires grading permission.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.index' data-subtopic='Submissions'>
+    <a name='method.submissions_api.index' href='#method.submissions_api.index'>
+      List assignment submissions
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:assignment_id/submissions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/assignments/:assignment_id/submissions</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/sections/:section_id/assignments/:assignment_id/submissions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/sections/:section_id/assignments/:assignment_id/submissions</code>
+  </div>
+
+
+<p>A paginated list of all existing submissions for an assignment.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Associations to include with the group.  “group” will add group_id and group_name.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>submission_history</code>, <code class=enum>submission_comments</code>, <code class=enum>rubric_assessment</code>, <code class=enum>assignment</code>, <code class=enum>visibility</code>, <code class=enum>course</code>, <code class=enum>user</code>, <code class=enum>group</code>, <code class=enum>read_status</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grouped</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If this argument is true, the response will be grouped by student groups.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<h4>API response field:</h4>
+<ul class="response_field">
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>assignment_id</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The unique identifier for the assignment.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>user_id</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The id of the user who submitted the assignment.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>grader_id</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The id of the user who graded the submission. This will be null for submissions that haven&#39;t been graded yet. It will be a positive number if a real user has graded the submission and a negative number if the submission was graded by a process (e.g. Quiz autograder and autograding LTI tools).  Specifically autograded quizzes set grader_id to the negative of the quiz id.  Submissions autograded by LTI tools set grader_id to the negative of the tool id.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>canvadoc_document_id</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The id for the canvadoc document associated with this submission, if it was a file upload.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>submitted_at</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The timestamp when the assignment was submitted, if an actual submission has been made.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>score</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The raw score for the assignment submission.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>attempt</span>
+
+      
+
+      
+        <div class='inline'>
+<p>If multiple submissions have been made, this is the attempt number.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>body</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The content of the submission, if it was submitted directly in a text field.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>grade</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The grade for the submission, translated into the assignment grading scheme (so a letter grade, for example).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>grade_matches_current_submission</span>
+
+      
+
+      
+        <div class='inline'>
+<p>A boolean flag which is false if the student has re-submitted since the submission was last graded.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>preview_url</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Link to the URL in canvas where the submission can be previewed. This will require the user to log in.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>url</span>
+
+      
+
+      
+        <div class='inline'>
+<p>If the submission was made as a URL.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>late</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Whether the submission was made after the applicable due date.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>assignment_visible</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Whether this assignment is visible to the user who submitted the assignment.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>workflow_state</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The current status of the submission. Possible values: “submitted”, “unsubmitted”, “graded”, “pending_review”</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a list of 
+
+<a href='submissions.html#Submission'>Submissions</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.for_students' data-subtopic='Submissions'>
+    <a name='method.submissions_api.for_students' href='#method.submissions_api.for_students'>
+      List submissions for multiple assignments
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#for_students</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/students/submissions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/students/submissions</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/sections/:section_id/students/submissions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/sections/:section_id/students/submissions</code>
+  </div>
+
+
+<p>A paginated list of all existing submissions for a given set of students and assignments.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>student_ids[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>List of student ids to return submissions for. If this argument is omitted, return submissions for the calling user. Students may only list their own submissions. Observers may only list those of associated students. The special id “all” will return submissions for all students in the course/section as appropriate.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>assignment_ids[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>List of assignments to return submissions for. If none are given, submissions for all assignments are returned.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grouped</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If this argument is present, the response will be grouped by student, rather than a flat array of submissions.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>post_to_sis</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If this argument is set to true, the response will only include submissions for assignments that have the post_to_sis flag set to true and user enrollments that were added through sis.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submitted_since</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If this argument is set, the response will only include submissions that were submitted after the specified date_time. This will exclude submissions that do not have a submitted_at which will exclude unsubmitted submissions. The value must be formatted as ISO 8601 YYYY-MM-DDTHH:MM:SSZ.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>graded_since</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If this argument is set, the response will only include submissions that were graded after the specified date_time. This will exclude submissions that have not been graded. The value must be formatted as ISO 8601 YYYY-MM-DDTHH:MM:SSZ.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grading_period_id</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the grading period in which submissions are being requested (Requires grading periods to exist on the account)</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>workflow_state</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The current status of the submission</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>submitted</code>, <code class=enum>unsubmitted</code>, <code class=enum>graded</code>, <code class=enum>pending_review</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>enrollment_state</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The current state of the enrollments. If omitted will include all enrollments that are not deleted.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>active</code>, <code class=enum>concluded</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>state_based_on_date</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If omitted it is set to true. When set to false it will ignore the effective state of the student enrollments and use the workflow_state for the enrollments. The argument is ignored unless enrollment_state argument is also passed.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>order</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The order submissions will be returned in.  Defaults to “id”.  Doesn&#39;t affect results for “grouped” mode.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>id</code>, <code class=enum>graded_at</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>order_direction</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Determines whether ordered results are returned in ascending or descending order.  Defaults to “ascending”.  Doesn&#39;t affect results for “grouped” mode.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>ascending</code>, <code class=enum>descending</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Associations to include with the group. `total_scores` requires the `grouped` argument.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>submission_history</code>, <code class=enum>submission_comments</code>, <code class=enum>rubric_assessment</code>, <code class=enum>assignment</code>, <code class=enum>total_scores</code>, <code class=enum>visibility</code>, <code class=enum>course</code>, <code class=enum>user</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js"># Without grouped:
+
+[
+  { &quot;assignment_id&quot;: 100, grade: 5, &quot;user_id&quot;: 1, ... },
+  { &quot;assignment_id&quot;: 101, grade: 6, &quot;user_id&quot;: 2, ... }
+
+# With grouped:
+
+[
+  {
+    &quot;user_id&quot;: 1,
+    &quot;submissions&quot;: [
+      { &quot;assignment_id&quot;: 100, grade: 5, ... },
+      { &quot;assignment_id&quot;: 101, grade: 6, ... }
+    ]
+  }
+]</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.show' data-subtopic='Submissions'>
+    <a name='method.submissions_api.show' href='#method.submissions_api.show'>
+      Get a single submission
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id</code>
+  </div>
+
+
+<p>Get a single submission, based on user id.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Associations to include with the group.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>submission_history</code>, <code class=enum>submission_comments</code>, <code class=enum>rubric_assessment</code>, <code class=enum>full_rubric_assessment</code>, <code class=enum>visibility</code>, <code class=enum>course</code>, <code class=enum>user</code>, <code class=enum>read_status</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.show_anonymous' data-subtopic='Submissions'>
+    <a name='method.submissions_api.show_anonymous' href='#method.submissions_api.show_anonymous'>
+      Get a single submission by anonymous id
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#show_anonymous</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/sections/:section_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/sections/:section_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id</code>
+  </div>
+
+
+<p>Get a single submission, based on the submission&#39;s anonymous id.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Associations to include with the group.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>submission_history</code>, <code class=enum>submission_comments</code>, <code class=enum>rubric_assessment</code>, <code class=enum>full_rubric_assessment</code>, <code class=enum>visibility</code>, <code class=enum>course</code>, <code class=enum>user</code>, <code class=enum>read_status</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.create_file' data-subtopic='Submissions'>
+    <a name='method.submissions_api.create_file' href='#method.submissions_api.create_file'>
+      Upload a file
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#create_file</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/files
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/files</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/files
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/files</code>
+  </div>
+
+
+<p>Upload a file to a submission.</p>
+
+<p>This API endpoint is the first step in uploading a file to a submission as a student. See the <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a> for details on the file upload workflow.</p>
+
+<p>The final step of the file upload workflow will return the attachment data, including the new file id. The caller can then POST to submit the <code>online_upload</code> assignment with these file ids.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.update' data-subtopic='Submissions'>
+    <a name='method.submissions_api.update' href='#method.submissions_api.update'>
+      Grade or comment on a submission
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id</code>
+  </div>
+
+
+<p>Comment on and/or update the grading for a student&#39;s assignment submission. If any submission or rubric_assessment arguments are provided, the user must have permission to manage grades in the appropriate context (course or section).</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>comment[text_comment]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Add a textual comment to the submission.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>comment[group_comment]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether or not this comment should be sent to the entire group (defaults to false). Ignored if this is not a group assignment or if no text_comment is provided.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>comment[media_comment_id]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Add an audio/video comment to the submission. Media comments can be added via this API, however, note that there is not yet an API to generate or list existing media comments, so this functionality is currently of limited use.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>comment[media_comment_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The type of media comment being added.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>audio</code>, <code class=enum>video</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>comment[file_ids][]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Attach files to this comment that were previously uploaded using the Submission Comment API&#39;s files action</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include[visibility]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether this assignment is visible to the owner of the submission</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[posted_grade]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Assign a score to the submission, updating both the “score” and “grade” fields on the submission record. This parameter can be passed in a few different formats:</p>
+<dl class="rdoc-list note-list"><dt>points
+<dd>
+<p>A floating point or integral value, such as “13.5”. The grade</p>
+</dd></dl>
+
+<pre class="code ruby"><code class="ruby">will be interpreted directly as the score of the assignment.
+Values above assignment.points_possible are allowed, for awarding
+extra credit.
+</code></pre>
+<dl class="rdoc-list note-list"><dt>percentage
+<dd>
+<p>A floating point value appended with a percent sign, such as</p>
+</dd></dl>
+
+<pre class="code ruby"><code class="ruby">&quot;40%&quot;. The grade will be interpreted as a percentage score on the
+assignment, where 100% == assignment.points_possible. Values above 100%
+are allowed, for awarding extra credit.
+</code></pre>
+<dl class="rdoc-list note-list"><dt>letter grade
+<dd>
+<p>A letter grade, following the assignment&#39;s defined letter</p>
+</dd></dl>
+
+<pre class="code ruby"><code class="ruby">grading scheme. For example, &quot;A-&quot;. The resulting score will be the high
+end of the defined range for the letter grade. For instance, if &quot;B&quot; is
+defined as 86% to 84%, a letter grade of &quot;B&quot; will be worth 86%. The
+letter grade will be rejected if the assignment does not have a defined
+letter grading scheme. For more fine-grained control of scores, pass in
+points or percentage rather than the letter grade.
+</code></pre>
+<dl class="rdoc-list note-list"><dt>“pass/complete/fail/incomplete”
+<dd>
+<p>A string value of “pass” or “complete”</p>
+</dd></dl>
+
+<pre class="code ruby"><code class="ruby">will give a score of 100%. &quot;fail&quot; or &quot;incomplete&quot; will give a score of
+0.
+</code></pre>
+
+<p>Note that assignments with grading_type of “pass_fail” can only be assigned a score of 0 or assignment.points_possible, nothing inbetween. If a posted_grade in the “points” or “percentage” format is sent, the grade will only be accepted if the grade equals one of those two values.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[excuse]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Sets the “excused” status of an assignment.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[late_policy_status]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Sets the late policy status to either “late”, “missing”, “none”, or null.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[seconds_late_override]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Sets the seconds late if late policy status is “late”</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>rubric_assessment</td>
+      <td>
+        
+      </td>
+      <td>RubricAssessment</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Assign a rubric assessment to this assignment submission. The sub-parameters here depend on the rubric for the assignment. The general format is, for each row in the rubric:</p>
+
+<p>The points awarded for this row.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rubric_assessment'>rubric_assessment</span><span class='lbracket'>[</span><span class='id identifier rubyid_criterion_id'>criterion_id</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_points'>points</span><span class='rbracket'>]</span>
+</code></pre>
+
+<p>The rating id for the row.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rubric_assessment'>rubric_assessment</span><span class='lbracket'>[</span><span class='id identifier rubyid_criterion_id'>criterion_id</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_rating_id'>rating_id</span><span class='rbracket'>]</span>
+</code></pre>
+
+<p>Comments to add for this row.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rubric_assessment'>rubric_assessment</span><span class='lbracket'>[</span><span class='id identifier rubyid_criterion_id'>criterion_id</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_comments'>comments</span><span class='rbracket'>]</span>
+</code></pre>
+
+<p>For example, if the assignment rubric is (in JSON format):</p>
+
+<pre class="code javascript"><code class="javascript">[
+  {
+    &#39;id&#39;: &#39;crit1&#39;,
+    &#39;points&#39;: 10,
+    &#39;description&#39;: &#39;Criterion 1&#39;,
+    &#39;ratings&#39;:
+    [
+      { &#39;id&#39;: &#39;rat1&#39;, &#39;description&#39;: &#39;Good&#39;, &#39;points&#39;: 10 },
+      { &#39;id&#39;: &#39;rat2&#39;, &#39;description&#39;: &#39;Poor&#39;, &#39;points&#39;: 3 }
+    ]
+  },
+  {
+    &#39;id&#39;: &#39;crit2&#39;,
+    &#39;points&#39;: 5,
+    &#39;description&#39;: &#39;Criterion 2&#39;,
+    &#39;ratings&#39;:
+    [
+      { &#39;id&#39;: &#39;rat1&#39;, &#39;description&#39;: &#39;Exemplary&#39;, &#39;points&#39;: 5 },
+      { &#39;id&#39;: &#39;rat2&#39;, &#39;description&#39;: &#39;Complete&#39;, &#39;points&#39;: 5 },
+      { &#39;id&#39;: &#39;rat3&#39;, &#39;description&#39;: &#39;Incomplete&#39;, &#39;points&#39;: 0 }
+    ]
+  }
+]
+</code></pre>
+
+<p>Then a possible set of values for rubric_assessment would be:</p>
+
+<pre class="code ruby"><code class="ruby">rubric_assessment[crit1][points]=3&amp;rubric_assessment[crit1][rating_id]=rat1&amp;rubric_assessment[crit2][points]=5&amp;rubric_assessment[crit2][rating_id]=rat2&amp;rubric_assessment[crit2][comments]=Well%20Done.
+</code></pre>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.update_anonymous' data-subtopic='Submissions'>
+    <a name='method.submissions_api.update_anonymous' href='#method.submissions_api.update_anonymous'>
+      Grade or comment on a submission by anonymous id
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#update_anonymous</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/sections/:section_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/sections/:section_id/assignments/:assignment_id/anonymous_submissions/:anonymous_id</code>
+  </div>
+
+
+<p>Comment on and/or update the grading for a student&#39;s assignment submission, fetching the submission by anonymous id (instead of user id). If any submission or rubric_assessment arguments are provided, the user must have permission to manage grades in the appropriate context (course or section).</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>comment[text_comment]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Add a textual comment to the submission.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>comment[group_comment]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether or not this comment should be sent to the entire group (defaults to false). Ignored if this is not a group assignment or if no text_comment is provided.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>comment[media_comment_id]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Add an audio/video comment to the submission. Media comments can be added via this API, however, note that there is not yet an API to generate or list existing media comments, so this functionality is currently of limited use.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>comment[media_comment_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The type of media comment being added.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>audio</code>, <code class=enum>video</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>comment[file_ids][]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Attach files to this comment that were previously uploaded using the Submission Comment API&#39;s files action</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include[visibility]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether this assignment is visible to the owner of the submission</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[posted_grade]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Assign a score to the submission, updating both the “score” and “grade” fields on the submission record. This parameter can be passed in a few different formats:</p>
+<dl class="rdoc-list note-list"><dt>points
+<dd>
+<p>A floating point or integral value, such as “13.5”. The grade</p>
+</dd></dl>
+
+<pre class="code ruby"><code class="ruby">will be interpreted directly as the score of the assignment.
+Values above assignment.points_possible are allowed, for awarding
+extra credit.
+</code></pre>
+<dl class="rdoc-list note-list"><dt>percentage
+<dd>
+<p>A floating point value appended with a percent sign, such as</p>
+</dd></dl>
+
+<pre class="code ruby"><code class="ruby">&quot;40%&quot;. The grade will be interpreted as a percentage score on the
+assignment, where 100% == assignment.points_possible. Values above 100%
+are allowed, for awarding extra credit.
+</code></pre>
+<dl class="rdoc-list note-list"><dt>letter grade
+<dd>
+<p>A letter grade, following the assignment&#39;s defined letter</p>
+</dd></dl>
+
+<pre class="code ruby"><code class="ruby">grading scheme. For example, &quot;A-&quot;. The resulting score will be the high
+end of the defined range for the letter grade. For instance, if &quot;B&quot; is
+defined as 86% to 84%, a letter grade of &quot;B&quot; will be worth 86%. The
+letter grade will be rejected if the assignment does not have a defined
+letter grading scheme. For more fine-grained control of scores, pass in
+points or percentage rather than the letter grade.
+</code></pre>
+<dl class="rdoc-list note-list"><dt>“pass/complete/fail/incomplete”
+<dd>
+<p>A string value of “pass” or “complete”</p>
+</dd></dl>
+
+<pre class="code ruby"><code class="ruby">will give a score of 100%. &quot;fail&quot; or &quot;incomplete&quot; will give a score of
+0.
+</code></pre>
+
+<p>Note that assignments with grading_type of “pass_fail” can only be assigned a score of 0 or assignment.points_possible, nothing inbetween. If a posted_grade in the “points” or “percentage” format is sent, the grade will only be accepted if the grade equals one of those two values.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[excuse]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Sets the “excused” status of an assignment.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[late_policy_status]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Sets the late policy status to either “late”, “missing”, “none”, or null.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>submission[seconds_late_override]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Sets the seconds late if late policy status is “late”</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>rubric_assessment</td>
+      <td>
+        
+      </td>
+      <td>RubricAssessment</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Assign a rubric assessment to this assignment submission. The sub-parameters here depend on the rubric for the assignment. The general format is, for each row in the rubric:</p>
+
+<p>The points awarded for this row.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rubric_assessment'>rubric_assessment</span><span class='lbracket'>[</span><span class='id identifier rubyid_criterion_id'>criterion_id</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_points'>points</span><span class='rbracket'>]</span>
+</code></pre>
+
+<p>The rating id for the row.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rubric_assessment'>rubric_assessment</span><span class='lbracket'>[</span><span class='id identifier rubyid_criterion_id'>criterion_id</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_rating_id'>rating_id</span><span class='rbracket'>]</span>
+</code></pre>
+
+<p>Comments to add for this row.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rubric_assessment'>rubric_assessment</span><span class='lbracket'>[</span><span class='id identifier rubyid_criterion_id'>criterion_id</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_comments'>comments</span><span class='rbracket'>]</span>
+</code></pre>
+
+<p>For example, if the assignment rubric is (in JSON format):</p>
+
+<pre class="code javascript"><code class="javascript">[
+  {
+    &#39;id&#39;: &#39;crit1&#39;,
+    &#39;points&#39;: 10,
+    &#39;description&#39;: &#39;Criterion 1&#39;,
+    &#39;ratings&#39;:
+    [
+      { &#39;id&#39;: &#39;rat1&#39;, &#39;description&#39;: &#39;Good&#39;, &#39;points&#39;: 10 },
+      { &#39;id&#39;: &#39;rat2&#39;, &#39;description&#39;: &#39;Poor&#39;, &#39;points&#39;: 3 }
+    ]
+  },
+  {
+    &#39;id&#39;: &#39;crit2&#39;,
+    &#39;points&#39;: 5,
+    &#39;description&#39;: &#39;Criterion 2&#39;,
+    &#39;ratings&#39;:
+    [
+      { &#39;id&#39;: &#39;rat1&#39;, &#39;description&#39;: &#39;Exemplary&#39;, &#39;points&#39;: 5 },
+      { &#39;id&#39;: &#39;rat2&#39;, &#39;description&#39;: &#39;Complete&#39;, &#39;points&#39;: 5 },
+      { &#39;id&#39;: &#39;rat3&#39;, &#39;description&#39;: &#39;Incomplete&#39;, &#39;points&#39;: 0 }
+    ]
+  }
+]
+</code></pre>
+
+<p>Then a possible set of values for rubric_assessment would be:</p>
+
+<pre class="code ruby"><code class="ruby">rubric_assessment[crit1][points]=3&amp;rubric_assessment[crit1][rating_id]=rat1&amp;rubric_assessment[crit2][points]=5&amp;rubric_assessment[crit2][rating_id]=rat2&amp;rubric_assessment[crit2][comments]=Well%20Done.
+</code></pre>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.gradeable_students' data-subtopic='Submissions'>
+    <a name='method.submissions_api.gradeable_students' href='#method.submissions_api.gradeable_students'>
+      List gradeable students
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#gradeable_students</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:assignment_id/gradeable_students
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/assignments/:assignment_id/gradeable_students</code>
+  </div>
+
+
+<p>A paginated list of students eligible to submit the assignment. The caller must have permission to view grades.</p>
+
+<p>If anonymous grading is enabled for the current assignment and the allow_new_anonymous_id parameter is passed, the returned data will not include any values identifying the student, but will instead include an assignment-specific anonymous ID for each student.</p>
+
+<p>Section-limited instructors will only see students in their own sections.</p>
+
+
+
+
+  Returns a list of 
+
+<a href='users.html#UserDisplay'>UserDisplays</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.multiple_gradeable_students' data-subtopic='Submissions'>
+    <a name='method.submissions_api.multiple_gradeable_students' href='#method.submissions_api.multiple_gradeable_students'>
+      List multiple assignments gradeable students
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#multiple_gradeable_students</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/gradeable_students
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/assignments/gradeable_students</code>
+  </div>
+
+
+<p>A paginated list of students eligible to submit a list of assignments. The caller must have permission to view grades for the requested course.</p>
+
+<p>Section-limited instructors will only see students in their own sections.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>assignment_ids[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Assignments being requested</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">A [UserDisplay] with an extra assignment_ids field to indicate what assignments
+that user can submit
+
+[
+  {
+    &quot;id&quot;: 2,
+    &quot;display_name&quot;: &quot;Display Name&quot;,
+    &quot;avatar_image_url&quot;: &quot;http://avatar-image-url.jpeg&quot;,
+    &quot;html_url&quot;: &quot;http://canvas.com&quot;,
+    &quot;assignment_ids&quot;: [1, 2, 3]
+  }
+]</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.bulk_update' data-subtopic='Submissions'>
+    <a name='method.submissions_api.bulk_update' href='#method.submissions_api.bulk_update'>
+      Grade or comment on multiple submissions
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#bulk_update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/submissions/update_grades
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/submissions/update_grades</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/assignments/:assignment_id/submissions/update_grades
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/update_grades</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/sections/:section_id/submissions/update_grades
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/sections/:section_id/submissions/update_grades</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/sections/:section_id/assignments/:assignment_id/submissions/update_grades
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/update_grades</code>
+  </div>
+
+
+<p>Update the grading and comments on multiple student&#39;s assignment submissions in an asynchronous job.</p>
+
+<p>The user must have permission to manage grades in the appropriate context (course or section).</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>grade_data[&lt;student_id&gt;][posted_grade]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>See documentation for the posted_grade argument in the <a href="submissions.html#method.submissions_api.update" title="Submissions Update">Submissions Update</a> documentation</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grade_data[&lt;student_id&gt;][excuse]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>See documentation for the excuse argument in the <a href="submissions.html#method.submissions_api.update" title="Submissions Update">Submissions Update</a> documentation</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grade_data[&lt;student_id&gt;][rubric_assessment]</td>
+      <td>
+        
+      </td>
+      <td>RubricAssessment</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>See documentation for the rubric_assessment argument in the <a href="submissions.html#method.submissions_api.update" title="Submissions Update">Submissions Update</a> documentation</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grade_data[&lt;student_id&gt;][text_comment]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grade_data[&lt;student_id&gt;][group_comment]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grade_data[&lt;student_id&gt;][media_comment_id]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grade_data[&lt;student_id&gt;][media_comment_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>audio</code>, <code class=enum>video</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grade_data[&lt;student_id&gt;][file_ids][]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>See documentation for the comment[] arguments in the <a href="submissions.html#method.submissions_api.update" title="Submissions Update">Submissions Update</a> documentation</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>grade_data[&lt;assignment_id&gt;][&lt;student_id&gt;]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Specifies which assignment to grade.  This argument is not necessary when using the assignment-specific endpoints.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/1/assignments/2/submissions/update_grades&#39; \
+     -X POST \
+     -F &#39;grade_data[3][posted_grade]=88&#39; \
+     -F &#39;grade_data[4][posted_grade]=95&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='progress.html#Progress'>Progress</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.mark_submission_read' data-subtopic='Submissions'>
+    <a name='method.submissions_api.mark_submission_read' href='#method.submissions_api.mark_submission_read'>
+      Mark submission as read
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#mark_submission_read</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/read</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/read</code>
+  </div>
+
+
+<p>No request fields are necessary.</p>
+
+<p>On success, the response will be 204 No Content with an empty body.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/assignments/&lt;assignment_id&gt;/submissions/&lt;user_id&gt;/read.json&#39; \
+     -X PUT \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -H &quot;Content-Length: 0&quot;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.mark_submission_unread' data-subtopic='Submissions'>
+    <a name='method.submissions_api.mark_submission_unread' href='#method.submissions_api.mark_submission_unread'>
+      Mark submission as unread
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#mark_submission_unread</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/read</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/read</code>
+  </div>
+
+
+<p>No request fields are necessary.</p>
+
+<p>On success, the response will be 204 No Content with an empty body.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/assignments/&lt;assignment_id&gt;/submissions/&lt;user_id&gt;/read.json&#39; \
+     -X DELETE \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.rubric_comments_read_state' data-subtopic='Submissions'>
+    <a name='method.submissions_api.rubric_comments_read_state' href='#method.submissions_api.rubric_comments_read_state'>
+      Get rubric comments read state
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#rubric_comments_read_state</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read</code>
+  </div>
+
+
+<p>Return whether new rubric comments made on a submission have been seen by the student being assessed.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/assignments/&lt;assignment_id&gt;/submissions/&lt;user_id&gt;/rubric_comments/read&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</code></pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;read&quot;: false
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.mark_rubric_comments_read' data-subtopic='Submissions'>
+    <a name='method.submissions_api.mark_rubric_comments_read' href='#method.submissions_api.mark_rubric_comments_read'>
+      Mark rubric comments as read
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#mark_rubric_comments_read</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/rubric_comments/read</code>
+  </div>
+
+
+<p>Indicate that rubric comments made on a submission have been read by the student being assessed. Only the student who owns the submission can use this endpoint.</p>
+
+<p>NOTE: Rubric comments will be marked as read automatically when they are viewed in Canvas web.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/assignments/&lt;assignment_id&gt;/submissions/&lt;user_id&gt;/rubric_comments/read&#39; \
+     -X PUT \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -H &quot;Content-Length: 0&quot;</code></pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;read&quot;: true
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.document_annotations_read_state' data-subtopic='Submissions'>
+    <a name='method.submissions_api.document_annotations_read_state' href='#method.submissions_api.document_annotations_read_state'>
+      Get document annotations read state
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#document_annotations_read_state</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read</code>
+  </div>
+
+
+<p>Return whether annotations made on a submitted document have been read by the student</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/assignments/&lt;assignment_id&gt;/submissions/&lt;user_id&gt;/document_annotations/read&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</code></pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;read&quot;: false
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.mark_document_annotations_read' data-subtopic='Submissions'>
+    <a name='method.submissions_api.mark_document_annotations_read' href='#method.submissions_api.mark_document_annotations_read'>
+      Mark document annotations as read
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#mark_document_annotations_read</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/sections/:section_id/assignments/:assignment_id/submissions/:user_id/document_annotations/read</code>
+  </div>
+
+
+<p>Indicate that annotations made on a submitted document have been read by the student. Only the student who owns the submission can use this endpoint.</p>
+
+<p>NOTE: Document annotations will be marked as read automatically when they are viewed in Canvas web.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/assignments/&lt;assignment_id&gt;/submissions/&lt;user_id&gt;/document_annotations/read&#39; \
+     -X PUT \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -H &quot;Content-Length: 0&quot;</code></pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;read&quot;: true
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.submissions_api.submission_summary' data-subtopic='Submissions'>
+    <a name='method.submissions_api.submission_summary' href='#method.submissions_api.submission_summary'>
+      Submission Summary
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/submissions_api_controller.rb">SubmissionsApiController#submission_summary</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:assignment_id/submission_summary
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/assignments/:assignment_id/submission_summary</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/sections/:section_id/assignments/:assignment_id/submission_summary
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/sections/:section_id/assignments/:assignment_id/submission_summary</code>
+  </div>
+
+
+<p>Returns the number of submissions for the given assignment based on gradeable students that fall into three categories: graded, ungraded, not submitted.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>grouped</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If this argument is true, the response will take into account student groups.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;graded&quot;: 5,
+  &quot;ungraded&quot;: 10,
+  &quot;not_submitted&quot;: 42
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:13 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

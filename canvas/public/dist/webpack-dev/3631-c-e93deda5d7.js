@@ -1,0 +1,14 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3631],{
+
+/***/ "aVOL":
+/*!*******************************************************************!*\
+  !*** ./node_modules/mediaelement/build/lang/me-i18n-locale-ja.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/*!\n * This is a i18n.locale language object.\n *\n * Japanese\n *\n * @author\n *   Jalios (Twitter: @Jalios)\n *   Sascha \"SoftCreatR\" Greuel\n *\n * @see\n *   me-i18n.js\n *\n * @params\n *  - exports - CommonJS, window ..\n */\n(function (exports) {\n    \"use strict\";\n\n    if (exports.ja === undefined) {\n        exports.ja = {\n            \"mejs.plural-form\": 0,\n\n            // me-shim\n            \"mejs.download-file\": \"ファイルをダウンロードする\",\n\n            // mep-feature-contextmenu\n            \"mejs.fullscreen-off\": \"全画面をオフにする\",\n            \"mejs.fullscreen-on\": \"全画面にする\",\n            \"mejs.download-video\": \"動画をダウンロードする\",\n\n            // mep-feature-fullscreen\n            \"mejs.fullscreen\": \"全画面\",\n\n            // mep-feature-jumpforward\n            //\"mejs.time-jump-forward\": \"Jump forward %1 second(s)\",\n\n            // mep-feature-playpause\n            \"mejs.play\": \"再生\",\n            \"mejs.pause\": \"一時停止\",\n\n            // mep-feature-postroll\n            \"mejs.close\": \"閉じる\",\n\n            // mep-feature-progress\n            \"mejs.time-slider\": \"タイムスライダー\",\n            \"mejs.time-help-text\": \"1秒進めるには左/右矢印をキーを、10秒進めるには上/下矢印を使います。\",\n\n            // mep-feature-skipback\n            \"mejs.time-skip-back\": \"%1秒スキップバックする\",\n\n            // mep-feature-tracks\n            \"mejs.captions-subtitles\": \"キャプション/字幕\",\n            \"mejs.none\": \"なし\",\n\n            // mep-feature-volume\n            \"mejs.mute-toggle\": \"ミュートトグル\",\n            \"mejs.volume-help-text\": \"音量を上げたり下げたりするには、上/下矢印を使います。\",\n            \"mejs.unmute\": \"ミュートを解除\",\n            \"mejs.mute\": \"ミュート\",\n            \"mejs.volume-slider\": \"音量スライダー\",\n\n            // mep-player\n            \"mejs.video-player\": \"ビデオプレーヤー\",\n            \"mejs.audio-player\": \"オーディオプレーヤー\",\n\n            // mep-feature-ads\n            //\"mejs.ad-skip\": \"Skip ad\",\n            //\"mejs.ad-skip-info\": \"Skip in %1 second(s)\",\n\n            // mep-feature-sourcechooser\n            //\"mejs.source-chooser\": \"Source Chooser\"\n        };\n    }\n}(mejs.i18n.locale.strings));\n\n\n//# sourceURL=webpack:///./node_modules/mediaelement/build/lang/me-i18n-locale-ja.js?");
+
+/***/ })
+
+}]);

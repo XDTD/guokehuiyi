@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Importing Extended Tool Configurations
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><h1 id="importing-extended-tool-configurations">Importing Extended Tool Configurations</h1>
+
+<p>Standard LTI tool configurations can be manually entered by users in
+the Canvas UI, or set up via the
+<a href="external_tools.html">external tools API</a>.
+In the manual case, since many of the extensions listed here require
+more than a few lines of configuration, there is not currently an
+interface for extensions to be manually configured. Instead, we encourage
+tool providers to expose a set of URL endpoints that return standard
+configuration options for their tool services. Users are still required
+to enter their consumer key and shared secret manually, but the rest
+of the configuration should be standard enough that it can be reused for
+all users.</p>
+
+<p>If providing a URL configuration endpoint is not an option, you can also
+provide your users with raw XML that they can paste in for configuration.</p>
+
+<p>The configuration format is the same format used to import external tools
+using Common Cartridge. Examples of valid XML configuration snippets are
+found below.</p>
+
+<h2 id="standard-external-tool-examples">Standard External Tool Examples</h2>
+
+<h3 id="minimal-configuration-with-url-matching">Minimal configuration, with URL matching</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:title&gt;Protractor Tool&lt;/blti:title&gt;
+    &lt;blti:description&gt;This tool provides an online, interactive protractor for students to use&lt;/blti:description&gt;
+    &lt;blti:launch_url&gt;https://example.com/tool_redirect&lt;/blti:launch_url&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="domain-matching-name-only-privacy-level">Domain matching, &quot;name only&quot; privacy level</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:title&gt;Protractor Tool&lt;/blti:title&gt;
+    &lt;blti:description&gt;This tool provides an online, interactive protractor for students to use&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;name_only&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="minimal-configuration-preferring-sis-emails">Minimal configuration preferring SIS emails</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/attendance&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;prefer_sis_email&quot;&gt;true&lt;/lticm:property&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="course-navigation-external-tool-examples">Course Navigation External Tool Examples</h2>
+
+<h3 id="minimal-configuration">Minimal configuration</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/attendance&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="minimal-configuration-with-specific-launch-url-for-extension">Minimal configuration with specific launch url for extension</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/attendance&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="configuration-with-specific-custom-variables-for-extension">Configuration with specific custom variables for extension</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/launch&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Mind blowing awesomeness&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides something so awesome you&#39;ll just have to launch it to believe it&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:options name=&quot;custom_fields&quot;&gt;
+          &lt;lticm:property name=&quot;key1&quot;&gt;value1&lt;/lticm:property&gt;
+          &lt;lticm:property name=&quot;key2&quot;&gt;value2&lt;/lticm:property&gt;
+        &lt;/lticm:options&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="admin-teacher-ta-designer-only-navigation">Admin/Teacher/TA/Designer-only navigation</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/attendance&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;visibility&quot;&gt;admins&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="disabled-by-default">Disabled by default</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/attendance&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;default&quot;&gt;disabled&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="multiple-language-support">Multiple language support</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/attendance&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;text&quot;&gt;Attendance&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:options name=&quot;labels&quot;&gt;
+          &lt;lticm:property name=&quot;en&quot;&gt;Attendance&lt;/lticm:property&gt;
+          &lt;lticm:property name=&quot;es&quot;&gt;Asistencia&lt;/lticm:property&gt;
+        &lt;/lticm:options&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="launch-in-new-tab">Launch in new tab</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/attendance&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;windowTarget&quot;&gt;_blank&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="account-navigation-external-tool-examples">Account Navigation External Tool Examples</h2>
+
+<h3 id="minimal-configuration">Minimal configuration</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/reports&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Custom Reports&lt;/blti:title&gt;
+    &lt;blti:description&gt;Department reports pulled from other campus systems&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;text&quot;&gt;Other Reports&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;account_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="user-navigation-external-tool-examples">User Navigation External Tool Examples</h2>
+
+<h3 id="minimal-configuration">Minimal configuration</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/profile&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Campus Profile&lt;/blti:title&gt;
+    &lt;blti:description&gt;Access to campus profile from within Canvas&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;user_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="rich-editor-external-tool-examples">Rich Editor External Tool Examples</h2>
+
+<h3 id="minimal-configuration">Minimal configuration</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/image_selector&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Image Selector&lt;/blti:title&gt;
+    &lt;blti:description&gt;This connects to the campus image library and allows inserting images into content directly from this library&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;text&quot;&gt;Image Library&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;editor_button&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;icon_url&quot;&gt;https://example.com/image_selector.png&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_width&quot;&gt;500&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_height&quot;&gt;300&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="multiple-language-support">Multiple language support</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/image_selector&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Image Selector&lt;/blti:title&gt;
+    &lt;blti:description&gt;This connects to the campus image library and allows inserting images into content directly from this library&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;icon_url&quot;&gt;https://example.com/image_selector.png&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;editor_button&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;text&quot;&gt;Image Library&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_width&quot;&gt;500&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_height&quot;&gt;300&lt;/lticm:property&gt;
+        &lt;lticm:options name=&quot;labels&quot;&gt;
+          &lt;lticm:property name=&quot;en&quot;&gt;Image Library&lt;/lticm:property&gt;
+          &lt;lticm:property name=&quot;es&quot;&gt;Biblioteca de Imágenes&lt;/lticm:property&gt;
+        &lt;/lticm:options&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="link-selection-external-tool-examples">Link Selection External Tool Examples</h2>
+
+<p>Remember, best practice is for link selection tools to have domain-level
+matching, and to only return URLs matching that domain.</p>
+
+<h3 id="minimal-configuration">Minimal configuration</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:title&gt;eBook Selector&lt;/blti:title&gt;
+    &lt;blti:description&gt;Select chapters of available eBooks to insert into course modules&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;resource_selection&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/chapter_selector&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;text&quot;&gt;eBook Chapter Selector&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_width&quot;&gt;500&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_height&quot;&gt;300&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="multiple-language-support">Multiple language support</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:title&gt;eBook Selector&lt;/blti:title&gt;
+    &lt;blti:description&gt;Select chapters of available eBooks to insert into course modules&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;resource_selection&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/chapter_selector&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;text&quot;&gt;eBook Chapter Selector&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_width&quot;&gt;500&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_height&quot;&gt;300&lt;/lticm:property&gt;
+        &lt;lticm:options name=&quot;labels&quot;&gt;
+          &lt;lticm:property name=&quot;en&quot;&gt;eBook Chapter Selector&lt;/lticm:property&gt;
+          &lt;lticm:property name=&quot;es&quot;&gt;eBook Capítulo Selector&lt;/lticm:property&gt;
+        &lt;/lticm:options&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="assignment-external-tool-examples">Assignment External Tool Examples</h2>
+
+<h3 id="assignment-edit">Assignment Edit</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+  &lt;blti:title&gt;Example Tool Provider&lt;/blti:title&gt;
+  &lt;blti:description&gt;This is a Sample Tool Provider.&lt;/blti:description&gt;
+  &lt;blti:launch_url&gt;https://example.com/messages/blti&lt;/blti:launch_url&gt;
+  &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+    &lt;lticm:options name=&quot;assignment_edit&quot;&gt;
+      &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/messages/blti?placement=assignment_edit&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;launch_width&quot;&gt;500&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;launch_height&quot;&gt;600&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;custom_fields&quot;&gt;
+        &lt;lticm:property name=&quot;course_id&quot;&gt;$Canvas.course.id&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;assignment_id&quot;&gt;$Canvas.assignment.id&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/lticm:options&gt;
+    &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+  &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="assignment-view">Assignment View</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+  &lt;blti:title&gt;Example Tool Provider&lt;/blti:title&gt;
+  &lt;blti:description&gt;This is a Sample Tool Provider.&lt;/blti:description&gt;
+  &lt;blti:launch_url&gt;https://example.com/messages/blti&lt;/blti:launch_url&gt;
+  &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+    &lt;lticm:options name=&quot;assignment_view&quot;&gt;
+      &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/messages/blti?placement=assignment_view&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;launch_width&quot;&gt;500&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;launch_height&quot;&gt;600&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;visibility&quot;&gt;members&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;custom_fields&quot;&gt;
+        &lt;lticm:property name=&quot;course_id&quot;&gt;$Canvas.course.id&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;assignment_id&quot;&gt;$Canvas.assignment.id&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/lticm:options&gt;
+    &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+  &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="test-environment-setting-examples"><a name="test_env_settings"></a>Test Environment Setting Examples</h2>
+
+<p>External tools can support different LTI environments for different canvas environments.</p>
+
+<ul>
+<li><strong>domain</strong>: All url domains in this tool&#39;s configuration will be replaced with this domain</li>
+<li><strong>launch_url</strong>: the blti:launch_url property that should be used for all canvas test environments.
+This property takes precedent over domain changes if both properties are set.</li>
+</ul>
+
+<p>Additionally, the domain and launch_urls can be set for each canvas environment
+by specifying the environment as part of the property name (ie, test_launch_url,
+beta_domain, etc).  When used in this manner, specific environment properties take
+precedent over the default values.</p>
+
+<p>NOTE: Test environment settings are established during the refresh process when the environments are
+<a href="https://community.canvaslms.com/t5/Releases/What-is-the-Canvas-release-schedule-for-beta-production-and-test/ta-p/242411">mirrored from production</a>.</p>
+
+<h3 id="test-environment-example">Test Environment Example</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/attendance&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;text&quot;&gt;Attendance&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;visibility&quot;&gt;admins&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;default&quot;&gt;disabled&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+      &lt;lticm:options name=&quot;account_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/attendance_admin&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;text&quot;&gt;Attendance&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+      &lt;lticm:options name=&quot;environments&quot;&gt;
+        &lt;lticm:property name=&quot;launch_url&quot;&gt;http://test.example.com/content&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;domain&quot;&gt;test.example.com&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;test_launch_url&quot;&gt;http://test.example.com/content&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;test_domain&quot;&gt;test.example.com&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;beta_launch_url&quot;&gt;http://beta.example.com/content&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;beta_domain&quot;&gt;beta.example.com&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="combined-external-tool-configuration-examples">Combined External Tool Configuration Examples</h2>
+
+<p>External tools can support multiple extensions in a single tool since each
+extension will have its own tool launch URL. Remember, though, that link
+selection tools should have domain-level matching set, and URLs returned
+by the service should be scoped to the matching domain.</p>
+
+<h3 id="course-navigation-and-account-navigation">Course navigation and account navigation</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/attendance&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;text&quot;&gt;Attendance&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;visibility&quot;&gt;admins&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;default&quot;&gt;disabled&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+      &lt;lticm:options name=&quot;account_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;url&quot;&gt;https://example.com/attendance_admin&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;text&quot;&gt;Attendance&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="course-navigation-and-account-navigation-with-shared-url-and-text">Course navigation and account navigation with shared url and text</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/attendance&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Attendance&lt;/blti:title&gt;
+    &lt;blti:description&gt;Provides an interactive seating chart and attendance tool&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;text&quot;&gt;Attendance&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;course_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;visibility&quot;&gt;admins&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;default&quot;&gt;disabled&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+      &lt;lticm:options name=&quot;account_navigation&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h3 id="rich-editor-and-link-selection-with-multiple-language-support">Rich editor and link selection with multiple language support</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:launch_url&gt;https://example.com/wiki&lt;/blti:launch_url&gt;
+    &lt;blti:title&gt;Global Wiki&lt;/blti:title&gt;
+    &lt;blti:description&gt;Institution-wide wiki tool with all the trimmings&lt;/blti:description&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;domain&quot;&gt;example.com&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;icon_url&quot;&gt;https://example.com/wiki.png&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;text&quot;&gt;Build/Link to Wiki Page&lt;/lticm:property&gt;
+      &lt;lticm:options name=&quot;labels&quot;&gt;
+          &lt;lticm:property name=&quot;en-US&quot;&gt;Build/Link to Wiki Page&lt;/lticm:property&gt;
+          &lt;lticm:property name=&quot;en-GB&quot;&gt;Build/Link to Wiki Page&lt;/lticm:property&gt;
+        &lt;/lticm:options&gt;
+      &lt;lticm:options name=&quot;editor_button&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_width&quot;&gt;500&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_height&quot;&gt;300&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+      &lt;lticm:options name=&quot;resource_selection&quot;&gt;
+        &lt;lticm:property name=&quot;enabled&quot;&gt;true&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_width&quot;&gt;500&lt;/lticm:property&gt;
+        &lt;lticm:property name=&quot;selection_height&quot;&gt;300&lt;/lticm:property&gt;
+      &lt;/lticm:options&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="launch-urls-containing-query-parameters">Launch URL&#39;s containing query parameters</h2>
+
+<p>By default, Canvas handles LTI launch URLs with query parameters by including the query parameters
+in the URL and the post body. This can result in a signature mismatch if not accounted for. The
+<code>oauth_compliant</code> parameter allows an external tool provider to specify how it wants Canvas to
+handle launch URLs with query parameters: if set to <code>true</code> LTI query parameters will not be copied
+to the POST body.</p>
+
+<h3 id="do-not-move-lti-query-params-to-post-body">Do not move LTI query params to POST body</h3>
+
+<pre class="code xml"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;cartridge_basiclti_link xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot;
+    xmlns:blti = &quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot;
+    xmlns:lticm =&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot;
+    xmlns:lticp =&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot;
+    xmlns:xsi = &quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation = &quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd
+    http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd
+    http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+    &lt;blti:title&gt;Protractor Tool&lt;/blti:title&gt;
+    &lt;blti:description&gt;This tool provides an online, interactive protractor for students to use&lt;/blti:description&gt;
+    &lt;blti:launch_url&gt;https://example.com/tool_redirect?query_param=some_value&lt;/blti:launch_url&gt;
+    &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+      &lt;lticm:property name=&quot;oauth_compliant&quot;&gt;true&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;privacy_level&quot;&gt;public&lt;/lticm:property&gt;
+    &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<h2 id="content-migrations-support">Content Migrations support</h2>
+
+<h3 class='beta'>BETA: The following configurations and APIs are not finalized
+and may be subject to breaking changes before final release.</h3>
+
+<h3 id="example-configuration">Example Configuration</h3>
+
+<pre class="code xml"><code class="xml">&lt;cartridge_basiclti_link xmlns:blti=&quot;http://www.imsglobal.org/xsd/imsbasiclti_v1p0&quot; xmlns:lticm=&quot;http://www.imsglobal.org/xsd/imslticm_v1p0&quot; xmlns:lticp=&quot;http://www.imsglobal.org/xsd/imslticp_v1p0&quot; xmlns=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.imsglobal.org/xsd/imslticc_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticc_v1p0.xsd http://www.imsglobal.org/xsd/imsbasiclti_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imsbasiclti_v1p0p1.xsd http://www.imsglobal.org/xsd/imslticm_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticm_v1p0.xsd http://www.imsglobal.org/xsd/imslticp_v1p0 http://www.imsglobal.org/xsd/lti/ltiv1p0/imslticp_v1p0.xsd&quot;&gt;
+  &lt;blti:extensions platform=&quot;canvas.instructure.com&quot;&gt;
+    &lt;lticm:options name=&quot;content_migration&quot;&gt;
+      &lt;lticm:property name=&quot;export_start_url&quot;&gt;https://example.com/export/&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;import_start_url&quot;&gt;https://example.com/import/&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;export_format&quot;&gt;json&lt;/lticm:property&gt;
+      &lt;lticm:property name=&quot;import_format&quot;&gt;json&lt;/lticm:property&gt;
+    &lt;/lticm:options&gt;
+  &lt;/blti:extensions&gt;
+&lt;/cartridge_basiclti_link&gt;
+</code></pre>
+
+<p>Inside the options block there are two properties providing urls for initiating
+imports and exports of course based content, <code>export_start_url</code> and
+<code>import_start_url</code> respectively.</p>
+
+<p>There are also two options for specifying the format for messages sent to these
+urls. The default format is Rack&#39;s nested query parameters <a href="https://codefol.io/posts/How-Does-Rack-Parse-Query-Params-With-parse-nested-query/">(explanation)</a>,
+but if your application isn&#39;t set up to parse those or you&#39;d prefer a JSON body,
+provide the <code>export_format</code> and/or <code>import_format</code> properties, with the property
+value set to <code>json</code>. Omitting these properties or providing any other value will
+be treated as the default.</p>
+
+<h3 id="export-process">Export process</h3>
+
+<p>Both the export and import processes are designed to be asynchronous; to start
+the export process your application will receive a <code>POST</code> request to the
+specified <code>export_start_url</code>. The request body will contain
+<code>tool_consumer_instance_guid</code>, <code>context_id</code>, and any variable expansions
+requested (excluding user info and URLs). For authentication a JWT will be
+included in the <code>Authorization</code> header using the <code>Bearer</code> scheme, it is signed
+using the shared secret for the tool and will include the stored consumer key
+in the <code>kid</code> field of the token&#39;s header object.</p>
+
+<p>If any action needs to performed by the tool it MUST respond with a success
+HTTP status code and the body MUST include two urls, one for checking the
+progress of the export and one to retrieve the JSON to be returned to the tool
+upon import. In the event there is nothing to be exported respond with an empty
+JSON object as the body or a 4xx status code. Any status codes aside from 200
+and 201 in responses will be treated as though there is nothing to be returned
+upon import.</p>
+
+<h4 id="example-export-start-response">Example export start response</h4>
+
+<pre class="code"><code class=""><span class='lbrace'>{</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>status_url</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://lti.example.com/export/42/status</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>fetch_url</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://lti.example.com/export/42</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span>
+</code></pre>
+
+<p>The <code>status_url</code> will be polled to determine when the content should be
+retreived. The response MUST include a <code>status</code> key; this key will be used to
+determine when the tool considers the export process to be completed whether it
+has been successful or not. When this field contains <code>complete</code> Canvas will then
+attempt to use the <code>fetch_url</code> to retrieve the exported data. In the case of
+failure set the <code>status</code> field to <code>failed</code> and supply a <code>message</code> field for
+display to the user.</p>
+
+<h4 id="example-in-progress-status-response">Example in progress status response</h4>
+
+<pre class="code"><code class=""><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>status</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>processing</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+</code></pre>
+
+<h4 id="example-failed-status-response">Example failed status response</h4>
+
+<pre class="code"><code class=""><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>status</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>failed</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>message</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The content is not able to be copied due to copyright restrictions.</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+</code></pre>
+
+<h4 id="example-complete-success-status-response">Example complete success status response</h4>
+
+<pre class="code"><code class=""><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>status</span><span class='label_end'>&quot;:</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>completed</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+</code></pre>
+
+<h4 id="exporting-a-subset-of-course-content">Exporting a Subset of Course Content</h4>
+
+<p>If the user has chosen to migrate a subset of the source course&#39;s content an
+this will be indicated to the tool by inclusion of an additional field in the
+post body called <code>custom_exported_assets</code>. This will be an array of asset
+identifiers in the form of <code>&lt;asset type key&gt;_&lt;asset_id&gt;</code> (e.g. <code>assignment_42</code>)
+these use the same mappings as exported identifiers below. In the event that a
+tool provider has no content to export for a subset export either return an
+empty JSON object in the response or a status code outside the 200 range.</p>
+
+<h4 id="exported-data-including-canvas-record-ids">Exported Data Including Canvas Record IDs.</h4>
+
+<p>If in the process of importing your tool needs to receive record identifers for
+newly created items in Canavs the source IDs may be included in the export data
+with keys matching the pattern <code>/^\$canvas_(\w+)_id$/</code>. Example export data
+including an assignment ID with the orignial being assignment #42 and the newly
+created one for import being #84.</p>
+
+<p>Exported data:</p>
+
+<pre class="code"><code class=""><span class='lbrace'>{</span>
+  <span class='label'>assignments:</span> <span class='lbracket'>[</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='label_end'>&quot;:</span><span class='id identifier rubyid_afd24c'>afd24c</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$canvas_assignment_id</span><span class='label_end'>&quot;:</span><span class='int'>42</span><span class='rbrace'>}</span><span class='rbracket'>]</span>
+<span class='rbrace'>}</span>
+</code></pre>
+
+<p>Data returned on import:</p>
+
+<pre class="code"><code class=""><span class='lbrace'>{</span>
+  <span class='label'>assignments:</span> <span class='lbracket'>[</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='label_end'>&quot;:</span><span class='id identifier rubyid_afd24c'>afd24c</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$canvas_assignment_id</span><span class='label_end'>&quot;:</span><span class='int'>84</span><span class='rbrace'>}</span><span class='rbracket'>]</span>
+<span class='rbrace'>}</span>
+</code></pre>
+
+<p>Additional expansions are available, for the most up to date list see
+<code>[Canvas::Migration::ExternalContent::Translator::TYPES_TO_CLASSES](https://github.com/instructure/canvas-lms/blob/stable/lib/canvas/migration/external_content/translator.rb#L40)</code></p>
+
+<h3 id="import-process">Import process</h3>
+
+<p>To start the import process your application will receive a <code>POST</code> request to
+the specified <code>import_start_url</code>. The request body will contain
+<code>tool_consumer_instance_guid</code>, <code>context_id</code>, any variable expansions requested
+(excluding user info and URLs), and the content to be imported will be included
+in the <code>data</code> field of the posted form. Authentication will be handled in the
+same way as the export process.</p>
+
+<p>The JSON response must include a <code>status_url</code> field which is used in the same
+manner as the same field in the export start response.</p>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

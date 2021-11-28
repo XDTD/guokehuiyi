@@ -1,0 +1,25 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([["moment/locale/hy-am"],{
+
+/***/ "1rYy":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/hy-am.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("//! moment.js locale configuration\n//! locale : Armenian [hy-am]\n//! author : Armendarabyan : https://github.com/armendarabyan\n\n;(function (global, factory) {\n    true ? factory(__webpack_require__(/*! ../moment */ \"wd/R\")) :\n   undefined\n}(this, (function (moment) { 'use strict';\n\n    //! moment.js locale configuration\n\n    var hyAm = moment.defineLocale('hy-am', {\n        months: {\n            format: 'հունվարի_փետրվարի_մարտի_ապրիլի_մայիսի_հունիսի_հուլիսի_օգոստոսի_սեպտեմբերի_հոկտեմբերի_նոյեմբերի_դեկտեմբերի'.split(\n                '_'\n            ),\n            standalone: 'հունվար_փետրվար_մարտ_ապրիլ_մայիս_հունիս_հուլիս_օգոստոս_սեպտեմբեր_հոկտեմբեր_նոյեմբեր_դեկտեմբեր'.split(\n                '_'\n            ),\n        },\n        monthsShort: 'հնվ_փտր_մրտ_ապր_մյս_հնս_հլս_օգս_սպտ_հկտ_նմբ_դկտ'.split('_'),\n        weekdays: 'կիրակի_երկուշաբթի_երեքշաբթի_չորեքշաբթի_հինգշաբթի_ուրբաթ_շաբաթ'.split(\n            '_'\n        ),\n        weekdaysShort: 'կրկ_երկ_երք_չրք_հնգ_ուրբ_շբթ'.split('_'),\n        weekdaysMin: 'կրկ_երկ_երք_չրք_հնգ_ուրբ_շբթ'.split('_'),\n        longDateFormat: {\n            LT: 'HH:mm',\n            LTS: 'HH:mm:ss',\n            L: 'DD.MM.YYYY',\n            LL: 'D MMMM YYYY թ.',\n            LLL: 'D MMMM YYYY թ., HH:mm',\n            LLLL: 'dddd, D MMMM YYYY թ., HH:mm',\n        },\n        calendar: {\n            sameDay: '[այսօր] LT',\n            nextDay: '[վաղը] LT',\n            lastDay: '[երեկ] LT',\n            nextWeek: function () {\n                return 'dddd [օրը ժամը] LT';\n            },\n            lastWeek: function () {\n                return '[անցած] dddd [օրը ժամը] LT';\n            },\n            sameElse: 'L',\n        },\n        relativeTime: {\n            future: '%s հետո',\n            past: '%s առաջ',\n            s: 'մի քանի վայրկյան',\n            ss: '%d վայրկյան',\n            m: 'րոպե',\n            mm: '%d րոպե',\n            h: 'ժամ',\n            hh: '%d ժամ',\n            d: 'օր',\n            dd: '%d օր',\n            M: 'ամիս',\n            MM: '%d ամիս',\n            y: 'տարի',\n            yy: '%d տարի',\n        },\n        meridiemParse: /գիշերվա|առավոտվա|ցերեկվա|երեկոյան/,\n        isPM: function (input) {\n            return /^(ցերեկվա|երեկոյան)$/.test(input);\n        },\n        meridiem: function (hour) {\n            if (hour < 4) {\n                return 'գիշերվա';\n            } else if (hour < 12) {\n                return 'առավոտվա';\n            } else if (hour < 17) {\n                return 'ցերեկվա';\n            } else {\n                return 'երեկոյան';\n            }\n        },\n        dayOfMonthOrdinalParse: /\\d{1,2}|\\d{1,2}-(ին|րդ)/,\n        ordinal: function (number, period) {\n            switch (period) {\n                case 'DDD':\n                case 'w':\n                case 'W':\n                case 'DDDo':\n                    if (number === 1) {\n                        return number + '-ին';\n                    }\n                    return number + '-րդ';\n                default:\n                    return number;\n            }\n        },\n        week: {\n            dow: 1, // Monday is the first day of the week.\n            doy: 7, // The week that contains Jan 7th is the first week of the year.\n        },\n    });\n\n    return hyAm;\n\n})));\n\n\n//# sourceURL=webpack:///./node_modules/moment/locale/hy-am.js?");
+
+/***/ }),
+
+/***/ "Oq2T":
+/*!***********************************************!*\
+  !*** ./ui/ext/custom_moment_locales/hy_am.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("/*\n * Copyright (C) 2019 - present Instructure, Inc.\n *\n * This file is part of Canvas.\n *\n * Canvas is free software: you can redistribute it and/or modify it under\n * the terms of the GNU Affero General Public License as published by the Free\n * Software Foundation, version 3 of the License.\n *\n * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\n * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more\n * details.\n *\n * You should have received a copy of the GNU Affero General Public License along\n * with this program. If not, see <http://www.gnu.org/licenses/>.\n */\n__webpack_require__(/*! moment/locale/hy-am */ \"1rYy\");\n\nconst moment = __webpack_require__(/*! moment */ \"wd/R\");\n\nconst data = moment.localeData('hy-am');\ndata._monthsShort = ['Հնվ', 'Փտր', 'Մրտ', 'Ապր', 'Մյս', 'Հնս', 'Հլս', 'Օգս', 'Սպտ', 'Հկտ', 'Նմբ', 'Դկտ'];\n\n//# sourceURL=webpack:///./ui/ext/custom_moment_locales/hy_am.js?");
+
+/***/ })
+
+}]);

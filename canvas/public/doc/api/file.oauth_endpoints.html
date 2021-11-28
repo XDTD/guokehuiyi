@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>OAuth2 Endpoints
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="" class="current">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><h1 id="oauth2-endpoints">OAuth2 Endpoints</h1>
+
+<div class="warning-message"> Developer keys issued after Oct 2015 generate tokens with a 1 hour expiration. Applications must use <a href="file.oauth.html#using-refresh-tokens">refresh tokens</a> to generate new access tokens.</div>
+
+<ul>
+<li><a href="#get-login-oauth2-auth">GET login/oauth2/auth</a></li>
+<li><a href="#post-login-oauth2-token">POST login/oauth2/token</a></li>
+<li><a href="#delete-login-oauth2-token">DELETE login/oauth2/token</a></li>
+<li><a href="#get-login-session-token">GET login/session_token</a></li>
+</ul>
+
+<p><a name="get-login-oauth2-auth"></a></p>
+
+<h2 id="get-login-oauth2-auth">GET login/oauth2/auth</h2>
+
+<div class="method_details">
+
+<h3 class="endpoint">GET https://&lt;canvas-install-url&gt;/login/oauth2/auth?client_id=XXX&response_type=code&redirect_uri=https://example.com/oauth_complete&state=YYY&scope=&lt;value_1&gt;%20&lt;value_2&gt;%20&lt;value_n&gt;</h3>
+
+<h4>Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td class="mono">client_id <span class="label required"></span></td>
+      <td>The client id for your registered application.</td>
+    </tr>
+    <tr>
+      <td class="mono">response_type <span class="label required"></span></td>
+      <td>The type of OAuth2 response requested. The only
+currently supported value is <code>code</code>.</td>
+    </tr>
+    <tr>
+      <td class="mono">redirect_uri <span class="label required"></span></td>
+      <td>The URL where the user will be redirected after
+authorization. The domain of this URL must match the domain of the
+redirect_uri stored on the developer key, or it must be a subdomain of
+that domain.
+
+For native applications, currently the only supported value is
+<code>urn:ietf:wg:oauth:2.0:oob</code>, signifying that the credentials will be
+retrieved out-of-band using an embedded browser or other functionality.
+</td>
+    </tr>
+    <tr>
+      <td class="mono">state <span class="label optional"></span></td>
+      <td>Your application can pass Canvas an arbitrary piece of
+state in this parameter, which will be passed back to your application
+in Step 2. It's strongly encouraged that your application pass a unique
+identifier in the state parameter, and then verify in Step 2 that the
+state you receive back from Canvas is the same expected value. Failing
+to do this opens your application to the possibility of logging the
+wrong person in, as <a href="http://homakov.blogspot.com/2012/07/saferweb-most-common-oauth2.html">described here</a>.</td>
+    </tr>
+    <tr>
+      <td class="mono">scope<span class="label optional"></span></td>
+      <td>
+        This can be used to specify what information the Canvas API access token will provide access to.
+        Canvas API scopes may be found beneath their corresponding endpoints in the "resources" documentation pages.
+        If the developer key does not require scopes and no scope parameter is specified, the access token will have access to all scopes. If the developer key does require scopes and no scope parameter is specified, Canvas will respond with "invalid_scope."
+        To successfully pass multiple scope values, the scope parameter is included once, with multiple values separated by spaces.
+        Passing multiple scope parameters, as is common in other areas of Canvas, causes only the last value to be applied to the generated token.
+      </td>
+    </tr>
+    <tr>
+      <td class="mono">purpose<span class="label optional"></span></td>
+      <td>This can be used to help the user identify which instance
+      of an application this token is for. For example, a mobile device
+      application could provide the name of the device.</td>
+    </tr>
+    <tr>
+      <td class="mono">force_login<span class="label optional"></span></td>
+      <td>Set to '1' if you want to force the user to enter their
+      credentials, even if they're already logged into Canvas. By default,
+      if a user already has an active Canvas web session, they will not be
+      asked to re-enter their credentials.</td>
+    </tr>
+    <tr>
+      <td class="mono">unique_id<span class="label optional"></span></td>
+      <td>Set to the user's username to be populated in the login form in the event
+      that the user must authenticate.</td>
+    </tr>
+    <tr>
+      <td class="mono">prompt<span class="label optional"></span></td>
+      <td>If set to <code>none</code>, Canvas will immediately redirect to the
+      <code>redirect_uri</code>. If the caller has a valid session with a
+      &quot;remember me&quot; token or a token from a trusted Developer Key,
+      the redirect will contain a <code>code=XYZ</code> param. If the caller
+      has no session, the redirect will contain an
+      <code>error=login_required</code> param. If the caller has a session, but
+      no &quot;remember me&quot; or trusted token, the redirect will contain an
+      <code>error=interaction_required</code> param.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><a name="post-login-oauth2-token"></a></p>
+
+<h2 id="post-login-oauth2-token">POST login/oauth2/token</h2>
+
+<div class="method_details">
+
+See <a href="http://tools.ietf.org/html/rfc6749#section-4.1.3">Section 4.1.3</a> of the OAuth2 RFC for more information about this process.
+
+  <h3 class="endpoint">POST /login/oauth2/token</h3>
+  <h4>Parameters</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">grant_type <span class="label required"></span></td>
+        <td>Values currently supported "authorization_code", "refresh_token", and "client_credentials"</td>
+      </tr>
+      <tr>
+        <td class="mono">client_id <span class="label required-for">grant_types: authorization_code refresh_token</span></td>
+        <td>The client id for your registered application.</td>
+      </tr>
+      <tr>
+        <td class="mono">client_secret <span class="label required-for">grant_types: authorization_code refresh_token</span></td>
+        <td>The client secret for your registered application.</td>
+      </tr>
+      <tr>
+        <td class="mono">redirect_uri <span class="label required-for">grant_types: authorization_code refresh_token</span></td>
+        <td>If a redirect_uri was passed to the initial request in
+        step 1, the same redirect_uri must be given here.</td>
+      </tr>
+      <tr>
+        <td class="mono">code <span class="label required-for">grant_type: authorization_code</span></td>
+        <td>Required if grant_type is authorization_code. The code you received in a redirect response.</td>
+      </tr>
+      <tr>
+        <td class="mono">refresh_token <span class="label required-for">grant_type: refresh_token</span></td>
+        <td>Required if grant_type is refresh_token. The refresh_token you received in a redirect response.</td>
+      </tr>
+      <tr>
+        <td class="mono">client_assertion_type <span class="label required-for">grant_type: client_credentials</span></td>
+        <td>Currently the only supported value for this field is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`</td>
+      </tr>
+      <tr>
+        <td class="mono">client_assertion <span class="label required-for">grant_type: client_credentials</span></td>
+        <td>The signed jwt used to request an access token. Includes the value of Developer Key id
+        as the sub claim of the jwt body. Should be signed by the private key of the stored public key on the DeveloperKey.</td>
+      </tr>
+      <tr>
+        <td class="mono">scope <span class="label required-for">grant_type: client_credentials</span></td>
+        <td>A list of scopes to be granted to the token. Currently only IMS defined scopes may be used.</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4>Canvas API example responses</h4>
+  <p>For grant_type of code or refresh_token:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">access_token</td>
+        <td>The OAuth2 Canvas API access token.</td>
+      </tr>
+      <tr>
+        <td class="mono">token_type</td>
+        <td>The type of token that is returned.</td>
+      </tr>
+      <tr>
+        <td class="mono">user</td>
+        <td>A JSON object of canvas user id and user name.</td>
+      </tr>
+      <tr>
+        <td class="mono">refresh_token</td>
+        <td>The OAuth2 refresh token.</td>
+      </tr>
+      <tr>
+        <td class="mono">expires_in</td>
+        <td>Seconds until the access token expires.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>When using grant_type=code (ex: for Canvas API access):</p>
+
+  <pre class="code"><code class="">
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>access_token</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1/fFAGRNJru1FTz70BzhT3Zg</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>token_type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bearer</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>user</span><span class='label_end'>&quot;:</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='label_end'>&quot;:</span><span class='int'>42</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Jimi Hendrix</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>refresh_token</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tIh2YBWGiC0GgGRglT9Ylwv2MnTvy8csfGyfK2PqZmkFYYqYZ0wui4tzI7uBwnN2</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>expires_in</span><span class='label_end'>&quot;:</span> <span class='int'>3600</span>
+  <span class='rbrace'>}</span>
+</code></pre>
+  
+  <p>When using grant_type=refresh_token, the response will not contain a new
+  refresh token since the same refresh token can be used multiple times:</p>
+
+  <pre class="code"><code class="">
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>access_token</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1/fFAGRNJru1FTz70BzhT3Zg</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>token_type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bearer</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>user</span><span class='label_end'>&quot;:</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='label_end'>&quot;:</span><span class='int'>42</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Jimi Hendrix</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>expires_in</span><span class='label_end'>&quot;:</span> <span class='int'>3600</span>
+  <span class='rbrace'>}</span>
+</code></pre>
+
+  <p>If scope=/auth/userinfo was specified in the
+  <a href=oauth_endpoints.html#get-login-oauth2-auth>GET login/oauth2/auth</a> request (ex: when using Canvas as an authentication service)
+  then the response that results from
+  <a href=oauth_endpoints.html#post-login-oauth2-token>POST login/oauth2/token</a> would be:</p>
+
+  <pre class="code"><code class="">
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>access_token</span><span class='label_end'>&quot;:</span> <span class='id identifier rubyid_null'>null</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>token_type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bearer</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>user</span><span class='label_end'>&quot;:</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='label_end'>&quot;:</span> <span class='int'>42</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Jimi Hendrix</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+</code></pre>
+
+<h4>Examples using client_credentials</h4>
+  
+
+  <p>When using grant_type=client_credentials (ex: <a href="/doc/api/file.oauth.html#accessing-lti-advantage-services">to access LTI Advantage Services</a>):</p>
+
+<h5>Example request</h5>
+  
+<p>This request must be signed by an RSA256 private key with a public key that is configured on the developer key as described in <a href="/doc/api/file.oauth.html#developer-key-setup" target="_blank">Step 1: Developer Key Setup</a>.</p>
+
+  <pre class="code"><code class="">
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>grant_type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>client_credentials</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>client_assertion_type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>urn:ietf:params:oauth:client-assertion-type:jwt-bearer</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>client_assertion</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjIwMTktMDYtMjFUMTQ6NTk6MzBaIn0.eyJpc3MiOiJodHRwczovL3d3dy5teS10b29sLmNvbSIsInN1YiI6Ilx1MDAzY2NsaWVudF9pZFx1MDAzZSIsImF1ZCI6Imh0dHA6Ly9cdTAwM2NjYW52YXNfZG9tYWluXHUwMDNlL2xvZ2luL29hdXRoMi90b2tlbiIsImlhdCI6MTU2MTc1MDAzMSwiZXhwIjoxNTYxNzUwNjMxLCJqdGkiOiJkZmZkYmRjZS1hOWYxLTQyN2ItOGZjYS02MDQxODIxOTg3ODMifQ.lUHCwDqx2ukKQ2vwoz_824IVcyq-rNdJKVpGUiJea5-Ybk_VfyKW5v0ky-4XTJrGHkDcj0T9J8qKfYbikqyetK44yXx1YGo-2Pn2GEZ26bZxCnuDUDhbqN8OZf4T8DnZsYP4OyhOseHERsHCzKF-SD2_Pk6ES5-Z8J55_aMyS3w3tl4nJtwsMm6FbMDp_FhSGE4xTwkBZ2KNM4JqkCwHGX_9KcpsPsHRFQjn9ysTeg-Qf7H2QFgFMFjsfQX-iSL_bQoC2npSz7rQ8awKMhCEYdMYZk2vVhQ7XQ8ysAyf3m1vlLbHjASpztcAB0lz_DJysT0Ep-Rh311Qf_vXHexjVA</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>scope</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://purl.imsglobal.org/spec/lti-ags/lineitem https://purl.imsglobal.org/spec/lti-ags/result/read</span><span class='tstring_end'>&quot;</span></span>
+  <span class='rbrace'>}</span>
+</code></pre>
+
+<p>Below is an example of the decoded client_assertion JWT in the above request:</p>
+
+  <pre class="code"><code class="">
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>iss</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://www.my-tool.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sub</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;client_id&gt;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>aud</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://&lt;canvas_domain&gt;/login/oauth2/token</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>iat</span><span class='label_end'>&quot;:</span> <span class='int'>1561750031</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>exp</span><span class='label_end'>&quot;:</span> <span class='int'>1561750631</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>jti</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dffdbdce-a9f1-427b-8fca-604182198783</span><span class='tstring_end'>&quot;</span></span>
+  <span class='rbrace'>}</span>
+</code></pre>
+ 
+<p>NOTE:</p>
+
+<ul>
+ <li> the value of the sub claim should match the client_id of the developer key in Canvas.</li>
+ <li> the value of the aud claim should contain the domain of the Canvas account where the desired data resides.</li>
+</ul>
+
+
+  <h5>Example Response</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">access_token</td>
+        <td>The OAuth2 client_credentials access token.</td>
+      </tr>
+      <tr>
+        <td class="mono">token_type</td>
+        <td>The type of token that is returned.</td>
+      </tr>
+      <tr>
+        <td class="mono">expires_in</td>
+        <td>Seconds until the access token expires.</td>
+      </tr>      
+      <tr>
+        <td class="mono">scope</td>
+        <td>The scope or space delimited list of scopes granted for the access token.</td>
+      </tr>
+    </tbody>
+  </table>
+  <pre class="code"><code class="">
+  {
+    &quot;access_token&quot; : &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3d3cuZXhhbXBsZS5jb20iLCJpYXQiOiIxNDg1OTA3MjAwIiwiZXhwIjoiMTQ4NTkwNzUwMCIsImltc2dsb2JhbC5vcmcuc2VjdXJpdHkuc2NvcGUiOiJMdGlMaW5rU2V0dGluZ3MgU2NvcmUuaXRlbS5QVVQifQ.UWCuoD05KDYVQHEcciTV88YYtWWMwgb3sTbrjwxGBZA&quot;,
+    &quot;token_type&quot; : &quot;Bearer&quot;,
+    &quot;expires_in&quot; : 3600,
+    &quot;scope&quot; : &quot;https://purl.imsglobal.org/spec/lti-ags/lineitem https://purl.imsglobal.org/spec/lti-ags/result/read&quot;
+  }
+  </code></pre>
+</div>
+
+<p><a name="delete-login-oauth2-token"></a></p>
+
+<h2 id="delete-login-oauth2-token">DELETE login/oauth2/token</h2>
+
+<div class="method_details">
+
+  If your application supports logout functionality, you can revoke your own
+  access token. This is useful for security reasons, as well as removing your
+  application from the list of tokens on the user's profile page. Simply make
+  an authenticated request to the following endpoint by including an Authorization
+  header or providing the access_token as a request parameter.
+
+  <h3 class="endpoint">DELETE /login/oauth2/token</h3>
+
+  <h4>Parameters</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">expire_sessions <span class="label optional"></span></td>
+        <td><p>Set this to '1' if you want to end all of the user's
+        Canvas web sessions.  Without this argument, the endpoint will leave web sessions intact.</p>
+
+        <p>Additionally, if the user logged in to Canvas via a delegated authentication provider,
+        and the provider supports Single Log Out functionality, the response will contain a 
+        forward_url key. If you are still in control of the user's browsing session, it is
+        recommended to then redirect them to this URL, in order to also log them out from
+        where their session originated. Beware that it is unlikely that control will be returned
+        to your application after this redirect.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Example responses</h4>
+
+  <pre class="code"><code class="">
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>forward_url</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://idp.school.edu/opaque_url</span><span class='tstring_end'>&quot;</span></span>
+  <span class='rbrace'>}</span>
+</code></pre>
+</div>
+
+<p><a name="get-login-session-token"></a></p>
+
+<h2 id="get-login-session_token">GET login/session_token</h2>
+
+<div class="method_details">
+
+  If your application needs to begin a normal web session in order to access
+  features not supported via API (such as quiz taking), you can use your API
+  access token in order to get a time-limited URL that can be fed to a
+  browser or web view to begin a new web session.
+
+  <h3 class="endpoint">GET /login/session_token</h3>
+
+  <h4>Parameters</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">return_to <span class="label optional"></span></td>
+        <td>An optional URL to begin the web session at. Otherwise the user will be sent to the dashboard.</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4>Example responses</h4>
+
+  <pre class="code"><code class="">
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>session_url</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://canvas.instructure.com/opaque_url</span><span class='tstring_end'>&quot;</span></span>
+  <span class='rbrace'>}</span>
+</code></pre>
+</div>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

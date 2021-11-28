@@ -1,0 +1,2500 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Modules - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="current" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Modules API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>Modules are collections of learning materials useful for organizing courses
+and optionally providing a linear flow through them. Module items can be
+accessed linearly or sequentially depending on module configuration. Items
+can be unlocked by various criteria such as reading a page or achieving a
+minimum score on a quiz. Modules themselves can be unlocked by the completion
+of other Modules.</p>
+
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Module">A Module object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // the unique identifier for the module
+  &quot;id&quot;: 123,
+  // the state of the module: &#39;active&#39;, &#39;deleted&#39;
+  &quot;workflow_state&quot;: &quot;active&quot;,
+  // the position of this module in the course (1-based)
+  &quot;position&quot;: 2,
+  // the name of this module
+  &quot;name&quot;: &quot;Imaginary Numbers and You&quot;,
+  // (Optional) the date this module will unlock
+  &quot;unlock_at&quot;: &quot;2012-12-31T06:00:00-06:00&quot;,
+  // Whether module items must be unlocked in order
+  &quot;require_sequential_progress&quot;: true,
+  // IDs of Modules that must be completed before this one is unlocked
+  &quot;prerequisite_module_ids&quot;: [121, 122],
+  // The number of items in the module
+  &quot;items_count&quot;: 10,
+  // The API URL to retrive this module&#39;s items
+  &quot;items_url&quot;: &quot;https://canvas.example.com/api/v1/modules/123/items&quot;,
+  // The contents of this module, as an array of Module Items. (Present only if
+  // requested via include[]=items AND the module is not deemed too large by
+  // Canvas.)
+  &quot;items&quot;: null,
+  // The state of this Module for the calling user one of &#39;locked&#39;, &#39;unlocked&#39;,
+  // &#39;started&#39;, &#39;completed&#39; (Optional; present only if the caller is a student or
+  // if the optional parameter &#39;student_id&#39; is included)
+  &quot;state&quot;: &quot;started&quot;,
+  // the date the calling user completed the module (Optional; present only if the
+  // caller is a student or if the optional parameter &#39;student_id&#39; is included)
+  &quot;completed_at&quot;: null,
+  // if the student&#39;s final grade for the course should be published to the SIS
+  // upon completion of this module
+  &quot;publish_final_grade&quot;: null,
+  // (Optional) Whether this module is published. This field is present only if
+  // the caller has permission to view unpublished modules.
+  &quot;published&quot;: true
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="CompletionRequirement">A CompletionRequirement object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // one of &#39;must_view&#39;, &#39;must_submit&#39;, &#39;must_contribute&#39;, &#39;min_score&#39;,
+  // &#39;must_mark_done&#39;
+  &quot;type&quot;: &quot;min_score&quot;,
+  // minimum score required to complete (only present when type == &#39;min_score&#39;)
+  &quot;min_score&quot;: 10,
+  // whether the calling user has met this requirement (Optional; present only if
+  // the caller is a student or if the optional parameter &#39;student_id&#39; is
+  // included)
+  &quot;completed&quot;: true
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="ContentDetails">A ContentDetails object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  &quot;points_possible&quot;: 20,
+  &quot;due_at&quot;: &quot;2012-12-31T06:00:00-06:00&quot;,
+  &quot;unlock_at&quot;: &quot;2012-12-31T06:00:00-06:00&quot;,
+  &quot;lock_at&quot;: &quot;2012-12-31T06:00:00-06:00&quot;,
+  &quot;locked_for_user&quot;: true,
+  &quot;lock_explanation&quot;: &quot;This quiz is part of an unpublished module and is not available yet.&quot;,
+  &quot;lock_info&quot;: {&quot;asset_string&quot;:&quot;assignment_4&quot;,&quot;unlock_at&quot;:&quot;2012-12-31T06:00:00-06:00&quot;,&quot;lock_at&quot;:&quot;2012-12-31T06:00:00-06:00&quot;,&quot;context_module&quot;:{}}
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="ModuleItem">A ModuleItem object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // the unique identifier for the module item
+  &quot;id&quot;: 768,
+  // the id of the Module this item appears in
+  &quot;module_id&quot;: 123,
+  // the position of this item in the module (1-based)
+  &quot;position&quot;: 1,
+  // the title of this item
+  &quot;title&quot;: &quot;Square Roots: Irrational numbers or boxy vegetables?&quot;,
+  // 0-based indent level; module items may be indented to show a hierarchy
+  &quot;indent&quot;: 0,
+  // the type of object referred to one of &#39;File&#39;, &#39;Page&#39;, &#39;Discussion&#39;,
+  // &#39;Assignment&#39;, &#39;Quiz&#39;, &#39;SubHeader&#39;, &#39;ExternalUrl&#39;, &#39;ExternalTool&#39;
+  &quot;type&quot;: &quot;Assignment&quot;,
+  // the id of the object referred to applies to &#39;File&#39;, &#39;Discussion&#39;,
+  // &#39;Assignment&#39;, &#39;Quiz&#39;, &#39;ExternalTool&#39; types
+  &quot;content_id&quot;: 1337,
+  // link to the item in Canvas
+  &quot;html_url&quot;: &quot;https://canvas.example.edu/courses/222/modules/items/768&quot;,
+  // (Optional) link to the Canvas API object, if applicable
+  &quot;url&quot;: &quot;https://canvas.example.edu/api/v1/courses/222/assignments/987&quot;,
+  // (only for &#39;Page&#39; type) unique locator for the linked wiki page
+  &quot;page_url&quot;: &quot;my-page-title&quot;,
+  // (only for &#39;ExternalUrl&#39; and &#39;ExternalTool&#39; types) external url that the item
+  // points to
+  &quot;external_url&quot;: &quot;https://www.example.com/externalurl&quot;,
+  // (only for &#39;ExternalTool&#39; type) whether the external tool opens in a new tab
+  &quot;new_tab&quot;: false,
+  // Completion requirement for this module item
+  &quot;completion_requirement&quot;: {&quot;type&quot;:&quot;min_score&quot;,&quot;min_score&quot;:10,&quot;completed&quot;:true},
+  // (Present only if requested through include[]=content_details) If applicable,
+  // returns additional details specific to the associated object
+  &quot;content_details&quot;: {&quot;points_possible&quot;:20,&quot;due_at&quot;:&quot;2012-12-31T06:00:00-06:00&quot;,&quot;unlock_at&quot;:&quot;2012-12-31T06:00:00-06:00&quot;,&quot;lock_at&quot;:&quot;2012-12-31T06:00:00-06:00&quot;},
+  // (Optional) Whether this module item is published. This field is present only
+  // if the caller has permission to view unpublished items.
+  &quot;published&quot;: true
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="ModuleItemSequenceNode">A ModuleItemSequenceNode object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // The previous ModuleItem in the sequence
+  &quot;prev&quot;: null,
+  // The ModuleItem being queried
+  &quot;current&quot;: {&quot;id&quot;:768,&quot;module_id&quot;:123,&quot;title&quot;:&quot;A lonely page&quot;,&quot;type&quot;:&quot;Page&quot;},
+  // The next ModuleItem in the sequence
+  &quot;next&quot;: {&quot;id&quot;:769,&quot;module_id&quot;:127,&quot;title&quot;:&quot;Project 1&quot;,&quot;type&quot;:&quot;Assignment&quot;},
+  // The conditional release rule for the module item, if applicable
+  &quot;mastery_path&quot;: {&quot;locked&quot;:true,&quot;assignment_sets&quot;:[],&quot;selected_set_id&quot;:null,&quot;awaiting_choice&quot;:false,&quot;still_processing&quot;:false,&quot;modules_url&quot;:&quot;\/courses\/11\/modules&quot;,&quot;choose_url&quot;:&quot;\/courses\/11\/modules\/items\/9\/choose&quot;,&quot;modules_tab_disabled&quot;:false}
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="ModuleItemSequence">A ModuleItemSequence object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // an array containing one ModuleItemSequenceNode for each appearence of the
+  // asset in the module sequence (up to 10 total)
+  &quot;items&quot;: [{&quot;prev&quot;:null,&quot;current&quot;:{&quot;id&quot;:768,&quot;module_id&quot;:123,&quot;title&quot;:&quot;A lonely page&quot;,&quot;type&quot;:&quot;Page&quot;},&quot;next&quot;:{&quot;id&quot;:769,&quot;module_id&quot;:127,&quot;title&quot;:&quot;Project 1&quot;,&quot;type&quot;:&quot;Assignment&quot;},&quot;mastery_path&quot;:{&quot;locked&quot;:true,&quot;assignment_sets&quot;:[],&quot;selected_set_id&quot;:null,&quot;awaiting_choice&quot;:false,&quot;still_processing&quot;:false,&quot;modules_url&quot;:&quot;\/courses\/11\/modules&quot;,&quot;choose_url&quot;:&quot;\/courses\/11\/modules\/items\/9\/choose&quot;,&quot;modules_tab_disabled&quot;:false}}],
+  // an array containing each Module referenced above
+  &quot;modules&quot;: [{&quot;id&quot;:123,&quot;name&quot;:&quot;Overview&quot;}, {&quot;id&quot;:127,&quot;name&quot;:&quot;Imaginary Numbers&quot;}]
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.context_modules_api.index' data-subtopic='Modules'>
+    <a name='method.context_modules_api.index' href='#method.context_modules_api.index'>
+      List modules
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_modules_api_controller.rb">ContextModulesApiController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/modules
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/modules</code>
+  </div>
+
+
+<p>A paginated list of the modules in a course</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        <ul><li>
+<p>“items”: Return module items inline if possible. This parameter suggests that Canvas return module items directly in the Module object JSON, to avoid having to make separate API requests for each module when enumerating modules and items. Canvas is free to omit &#39;items&#39; for any particular module if it deems them too numerous to return inline. Callers must be prepared to use the <a href="modules.html#method.context_module_items_api.index" title="List Module Items API">List Module Items API</a> if items are not returned.</p>
+</li><li>
+<p>“content_details”: Requires &#39;items&#39;. Returns additional details with module items specific to their associated content items. Includes standard lock information for each item.</p>
+</li></ul>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>items</code>, <code class=enum>content_details</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>search_term</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The partial name of the modules (and module items, if &#39;items&#39; is specified with include[]) to match and return.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>student_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Returns module completion information for the student with this id.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+     https://&lt;canvas&gt;/api/v1/courses/222/modules</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='modules.html#Module'>Modules</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_modules_api.show' data-subtopic='Modules'>
+    <a name='method.context_modules_api.show' href='#method.context_modules_api.show'>
+      Show module
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_modules_api_controller.rb">ContextModulesApiController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/modules/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/modules/:id</code>
+  </div>
+
+
+<p>Get information about a single module</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        <ul><li>
+<p>“items”: Return module items inline if possible. This parameter suggests that Canvas return module items directly in the Module object JSON, to avoid having to make separate API requests for each module when enumerating modules and items. Canvas is free to omit &#39;items&#39; for any particular module if it deems them too numerous to return inline. Callers must be prepared to use the <a href="modules.html#method.context_module_items_api.index" title="List Module Items API">List Module Items API</a> if items are not returned.</p>
+</li><li>
+<p>“content_details”: Requires &#39;items&#39;. Returns additional details with module items specific to their associated content items. Includes standard lock information for each item.</p>
+</li></ul>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>items</code>, <code class=enum>content_details</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>student_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Returns module completion information for the student with this id.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+     https://&lt;canvas&gt;/api/v1/courses/222/modules/123</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#Module'>Module</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_modules_api.create' data-subtopic='Modules'>
+    <a name='method.context_modules_api.create' href='#method.context_modules_api.create'>
+      Create a module
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_modules_api_controller.rb">ContextModulesApiController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/modules
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/modules</code>
+  </div>
+
+
+<p>Create and return a new module</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>module[name]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name of the module</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[unlock_at]</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The date the module will unlock</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[position]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The position of this module in the course (1-based)</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[require_sequential_progress]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether module items must be unlocked in order</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[prerequisite_module_ids][]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>IDs of Modules that must be completed before this one is unlocked. Prerequisite modules must precede this module (i.e. have a lower position value), otherwise they will be ignored</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[publish_final_grade]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether to publish the student&#39;s final grade for the course upon completion of this module.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules \
+  -X POST \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+  -d &#39;module[name]=module&#39; \
+  -d &#39;module[position]=2&#39; \
+  -d &#39;module[prerequisite_module_ids][]=121&#39; \
+  -d &#39;module[prerequisite_module_ids][]=122&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#Module'>Module</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_modules_api.update' data-subtopic='Modules'>
+    <a name='method.context_modules_api.update' href='#method.context_modules_api.update'>
+      Update a module
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_modules_api_controller.rb">ContextModulesApiController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/modules/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/modules/:id</code>
+  </div>
+
+
+<p>Update and return an existing module</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>module[name]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name of the module</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[unlock_at]</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The date the module will unlock</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[position]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The position of the module in the course (1-based)</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[require_sequential_progress]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether module items must be unlocked in order</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[prerequisite_module_ids][]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>IDs of Modules that must be completed before this one is unlocked Prerequisite modules must precede this module (i.e. have a lower position value), otherwise they will be ignored</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[publish_final_grade]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether to publish the student&#39;s final grade for the course upon completion of this module.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module[published]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether the module is published and visible to students</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules/&lt;module_id&gt; \
+  -X PUT \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+  -d &#39;module[name]=module&#39; \
+  -d &#39;module[position]=2&#39; \
+  -d &#39;module[prerequisite_module_ids][]=121&#39; \
+  -d &#39;module[prerequisite_module_ids][]=122&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#Module'>Module</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_modules_api.destroy' data-subtopic='Modules'>
+    <a name='method.context_modules_api.destroy' href='#method.context_modules_api.destroy'>
+      Delete module
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_modules_api_controller.rb">ContextModulesApiController#destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/courses/:course_id/modules/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/courses/:course_id/modules/:id</code>
+  </div>
+
+
+<p>Delete a module</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules/&lt;module_id&gt; \
+  -X Delete \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#Module'>Module</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_modules_api.relock' data-subtopic='Modules'>
+    <a name='method.context_modules_api.relock' href='#method.context_modules_api.relock'>
+      Re-lock module progressions
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_modules_api_controller.rb">ContextModulesApiController#relock</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/modules/:id/relock
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/modules/:id/relock</code>
+  </div>
+
+
+<p>Resets module progressions to their default locked state and recalculates them based on the current requirements.</p>
+
+<p>Adding progression requirements to an active course will not lock students out of modules they have already unlocked unless this action is called.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules/&lt;module_id&gt;/relock \
+  -X PUT \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#Module'>Module</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_module_items_api.index' data-subtopic='Module Items'>
+    <a name='method.context_module_items_api.index' href='#method.context_module_items_api.index'>
+      List module items
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb">ContextModuleItemsApiController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/modules/:module_id/items
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/modules/:module_id/items</code>
+  </div>
+
+
+<p>A paginated list of the items in a module</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If included, will return additional details specific to the content associated with each item. Refer to the <a href="modules.html#Module%20Item" title="Module Item specification">Module Item specification</a> for more details. Includes standard lock information for each item.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>content_details</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>search_term</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The partial title of the items to match and return.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>student_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Returns module completion information for the student with this id.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+     https://&lt;canvas&gt;/api/v1/courses/222/modules/123/items</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='modules.html#ModuleItem'>ModuleItems</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_module_items_api.show' data-subtopic='Module Items'>
+    <a name='method.context_module_items_api.show' href='#method.context_module_items_api.show'>
+      Show module item
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb">ContextModuleItemsApiController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/modules/:module_id/items/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/modules/:module_id/items/:id</code>
+  </div>
+
+
+<p>Get information about a single module item</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If included, will return additional details specific to the content associated with this item. Refer to the <a href="modules.html#Module%20Item" title="Module Item specification">Module Item specification</a> for more details. Includes standard lock information for each item.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>content_details</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>student_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Returns module completion information for the student with this id.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+     https://&lt;canvas&gt;/api/v1/courses/222/modules/123/items/768</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#ModuleItem'>ModuleItem</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_module_items_api.create' data-subtopic='Module Items'>
+    <a name='method.context_module_items_api.create' href='#method.context_module_items_api.create'>
+      Create a module item
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb">ContextModuleItemsApiController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/modules/:module_id/items
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/modules/:module_id/items</code>
+  </div>
+
+
+<p>Create and return a new module item</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>module_item[title]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name of the module item and associated content</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[type]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The type of content linked to the item</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>File</code>, <code class=enum>Page</code>, <code class=enum>Discussion</code>, <code class=enum>Assignment</code>, <code class=enum>Quiz</code>, <code class=enum>SubHeader</code>, <code class=enum>ExternalUrl</code>, <code class=enum>ExternalTool</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[content_id]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the content to link to the module item. Required, except for &#39;ExternalUrl&#39;, &#39;Page&#39;, and &#39;SubHeader&#39; types.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[position]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The position of this item in the module (1-based).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[indent]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>0-based indent level; module items may be indented to show a hierarchy</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[page_url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Suffix for the linked wiki page (e.g. &#39;front-page&#39;). Required for &#39;Page&#39; type.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[external_url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>External url that the item points to. [Required for &#39;ExternalUrl&#39; and &#39;ExternalTool&#39; types.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[new_tab]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether the external tool opens in a new tab. Only applies to &#39;ExternalTool&#39; type.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[completion_requirement][type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Completion requirement for this module item. “must_view”: Applies to all item types “must_contribute”: Only applies to “Assignment”, “Discussion”, and “Page” types “must_submit”, “min_score”: Only apply to “Assignment” and “Quiz” types “must_mark_done”: Only applies to “Assignment” and “Page” types Inapplicable types will be ignored</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>must_view</code>, <code class=enum>must_contribute</code>, <code class=enum>must_submit</code>, <code class=enum>must_mark_done</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[completion_requirement][min_score]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Minimum score required to complete. Required for completion_requirement type &#39;min_score&#39;.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules/&lt;module_id&gt;/items \
+  -X POST \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+  -d &#39;module_item[title]=module item&#39; \
+  -d &#39;module_item[type]=ExternalTool&#39; \
+  -d &#39;module_item[content_id]=10&#39; \
+  -d &#39;module_item[position]=2&#39; \
+  -d &#39;module_item[indent]=1&#39; \
+  -d &#39;module_item[new_tab]=true&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#ModuleItem'>ModuleItem</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_module_items_api.update' data-subtopic='Module Items'>
+    <a name='method.context_module_items_api.update' href='#method.context_module_items_api.update'>
+      Update a module item
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb">ContextModuleItemsApiController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/modules/:module_id/items/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/modules/:module_id/items/:id</code>
+  </div>
+
+
+<p>Update and return an existing module item</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>module_item[title]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name of the module item</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[position]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The position of this item in the module (1-based)</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[indent]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>0-based indent level; module items may be indented to show a hierarchy</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[external_url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>External url that the item points to. Only applies to &#39;ExternalUrl&#39; type.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[new_tab]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether the external tool opens in a new tab. Only applies to &#39;ExternalTool&#39; type.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[completion_requirement][type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Completion requirement for this module item. “must_view”: Applies to all item types “must_contribute”: Only applies to “Assignment”, “Discussion”, and “Page” types “must_submit”, “min_score”: Only apply to “Assignment” and “Quiz” types “must_mark_done”: Only applies to “Assignment” and “Page” types Inapplicable types will be ignored</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>must_view</code>, <code class=enum>must_contribute</code>, <code class=enum>must_submit</code>, <code class=enum>must_mark_done</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[completion_requirement][min_score]</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Minimum score required to complete, Required for completion_requirement type &#39;min_score&#39;.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[published]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether the module item is published and visible to students.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item[module_id]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Move this item to another module by specifying the target module id here. The target module must be in the same course.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules/&lt;module_id&gt;/items/&lt;item_id&gt; \
+  -X PUT \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+  -d &#39;module_item[position]=2&#39; \
+  -d &#39;module_item[indent]=1&#39; \
+  -d &#39;module_item[new_tab]=true&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#ModuleItem'>ModuleItem</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_module_items_api.select_mastery_path' data-subtopic='Module Items'>
+    <a name='method.context_module_items_api.select_mastery_path' href='#method.context_module_items_api.select_mastery_path'>
+      Select a mastery path
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb">ContextModuleItemsApiController#select_mastery_path</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/modules/:module_id/items/:id/select_mastery_path
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/modules/:module_id/items/:id/select_mastery_path</code>
+  </div>
+
+
+<p>Select a mastery path when module item includes several possible paths. Requires Mastery Paths feature to be enabled.  Returns a compound document with the assignments included in the given path and any module items related to those assignments</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>assignment_set_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Assignment set chosen, as specified in the mastery_paths portion of the context module item response</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>student_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Which student the selection applies to.  If not specified, current user is implied.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules/&lt;module_id&gt;/items/&lt;item_id&gt;/select_master_path \
+  -X POST \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+  -d &#39;assignment_set_id=2992&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_module_items_api.destroy' data-subtopic='Module Items'>
+    <a name='method.context_module_items_api.destroy' href='#method.context_module_items_api.destroy'>
+      Delete module item
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb">ContextModuleItemsApiController#destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/courses/:course_id/modules/:module_id/items/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/courses/:course_id/modules/:module_id/items/:id</code>
+  </div>
+
+
+<p>Delete a module item</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules/&lt;module_id&gt;/items/&lt;item_id&gt; \
+  -X Delete \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#ModuleItem'>ModuleItem</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_module_items_api.mark_as_done' data-subtopic='Module Items'>
+    <a name='method.context_module_items_api.mark_as_done' href='#method.context_module_items_api.mark_as_done'>
+      Mark module item as done/not done
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb">ContextModuleItemsApiController#mark_as_done</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/modules/:module_id/items/:id/done
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/modules/:module_id/items/:id/done</code>
+  </div>
+
+
+<p>Mark a module item as done/not done. Use HTTP method PUT to mark as done, and DELETE to mark as not done.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules/&lt;module_id&gt;/items/&lt;item_id&gt;/done \
+  -X Put \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_module_items_api.item_sequence' data-subtopic='Module Items'>
+    <a name='method.context_module_items_api.item_sequence' href='#method.context_module_items_api.item_sequence'>
+      Get module item sequence
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb">ContextModuleItemsApiController#item_sequence</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/module_item_sequence
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/module_item_sequence</code>
+  </div>
+
+
+<p>Given an asset in a course, find the ModuleItem it belongs to, the previous and next Module Items in the course sequence, and also any applicable mastery path rules</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>asset_type</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The type of asset to find module sequence information for. Use the ModuleItem if it is known (e.g., the user navigated from a module item), since this will avoid ambiguity if the asset appears more than once in the module sequence.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>ModuleItem</code>, <code class=enum>File</code>, <code class=enum>Page</code>, <code class=enum>Discussion</code>, <code class=enum>Assignment</code>, <code class=enum>Quiz</code>, <code class=enum>ExternalTool</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>asset_id</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the asset (or the url in the case of a Page)</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/module_item_sequence?asset_type=Assignment&amp;asset_id=123 \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='modules.html#ModuleItemSequence'>ModuleItemSequence</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.context_module_items_api.mark_item_read' data-subtopic='Module Items'>
+    <a name='method.context_module_items_api.mark_item_read' href='#method.context_module_items_api.mark_item_read'>
+      Mark module item read
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/context_module_items_api_controller.rb">ContextModuleItemsApiController#mark_item_read</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/modules/:module_id/items/:id/mark_read
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/modules/:module_id/items/:id/mark_read</code>
+  </div>
+
+
+<p>Fulfills “must view” requirement for a module item. It is generally not necessary to do this explicitly, but it is provided for applications that need to access external content directly (bypassing the html_url redirect that normally allows Canvas to fulfill “must view” requirements).</p>
+
+<p>This endpoint cannot be used to complete requirements on locked or unpublished module items.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/modules/&lt;module_id&gt;/items/&lt;item_id&gt;/mark_read \
+  -X POST \
+  -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:10 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

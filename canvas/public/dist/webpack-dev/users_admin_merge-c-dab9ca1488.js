@@ -1,0 +1,15 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([["users_admin_merge"],{
+
+/***/ "DzM5":
+/*!************************************************!*\
+  !*** ./ui/features/users_admin_merge/index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"ouhR\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var jqueryui_autocomplete__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jqueryui/autocomplete */ \"JFsI\");\n//\n// Copyright (C) 2014 - present Instructure, Inc.\n//\n// This file is part of Canvas.\n//\n// Canvas is free software: you can redistribute it and/or modify it under\n// the terms of the GNU Affero General Public License as published by the Free\n// Software Foundation, version 3 of the License.\n//\n// Canvas is distributed in the hope that it will be useful, but WITHOUT ANY\n// WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\n// A PARTICULAR PURPOSE. See the GNU Affero General Public License for more\n// details.\n//\n// You should have received a copy of the GNU Affero General Public License along\n// with this program. If not, see <http://www.gnu.org/licenses/>.\n\n\nconst $select_name = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#select_name');\nconst $selected_name = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selected_name');\njquery__WEBPACK_IMPORTED_MODULE_0___default()('#account_select').change(function () {\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.account_search').hide();\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()(`#account_search_${jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val()}`).show();\n}).change();\n/* harmony default export */ __webpack_exports__[\"default\"] = (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.account_search .user_name').each(function () {\n  const $input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);\n  $input.autocomplete({\n    minLength: 4,\n    source: $input.data('autocompleteSource')\n  });\n  return $input.bind('autocompleteselect autocompletechange', (event, ui) => {\n    if (ui.item) {\n      $selected_name.text(ui.item.label);\n      $select_name.show().attr('href', jquery__WEBPACK_IMPORTED_MODULE_0___default.a.replaceTags(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#select_name').attr('rel'), 'id', ui.item.id));\n    } else {\n      $select_name.hide();\n    }\n  });\n}));\n\n//# sourceURL=webpack:///./ui/features/users_admin_merge/index.js?");
+
+/***/ })
+
+}]);

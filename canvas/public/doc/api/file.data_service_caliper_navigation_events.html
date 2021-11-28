@@ -1,0 +1,3891 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Navigation Events
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="" class="current">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><h1 id="navigation-events">Navigation Events</h1>
+
+<h2 id="asset_accessed">asset_accessed</h2>
+
+<p><strong>Definition:</strong> <code>asset_accessed</code> events are triggered for viewing various objects in Canvas. Viewing a quiz, a wiki page, the list of quizzes, etc, all generate <code>asset_access</code> events.</p>
+
+<p><strong>Trigger:</strong> Triggered when a variety of assets are viewed.</p>
+
+<p><strong>Description:</strong> type=account, subtype=outcomes</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:46.287Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:02729bac-c975-4e22-b312-6a7f1d8be173&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:account:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;outcomes&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Canvas County School District&quot;,
+            &quot;asset_type&quot;: &quot;account&quot;,
+            &quot;asset_subtype&quot;: &quot;outcomes&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;,
+            &quot;context_account_id&quot;: &quot;210700000000000001&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-04T14:46:31.249Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/accounts/1/outcomes&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/accounts/1/outcomes&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=assignment</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:46.608Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:d71bd983-d03a-4ef8-8701-71cfa7889eaf&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:assignment:21070000000000144&quot;,
+        &quot;type&quot;: &quot;AssignableDigitalResource&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Week 5 Math Homework&quot;,
+            &quot;asset_type&quot;: &quot;assignment&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;developer_key_id&quot;: &quot;170000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.700Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/565/assignments/31468&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=attachment</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:46.918Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:abd40e68-7792-46c3-b0bf-e4980d9c5236&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:attachment:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;attachment&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;My Attachment.html&quot;,
+            &quot;asset_type&quot;: &quot;attachment&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000001963&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;filename&quot;: &quot;My+Attachment.html&quot;,
+            &quot;display_name&quot;: &quot;My+Attachment.html&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.655Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/1963/files/12345?module_item_id=123&amp;fd_cookie_set=1&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/412~17342/files/474~958001/course%20files/CourseResources/Week1/My%20Attachments.htm?download=1&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=calendar_event</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:47.228Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:2a81b5ce-8cd8-4e2f-96c6-62190fadf31d&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:calendar_event:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;calendar_event&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Class end of year party&quot;,
+            &quot;asset_type&quot;: &quot;calendar_event&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:11.076Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/calendar&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/groups/4820/calendar_events/144?return_to=https%3A%2F%2Futpl.instructure.com%2Fcalendar%4view_name%3Dmonth%10view_start%3D348-0-10&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=collaboration</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:47.556Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:6713c466-1ce1-4ffd-b37f-4940e9d1cb17&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:collaboration:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;collaboration&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Example Collaboration&quot;,
+            &quot;asset_type&quot;: &quot;collaboration&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:35:15.069Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/8346/collaborations&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000008346&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000008346&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000008346:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000008346&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/8346/collaborations/144&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=content_tag</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:47.892Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:42fafa38-6b5a-4187-9f9c-007f5262d290&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:content_tag:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;content_tag&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Article: How to learn a foreign language&quot;,
+            &quot;asset_type&quot;: &quot;content_tag&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.871Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/14855/modules/items/143&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000014855&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000014855&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000014855:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000014855&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/14855/modules/items/144&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=context_external_tool (this type is used to identify all LTI versions but LTI 2.0 launches)</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:48.209Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:d745a8a5-dd2b-473e-bb96-8c8f6773289a&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:context_external_tool:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;context_external_tool&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;External tool modules&quot;,
+            &quot;asset_type&quot;: &quot;context_external_tool&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;url&quot;: &quot;https://externaltool.example.com/lti/&quot;,
+            &quot;domain&quot;: &quot;externaltool.example.com&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:08.825Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/20572&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000020572&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000020572&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000020572:Instructor:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000020572&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/20572/modules/items/44&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=announcements</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:48.547Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:21937a1f-3d5f-40cb-b9d4-2863df75a4fa&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:2107000000000123&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;announcements&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;announcements&quot;,
+            &quot;entity_id&quot;: &quot;2107000000000123&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.956Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000123&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000123&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000123:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000123&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/123/announcements&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=assignments</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:48.880Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:55154e3e-fcff-4378-83f9-d1068d792261&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;assignments&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;assignments&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.753Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/assignments/64541?module_item_id=313255&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/144/assignments&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=calendar_feed</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:49.188Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:49394652-705e-4b29-8412-f2c430f9b824&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;calendar_feed&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;6th Grade History&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;calendar_feed&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.874Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/feeds/calendars/user_abcdeadsadsX3jd93E2134431dasf3214123rf321231.ics&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=collaborations</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:49.498Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:e26e5294-0d45-43d4-8d04-e746c61cffd7&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000012345&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;collaborations&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Perspectives on Linguistic Science&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;collaborations&quot;,
+            &quot;entity_id&quot;: &quot;21070000000012345&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:35:04.235Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/12345/external_tools/25&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000012345&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000012345&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000012345:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000012345&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/12345/collaborations&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=conferences</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:49.832Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:39b95352-8583-4e4a-a6b5-b6f6bc9b1f50&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;conferences&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Mathematics for Engineers 1&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;conferences&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:27.252Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/grades&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/144/conferences&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=files</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:50.156Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:7398e642-b578-4377-8af4-ed7c00378557&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;files&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;files&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;developer_key_id&quot;: &quot;170000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:07.907Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144/files?sort=updated_at&amp;order=desc&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=grades</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:50.480Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:b53bf87a-497c-4122-b0e3-c642580a1623&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;grades&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Complex Analysis&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;grades&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.918Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/144/grades&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=home</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:50.820Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:5d11e896-1d50-4a19-ada1-2c52fbbcda4d&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;home&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Complex Analysis&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;home&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;developer_key_id&quot;: &quot;170000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.697Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=modules</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:51.128Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:46a5d8a0-9a09-459c-8ab3-e2c9a86c7ca9&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;modules&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Complex Analysis&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;modules&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.796Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/discussion_topics/89887?module_item_id=219850&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/144/modules&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=outcomes</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:51.444Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:980f8c56-35bf-4ece-b77b-3222ddff2c3c&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;outcomes&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;outcomes&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-03T19:01:11.198Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/modules&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:Instructor:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/144/outcomes&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=pages</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:51.787Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:464fd337-2c75-4afd-81fd-c6fee60e6af6&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;pages&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;pages&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;developer_key_id&quot;: &quot;170000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:08.823Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144/pages?sort=updated_at&amp;order=desc&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=quizzes</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:52.084Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:c8e7c7a1-2335-4fcc-b8f7-0920752ea239&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;quizzes&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;quizzes&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;developer_key_id&quot;: &quot;170000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:07.636Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144/quizzes?page=1&amp;per_page=100&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=roster</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:52.383Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:d8c06f6e-592a-4a27-99ee-4d0b61cafdd5&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;roster&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;roster&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;developer_key_id&quot;: &quot;170000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:08.177Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/144/users?per_page=100&amp;include[]=email&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=speed_grader</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:52.696Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:f0e75bbd-d4de-4647-bfd8-260f98b11632&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;speed_grader&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;speed_grader&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:07.276Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:Instructor:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/144/gradebook/speed_grader?assignment_id=62969&amp;student_id=1830&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=syllabus</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:52.999Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:f2fa19f4-3240-4549-b067-5063c39d286a&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;syllabus&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;syllabus&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:07.844Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/101/pages/the-bbc-reports-on-shakespeare?module_item_id=457878&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/144/assignments/syllabus&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=course, subtype=topics</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:53.302Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:c1c584f2-7194-4b3b-a8bf-5e1115b475a7&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;topics&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Introduction to Algebra&quot;,
+            &quot;asset_type&quot;: &quot;course&quot;,
+            &quot;asset_subtype&quot;: &quot;topics&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:07.373Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/144/announcements&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000144&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/144/discussion_topics&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=discussion_topic</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:53.617Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:8467aed3-6bb6-42d4-8392-f354829cb29c&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:discussion:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Thread&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Week 1 Journal&quot;,
+            &quot;asset_type&quot;: &quot;discussion_topic&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.666Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/1234/discussion_topics/144?module_item_id=457151&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/groups/1234/discussion_topics/144/view?include_new_entries=1&amp;include_enrollment_state=1&amp;include_context_card_info=1&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=enrollment</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:53.929Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:2c7cfa5c-7ef3-45a6-a4a5-7969e95afe82&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:enrollment:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;enrollment&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_type&quot;: &quot;enrollment&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:30.201Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/1234/users&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000001234&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000001234&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000001234:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000001234&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/1234/users/14320&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=announcements</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:54.249Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:45280282-9b8d-46d2-8102-7ce985761b95&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000006296&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;announcements&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Group 2&quot;,
+            &quot;asset_type&quot;: &quot;group&quot;,
+            &quot;asset_subtype&quot;: &quot;announcements&quot;,
+            &quot;entity_id&quot;: &quot;21070000000006296&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T02:35:16.059Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/6296/discussion_topics/724641&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/groups/6296/announcements&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=calendar_feed</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:54.569Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:087cd124-4093-4dac-b47b-2a16b6375c04&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;calendar_feed&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Session 1 (Apr 1, 2019)&quot;,
+            &quot;asset_type&quot;: &quot;group&quot;,
+            &quot;asset_subtype&quot;: &quot;calendar_feed&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:07.987Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/feeds/calendars/user_AbcDeFGhIJkL123412312312312312.ics&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=collaborations</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:54.875Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:f8908571-6c91-4775-bc9e-00ffc01c974c&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;collaborations&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Example Name&quot;,
+            &quot;asset_type&quot;: &quot;group&quot;,
+            &quot;asset_subtype&quot;: &quot;collaborations&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T03:08:58.218Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/1444/users&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/groups/144/collaborations&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=conferences</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:55.273Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:8cb24552-4c6a-4c25-91ed-6ccb1cebe65f&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;conferences&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+            &quot;asset_type&quot;: &quot;group&quot;,
+            &quot;asset_subtype&quot;: &quot;conferences&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:07.150Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/144/conferences&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/groups/144/conferences&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=files</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:55.634Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:6fcb10d6-3ee5-44cf-a584-841bfbf28d5a&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;files&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+            &quot;asset_type&quot;: &quot;group&quot;,
+            &quot;asset_subtype&quot;: &quot;files&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;developer_key_id&quot;: &quot;170000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:58.002Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/groups/144/files?sort=updated_at&amp;order=desc&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=pages</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:55.930Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:98b1fb69-f716-403f-a4e4-94781a707d64&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;pages&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+            &quot;asset_type&quot;: &quot;group&quot;,
+            &quot;asset_subtype&quot;: &quot;pages&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;developer_key_id&quot;: &quot;170000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:34:51.407Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/groups/144/pages?sort=title&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=roster</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:56.252Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:bd56ebcb-fcba-4d1e-9c68-cbfbaeb8eb2d&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;roster&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+            &quot;asset_type&quot;: &quot;group&quot;,
+            &quot;asset_subtype&quot;: &quot;roster&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:10:04.255Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/144&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/groups/144/users&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=group, subtype=topics</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:56.594Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:5df496f2-ce03-425f-a95f-27498872aafa&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;topics&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;MATH 101 Group 1&quot;,
+            &quot;asset_type&quot;: &quot;group&quot;,
+            &quot;asset_subtype&quot;: &quot;topics&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:16.679Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/groups/144/discussion_topics/1434696?module_item_id=5629142&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/groups/144/discussion_topics&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=learning_outcome</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:56.909Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:f2318102-28da-4f03-905c-420b2f57a873&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:learning_outcome:21070000000004764&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;learning_outcome&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Outcome Test 1&quot;,
+            &quot;asset_type&quot;: &quot;learning_outcome&quot;,
+            &quot;entity_id&quot;: &quot;21070000000004764&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-08T19:53:07.183Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/accounts/1/outcomes&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/accounts/1/outcomes/4764&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=lti/tool_proxy (this type is used to identify LTI 2.0 launches)</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:57.232Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:c9d89a6e-e7e0-4c30-b2d7-8f78fc61c3f0&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:lti/tool_proxy:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;lti/tool_proxy&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Some LTI Tool&quot;,
+            &quot;asset_type&quot;: &quot;lti/tool_proxy&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:15.799Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/grades&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/565/assignments/5606488/lti/resource/29600186-1937-4bb2-a68-54fe40eff21?display=borderless&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=quizzes:quiz</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:57.605Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:8bfe9cd1-8960-4fb1-b5df-7274b593f178&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:quizzes:quiz:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;quizzes:quiz&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;A very special quiz&quot;,
+            &quot;asset_type&quot;: &quot;quizzes:quiz&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-08T19:56:55.781Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/quizzes&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/565/quizzes/144&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=user, subtype=calendar_feed</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:58.029Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:0c4559c2-2a6d-4553-9b29-989c2420ac86&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;calendar_feed&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Sally Student&quot;,
+            &quot;asset_type&quot;: &quot;user&quot;,
+            &quot;asset_subtype&quot;: &quot;calendar_feed&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.718Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/feeds/calendars/user_ABdASKrt432fdKSDALhGDSL83423kFDRK32.ics&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=user, subtype=files</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:58.332Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:a829b641-07a1-4a76-a312-55ad35f28a9f&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;files&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Sally Student&quot;,
+            &quot;asset_type&quot;: &quot;user&quot;,
+            &quot;asset_subtype&quot;: &quot;files&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;developer_key_id&quot;: &quot;170000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:23.214Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/users/144/files?sort=updated_at&amp;order=desc&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=web_conference</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:58.687Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:6bec0191-8ca5-4110-bf3a-12081068e182&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:web_conference:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;web_conference&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Basic Math Conference&quot;,
+            &quot;asset_type&quot;: &quot;web_conference&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;2107000000000007&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-02T01:27:38.610Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/conferences&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/565/conferences/144/join&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>Description:</strong> type=wiki_page</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:59.163Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:cf6e0f3b-3511-4254-86c5-6936ff33f267&quot;,
+      &quot;type&quot;: &quot;NavigationEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;7db438071375c02373713c12c73869ff2f470b68.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;NavigatedTo&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:wikiPage:21070000000000144&quot;,
+        &quot;type&quot;: &quot;Page&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;asset_name&quot;: &quot;Week 1: Intro&quot;,
+            &quot;asset_type&quot;: &quot;wiki_page&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000144&quot;,
+            &quot;context_account_id&quot;: &quot;21070000000000079&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:09:06.878Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/discussion_topics/1072925?module_item_id=4635201&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:Learner:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/565/pages/week-2-introduction?module_item_id=4635203&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].asset_name</strong></td>
+<td>indicates Canvas object name being accessed in the NavigationEvent. For an example it could be a title of a course, page, module, assignment, LTI, attachment etc</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].asset_subtype</strong></td>
+<td>indicates Canvas object sub-type being accessed in the NavigationEvent</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].asset_type</strong></td>
+<td>indicates Canvas object type being accessed in the NavigationEvent</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].context_account_id</strong></td>
+<td>The account id of the current context. This is the actual account the context is attached to could be account, sub-account, course</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].http_method</strong></td>
+<td>HTTP method/verb (GET, PUT, POST etc.) that the request was sent with. Only present in user-generated events</td>
+</tr>
+</tbody></table>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

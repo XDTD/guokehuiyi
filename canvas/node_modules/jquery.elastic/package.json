@@ -1,0 +1,15 @@
+{
+  "name": "jquery.elastic",
+  "version": "1.0.0",
+  "description": "Elastic makes your textareas grow and shrink to fit it’s content. http://jan.jarfalk.se/jquery-elastic/",
+  "main": "jquery.elastic.source.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryankshaw/jquery-elastic.git"
+  },
+  "author": "janjarfalk",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}

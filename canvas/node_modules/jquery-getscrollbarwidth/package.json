@@ -1,0 +1,15 @@
+{
+  "name": "jquery-getscrollbarwidth",
+  "version": "1.0.0",
+  "description": "A jQuery plugin to retrieve the width of a system scrollbar.",
+  "main": "jquery.getscrollbarwidth.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryankshaw/jquery-getscrollbarwidth.git"
+  },
+  "author": "Brandon Aaron",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}

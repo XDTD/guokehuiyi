@@ -1,0 +1,14 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3636],{
+
+/***/ "on1a":
+/*!*******************************************************************!*\
+  !*** ./node_modules/mediaelement/build/lang/me-i18n-locale-pt.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/*!\n * This is a i18n.locale language object.\n *\n * Portuguese\n *\n * @author\n *   Jalios (Twitter: @Jalios)\n *   Sascha Greuel (Twitter: @SoftCreatR)\n *\n * @see\n *   me-i18n.js\n *\n * @params\n *  - exports - CommonJS, window ..\n */\n(function (exports) {\n    \"use strict\";\n\n    if (exports.pt === undefined) {\n        exports.pt = {\n            \"mejs.plural-form\": 1,\n\n            // me-shim\n            \"mejs.download-file\": \"Descarregar o ficheiro\",\n\n            // mep-feature-contextmenu\n            \"mejs.fullscreen-off\": \"Desligar ecrã completo\",\n            \"mejs.fullscreen-on\": \"Ir para ecrã completo\",\n            \"mejs.download-video\": \"Descarregar o vídeo\",\n\n            // mep-feature-fullscreen\n            \"mejs.fullscreen\": \"Ecrã completo\",\n\n            // mep-feature-jumpforward\n            //\"mejs.time-jump-forward\": \"Jump forward %1 second(s)\",\n\n            // mep-feature-playpause\n            \"mejs.play\": \"Reprodução\",\n            \"mejs.pause\": \"Pausa\",\n\n            // mep-feature-postroll\n            \"mejs.close\": \"Fechar\",\n\n            // mep-feature-progress\n            \"mejs.time-slider\": \"Deslizador do tempo\",\n            \"mejs.time-help-text\": \"Use as teclas das setas para a esquerda/direita para avançar um segundo, e as setas para cima/baixo para avançar dez segundos.\",\n\n            // mep-feature-skipback\n            \"mejs.time-skip-back\": \"Retroceder %1 segundos\",\n\n            // mep-feature-tracks\n            \"mejs.captions-subtitles\": \"Legendas\",\n            \"mejs.none\": \"Nenhum\",\n\n            // mep-feature-volume\n            \"mejs.mute-toggle\": \"Alternar silêncio\",\n            \"mejs.volume-help-text\": \"Use as teclas das setas para cima/baixo para aumentar ou diminuir o volume.\",\n            \"mejs.unmute\": \"Voltar ao som\",\n            \"mejs.mute\": \"Silêncio\",\n            \"mejs.volume-slider\": \"Deslizador do volume\",\n\n            // mep-player\n            \"mejs.video-player\": \"Leitor de vídeo\",\n            \"mejs.audio-player\": \"Leitor de áudio\",\n\n            // mep-feature-ads\n            //\"mejs.ad-skip\": \"Skip ad\",\n            //\"mejs.ad-skip-info\": \"Skip in %1 second(s)\",\n\n            // mep-feature-sourcechooser\n            //\"mejs.source-chooser\": \"Source Chooser\"\n        };\n    }\n}(mejs.i18n.locale.strings));\n\n\n//# sourceURL=webpack:///./node_modules/mediaelement/build/lang/me-i18n-locale-pt.js?");
+
+/***/ })
+
+}]);

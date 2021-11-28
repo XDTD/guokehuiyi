@@ -1,0 +1,15 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([["course_wizard"],{
+
+/***/ "5JSX":
+/*!********************************************!*\
+  !*** ./ui/features/course_wizard/index.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"ouhR\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"q1tI\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ \"i8i4\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);\n/*\n * Copyright (C) 2014 - present Instructure, Inc.\n *\n * This file is part of Canvas.\n *\n * Canvas is free software: you can redistribute it and/or modify it under\n * the terms of the GNU Affero General Public License as published by the Free\n * Software Foundation, version 3 of the License.\n *\n * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\n * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more\n * details.\n *\n * You should have received a copy of the GNU Affero General Public License along\n * with this program. If not, see <http://www.gnu.org/licenses/>.\n */\n\n\n\nconst CourseWizard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.lazy(() => Promise.all(/*! import() */[__webpack_require__.e(9), __webpack_require__.e(3686)]).then(__webpack_require__.bind(null, /*! ./react/CourseWizard */ \"x9/Y\")));\n/*\n * This essentially handles binding the button events and calling out to the\n * CourseWizard React component that is the actual wizard.\n */\n\nfunction renderWizard(showWizard) {\n  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__[\"Suspense\"], {\n    fallback: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(\"div\", null)\n  }, showWizard && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CourseWizard, {\n    onHideWizard: () => renderWizard(false)\n  })), document.getElementById('wizard_box'));\n}\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', '.wizard_popup_link', () => renderWizard(true));\n\n//# sourceURL=webpack:///./ui/features/course_wizard/index.js?");
+
+/***/ })
+
+}]);

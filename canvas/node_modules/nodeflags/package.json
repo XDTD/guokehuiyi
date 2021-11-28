@@ -1,0 +1,35 @@
+{
+  "name": "nodeflags",
+  "description": "Get all available node cli flags.",
+  "author": "Jarid Margolin <jaridmargolin@gmail.com>",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jaridmargolin/nodeflags",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaridmargolin/nodeflags"
+  },
+  "bugs": {
+    "url": "https://github.com/jaridmargolin/nodeflags/issues"
+  },
+  "scripts": {
+    "test": "standard && mocha",
+    "inspect-test": "inspect _mocha --no-timeouts",
+    "coverage": "nyc --reporter=lcov --reporter=text npm test",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "lodash": "^4.17.3",
+    "semver": "^5.3.0",
+    "v8flags": "^2.0.11"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.15",
+    "inspect-process": "^0.4.1",
+    "mocha": "^3.2.0",
+    "nyc": "^10.0.0",
+    "standard": "^8.6.0"
+  }
+}

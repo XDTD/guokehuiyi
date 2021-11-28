@@ -1,0 +1,592 @@
+@charset "UTF-8";
+/*
+ * Copyright (C) 2016 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/* Legacy variables. Discontinue to use these: */
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
+ * Convert font-size from px to rem with px fallback
+ * @param $size - the value in pixel you want to convert
+ * e.g. p {@include fontSize(12px);}
+ * courtesy of https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_fontSize.scss
+ */
+/*
+ * Copyright (C) 2011 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+.react-rubric {
+  border-collapse: collapse;
+  page-break-inside: avoid;
+}
+
+.react-rubric table {
+  width: 100%;
+  height: 100%;
+}
+
+.react-rubric th.rubric-criteria {
+  width: 8rem;
+}
+
+.react-rubric th.rubric-points {
+  width: 6rem;
+}
+
+.react-rubric .react-rubric-cell {
+  width: 100%;
+}
+
+.react-rubric thead {
+  background-color: #F5F5F5;
+}
+
+.react-rubric td, .react-rubric th {
+  border: 1px solid #C7CDD1;
+  padding: 7px 10px;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+.react-rubric th {
+  padding-bottom: 14px;
+}
+
+.react-rubric th[scope=col] {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.react-rubric th.rubric-title {
+  background-color: #FFFFFF;
+  border-top: 1px solid #C7CDD1;
+  border-left: 1px solid #C7CDD1;
+  border-right: 1px solid #C7CDD1;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.react-rubric .description-header {
+  height: 100%;
+  vertical-align: text-top;
+}
+.react-rubric .description-header .long-description button {
+  margin: 0;
+  padding: 0;
+}
+
+.react-rubric .assessment-comments {
+  margin-top: 10px;
+  margin-bottom: 6px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.react-rubric .react-rubric-break-words {
+  word-wrap: break-word;
+  /* for IE support */
+  overflow-wrap: break-word;
+}
+
+.react-rubric .rubric-criterion td {
+  vertical-align: top;
+  height: 100%;
+}
+
+.react-rubric .rating-description {
+  padding-bottom: 0.5em;
+}
+
+.react-rubric td.ratings {
+  padding: 0;
+  vertical-align: middle;
+}
+
+.react-rubric .ratings .rating-points {
+  white-space: nowrap;
+}
+
+.react-rubric .rubric-freeform {
+  padding: 5px;
+}
+
+.react-rubric .edit-freeform-comments-large {
+  min-width: 15rem;
+  padding: 1rem;
+}
+
+.react-rubric .edit-freeform-comments-small {
+  padding: 0.75rem;
+}
+
+.react-rubric .rating-tier {
+  padding: 7px 10px;
+  border-left: 1px solid #C7CDD1;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  position: relative;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+
+.react-rubric .rating-tier .rating-footer {
+  padding-bottom: 1rem;
+}
+
+.react-rubric .rating-tier.selected .shader {
+  width: 100%;
+  height: 0.3em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.react-rubric .rating-tier.selected .shader .triangle {
+  width: 0;
+  height: 0;
+  border-left: 0.7em solid transparent;
+  border-right: 0.7em solid transparent;
+  border-bottom: 1em solid;
+  position: relative;
+  margin: 0 auto;
+  bottom: 0.7em;
+}
+.react-rubric .rating-tier.selected .exceedsMasteryShader {
+  background-color: #127A1B;
+}
+.react-rubric .rating-tier.selected .exceedsMasteryShader .triangle {
+  color: #127A1B;
+}
+.react-rubric .rating-tier.selected .meetsMasteryShader {
+  background-color: #127A1B;
+}
+.react-rubric .rating-tier.selected .meetsMasteryShader .triangle {
+  color: #127A1B;
+}
+.react-rubric .rating-tier.selected .nearMasteryShader {
+  background-color: #C23C0D;
+}
+.react-rubric .rating-tier.selected .nearMasteryShader .triangle {
+  color: #C23C0D;
+}
+.react-rubric .rating-tier.selected .wellBelowMasteryShader {
+  background-color: #EE0612;
+}
+.react-rubric .rating-tier.selected .wellBelowMasteryShader .triangle {
+  color: #EE0612;
+}
+
+.react-rubric .rating-tier.assessing:focus,
+.react-rubric .rating-tier.assessing:hover {
+  background-color: #ad9;
+  cursor: pointer;
+}
+
+.rating-all-footer {
+  border-top: 1px solid #C7CDD1;
+}
+
+.react-rubric .graded-points {
+  white-space: nowrap;
+  text-align: end;
+}
+
+.submission_details .bold {
+  font-weight: bold;
+}
+.submission_details .error {
+  color: #D01A19;
+}
+.submission_details td {
+  padding-left: 1em;
+}
+.submission_details th {
+  font-weight: normal;
+}
+.submission_details td, .submission_details th {
+  text-align: right;
+}
+
+.submission-details-header {
+  margin-bottom: 12px;
+}
+
+.submission-details-header__heading-and-grades {
+  border-bottom: 0.0625rem solid #C7CDD1;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+@media only screen and (min-width: 768px) {
+  .submission-details-header__heading-and-grades {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.submission-details-header__heading {
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+@media only screen and (min-width: 768px) {
+  .submission-details-header__heading {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 1px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .submission-details-header__rubric {
+    text-align: right;
+  }
+}
+.submission-details-header__rubric.submission-details-header__rubric--can-grade {
+  margin-top: -9px;
+}
+
+.submission-details-header__info {
+  margin-top: 4px;
+  display: flex;
+}
+.submission-details-header__info .submission-details-header__attempts_info {
+  margin: 0px 0px 0px 40px;
+}
+.submission-details-header__info .submission-details-header__attempts_info > span {
+  margin: 0px 20px 0px 0px;
+}
+
+.submission-details-header__time {
+  margin-right: 3px;
+}
+.submission-details-header__time.late {
+  color: #D01A19;
+  font-weight: bold;
+}
+
+.submission-details-container {
+  border: 1px solid #C7CDD1;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 992px) {
+  .submission-details-container {
+    display: flex;
+  }
+}
+
+.submission-details-frame {
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 992px) {
+  .submission-details-frame {
+    flex: 1;
+  }
+}
+
+.submission-details-comments {
+  box-sizing: border-box;
+  border-top: 1px solid #C7CDD1;
+}
+@media only screen and (min-width: 992px) {
+  .submission-details-comments {
+    flex: 0 0 280px;
+    border-top: none;
+  }
+}
+.submission-details-comments .comments {
+  height: 300px;
+  overflow: auto;
+  background-color: #EBEDEE;
+}
+@media only screen and (min-width: 992px) {
+  .submission-details-comments .comments {
+    border-left: 1px solid #C7CDD1;
+  }
+}
+.submission-details-comments .comment_author_and_date {
+  color: #6D696A;
+}
+
+.unread_indicator {
+  color: var(--ic-brand-button--primary-bgd);
+  font-size: x-large;
+  vertical-align: 1px;
+}
+.unread_indicator::after {
+  font-family: "Lato Extended";
+  content: "•";
+}
+.unread_indicator.submission_annotation {
+  margin-left: -4px;
+}
+.unread_indicator.rubric_comment {
+  margin-left: -13px;
+}
+
+.file-upload-submission {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  padding: 12px 6px;
+  border-bottom: 1px solid #C7CDD1;
+}
+.file-upload-submission:last-of-type {
+  border-bottom: none;
+}
+
+.file-upload-submission-info {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  box-sizing: border-box;
+  padding-right: 12px;
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.file-upload-submission-info > a {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+.file-upload-submission-info__filesize {
+  font-size: 12px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.file-upload-submission-attachment {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  flex: 0 0 auto;
+  text-align: right;
+  box-sizing: border-box;
+  padding-left: 12px;
+}
+
+.file-upload-submission-turnitin {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  flex: 0 0 20%;
+}
+
+.omit-from-final-warning {
+  padding: 12px;
+  border-width: 1px;
+  margin: 5px;
+}
+
+.turnitin_score_container {
+  vertical-align: middle;
+}
+.turnitin_score_containera {
+  text-decoration: none;
+}
+.turnitin_score_container i.icon-empty, .turnitin_score_container i.icon-oval-half {
+  color: #D01A19;
+}
+.turnitin_score_container i.icon-certified {
+  color: #127A1B;
+}
+.turnitin_score_container i.icon-clock {
+  color: #2D3B45;
+}
+.turnitin_score_container .turnitin_similarity_score, .turnitin_score_container .turnitin_similarity_score:hover {
+  color: #2D3B45;
+}

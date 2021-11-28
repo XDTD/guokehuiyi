@@ -1,0 +1,3079 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>External Tools - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="current" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>External Tools API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for accessing and configuring external tools on accounts and courses.
+&quot;External tools&quot; are IMS LTI links: <a href="http://www.imsglobal.org/developers/LTI/index.cfm">http://www.imsglobal.org/developers/LTI/index.cfm</a></p>
+
+<p>NOTE: Placements not documented here should be considered beta features and are not officially supported.</p>
+
+
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.external_tools.index' data-subtopic='External Tools'>
+    <a name='method.external_tools.index' href='#method.external_tools.index'>
+      List external tools
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/external_tools
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/external_tools</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/external_tools
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/external_tools</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/external_tools
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/external_tools</code>
+  </div>
+
+
+<p>Returns the paginated list of external tools for the current context. See the get request docs for a single tool for a list of properties on an external tool.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>search_term</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The partial name of the tools to match and return.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>selectable</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If true, then only tools that are meant to be selectable are returned</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include_parents</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If true, then include tools installed in all accounts above the current context</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">[
+ {
+   &quot;id&quot;: 1,
+   &quot;domain&quot;: &quot;domain.example.com&quot;,
+   &quot;url&quot;: &quot;http://www.example.com/ims/lti&quot;,
+   &quot;consumer_key&quot;: &quot;key&quot;,
+   &quot;name&quot;: &quot;LTI Tool&quot;,
+   &quot;description&quot;: &quot;This is for cool things&quot;,
+   &quot;created_at&quot;: &quot;2037-07-21T13:29:31Z&quot;,
+   &quot;updated_at&quot;: &quot;2037-07-28T19:38:31Z&quot;,
+   &quot;privacy_level&quot;: &quot;anonymous&quot;,
+   &quot;custom_fields&quot;: {&quot;key&quot;: &quot;value&quot;},
+   &quot;is_rce_favorite&quot;: false
+   &quot;account_navigation&quot;: {
+        &quot;canvas_icon_class&quot;: &quot;icon-lti&quot;,
+        &quot;icon_url&quot;: &quot;...&quot;,
+        &quot;text&quot;: &quot;...&quot;,
+        &quot;url&quot;: &quot;...&quot;,
+        &quot;label&quot;: &quot;...&quot;,
+        &quot;selection_width&quot;: 50,
+        &quot;selection_height&quot;:50
+   },
+   &quot;assignment_selection&quot;: null,
+   &quot;course_home_sub_navigation&quot;: null,
+   &quot;course_navigation&quot;: {
+        &quot;canvas_icon_class&quot;: &quot;icon-lti&quot;,
+        &quot;icon_url&quot;: &quot;...&quot;,
+        &quot;text&quot;: &quot;...&quot;,
+        &quot;url&quot;: &quot;...&quot;,
+        &quot;default&quot;: &quot;disabled&quot;,
+        &quot;enabled&quot;: &quot;true&quot;,
+        &quot;visibility&quot;: &quot;public&quot;,
+        &quot;windowTarget&quot;: &quot;_blank&quot;
+   },
+   &quot;editor_button&quot;: {
+        &quot;canvas_icon_class&quot;: &quot;icon-lti&quot;,
+        &quot;icon_url&quot;: &quot;...&quot;,
+        &quot;message_type&quot;: &quot;ContentItemSelectionRequest&quot;,
+        &quot;text&quot;: &quot;...&quot;,
+        &quot;url&quot;: &quot;...&quot;,
+        &quot;label&quot;: &quot;...&quot;,
+        &quot;selection_width&quot;: 50,
+        &quot;selection_height&quot;: 50
+   },
+   &quot;homework_submission&quot;: null,
+   &quot;link_selection&quot;: null,
+   &quot;migration_selection&quot;: null,
+   &quot;resource_selection&quot;: null,
+   &quot;tool_configuration&quot;: null,
+   &quot;user_navigation&quot;: null,
+   &quot;selection_width&quot;: 500,
+   &quot;selection_height&quot;: 500,
+   &quot;icon_url&quot;: &quot;...&quot;,
+   &quot;not_selectable&quot;: false
+ },
+ { ...  }
+]</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.external_tools.generate_sessionless_launch' data-subtopic='External Tools'>
+    <a name='method.external_tools.generate_sessionless_launch' href='#method.external_tools.generate_sessionless_launch'>
+      Get a sessionless launch url for an external tool.
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#generate_sessionless_launch</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/external_tools/sessionless_launch
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/external_tools/sessionless_launch</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/external_tools/sessionless_launch
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/external_tools/sessionless_launch</code>
+  </div>
+
+
+<p>Returns a sessionless launch url for an external tool.</p>
+
+<p>NOTE: Either the id or url must be provided unless launch_type is assessment or module_item.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The external id of the tool to launch.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>url</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The LTI launch url for the external tool.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>assignment_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The assignment id for an assignment launch. Required if launch_type is set to “assessment”.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>module_item_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The assignment id for a module item launch. Required if launch_type is set to “module_item”.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>launch_type</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The type of launch to perform on the external tool. Placement names (eg. “course_navigation”) can also be specified to use the custom launch url for that placement; if done, the tool id must be provided.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>assessment</code>, <code class=enum>module_item</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<h4>API response field:</h4>
+<ul class="response_field">
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>id</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The id for the external tool to be launched.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>name</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The name of the external tool to be launched.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>url</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The url to load to launch the external tool for the user.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">Finds the tool by id and returns a sessionless launch url
+curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/external_tools/sessionless_launch&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;id=&lt;external_tool_id&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">Finds the tool by launch url and returns a sessionless launch url
+curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/external_tools/sessionless_launch&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;url=&lt;lti launch url&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">Finds the tool associated with a specific assignment and returns a sessionless launch url
+curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/external_tools/sessionless_launch&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;launch_type=assessment&#39; \
+     -F &#39;assignment_id=&lt;assignment_id&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">Finds the tool associated with a specific module item and returns a sessionless launch url
+curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/external_tools/sessionless_launch&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;launch_type=module_item&#39; \
+     -F &#39;module_item_id=&lt;module_item_id&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">Finds the tool by id and returns a sessionless launch url for a specific placement
+curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/external_tools/sessionless_launch&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;id=&lt;external_tool_id&gt;&#39; \
+     -F &#39;launch_type=&lt;placement_name&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.external_tools.show' data-subtopic='External Tools'>
+    <a name='method.external_tools.show' href='#method.external_tools.show'>
+      Get a single external tool
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/external_tools/:external_tool_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/external_tools/:external_tool_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/external_tools/:external_tool_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/external_tools/:external_tool_id</code>
+  </div>
+
+
+<p>Returns the specified external tool.</p>
+
+<h4>API response field:</h4>
+<ul class="response_field">
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>id</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The unique identifier for the tool</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>domain</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The domain to match links against</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>url</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The url to match links against</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>consumer_key</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The consumer key used by the tool (The associated shared secret is not returned)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>name</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The name of the tool</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>description</span>
+
+      
+
+      
+        <div class='inline'>
+<p>A description of the tool</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>created_at</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Timestamp of creation</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>updated_at</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Timestamp of last update</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>privacy_level</span>
+
+      
+
+      
+        <div class='inline'>
+<p>What information to send to the external tool, “anonymous”, “name_only”, “public”</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>custom_fields</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Custom fields that will be sent to the tool consumer</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>is_rce_favorite</span>
+
+      
+
+      
+        <div class='inline'>
+<p>Boolean determining whether this tool should be in a preferred location in the RCE.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>account_navigation</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for account navigation links (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>assignment_selection</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for assignment selection links (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>course_home_sub_navigation</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for course home navigation links (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>course_navigation</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for course navigation links (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>editor_button</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for a WYSIWYG editor button (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>homework_submission</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for homework submission selection (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>link_selection</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for link selection (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>migration_selection</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for migration selection (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>resource_selection</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for a resource selector in modules (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>tool_configuration</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for a tool configuration link (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>user_navigation</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The configuration for user navigation links (see create API for values)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>selection_width</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The pixel width of the iFrame that the tool will be rendered in</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>selection_height</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The pixel height of the iFrame that the tool will be rendered in</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>icon_url</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The url for the tool icon</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>not_selectable</span>
+
+      
+
+      
+        <div class='inline'>
+<p>whether the tool is not selectable from assignment and modules</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;id&quot;: 1,
+  &quot;domain&quot;: &quot;domain.example.com&quot;,
+  &quot;url&quot;: &quot;http://www.example.com/ims/lti&quot;,
+  &quot;consumer_key&quot;: &quot;key&quot;,
+  &quot;name&quot;: &quot;LTI Tool&quot;,
+  &quot;description&quot;: &quot;This is for cool things&quot;,
+  &quot;created_at&quot;: &quot;2037-07-21T13:29:31Z&quot;,
+  &quot;updated_at&quot;: &quot;2037-07-28T19:38:31Z&quot;,
+  &quot;privacy_level&quot;: &quot;anonymous&quot;,
+  &quot;custom_fields&quot;: {&quot;key&quot;: &quot;value&quot;},
+  &quot;account_navigation&quot;: {
+       &quot;canvas_icon_class&quot;: &quot;icon-lti&quot;,
+       &quot;icon_url&quot;: &quot;...&quot;,
+       &quot;text&quot;: &quot;...&quot;,
+       &quot;url&quot;: &quot;...&quot;,
+       &quot;label&quot;: &quot;...&quot;,
+       &quot;selection_width&quot;: 50,
+       &quot;selection_height&quot;:50
+  },
+  &quot;assignment_selection&quot;: null,
+  &quot;course_home_sub_navigation&quot;: null,
+  &quot;course_navigation&quot;: {
+       &quot;canvas_icon_class&quot;: &quot;icon-lti&quot;,
+       &quot;icon_url&quot;: &quot;...&quot;,
+       &quot;text&quot;: &quot;...&quot;,
+       &quot;url&quot;: &quot;...&quot;,
+       &quot;default&quot;: &quot;disabled&quot;,
+       &quot;enabled&quot;: &quot;true&quot;,
+       &quot;visibility&quot;: &quot;public&quot;,
+       &quot;windowTarget&quot;: &quot;_blank&quot;
+  },
+  &quot;editor_button&quot;: {
+       &quot;canvas_icon_class&quot;: &quot;icon-lti&quot;,
+       &quot;icon_url&quot;: &quot;...&quot;,
+       &quot;message_type&quot;: &quot;ContentItemSelectionRequest&quot;,
+       &quot;text&quot;: &quot;...&quot;,
+       &quot;url&quot;: &quot;...&quot;,
+       &quot;label&quot;: &quot;...&quot;,
+       &quot;selection_width&quot;: 50,
+       &quot;selection_height&quot;: 50
+  },
+  &quot;homework_submission&quot;: null,
+  &quot;link_selection&quot;: null,
+  &quot;migration_selection&quot;: null,
+  &quot;resource_selection&quot;: null,
+  &quot;tool_configuration&quot;: null,
+  &quot;user_navigation&quot;: {
+       &quot;canvas_icon_class&quot;: &quot;icon-lti&quot;,
+       &quot;icon_url&quot;: &quot;...&quot;,
+       &quot;text&quot;: &quot;...&quot;,
+       &quot;url&quot;: &quot;...&quot;,
+       &quot;default&quot;: &quot;disabled&quot;,
+       &quot;enabled&quot;: &quot;true&quot;,
+       &quot;visibility&quot;: &quot;public&quot;,
+       &quot;windowTarget&quot;: &quot;_blank&quot;
+  },
+  &quot;selection_width&quot;: 500,
+  &quot;selection_height&quot;: 500,
+  &quot;icon_url&quot;: &quot;...&quot;,
+  &quot;not_selectable&quot;: false
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.external_tools.create' data-subtopic='External Tools'>
+    <a name='method.external_tools.create' href='#method.external_tools.create'>
+      Create an external tool
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/external_tools
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/external_tools</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/accounts/:account_id/external_tools
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/accounts/:account_id/external_tools</code>
+  </div>
+
+
+<p>Create an external tool in the specified course/account. The created tool will be returned, see the “show” endpoint for an example. If a client ID is supplied canvas will attempt to create a context external tool using the LTI 1.3 standard.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>client_id</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The client id is attached to the developer key. If supplied all other parameters are unnecessary and will be ignored</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>name</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name of the tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>privacy_level</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>What information to send to the external tool.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>anonymous</code>, <code class=enum>name_only</code>, <code class=enum>public</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>consumer_key</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The consumer key for the external tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>shared_secret</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The shared secret with the external tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>description</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>A description of the tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>url</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url to match links against. Either “url” or “domain” should be set, not both.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>domain</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The domain to match links against. Either “url” or “domain” should be set, not both.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>icon_url</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the icon to show for this tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>text</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The default text to show for this tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>custom_fields[field_name]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Custom fields that will be sent to the tool consumer; can be used multiple times</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>is_rce_favorite</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>(Deprecated in favor of <a href="external_tools.html#method.external_tools.add_rce_favorite" title="Add tool to RCE Favorites">Add tool to RCE Favorites</a> and <a href="external_tools.html#method.external_tools.remove_rce_favorite" title="Remove tool from RCE Favorites">Remove tool from RCE Favorites</a>) Whether this tool should appear in a preferred location in the RCE. This only applies to tools in root account contexts that have an editor button placement.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>account_navigation[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the external tool for account navigation</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>account_navigation[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>account_navigation[text]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The text that will show on the left-tab in the account navigation</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>account_navigation[selection_width]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The width of the dialog the tool is launched in</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>account_navigation[selection_height]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The height of the dialog the tool is launched in</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>account_navigation[display_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The layout type to use when launching the tool. Must be “full_width”, “full_width_in_context”, “in_nav_context”, “borderless”, or “default”</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>user_navigation[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the external tool for user navigation</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>user_navigation[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>user_navigation[text]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The text that will show on the left-tab in the user navigation</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>user_navigation[visibility]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Who will see the navigation tab. “admins” for admins, “public” or “members” for everyone. Setting this to `null` will remove this configuration and use the default behavior, which is “public”.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>admins</code>, <code class=enum>members</code>, <code class=enum>public</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_home_sub_navigation[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the external tool for right-side course home navigation menu</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_home_sub_navigation[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_home_sub_navigation[text]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The text that will show on the right-side course home navigation menu</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_home_sub_navigation[icon_url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the icon to show in the right-side course home navigation menu</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_navigation[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_navigation[text]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The text that will show on the left-tab in the course navigation</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_navigation[visibility]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Who will see the navigation tab. “admins” for course admins, “members” for students, “public” for everyone. Setting this to `null` will remove this configuration and use the default behavior, which is “public”.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>admins</code>, <code class=enum>members</code>, <code class=enum>public</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_navigation[windowTarget]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Determines how the navigation tab will be opened. “_blank”	Launches the external tool in a new window or tab. “_self”	(Default) Launches the external tool in an iframe inside of Canvas.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>_blank</code>, <code class=enum>_self</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_navigation[default]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If set to “disabled” the tool will not appear in the course navigation until a teacher explicitly enables it.</p>
+
+<p>If set to “enabled” the tool will appear in the course navigation without requiring a teacher to explicitly enable it.</p>
+
+<p>defaults to “enabled”</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>disabled</code>, <code class=enum>enabled</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>course_navigation[display_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The layout type to use when launching the tool. Must be “full_width”, “full_width_in_context”, “in_nav_context”, “borderless”, or “default”</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>editor_button[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the external tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>editor_button[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>editor_button[icon_url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the icon to show in the WYSIWYG editor</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>editor_button[selection_width]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The width of the dialog the tool is launched in</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>editor_button[selection_height]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The height of the dialog the tool is launched in</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>editor_button[message_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to ContentItemSelectionRequest to tell the tool to use content-item; otherwise, omit</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>homework_submission[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the external tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>homework_submission[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>homework_submission[text]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The text that will show on the homework submission tab</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>homework_submission[message_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to ContentItemSelectionRequest to tell the tool to use content-item; otherwise, omit</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>link_selection[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the external tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>link_selection[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>link_selection[text]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The text that will show for the link selection text</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>link_selection[message_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to ContentItemSelectionRequest to tell the tool to use content-item; otherwise, omit</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>migration_selection[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the external tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>migration_selection[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>migration_selection[message_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to ContentItemSelectionRequest to tell the tool to use content-item; otherwise, omit</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>tool_configuration[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the external tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>tool_configuration[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>tool_configuration[message_type]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to ContentItemSelectionRequest to tell the tool to use content-item; otherwise, omit</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>tool_configuration[prefer_sis_email]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to default the lis_person_contact_email_primary to prefer provisioned sis_email; otherwise, omit</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>resource_selection[url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the external tool</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>resource_selection[enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set this to enable this feature. If set to false, not_selectable must also be set to true in order to hide this tool from the selection UI in modules and assignments.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>resource_selection[icon_url]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The url of the icon to show in the module external tool list</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>resource_selection[selection_width]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The width of the dialog the tool is launched in</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>resource_selection[selection_height]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The height of the dialog the tool is launched in</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>config_type</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Configuration can be passed in as CC xml instead of using query parameters. If this value is “by_url” or “by_xml” then an xml configuration will be expected in either the “config_xml” or “config_url” parameter. Note that the name parameter overrides the tool name provided in the xml</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>config_xml</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>XML tool configuration, as specified in the CC xml specification. This is required if “config_type” is set to “by_xml”</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>config_url</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>URL where the server can retrieve an XML tool configuration, as specified in the CC xml specification. This is required if “config_type” is set to “by_url”</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>not_selectable</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Default: false. If set to true, and if resource_selection is set to false, the tool won&#39;t show up in the external tool selection UI in modules and assignments</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>oauth_compliant</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Default: false, if set to true LTI query params will not be copied to the post body.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">This would create a tool on this course with two custom fields and a course navigation tab
+curl -X POST &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/external_tools&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;name=LTI Example&#39; \
+     -F &#39;consumer_key=asdfg&#39; \
+     -F &#39;shared_secret=lkjh&#39; \
+     -F &#39;url=https://example.com/ims/lti&#39; \
+     -F &#39;privacy_level=name_only&#39; \
+     -F &#39;custom_fields[key1]=value1&#39; \
+     -F &#39;custom_fields[key2]=value2&#39; \
+     -F &#39;course_navigation[text]=Course Materials&#39; \
+     -F &#39;course_navigation[enabled]=true&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">This would create a tool on the account with navigation for the user profile page
+curl -X POST &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/external_tools&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;name=LTI Example&#39; \
+     -F &#39;consumer_key=asdfg&#39; \
+     -F &#39;shared_secret=lkjh&#39; \
+     -F &#39;url=https://example.com/ims/lti&#39; \
+     -F &#39;privacy_level=name_only&#39; \
+     -F &#39;user_navigation[url]=https://example.com/ims/lti/user_endpoint&#39; \
+     -F &#39;user_navigation[text]=Something Cool&#39;
+     -F &#39;user_navigation[enabled]=true&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">This would create a tool on the account with configuration pulled from an external URL
+curl -X POST &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/external_tools&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;name=LTI Example&#39; \
+     -F &#39;consumer_key=asdfg&#39; \
+     -F &#39;shared_secret=lkjh&#39; \
+     -F &#39;config_type=by_url&#39; \
+     -F &#39;config_url=https://example.com/ims/lti/tool_config.xml&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.external_tools.update' data-subtopic='External Tools'>
+    <a name='method.external_tools.update' href='#method.external_tools.update'>
+      Edit an external tool
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/external_tools/:external_tool_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/external_tools/:external_tool_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/accounts/:account_id/external_tools/:external_tool_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/accounts/:account_id/external_tools/:external_tool_id</code>
+  </div>
+
+
+<p>Update the specified external tool. Uses same parameters as create</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">This would update the specified keys on this external tool
+curl -X PUT &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/external_tools/&lt;external_tool_id&gt;&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;name=Public Example&#39; \
+     -F &#39;privacy_level=public&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.external_tools.destroy' data-subtopic='External Tools'>
+    <a name='method.external_tools.destroy' href='#method.external_tools.destroy'>
+      Delete an external tool
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/courses/:course_id/external_tools/:external_tool_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/courses/:course_id/external_tools/:external_tool_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/accounts/:account_id/external_tools/:external_tool_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/accounts/:account_id/external_tools/:external_tool_id</code>
+  </div>
+
+
+<p>Remove the specified external tool</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">This would delete the specified external tool
+curl -X DELETE &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/external_tools/&lt;external_tool_id&gt;&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.external_tools.add_rce_favorite' data-subtopic='External Tools'>
+    <a name='method.external_tools.add_rce_favorite' href='#method.external_tools.add_rce_favorite'>
+      Add tool to RCE Favorites
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#add_rce_favorite</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/accounts/:account_id/external_tools/rce_favorites/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/accounts/:account_id/external_tools/rce_favorites/:id</code>
+  </div>
+
+
+<p>Add the specified editor_button external tool to a preferred location in the RCE for courses in the given account and its subaccounts (if the subaccounts haven&#39;t set their own RCE Favorites). Cannot set more than 2 RCE Favorites.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X POST &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/external_tools/rce_favorites/&lt;id&gt;&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.external_tools.remove_rce_favorite' data-subtopic='External Tools'>
+    <a name='method.external_tools.remove_rce_favorite' href='#method.external_tools.remove_rce_favorite'>
+      Remove tool from RCE Favorites
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#remove_rce_favorite</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/accounts/:account_id/external_tools/rce_favorites/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/accounts/:account_id/external_tools/rce_favorites/:id</code>
+  </div>
+
+
+<p>Remove the specified external tool from a preferred location in the RCE for the given account</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X DELETE &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/external_tools/rce_favorites/&lt;id&gt;&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.external_tools.all_visible_nav_tools' data-subtopic='External Tools'>
+    <a name='method.external_tools.all_visible_nav_tools' href='#method.external_tools.all_visible_nav_tools'>
+      Get visible course navigation tools
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#all_visible_nav_tools</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/external_tools/visible_course_nav_tools
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/external_tools/visible_course_nav_tools</code>
+  </div>
+
+
+<p>Get a list of external tools with the course_navigation placement that have not been hidden in course settings and whose visibility settings apply to the requesting user. These tools are the same that appear in the course navigation.</p>
+
+<p>The response format is the same as for List external tools, but with additional context_id and context_name fields on each element in the array.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>context_codes[]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>List of context_codes to retrieve visible course nav tools for (for example, <code>course_123</code>). Only courses are presently supported.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<h4>API response field:</h4>
+<ul class="response_field">
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>context_id</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The unique identifier of the associated context</p>
+</div>
+      
+    </li>
+  
+    <li>
+      <span class='type'></span>
+      <span class='name'>context_name</span>
+
+      
+
+      
+        <div class='inline'>
+<p>The name of the associated context</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/external_tools/visible_course_nav_tools?context_codes[]=course_5&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</code></pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">[{
+  &quot;id&quot;: 1,
+  &quot;domain&quot;: &quot;domain.example.com&quot;,
+  &quot;url&quot;: &quot;http://www.example.com/ims/lti&quot;,
+  &quot;context_id&quot;: 5,
+  &quot;context_name&quot;: &quot;Example Course&quot;,
+  ...
+},
+{ ...  }]</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.external_tools.visible_course_nav_tools' data-subtopic='External Tools'>
+    <a name='method.external_tools.visible_course_nav_tools' href='#method.external_tools.visible_course_nav_tools'>
+      Get visible course navigation tools for a single course
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/external_tools_controller.rb">ExternalToolsController#visible_course_nav_tools</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/external_tools/visible_course_nav_tools
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/external_tools/visible_course_nav_tools</code>
+  </div>
+
+
+<p>Get a list of external tools with the course_navigation placement that have not been hidden in course settings and whose visibility settings apply to the requesting user. These tools are the same that appear in the course navigation.</p>
+
+<p>The response format is the same as Get visible course navigation tools.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/external_tools/visible_course_nav_tools&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:09 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,798 @@
+/*
+ * Copyright (C) 2013 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/* Legacy variables. Discontinue to use these: */
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
+ * Convert font-size from px to rem with px fallback
+ * @param $size - the value in pixel you want to convert
+ * e.g. p {@include fontSize(12px);}
+ * courtesy of https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_fontSize.scss
+ */
+/*
+ * Copyright (C) 2013 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/* Legacy variables. Discontinue to use these: */
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
+ * Convert font-size from px to rem with px fallback
+ * @param $size - the value in pixel you want to convert
+ * e.g. p {@include fontSize(12px);}
+ * courtesy of https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_fontSize.scss
+ */
+#minical {
+  background-color: #fff;
+  text-shadow: none;
+  border: 1px solid #C7CDD1;
+}
+#minical .fc-row .fc-content-skeleton {
+  padding-bottom: 0;
+}
+#minical .fc-toolbar {
+  background: none;
+  border-top: none;
+  color: #666;
+  text-shadow: none;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #C7CDD1;
+  margin-bottom: 0;
+}
+#minical .fc-toolbar .fc-left {
+  outline-width: 0.125rem;
+  outline-color: transparent;
+  outline-style: solid;
+  order: 1;
+}
+#minical .fc-toolbar .fc-left:focus-within {
+  outline-offset: 0;
+  outline-color: var(--ic-link-color);
+}
+#minical .fc-toolbar .fc-center {
+  order: 2;
+}
+#minical .fc-toolbar .fc-right {
+  outline-width: 0.125rem;
+  outline-color: transparent;
+  outline-style: solid;
+  order: 3;
+}
+#minical .fc-toolbar .fc-right:focus-within {
+  outline-offset: 0;
+  outline-color: var(--ic-link-color);
+}
+#minical .fc-toolbar .fc-clear {
+  display: none;
+}
+#minical .fc-toolbar h2, #minical .fc-toolbar .h2 {
+  color: #666;
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+}
+#minical .fc-toolbar button {
+  padding: 0;
+  outline: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+#minical thead.fc-head {
+  display: none;
+}
+#minical .fc-view-container {
+  padding: 3px;
+}
+#minical .fc-view-container table {
+  border-spacing: 8px 2px;
+}
+#minical .fc-widget-content {
+  background: none;
+  border: 1px solid #fff;
+}
+#minical .fc-widget-content div {
+  min-height: 0 !important;
+}
+#minical .fc-day-number {
+  line-height: 1;
+}
+#minical .fc-other-month {
+  background-image: none;
+}
+#minical .fc-bg .fc-state-highlight {
+  background: #2D3B45;
+}
+#minical .fc-content-skeleton .fc-state-highlight {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+#minical .fc-basic-view td.fc-day-number {
+  padding: 3px 0 2px 2px;
+}
+#minical .event {
+  position: relative;
+}
+#minical .event::after {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  height: 1.2em;
+  left: 1px;
+  border: 1px solid #2D3B45;
+  content: " ";
+}
+#minical .event .fc-day-content {
+  display: none;
+}
+
+/*.ic-app-main-content__secondary {
+  @include breakpoint(desktop) {
+    flex: 0 0 $ic-sp*24;
+  }
+}*/
+#right-side .element_toggler {
+  padding: 0;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  font-weight: bold;
+}
+#right-side .element_toggler i {
+  vertical-align: middle;
+}
+
+.agenda-wrapper {
+  background-color: #fff;
+  display: none;
+}
+.agenda-wrapper.active {
+  display: block;
+}
+.agenda-wrapper .agenda-container {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.agenda-day {
+  display: block;
+  border-bottom: 1px solid #C7CDD1;
+  margin-top: 24px;
+  padding: 6px;
+}
+.agenda-day.agenda-today {
+  background: #FFFFFF;
+}
+.agenda-day .agenda-date {
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin: 0;
+  padding-right: 10px;
+}
+
+.agenda-event__list {
+  margin: 0;
+  padding: 0;
+}
+
+.agenda-event__item {
+  list-style: none;
+}
+
+.agenda-event__item-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px;
+}
+.agenda-event__item-container:hover, .agenda-event__item-container:focus {
+  box-shadow: inset 3px 0 0 var(--ic-brand-primary);
+  outline: none;
+}
+
+.agenda-event__item-container .agenda-event__icon {
+  background: none;
+  flex: 0 0 2rem;
+  padding-right: 3px;
+}
+.agenda-event__item-container .agenda-event__icon:hover, .agenda-event__item-container .agenda-event__icon:focus {
+  background: none;
+}
+
+.agenda-event__time {
+  flex: 0 0 7.875rem;
+  font-weight: 300;
+}
+
+.agenda-event__item-container .agenda-event__title {
+  background: none;
+  font-weight: 500;
+  flex: 1;
+}
+.agenda-event__item-container .agenda-event__title:hover, .agenda-event__item-container .agenda-event__title:focus {
+  background: none;
+}
+
+.agenda-event__action {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 0 6.25rem;
+}
+
+span.agendaView--no-assignments {
+  display: block;
+  margin-top: 24px;
+  font-weight: normal;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+.agenda-actions {
+  margin-right: 10%;
+}
+.agenda-actions .agenda-load-btn {
+  margin-bottom: 20px;
+}
+
+#calendar_header .navigation_buttons {
+  bottom: 0;
+  margin-right: 6px;
+}
+#calendar_header .navigation_buttons .ui-button {
+  padding: 8px;
+}
+#calendar_header .navigation_buttons .ui-button i:before {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+#calendar_header .ui-buttonset .ui-button {
+  vertical-align: middle;
+}
+#calendar_header .navigation_title, #calendar_header .appointment_group_title {
+  vertical-align: middle;
+  padding-right: 3px;
+}
+#calendar_header #refresh_calendar_link {
+  display: none;
+  float: none;
+  margin-left: 8px;
+}
+#calendar_header #refresh_calendar_link.loading {
+  display: inline-block;
+  cursor: default;
+}
+
+/*#calendar-drag-and-drop-container .fc-event {
+  border-width: 1px;
+  border-radius: 3px;
+}*/
+#calendar-app .fc-view-container, #calendar-drag-and-drop-container .fc-view-container {
+  background: none;
+}
+#calendar-app .fc-agendaWeek-view .fc-body, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-body {
+  background-color: white;
+}
+#calendar-app .fc-agendaWeek-view .fc-divider, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-divider {
+  padding-bottom: 0;
+}
+#calendar-app .fc-agendaWeek-view .fc-widget-header, #calendar-app .fc-agendaWeek-view .fc-axis, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-widget-header, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-axis {
+  box-sizing: border-box;
+  background: none;
+  border-right: none;
+  color: #394B58;
+}
+#calendar-app .fc-agendaWeek-view .fc-slats table td, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-slats table td {
+  height: 27px;
+}
+#calendar-app .fc-agendaWeek-view .fc-axis span, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-axis span {
+  border-color: #C7CDD1;
+  padding: 3px 6px;
+}
+#calendar-app .fc-agendaWeek-view .fc-axis td, #calendar-app .fc-agendaWeek-view span, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-axis td, #calendar-drag-and-drop-container .fc-agendaWeek-view span {
+  background: none;
+}
+#calendar-app .fc-agendaWeek-view .fc-head, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-head {
+  height: 32px;
+}
+#calendar-app .fc-agendaWeek-view .fc-widget-header, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-widget-header {
+  border-top: none;
+  border-left: none;
+  text-transform: uppercase;
+}
+#calendar-app .fc-agendaWeek-view .fc-widget-header .fc-axis, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-widget-header .fc-axis {
+  border-bottom: none;
+}
+#calendar-app .fc-agendaWeek-view .fc-day-grid .fc-today, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-day-grid .fc-today {
+  background-color: transparent;
+  box-shadow: 0.5px -6px 0px 0px var(--ic-brand-primary);
+  border: 3px solid #C7CDD1;
+}
+#calendar-app .fc-agendaWeek-view .fc-day-grid .fc-row, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-day-grid .fc-row {
+  border-left-color: #FFFFFF;
+}
+#calendar-app .fc-agendaWeek-view .fc-time-grid .fc-today, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-time-grid .fc-today {
+  background-color: transparent;
+  border: 3px solid #C7CDD1;
+}
+#calendar-app .fc-agendaWeek-view .fc-event, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-event {
+  white-space: nowrap;
+  background-color: #FFFFFF;
+}
+#calendar-app .fc-agendaWeek-view .calendar-nowline, #calendar-drag-and-drop-container .fc-agendaWeek-view .calendar-nowline {
+  background-color: #FACE90;
+  position: absolute;
+  left: 0;
+  height: 2px;
+}
+#calendar-app .fc-month-view .fc-widget-header, #calendar-drag-and-drop-container .fc-month-view .fc-widget-header {
+  background: none;
+  text-transform: uppercase;
+  border-right: none;
+  border-left: none;
+}
+#calendar-app .fc-month-view .fc-body, #calendar-drag-and-drop-container .fc-month-view .fc-body {
+  background-color: white;
+}
+#calendar-app .fc-month-view .fc-today, #calendar-drag-and-drop-container .fc-month-view .fc-today {
+  background: #FFFFFF;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#calendar-app .fc-other-month, #calendar-drag-and-drop-container .fc-other-month {
+  color: #556572;
+  opacity: 1;
+  background: none;
+}
+#calendar-app .fc-event, #calendar-drag-and-drop-container .fc-event {
+  background-color: #FFFFFF;
+  line-height: 1.3;
+  padding: 3px;
+}
+#calendar-app .fc-event i, #calendar-drag-and-drop-container .fc-event i {
+  margin-left: 2px;
+}
+#calendar-app .fc-grid .fc-day-number, #calendar-drag-and-drop-container .fc-grid .fc-day-number {
+  padding: 1px 4px;
+}
+#calendar-app .loading-spinner, #calendar-drag-and-drop-container .loading-spinner {
+  display: inline-block;
+  background-image: url("/dist/images/ajax-loader-black-on-white-3b4fe5b450.gif");
+  background-position: 50% 50%;
+  height: 16px;
+  margin-right: 3px;
+  position: relative;
+  top: 8px;
+  width: 16px;
+}
+
+.rs-section {
+  border: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+.rs-section:last-of-type {
+  margin-bottom: 0;
+}
+
+#context-list-holder, #undated-events {
+  background-color: #fff;
+  max-height: 300px;
+  overflow-y: auto;
+}
+#context-list-holder ul, #undated-events ul {
+  margin-bottom: 10px;
+}
+#context-list-holder ul:last-of-type, #undated-events ul:last-of-type {
+  margin-bottom: 0;
+}
+
+#context-list {
+  padding: 0;
+  max-height: none;
+}
+#context-list .context_list_context {
+  padding: 1px 6px;
+}
+#context-list .context-list-toggle-box {
+  border-radius: 2px;
+  margin-right: 0;
+}
+#context-list label {
+  display: inline;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-weight: bold;
+}
+#context-list .checked label {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-weight: bold;
+}
+
+#calendar-toggle-button,
+#undated-events-button {
+  text-transform: uppercase;
+}
+
+#undated-events {
+  display: none;
+}
+#undated-events .event {
+  background-color: #FFFFFF;
+  line-height: 1.5;
+  padding: 0;
+  border: none;
+}
+#undated-events .event .undated_event_title {
+  color: inherit;
+  font-size: 13px;
+  font-size: 0.8125rem;
+}

@@ -1,0 +1,14 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3624],{
+
+/***/ "Zjte":
+/*!*******************************************************************!*\
+  !*** ./node_modules/mediaelement/build/lang/me-i18n-locale-cs.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/*!\n * This is a i18n.locale language object.\n *\n * Czech\n *\n * @author\n *   Jalios (Twitter: @Jalios)\n *   Sascha Greuel (Twitter: @SoftCreatR)\n *\n * @see\n *   me-i18n.js\n *\n * @params\n *  - exports - CommonJS, window ..\n */\n(function (exports) {\n    \"use strict\";\n\n    if (exports.cs === undefined) {\n        exports.cs = {\n            \"mejs.plural-form\": 8,\n\n            // me-shim\n            \"mejs.download-file\": \"Stáhnout soubor\",\n\n            // mep-feature-contextmenu\n            \"mejs.fullscreen-off\": \"Vypnout režim celá obrazovka\",\n            \"mejs.fullscreen-on\": \"Na celou obrazovku\",\n            \"mejs.download-video\": \"Stáhnout video\",\n\n            // mep-feature-fullscreen\n            \"mejs.fullscreen\": \"Celá obrazovka\",\n\n            // mep-feature-jumpforward\n            //\"mejs.time-jump-forward\": \"Jump forward %1 second(s)\",\n\n            // mep-feature-playpause\n            \"mejs.play\": \"Přehrát\",\n            \"mejs.pause\": \"Pozastavit\",\n\n            // mep-feature-postroll\n            \"mejs.close\": \"Zavřít\",\n\n            // mep-feature-progress\n            \"mejs.time-slider\": \"Posuvný běžec nastavení času\",\n            \"mejs.time-help-text\": \"Použijte tlačítka se šipkami doleva / doprava pro posun o jednu vteřinu, tlačítka se šipkami nahoru / dolů pro posun o deset vteřin.\",\n\n            // mep-feature-skipback\n            \"mejs.time-skip-back\": \"Zpět o %1 vteřin\",\n\n            // mep-feature-tracks\n            \"mejs.captions-subtitles\": \"Titulky\",\n            \"mejs.none\": \"Žádný\",\n\n            // mep-feature-volume\n            \"mejs.mute-toggle\": \"Vypnout/zapnout zvuk\",\n            \"mejs.volume-help-text\": \"Použijte tlačítka se šipkami nahoru / dolů pro zesílení nebo zeslabení hlasitosti.\",\n            \"mejs.unmute\": \"Zapnout zvuk\",\n            \"mejs.mute\": \"Vypnout zvuk\",\n            \"mejs.volume-slider\": \"Posuvný běžec nastavení hlasitosti\",\n\n            // mep-player\n            \"mejs.video-player\": \"Přehrávač videa\",\n            \"mejs.audio-player\": \"Přehrávač hudby\",\n\n            // mep-feature-ads\n            //\"mejs.ad-skip\": \"Skip ad\",\n            //\"mejs.ad-skip-info\": \"Skip in %1 second(s)\",\n\n            // mep-feature-sourcechooser\n            //\"mejs.source-chooser\": \"Source Chooser\"\n        };\n    }\n}(mejs.i18n.locale.strings));\n\n\n//# sourceURL=webpack:///./node_modules/mediaelement/build/lang/me-i18n-locale-cs.js?");
+
+/***/ })
+
+}]);

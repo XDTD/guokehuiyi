@@ -1,0 +1,14 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3629],{
+
+/***/ "/Xzx":
+/*!*******************************************************************!*\
+  !*** ./node_modules/mediaelement/build/lang/me-i18n-locale-hu.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/*!\n * This is a i18n.locale language object.\n *\n * Hungarian\n *\n * @author\n *   Jalios (Twitter: @Jalios)\n *   Sascha Greuel (Twitter: @SoftCreatR)\n *\n * @see\n *   me-i18n.js\n *\n * @params\n *  - exports - CommonJS, window ..\n */\n(function (exports) {\n    \"use strict\";\n\n    if (exports.hu === undefined) {\n        exports.hu = {\n            \"mejs.plural-form\": 1,\n\n            // me-shim\n            \"mejs.download-file\": \"Fájl letöltése\",\n\n            // mep-feature-contextmenu\n            \"mejs.fullscreen-off\": \"Teljes képernyő kikapcsolása\",\n            \"mejs.fullscreen-on\": \"Átlépés teljes képernyős módra\",\n            \"mejs.download-video\": \"Videó letöltése\",\n\n            // mep-feature-fullscreen\n            \"mejs.fullscreen\": \"Teljes képernyő\",\n\n            // mep-feature-jumpforward\n            //\"mejs.time-jump-forward\": \"Jump forward %1 second(s)\",\n\n            // mep-feature-playpause\n            \"mejs.play\": \"Lejátszás\",\n            \"mejs.pause\": \"Szünet\",\n\n            // mep-feature-postroll\n            \"mejs.close\": \"Bezárás\",\n\n            // mep-feature-progress\n            \"mejs.time-slider\": \"Idő csúszka\",\n            \"mejs.time-help-text\": \"Használja a Bal/Jobb nyíl gombokat az egy másodperces léptetéshez, a Fel/Le nyíl gombokat a tíz másodperces léptetéshez.\",\n\n            // mep-feature-skipback\n            \"mejs.time-skip-back\": \"Ugrás vissza %1 másodperccel\",\n\n            // mep-feature-tracks\n            \"mejs.captions-subtitles\": \"Képaláírás/Feliratok\",\n            \"mejs.none\": \"Nincs\",\n\n            // mep-feature-volume\n            \"mejs.mute-toggle\": \"Némítás kapcsolója\",\n            \"mejs.volume-help-text\": \"Használja a Fel/Le nyíl gombokat a hangerő növeléséhez vagy csökkentéséhez.\",\n            \"mejs.unmute\": \"Némítás feloldása\",\n            \"mejs.mute\": \"Némítás\",\n            \"mejs.volume-slider\": \"Hangerőcsúszka\",\n\n            // mep-player\n            \"mejs.video-player\": \"Videolejátszó\",\n            \"mejs.audio-player\": \"Audiolejátszó\",\n\n            // mep-feature-ads\n            //\"mejs.ad-skip\": \"Skip ad\",\n            //\"mejs.ad-skip-info\": \"Skip in %1 second(s)\",\n\n            // mep-feature-sourcechooser\n            //\"mejs.source-chooser\": \"Source Chooser\"\n        };\n    }\n}(mejs.i18n.locale.strings));\n\n\n//# sourceURL=webpack:///./node_modules/mediaelement/build/lang/me-i18n-locale-hu.js?");
+
+/***/ })
+
+}]);

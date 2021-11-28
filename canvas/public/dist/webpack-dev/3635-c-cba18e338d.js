@@ -1,0 +1,14 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3635],{
+
+/***/ "OMPk":
+/*!**********************************************************************!*\
+  !*** ./node_modules/mediaelement/build/lang/me-i18n-locale-pt-br.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/*!\n * This is a i18n.locale language object.\n *\n * Brazilian (Portuguese)\n *\n * @author\n *   Armando Meziat (Twitter: @odnamrataizem)\n *   Sascha Greuel (Twitter: @SoftCreatR)\n *\n * @see\n *   me-i18n.js\n *\n * @params\n *  - exports - CommonJS, window ..\n */\n(function (exports) {\n    \"use strict\";\n\n    if (exports[\"pt-BR\"] === undefined) {\n        exports[\"pt-BR\"] = {\n            \"mejs.plural-form\": 2,\n\n            // me-shim\n            \"mejs.download-file\": \"Baixar arquivo\",\n\n            // mep-feature-contextmenu\n            \"mejs.fullscreen-off\": \"Sair da tela inteira\",\n            \"mejs.fullscreen-on\": \"Ir para tela inteira\",\n            \"mejs.download-video\": \"Baixar vídeo\",\n\n            // mep-feature-fullscreen\n            \"mejs.fullscreen\": \"Tela inteira\",\n\n            // mep-feature-jumpforward\n            //\"mejs.time-jump-forward\": \"Jump forward %1 second(s)\",\n\n            // mep-feature-playpause\n            //\"mejs.play\": \"Play\",\n            //\"mejs.pause\": \"Pause\",\n\n            // mep-feature-postroll\n            \"mejs.close\": \"Fechar\",\n\n            // mep-feature-progress\n            //\"mejs.time-slider\": \"Time Slider\",\n            //\"mejs.time-help-text\": \"Use Left/Right Arrow keys to advance one second, Up/Down arrows to advance ten seconds.\",\n\n            // mep-feature-skipback\n            //\"mejs.time-skip-back\": \"Skip back %1 second(s)\",\n\n            // mep-feature-tracks\n            \"mejs.captions-subtitles\": \"Legendas\",\n            \"mejs.none\": \"Sem legendas\",\n\n            // mep-feature-volume\n            \"mejs.mute-toggle\": \"Alternar silêncio\",\n            //\"mejs.volume-help-text\": \"Use Up/Down Arrow keys to increase or decrease volume.\",\n            \"mejs.unmute\": \"Tirar silêncio\",\n            \"mejs.mute\": \"Silenciar\",\n            //\"mejs.volume-slider\": \"Volume Slider\",\n\n            // mep-player\n            //\"mejs.video-player\": \"Video Player\",\n            //\"mejs.audio-player\": \"Audio Player\",\n\n            // mep-feature-ads\n            //\"mejs.ad-skip\": \"Skip ad\",\n            //\"mejs.ad-skip-info\": \"Skip in %1 second(s)\",\n\n            // mep-feature-sourcechooser\n            //\"mejs.source-chooser\": \"Source Chooser\"\n        };\n    }\n}(mejs.i18n.locale.strings));\n\n\n//# sourceURL=webpack:///./node_modules/mediaelement/build/lang/me-i18n-locale-pt-br.js?");
+
+/***/ })
+
+}]);

@@ -1,0 +1,14 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3637],{
+
+/***/ "Wvze":
+/*!*******************************************************************!*\
+  !*** ./node_modules/mediaelement/build/lang/me-i18n-locale-ro.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/*!\n * This is a i18n.locale language object.\n *\n * Romanian\n *\n * @author\n *   Jalios (Twitter: @Jalios)\n *   Sascha Greuel (Twitter: @SoftCreatR)\n *\n * @see\n *   me-i18n.js\n *\n * @params\n *  - exports - CommonJS, window ..\n */\n(function (exports) {\n    \"use strict\";\n\n    if (exports.ro === undefined) {\n        exports.ro = {\n            \"mejs.plural-form\": 5,\n\n            // me-shim\n            \"mejs.download-file\": \"Descarcă fişierul\",\n\n            // mep-feature-contextmenu\n            \"mejs.fullscreen-off\": \"Opreşte ecranul complet\",\n            \"mejs.fullscreen-on\": \"Treci la ecran complet\",\n            \"mejs.download-video\": \"Descarcă fişierul video\",\n\n            // mep-feature-fullscreen\n            \"mejs.fullscreen\": \"Ecran complet\",\n\n            // mep-feature-jumpforward\n            //\"mejs.time-jump-forward\": \"Jump forward %1 second(s)\",\n\n            // mep-feature-playpause\n            \"mejs.play\": \"Redare\",\n            \"mejs.pause\": \"Pauză\",\n\n            // mep-feature-postroll\n            \"mejs.close\": \"Închide\",\n\n            // mep-feature-progress\n            \"mejs.time-slider\": \"Cursor timp\",\n            \"mejs.time-help-text\": \"Utilizează tastele săgeată Stânga/Dreapta pentru a avansa o secundă şi săgeţile Sus/Jos pentru a avansa zece secunde.\",\n\n            // mep-feature-skipback\n            \"mejs.time-skip-back\": \"Sari înapoi %1 secunde\",\n\n            // mep-feature-tracks\n            \"mejs.captions-subtitles\": \"Legende/Subtitrări\",\n            \"mejs.none\": \"Niciunul\",\n\n            // mep-feature-volume\n            \"mejs.mute-toggle\": \"Comutare dezactivare sunet\",\n            \"mejs.volume-help-text\": \"Utilizează tastele de săgeată Sus/Jos pentru a creşte/micşora volumul\",\n            \"mejs.unmute\": \"Cu sunet\",\n            \"mejs.mute\": \"Fără sunet\",\n            \"mejs.volume-slider\": \"Cursor volum\",\n\n            // mep-player\n            \"mejs.video-player\": \"Player video\",\n            \"mejs.audio-player\": \"Player audio\",\n\n            // mep-feature-ads\n            //\"mejs.ad-skip\": \"Skip ad\",\n            //\"mejs.ad-skip-info\": \"Skip in %1 second(s)\",\n\n            // mep-feature-sourcechooser\n            //\"mejs.source-chooser\": \"Source Chooser\"\n        };\n    }\n}(mejs.i18n.locale.strings));\n\n\n//# sourceURL=webpack:///./node_modules/mediaelement/build/lang/me-i18n-locale-ro.js?");
+
+/***/ })
+
+}]);

@@ -1,0 +1,2992 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Files - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="current" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Files API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>An API for managing files and folders
+See the File Upload Documentation for details on the file upload workflow.</p>
+
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="File">A File object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  &quot;id&quot;: 569,
+  &quot;uuid&quot;: &quot;SUj23659sdfASF35h265kf352YTdnC4&quot;,
+  &quot;folder_id&quot;: 4207,
+  &quot;display_name&quot;: &quot;file.txt&quot;,
+  &quot;filename&quot;: &quot;file.txt&quot;,
+  &quot;content-type&quot;: &quot;text/plain&quot;,
+  &quot;url&quot;: &quot;http://www.example.com/files/569/download?download_frd=1&amp;verifier=c6HdZmxOZa0Fiin2cbvZeI8I5ry7yqD7RChQzb6P&quot;,
+  // file size in bytes
+  &quot;size&quot;: 43451,
+  &quot;created_at&quot;: &quot;2012-07-06T14:58:50Z&quot;,
+  &quot;updated_at&quot;: &quot;2012-07-06T14:58:50Z&quot;,
+  &quot;unlock_at&quot;: &quot;2012-07-07T14:58:50Z&quot;,
+  &quot;locked&quot;: false,
+  &quot;hidden&quot;: false,
+  &quot;lock_at&quot;: &quot;2012-07-20T14:58:50Z&quot;,
+  &quot;hidden_for_user&quot;: false,
+  &quot;thumbnail_url&quot;: null,
+  &quot;modified_at&quot;: &quot;2012-07-06T14:58:50Z&quot;,
+  // simplified content-type mapping
+  &quot;mime_class&quot;: &quot;html&quot;,
+  // identifier for file in third-party transcoding service
+  &quot;media_entry_id&quot;: &quot;m-3z31gfpPf129dD3sSDF85SwSDFnwe&quot;,
+  &quot;locked_for_user&quot;: false,
+  &quot;lock_info&quot;: null,
+  &quot;lock_explanation&quot;: &quot;This assignment is locked until September 1 at 12:00am&quot;,
+  // optional: url to the document preview. This url is specific to the user
+  // making the api call. Only included in submission endpoints.
+  &quot;preview_url&quot;: null
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Folder">A Folder object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  &quot;context_type&quot;: &quot;Course&quot;,
+  &quot;context_id&quot;: 1401,
+  &quot;files_count&quot;: 0,
+  &quot;position&quot;: 3,
+  &quot;updated_at&quot;: &quot;2012-07-06T14:58:50Z&quot;,
+  &quot;folders_url&quot;: &quot;https://www.example.com/api/v1/folders/2937/folders&quot;,
+  &quot;files_url&quot;: &quot;https://www.example.com/api/v1/folders/2937/files&quot;,
+  &quot;full_name&quot;: &quot;course files/11folder&quot;,
+  &quot;lock_at&quot;: &quot;2012-07-06T14:58:50Z&quot;,
+  &quot;id&quot;: 2937,
+  &quot;folders_count&quot;: 0,
+  &quot;name&quot;: &quot;11folder&quot;,
+  &quot;parent_folder_id&quot;: 2934,
+  &quot;created_at&quot;: &quot;2012-07-06T14:58:50Z&quot;,
+  &quot;unlock_at&quot;: null,
+  &quot;hidden&quot;: false,
+  &quot;hidden_for_user&quot;: false,
+  &quot;locked&quot;: true,
+  &quot;locked_for_user&quot;: false,
+  // If true, indicates this is a read-only folder containing files submitted to
+  // assignments
+  &quot;for_submissions&quot;: false
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="UsageRights">An UsageRights object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">// Describes the copyright and license information for a File
+{
+  // Copyright line for the file
+  &quot;legal_copyright&quot;: &quot;(C) 2014 Incom Corporation Ltd&quot;,
+  // Justification for using the file in a Canvas course. Valid values are
+  // &#39;own_copyright&#39;, &#39;public_domain&#39;, &#39;used_by_permission&#39;, &#39;fair_use&#39;,
+  // &#39;creative_commons&#39;
+  &quot;use_justification&quot;: &quot;creative_commons&quot;,
+  // License identifier for the file.
+  &quot;license&quot;: &quot;cc_by_sa&quot;,
+  // Readable license name
+  &quot;license_name&quot;: &quot;CC Attribution Share-Alike&quot;,
+  // Explanation of the action performed
+  &quot;message&quot;: &quot;4 files updated&quot;,
+  // List of ids of files that were updated
+  &quot;file_ids&quot;: [1, 2, 3]
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="License">A License object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // a short string identifying the license
+  &quot;id&quot;: &quot;cc_by_sa&quot;,
+  // the name of the license
+  &quot;name&quot;: &quot;CC Attribution ShareAlike&quot;,
+  // a link to the license text
+  &quot;url&quot;: &quot;http://creativecommons.org/licenses/by-sa/4.0&quot;
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.files.api_quota' data-subtopic='Files'>
+    <a name='method.files.api_quota' href='#method.files.api_quota'>
+      Get quota information
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb">FilesController#api_quota</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/files/quota
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/files/quota</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/files/quota
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/files/quota</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/files/quota
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/files/quota</code>
+  </div>
+
+
+<p>Returns the total and used storage quota for the course, group, or user.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/1/files/quota&#39; \
+      -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{ &quot;quota&quot;: 524288000, &quot;quota_used&quot;: 402653184 }</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.files.api_index' data-subtopic='Files'>
+    <a name='method.files.api_index' href='#method.files.api_index'>
+      List files
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb">FilesController#api_index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/files
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/files</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/files
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/files</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/files
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/files</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/folders/:id/files
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/folders/:id/files</code>
+  </div>
+
+
+<p>Returns the paginated list of files for the folder or course.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>content_types[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Filter results by content-type. You can specify type/subtype pairs (e.g., &#39;image/jpeg&#39;), or simply types (e.g., &#39;image&#39;, which will match &#39;image/gif&#39;, &#39;image/jpeg&#39;, etc.).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>exclude_content_types[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Exclude given content-types from your results. You can specify type/subtype pairs (e.g., &#39;image/jpeg&#39;), or simply types (e.g., &#39;image&#39;, which will match &#39;image/gif&#39;, &#39;image/jpeg&#39;, etc.).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>search_term</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The partial name of the files to match and return.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Array of additional information to include.</p>
+<dl class="rdoc-list note-list"><dt>“user”
+<dd>
+<p>the user who uploaded the file or last edited its content</p>
+</dd><dt>“usage_rights”
+<dd>
+<p>copyright and license information for the file (see UsageRights)</p>
+</dd></dl>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>user</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>only[]</td>
+      <td>
+        
+      </td>
+      <td>Array</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Array of information to restrict to. Overrides include[]</p>
+<dl class="rdoc-list note-list"><dt>“names”
+<dd>
+<p>only returns file name information</p>
+</dd></dl>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>sort</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Sort results by this field. Defaults to &#39;name&#39;. Note that `sort=user` implies `include[]=user`.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>name</code>, <code class=enum>size</code>, <code class=enum>created_at</code>, <code class=enum>updated_at</code>, <code class=enum>content_type</code>, <code class=enum>user</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>order</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The sorting order. Defaults to &#39;asc&#39;.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>asc</code>, <code class=enum>desc</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/folders/&lt;folder_id&gt;/files?content_types[]=image&amp;content_types[]=text/plain \
+      -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='plagiarism_detection_submissions.html#File'>Files</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.files.public_url' data-subtopic='Files'>
+    <a name='method.files.public_url' href='#method.files.public_url'>
+      Get public inline preview url
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb">FilesController#public_url</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/files/:id/public_url
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/files/:id/public_url</code>
+  </div>
+
+
+<p>Determine the URL that should be used for inline preview of the file.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>submission_id</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the submission the file is associated with.  Provide this argument to gain access to a file that has been submitted to an assignment (Canvas will verify that the file belongs to the submission and the calling user has rights to view the submission).</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/files/1/public_url&#39; \
+      -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{ &quot;public_url&quot;: &quot;https://example-bucket.s3.amazonaws.com/example-namespace/attachments/1/example-filename?AWSAccessKeyId=example-key&amp;Expires=1400000000&amp;Signature=example-signature&quot; }</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.files.api_show' data-subtopic='Files'>
+    <a name='method.files.api_show' href='#method.files.api_show'>
+      Get file
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb">FilesController#api_show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/files/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/files/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/files/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/files/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/files/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/files/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/files/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/files/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/files/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/files/:id</code>
+  </div>
+
+
+<p>Returns the standard attachment json object</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Array of additional information to include.</p>
+<dl class="rdoc-list note-list"><dt>“user”
+<dd>
+<p>the user who uploaded the file or last edited its content</p>
+</dd><dt>“usage_rights”
+<dd>
+<p>copyright and license information for the file (see UsageRights)</p>
+</dd></dl>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>user</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/files/&lt;file_id&gt;&#39; \
+      -H &#39;Authorization: Bearer &lt;token&gt;&#39;
+
+curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/files/&lt;file_id&gt;&#39; \
+      -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='plagiarism_detection_submissions.html#File'>File</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.files.api_update' data-subtopic='Files'>
+    <a name='method.files.api_update' href='#method.files.api_update'>
+      Update file
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb">FilesController#api_update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/files/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/files/:id</code>
+  </div>
+
+
+<p>Update some settings on the specified file</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>name</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The new display name of the file, with a limit of 255 characters.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>parent_folder_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the folder to move this file into. The new folder must be in the same context as the original parent folder. If the file is in a context without folders this does not apply.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>on_duplicate</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If the file is moved to a folder containing a file with the same name, or renamed to a name matching an existing file, the API call will fail unless this parameter is supplied.</p>
+<dl class="rdoc-list note-list"><dt>“overwrite”
+<dd>
+<p>Replace the existing file with the same name</p>
+</dd><dt>“rename”
+<dd>
+<p>Add a qualifier to make the new filename unique</p>
+</dd></dl>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>overwrite</code>, <code class=enum>rename</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>lock_at</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The datetime to lock the file at</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>unlock_at</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The datetime to unlock the file at</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>locked</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Flag the file as locked</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>hidden</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Flag the file as hidden</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X PUT &#39;https://&lt;canvas&gt;/api/v1/files/&lt;file_id&gt;&#39; \
+     -F &#39;name=&lt;new_name&gt;&#39; \
+     -F &#39;locked=true&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='plagiarism_detection_submissions.html#File'>File</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.files.destroy' data-subtopic='Files'>
+    <a name='method.files.destroy' href='#method.files.destroy'>
+      Delete file
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb">FilesController#destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/files/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/files/:id</code>
+  </div>
+
+
+<p>Remove the specified file. Unlike most other DELETE endpoints, using this endpoint will result in comprehensive, irretrievable destruction of the file. It should be used with the `replace` parameter set to true in cases where the file preview also needs to be destroyed (such as to remove files that violate privacy laws).</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>replace</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>This action is irreversible. If replace is set to true the file contents will be replaced with a generic “file has been removed” file. This also destroys any previews that have been generated for the file. Must have manage files and become other users permissions</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X DELETE &#39;https://&lt;canvas&gt;/api/v1/files/&lt;file_id&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='plagiarism_detection_submissions.html#File'>File</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.files.reset_verifier' data-subtopic='Files'>
+    <a name='method.files.reset_verifier' href='#method.files.reset_verifier'>
+      Reset link verifier
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/files_controller.rb">FilesController#reset_verifier</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/files/:id/reset_verifier
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/files/:id/reset_verifier</code>
+  </div>
+
+
+<p>Resets the link verifier. Any existing links to the file using the previous hard-coded “verifier” parameter will no longer automatically grant access.</p>
+
+<p>Must have manage files and become other users permissions</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X POST &#39;https://&lt;canvas&gt;/api/v1/files/&lt;file_id&gt;/reset_verifier&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='plagiarism_detection_submissions.html#File'>File</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.api_index' data-subtopic='Folders'>
+    <a name='method.folders.api_index' href='#method.folders.api_index'>
+      List folders
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#api_index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/folders/:id/folders
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/folders/:id/folders</code>
+  </div>
+
+
+<p>Returns the paginated list of folders in the folder.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/folders/&lt;folder_id&gt;/folders&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='files.html#Folder'>Folders</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.list_all_folders' data-subtopic='Folders'>
+    <a name='method.folders.list_all_folders' href='#method.folders.list_all_folders'>
+      List all folders
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#list_all_folders</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/folders
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/folders</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/folders
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/folders</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/folders
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/folders</code>
+  </div>
+
+
+<p>Returns the paginated list of all folders for the given context. This will be returned as a flat list containing all subfolders as well.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/folders&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='files.html#Folder'>Folders</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.resolve_path' data-subtopic='Folders'>
+    <a name='method.folders.resolve_path' href='#method.folders.resolve_path'>
+      Resolve path
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#resolve_path</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/folders/by_path/*full_path
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/folders/by_path/*full_path</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/folders/by_path
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/folders/by_path</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/folders/by_path/*full_path
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/folders/by_path/*full_path</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/folders/by_path
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/folders/by_path</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/folders/by_path/*full_path
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/folders/by_path/*full_path</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/folders/by_path
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/folders/by_path</code>
+  </div>
+
+
+<p>Given the full path to a folder, returns a list of all Folders in the path hierarchy, starting at the root folder, and ending at the requested folder. The given path is relative to the context&#39;s root folder and does not include the root folder&#39;s name (e.g., “course files”). If an empty path is given, the context&#39;s root folder alone is returned. Otherwise, if no folder exists with the given full path, a Not Found error is returned.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/folders/by_path/foo/bar/baz&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='files.html#Folder'>Folders</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.show' data-subtopic='Folders'>
+    <a name='method.folders.show' href='#method.folders.show'>
+      Get folder
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/folders/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/folders/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/folders/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/folders/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/folders/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/folders/:id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/folders/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/folders/:id</code>
+  </div>
+
+
+<p>Returns the details for a folder</p>
+
+<p>You can get the root folder from a context by using &#39;root&#39; as the :id. For example, you could get the root folder for a course like:</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/1337/folders/root&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/folders/&lt;folder_id&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='files.html#Folder'>Folder</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.update' data-subtopic='Folders'>
+    <a name='method.folders.update' href='#method.folders.update'>
+      Update folder
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/folders/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/folders/:id</code>
+  </div>
+
+
+<p>Updates a folder</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>name</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The new name of the folder</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>parent_folder_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the folder to move this folder into. The new folder must be in the same context as the original parent folder.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>lock_at</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The datetime to lock the folder at</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>unlock_at</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The datetime to unlock the folder at</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>locked</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Flag the folder as locked</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>hidden</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Flag the folder as hidden</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>position</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set an explicit sort position for the folder</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -XPUT &#39;https://&lt;canvas&gt;/api/v1/folders/&lt;folder_id&gt;&#39; \
+     -F &#39;name=&lt;new_name&gt;&#39; \
+     -F &#39;locked=true&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='files.html#Folder'>Folder</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.create' data-subtopic='Folders'>
+    <a name='method.folders.create' href='#method.folders.create'>
+      Create folder
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/folders
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/folders</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/users/:user_id/folders
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/users/:user_id/folders</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups/:group_id/folders
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/groups/:group_id/folders</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/folders/:folder_id/folders
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/folders/:folder_id/folders</code>
+  </div>
+
+
+<p>Creates a folder in the specified context</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>name</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name of the folder</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>parent_folder_id</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the folder to store the file in. If this and parent_folder_path are sent an error will be returned. If neither is given, a default folder will be used.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>parent_folder_path</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The path of the folder to store the new folder in. The path separator is the forward slash `/`, never a back slash. The parent folder will be created if it does not already exist. This parameter only applies to new folders in a context that has folders, such as a user, a course, or a group. If this and parent_folder_id are sent an error will be returned. If neither is given, a default folder will be used.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>lock_at</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The datetime to lock the folder at</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>unlock_at</td>
+      <td>
+        
+      </td>
+      <td>DateTime</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The datetime to unlock the folder at</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>locked</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Flag the folder as locked</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>hidden</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Flag the folder as hidden</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>position</td>
+      <td>
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set an explicit sort position for the folder</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/folders/&lt;folder_id&gt;/folders&#39; \
+     -F &#39;name=&lt;new_name&gt;&#39; \
+     -F &#39;locked=true&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/folders&#39; \
+     -F &#39;name=&lt;new_name&gt;&#39; \
+     -F &#39;locked=true&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='files.html#Folder'>Folder</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.api_destroy' data-subtopic='Folders'>
+    <a name='method.folders.api_destroy' href='#method.folders.api_destroy'>
+      Delete folder
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#api_destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/folders/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/folders/:id</code>
+  </div>
+
+
+<p>Remove the specified folder. You can only delete empty folders unless you set the &#39;force&#39; flag</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>force</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set to &#39;true&#39; to allow deleting a non-empty folder</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X DELETE &#39;https://&lt;canvas&gt;/api/v1/folders/&lt;folder_id&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.create_file' data-subtopic='Folders'>
+    <a name='method.folders.create_file' href='#method.folders.create_file'>
+      Upload a file
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#create_file</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/folders/:folder_id/files
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/folders/:folder_id/files</code>
+  </div>
+
+
+<p>Upload a file to a folder.</p>
+
+<p>This API endpoint is the first step in uploading a file. See the <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a> for details on the file upload workflow.</p>
+
+<p>Only those with the “Manage Files” permission on a course or group can upload files to a folder in that course or group.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.copy_file' data-subtopic='Folders'>
+    <a name='method.folders.copy_file' href='#method.folders.copy_file'>
+      Copy a file
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#copy_file</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/folders/:dest_folder_id/copy_file
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/folders/:dest_folder_id/copy_file</code>
+  </div>
+
+
+<p>Copy a file from elsewhere in Canvas into a folder.</p>
+
+<p>Copying a file across contexts (between courses and users) is permitted, but the source and destination must belong to the same institution.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>source_file_id</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the source file</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>on_duplicate</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>What to do if a file with the same name already exists at the destination. If such a file exists and this parameter is not given, the call will fail.</p>
+<dl class="rdoc-list note-list"><dt>“overwrite”
+<dd>
+<p>Replace an existing file with the same name</p>
+</dd><dt>“rename”
+<dd>
+<p>Add a qualifier to make the new filename unique</p>
+</dd></dl>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>overwrite</code>, <code class=enum>rename</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/folders/123/copy_file&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;
+     -F &#39;source_file_id=456&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='plagiarism_detection_submissions.html#File'>File</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.copy_folder' data-subtopic='Folders'>
+    <a name='method.folders.copy_folder' href='#method.folders.copy_folder'>
+      Copy a folder
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#copy_folder</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/folders/:dest_folder_id/copy_folder
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/folders/:dest_folder_id/copy_folder</code>
+  </div>
+
+
+<p>Copy a folder (and its contents) from elsewhere in Canvas into a folder.</p>
+
+<p>Copying a folder across contexts (between courses and users) is permitted, but the source and destination must belong to the same institution. If the source and destination folders are in the same context, the source folder may not contain the destination folder. A folder will be renamed at its destination if another folder with the same name already exists.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>source_folder_id</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the source folder</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/folders/123/copy_folder&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;
+     -F &#39;source_file_id=789&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='files.html#Folder'>Folder</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.folders.media_folder' data-subtopic='Folders'>
+    <a name='method.folders.media_folder' href='#method.folders.media_folder'>
+      Get uploaded media folder for user
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/folders_controller.rb">FoldersController#media_folder</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/folders/media
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/folders/media</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/folders/media
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/folders/media</code>
+  </div>
+
+
+<p>Returns the details for a designated upload folder that the user has rights to upload to, and creates it if it doesn&#39;t exist.</p>
+
+<p>If the current user does not have the permissions to manage files in the course or group, the folder will belong to the current user directly.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/courses/1337/folders/media&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='files.html#Folder'>Folder</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.usage_rights.set_usage_rights' data-subtopic='Usage Rights'>
+    <a name='method.usage_rights.set_usage_rights' href='#method.usage_rights.set_usage_rights'>
+      Set usage rights
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/usage_rights_controller.rb">UsageRightsController#set_usage_rights</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/usage_rights
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/usage_rights</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id/usage_rights
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/groups/:group_id/usage_rights</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/users/:user_id/usage_rights
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/users/:user_id/usage_rights</code>
+  </div>
+
+
+<p>Sets copyright and license information for one or more files</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>file_ids[]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>List of ids of files to set usage rights for.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>folder_ids[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>List of ids of folders to search for files to set usage rights for. Note that new files uploaded to these folders do not automatically inherit these rights.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>publish</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether the file(s) or folder(s) should be published on save, provided that usage rights have been specified (set to `true` to publish on save).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>usage_rights[use_justification]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The intellectual property justification for using the files in Canvas</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>own_copyright</code>, <code class=enum>used_by_permission</code>, <code class=enum>fair_use</code>, <code class=enum>public_domain</code>, <code class=enum>creative_commons</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>usage_rights[legal_copyright]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The legal copyright line for the files</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>usage_rights[license]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The license that applies to the files. See the <a href="files.html#method.usage_rights.licenses" title="List licenses endpoint">List licenses endpoint</a> for the supported license types.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+  Returns a 
+
+<a href='files.html#UsageRights'>UsageRights</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.usage_rights.remove_usage_rights' data-subtopic='Usage Rights'>
+    <a name='method.usage_rights.remove_usage_rights' href='#method.usage_rights.remove_usage_rights'>
+      Remove usage rights
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/usage_rights_controller.rb">UsageRightsController#remove_usage_rights</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/courses/:course_id/usage_rights
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/courses/:course_id/usage_rights</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/groups/:group_id/usage_rights
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/groups/:group_id/usage_rights</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/users/:user_id/usage_rights
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/users/:user_id/usage_rights</code>
+  </div>
+
+
+<p>Removes copyright and license information associated with one or more files</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>file_ids[]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>List of ids of files to remove associated usage rights from.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>folder_ids[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>List of ids of folders. Usage rights will be removed from all files in these folders.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.usage_rights.licenses' data-subtopic='Usage Rights'>
+    <a name='method.usage_rights.licenses' href='#method.usage_rights.licenses'>
+      List licenses
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/usage_rights_controller.rb">UsageRightsController#licenses</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_licenses
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/content_licenses</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_licenses
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/content_licenses</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_licenses
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/users/:user_id/content_licenses</code>
+  </div>
+
+
+<p>A paginated list of licenses that can be applied</p>
+
+
+
+
+  Returns a list of 
+
+<a href='files.html#License'>Licenses</a>
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:09 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

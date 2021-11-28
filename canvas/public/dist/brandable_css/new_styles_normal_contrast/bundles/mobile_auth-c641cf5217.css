@@ -1,0 +1,2607 @@
+@charset "UTF-8";
+/*
+ * Copyright (C) 2013 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/* Legacy variables. Discontinue to use these: */
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
+ * Convert font-size from px to rem with px fallback
+ * @param $size - the value in pixel you want to convert
+ * e.g. p {@include fontSize(12px);}
+ * courtesy of https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_fontSize.scss
+ */
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: var(--ic-brand-font-color-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 12px 0;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+}
+
+.lead {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 2.25;
+}
+
+.muted {
+  color: var(--ic-brand-font-color-dark-lightened-30);
+}
+
+.text-warning {
+  color: #FC5E13;
+}
+
+a.text-warning:hover {
+  color: #d94803;
+}
+
+.text-error {
+  color: #EE0612;
+}
+
+a.text-error:hover {
+  color: #bc050e;
+}
+
+.text-info {
+  color: var(--ic-brand-primary);
+}
+
+a.text-info:hover {
+  color: var(--ic-brand-primary-darkened-10);
+}
+
+.text-success {
+  color: #00AC18;
+}
+
+a.text-success:hover {
+  color: #007911;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 6px 0;
+  font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.5;
+  text-rendering: optimizelegibility;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-weight: normal;
+  line-height: 3;
+  color: var(--ic-brand-font-color-dark-lightened-15);
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+h1 small {
+  font-size: 24px;
+}
+
+h2 small {
+  font-size: 18px;
+}
+
+h3 small {
+  font-size: 16px;
+}
+
+h4 small {
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: normal;
+}
+
+h1, h2, .h1, .h2 {
+  font-size: 1.8em;
+  line-height: 1.5;
+}
+
+h3, .h3 {
+  font-size: 1.5em;
+}
+
+.page-header {
+  padding-bottom: 6px;
+  margin: 20px 0 30px;
+  border-bottom: 1px solid #C7CDD1;
+}
+
+a {
+  color: var(--ic-link-color);
+  text-decoration: none;
+}
+a:focus, a:hover {
+  color: var(--ic-link-color-darkened-10);
+}
+a:focus, a:hover {
+  text-decoration: underline;
+}
+
+.Underline-All-Links__enabled a:not(.Button):not(.ui-button):not(.btn):not(.ui-button):not(.ui-tabs-anchor) {
+  text-decoration: underline;
+}
+.Underline-All-Links__enabled a:not(.Button):not(.ui-button):not(.btn):not(.ui-button):not(.ui-tabs-anchor):focus, .Underline-All-Links__enabled a:not(.Button):not(.ui-button):not(.btn):not(.ui-button):not(.ui-tabs-anchor):hover {
+  text-decoration: none;
+}
+.Underline-All-Links__enabled a:not(.Button):not(.ui-button):not(.btn):not(.ui-button):not(.ui-tabs-anchor):not([data-cid*=Button]) {
+  outline-width: 0.125rem;
+  outline-color: transparent;
+  outline-style: solid;
+}
+.Underline-All-Links__enabled a:not(.Button):not(.ui-button):not(.btn):not(.ui-button):not(.ui-tabs-anchor):not([data-cid*=Button]):focus {
+  outline-offset: 0;
+  outline-color: var(--ic-link-color);
+}
+
+.alert a {
+  font-weight: bold;
+  color: inherit;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0 0 6px 25px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+dl {
+  margin-bottom: 20px;
+}
+
+dt,
+dd {
+  line-height: 1.5;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 10px;
+}
+
+.dl-horizontal:before, .dl-horizontal:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.dl-horizontal:after {
+  clear: both;
+}
+.dl-horizontal dt {
+  float: left;
+  width: 160px;
+  clear: left;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dl-horizontal dd {
+  margin-left: 180px;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+label {
+  display: inline-block;
+}
+
+.input-micro {
+  width: 30px;
+}
+
+.form-horizontal label, .bootstrap-form label {
+  display: block;
+}
+
+p label {
+  font-size: inherit;
+}
+
+.bootstrap-form.no-margin {
+  margin-bottom: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+select.un-bootrstrapify {
+  width: auto;
+  border-radius: 0;
+  height: auto;
+}
+
+.form-actions {
+  text-align: right;
+  padding: 10px 10px 11px;
+}
+.ui-dialog-content .form-actions {
+  margin-bottom: 0;
+  box-shadow: inset 0 1px 0 #fff;
+}
+.form-actions.flush {
+  margin-bottom: -1em;
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
+input[type=checkbox] + label,
+input[type=radio] + label {
+  vertical-align: -4px;
+}
+
+.form-inline input[type=checkbox] + label,
+.form-inline input[type=radio] + label {
+  vertical-align: middle;
+}
+
+.table > thead {
+  background: #e4e9ed;
+}
+
+.table-vertically-center th, .table-vertically-center td {
+  vertical-align: middle;
+}
+
+.table .center {
+  text-align: center;
+}
+
+.table-striped {
+  border: 1px solid #C7CDD1;
+}
+.table-striped > thead {
+  border: 1px solid #C7CDD1;
+}
+.table-striped > tbody > tr td {
+  background: #fff;
+}
+.table-striped > tbody > tr:first-child > td {
+  border-top: 0;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th, .table-hover tbody tr.table-hover-row td, .table-hover tbody tr.table-hover-row th {
+  background: #e6e6e6;
+}
+
+iframe#tool_content {
+  border: none;
+}
+
+.ui-dialog .input-append input:focus, .ui-dialog .input-append select:focus, .ui-dialog .input-append .uneditable-input:focus, .ui-dialog .input-prepend input:focus, .ui-dialog .input-prepend select:focus, .ui-dialog .input-prepend .uneditable-input:focus {
+  z-index: 1001;
+}
+
+.calendar_links input[readonly] {
+  cursor: auto;
+}
+
+blockquote p {
+  font-size: inherit;
+}
+
+.progress-small {
+  height: 10px;
+  margin: 5px 0;
+}
+
+.popover {
+  z-index: 10;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #C7CDD1;
+  border-bottom: none;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #C7CDD1;
+}
+
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #C7CDD1;
+}
+blockquote p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 25px;
+}
+blockquote small {
+  display: block;
+  line-height: 1.5;
+  color: var(--ic-brand-font-color-dark-lightened-15);
+}
+blockquote small:before {
+  content: "— ";
+}
+blockquote.pull-right {
+  float: right;
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #C7CDD1;
+  border-left: 0;
+}
+blockquote.pull-right p,
+blockquote.pull-right small {
+  text-align: right;
+}
+blockquote.pull-right small:before {
+  content: "";
+}
+blockquote.pull-right small:after {
+  content: " —";
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.ui-widget.ui-tooltip {
+  word-wrap: break-word;
+}
+
+.ui-widget.ui-tooltip.popover {
+  padding: 1px;
+  font-size: 14px;
+  max-width: 236px;
+  width: 236px;
+  color: #73818C;
+  text-align: left;
+  text-decoration: none;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ui-widget.ui-tooltip.popover-padded {
+  padding: 9px 14px;
+}
+
+.ui-tooltip.popover:before, .ui-tooltip.popover:after {
+  border-color: transparent transparent rgba(0, 0, 0, 0.25) transparent;
+  position: absolute;
+  border-style: solid;
+  border-width: 11px;
+  width: 0;
+  height: 0;
+  content: "";
+  top: -22px;
+  left: 11px;
+}
+.ui-tooltip.popover:after {
+  border-bottom-color: #f7f7f7;
+  border-width: 10px;
+  top: -20px;
+  left: 12px;
+}
+.ui-tooltip.popover.right:before {
+  left: auto;
+  right: 11px;
+}
+.ui-tooltip.popover.right:after {
+  left: auto;
+  right: 12px;
+}
+.ui-tooltip.popover.bottom:before {
+  border-color: rgba(0, 0, 0, 0.25) transparent transparent transparent;
+  top: auto;
+  bottom: -22px;
+}
+.ui-tooltip.popover.bottom:after {
+  border-color: #fff transparent transparent transparent;
+  top: auto;
+  bottom: -20px;
+}
+.ui-tooltip.popover.center:before {
+  left: 50%;
+  margin-left: -11px;
+  right: auto;
+}
+.ui-tooltip.popover.center:after {
+  left: 50%;
+  margin-left: -10px;
+  right: auto;
+}
+.ui-tooltip.popover.middle:before {
+  top: 50%;
+  margin-top: -11px;
+  bottom: auto;
+}
+.ui-tooltip.popover.middle:after {
+  top: 50%;
+  margin-top: -10px;
+  bottom: auto;
+}
+.ui-tooltip.popover.horizontal:before {
+  top: 50%;
+  margin-top: -11px;
+  bottom: auto;
+  left: -22px;
+  right: auto;
+  border-color: transparent rgba(0, 0, 0, 0.25) transparent transparent;
+}
+.ui-tooltip.popover.horizontal:after {
+  top: 50%;
+  margin-top: -10px;
+  bottom: auto;
+  left: -20px;
+  right: auto;
+  border-color: transparent #fff transparent transparent;
+}
+.ui-tooltip.popover.right.horizontal:before {
+  left: auto;
+  right: -22px;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.25);
+}
+.ui-tooltip.popover.right.horizontal:after {
+  left: auto;
+  right: -20px;
+  border-color: transparent transparent transparent #fff;
+}
+.ui-tooltip.popover.bottom.horizontal:before {
+  top: auto;
+  bottom: 11px;
+}
+.ui-tooltip.popover.bottom.horizontal:after {
+  top: auto;
+  bottom: 12px;
+}
+.ui-tooltip.popover.top.horizontal:before {
+  margin-top: 0;
+  top: 11px;
+}
+.ui-tooltip.popover.top.horizontal:after {
+  margin-top: 0;
+  top: 12px;
+}
+.ui-tooltip.popover.content-top.horizontal:before {
+  margin-top: 0;
+  top: 35px;
+}
+.ui-tooltip.popover.content-top.horizontal:after {
+  margin-top: 0;
+  top: 36px;
+}
+
+.dotted-separator {
+  border-bottom: 1px dotted #aaa;
+}
+
+@keyframes highlight-shadow-fade {
+  from {
+    box-shadow: 0 0 8px #52a8ec;
+  }
+  to {
+    box-shadow: none;
+  }
+}
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+@styleguide Forms
+
+## Basic inputs and labels
+
+Our forms styles are **opt-in**, which means you need to add the right CSS
+classes to inputs, labels, etc. to see the styles. (This prevents us from breaking
+any existing Canvas forms CSS.) Inputs, selects, textareas, etc. should be
+given the `.ic-Input` class, while labels should have the `.ic-Label` class.
+
+The `.ic-Form-control` element provides positioning context and margin for
+each label-input pair.
+
+```html
+<div class="ic-Form-control">
+  <label for="demo-text-input-1" class="ic-Label">This is a label</label>
+  <input type="text" id="demo-text-input-1" class="ic-Input" placeholder="Don't forget a helpful placeholder">
+</div>
+<div class="ic-Form-control">
+  <label for="demo-text-input-2" class="ic-Label">This is another label</label>
+  <select class="ic-Input" id="demo-text-input-2">
+    <option>This is an option</option>
+    <option>This is another option</option>
+    <option>This is yet another option</option>
+  </select>
+</div>
+```
+
+## Radio buttons
+
+### Radio button group
+
+Radio button groups should be contained within their own `<fieldset>` with
+the class `ic-Fieldset--radio-checkbox` and labeled with a `<legend>`.
+
+```html
+<fieldset class="ic-Fieldset ic-Fieldset--radio-checkbox">
+  <legend class="ic-Legend">
+    Favorite flower
+  </legend>
+  <div class="ic-Form-control ic-Form-control--radio">
+    <div class="ic-Radio">
+      <input id="tulip" type="radio" value="tulip" name="flower" checked>
+      <label for="tulip" class="ic-Label">Tulip</label>
+    </div>
+    <div class="ic-Radio">
+      <input id="daisy" type="radio" value="daisy" name="flower">
+      <label for="daisy" class="ic-Label">Daisy</label>
+    </div>
+    <div class="ic-Radio">
+      <input id="daffodil" type="radio" value="daffodil" name="flower">
+      <label for="daffodil" class="ic-Label">Daffodil</label>
+    </div>
+  </div>
+</fieldset>
+```
+
+### Inline radio button group
+
+Add the `ic-Form-control--radio-inline` class to the `ic-Form-control--radio`
+element to make the radio buttons display inline.
+
+```html
+<fieldset class="ic-Fieldset ic-Fieldset--radio-checkbox">
+  <legend class="ic-Legend">
+    Favorite Premier League team
+  </legend>
+  <div class="ic-Form-control ic-Form-control--radio ic-Form-control--radio-inline">
+    <div class="ic-Radio">
+      <input id="liverpool" type="radio" value="liverpool" name="epl" checked>
+      <label for="liverpool" class="ic-Label">Liverpool</label>
+    </div>
+    <div class="ic-Radio">
+      <input id="manutd" type="radio" value="manutd" name="epl">
+      <label for="manutd" class="ic-Label">Manchester United</label>
+    </div>
+    <div class="ic-Radio">
+      <input id="astonvilla" type="radio" value="astonvilla" name="epl" disabled>
+      <label for="astonvilla" class="ic-Label">Aston Villa (relegated)</label>
+    </div>
+    <div class="ic-Radio">
+      <input id="otherteam" type="radio" value="otherteam" name="epl">
+      <label for="otherteam" class="ic-Label">Another team</label>
+    </div>
+  </div>
+</fieldset>
+```
+
+## Checkboxes
+
+### Basic checkbox
+For these to work properly, make sure the ``for`` attribute of the ``label`` matches the ``id``
+of the ``checkbox`` element. If you want to use default checkboxes, the existing Bootstrap 2.x
+styles have been left unchanged.
+
+```html
+<div class="ic-Form-control ic-Form-control--checkbox">
+  <input type="checkbox" id="freecandy">
+  <label class="ic-Label" for="freecandy">Yes, I want free candy</label>
+</div>
+```
+
+### Checkbox group
+Checkbox groups should be contained within their own `<fieldset>` with
+the class `ic-Fieldset--radio-checkbox` and labeled with a `<legend>`.
+
+```html
+<fieldset class="ic-Fieldset ic-Fieldset--radio-checkbox">
+  <legend class="ic-Legend">
+    Major label artists you admire
+  </legend>
+  <div class="ic-Checkbox-group">
+    <div class="ic-Form-control ic-Form-control--checkbox">
+      <input type="checkbox" id="beyonce">
+      <label class="ic-Label" for="beyonce">Beyonce</label>
+    </div>
+    <div class="ic-Form-control ic-Form-control--checkbox">
+      <input type="checkbox" id="coldplay">
+      <label class="ic-Label" for="coldplay">Coldplay</label>
+    </div>
+    <div class="ic-Form-control ic-Form-control--checkbox">
+      <input type="checkbox" id="mariah">
+      <label class="ic-Label" for="mariah">Mariah Carey</label>
+    </div>
+  </div>
+</fieldset>
+```
+
+### Inline checkbox group
+Add the `ic-Checkbox-group--inline` class to the `ic-Checkbox-group`
+element to make the checkboxes display inline.
+
+```html
+<fieldset class="ic-Fieldset ic-Fieldset--radio-checkbox">
+  <legend class="ic-Legend">
+    Major label artists you admire
+  </legend>
+  <div class="ic-Checkbox-group ic-Checkbox-group--inline">
+    <div class="ic-Form-control ic-Form-control--checkbox">
+      <input type="checkbox" id="beyonce2">
+      <label class="ic-Label" for="beyonce2">Beyonce</label>
+    </div>
+    <div class="ic-Form-control ic-Form-control--checkbox">
+      <input type="checkbox" id="coldplay2">
+      <label class="ic-Label" for="coldplay2">Coldplay</label>
+    </div>
+    <div class="ic-Form-control ic-Form-control--checkbox">
+      <input type="checkbox" id="mariah2">
+      <label class="ic-Label" for="mariah2">Mariah Carey</label>
+    </div>
+  </div>
+</fieldset>
+```
+*/
+select.ic-Input, textarea.ic-Input,
+input[type=text].ic-Input, input[type=password].ic-Input,
+input[type=datetime].ic-Input, input[type=datetime-local].ic-Input,
+input[type=date].ic-Input, input[type=month].ic-Input,
+input[type=time].ic-Input, input[type=week].ic-Input,
+input[type=number].ic-Input, input[type=email].ic-Input,
+input[type=url].ic-Input, input[type=search].ic-Input,
+input[type=tel].ic-Input, input[type=color].ic-Input, .uneditable-input.ic-Input {
+  width: 100%;
+  height: 38px;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease-out;
+  border-width: 1px;
+  border-style: solid;
+  outline-color: transparent;
+  outline-offset: -12px;
+  background: #FFFFFF;
+  padding: 8px 12px;
+  -webkit-appearance: none;
+  border-color: #d8e0e6;
+  outline-style: solid;
+  outline-width: 12px;
+}
+select.ic-Input:focus, textarea.ic-Input:focus,
+input[type=text].ic-Input:focus, input[type=password].ic-Input:focus,
+input[type=datetime].ic-Input:focus, input[type=datetime-local].ic-Input:focus,
+input[type=date].ic-Input:focus, input[type=month].ic-Input:focus,
+input[type=time].ic-Input:focus, input[type=week].ic-Input:focus,
+input[type=number].ic-Input:focus, input[type=email].ic-Input:focus,
+input[type=url].ic-Input:focus, input[type=search].ic-Input:focus,
+input[type=tel].ic-Input:focus, input[type=color].ic-Input:focus, .uneditable-input.ic-Input:focus {
+  border-color: var(--ic-brand-primary);
+  outline-color: var(--ic-brand-primary-lightened-15);
+}
+select.ic-Input:focus, textarea.ic-Input:focus,
+input[type=text].ic-Input:focus, input[type=password].ic-Input:focus,
+input[type=datetime].ic-Input:focus, input[type=datetime-local].ic-Input:focus,
+input[type=date].ic-Input:focus, input[type=month].ic-Input:focus,
+input[type=time].ic-Input:focus, input[type=week].ic-Input:focus,
+input[type=number].ic-Input:focus, input[type=email].ic-Input:focus,
+input[type=url].ic-Input:focus, input[type=search].ic-Input:focus,
+input[type=tel].ic-Input:focus, input[type=color].ic-Input:focus, .uneditable-input.ic-Input:focus {
+  outline-width: 2px;
+  outline-offset: -2px;
+}
+select.ic-Input ~ .ic-Form-message, textarea.ic-Input ~ .ic-Form-message,
+input[type=text].ic-Input ~ .ic-Form-message, input[type=password].ic-Input ~ .ic-Form-message,
+input[type=datetime].ic-Input ~ .ic-Form-message, input[type=datetime-local].ic-Input ~ .ic-Form-message,
+input[type=date].ic-Input ~ .ic-Form-message, input[type=month].ic-Input ~ .ic-Form-message,
+input[type=time].ic-Input ~ .ic-Form-message, input[type=week].ic-Input ~ .ic-Form-message,
+input[type=number].ic-Input ~ .ic-Form-message, input[type=email].ic-Input ~ .ic-Form-message,
+input[type=url].ic-Input ~ .ic-Form-message, input[type=search].ic-Input ~ .ic-Form-message,
+input[type=tel].ic-Input ~ .ic-Form-message, input[type=color].ic-Input ~ .ic-Form-message, .uneditable-input.ic-Input ~ .ic-Form-message {
+  transform: translate3d(0, -4px, 0);
+}
+select.ic-Input:focus ~ .ic-Form-message, textarea.ic-Input:focus ~ .ic-Form-message,
+input[type=text].ic-Input:focus ~ .ic-Form-message, input[type=password].ic-Input:focus ~ .ic-Form-message,
+input[type=datetime].ic-Input:focus ~ .ic-Form-message, input[type=datetime-local].ic-Input:focus ~ .ic-Form-message,
+input[type=date].ic-Input:focus ~ .ic-Form-message, input[type=month].ic-Input:focus ~ .ic-Form-message,
+input[type=time].ic-Input:focus ~ .ic-Form-message, input[type=week].ic-Input:focus ~ .ic-Form-message,
+input[type=number].ic-Input:focus ~ .ic-Form-message, input[type=email].ic-Input:focus ~ .ic-Form-message,
+input[type=url].ic-Input:focus ~ .ic-Form-message, input[type=search].ic-Input:focus ~ .ic-Form-message,
+input[type=tel].ic-Input:focus ~ .ic-Form-message, input[type=color].ic-Input:focus ~ .ic-Form-message, .uneditable-input.ic-Input:focus ~ .ic-Form-message {
+  transform: translate3d(0, 6px, 0);
+}
+select.ic-Input[disabled], select.ic-Input[readonly], textarea.ic-Input[disabled], textarea.ic-Input[readonly],
+input[type=text].ic-Input[disabled],
+input[type=text].ic-Input[readonly], input[type=password].ic-Input[disabled], input[type=password].ic-Input[readonly],
+input[type=datetime].ic-Input[disabled],
+input[type=datetime].ic-Input[readonly], input[type=datetime-local].ic-Input[disabled], input[type=datetime-local].ic-Input[readonly],
+input[type=date].ic-Input[disabled],
+input[type=date].ic-Input[readonly], input[type=month].ic-Input[disabled], input[type=month].ic-Input[readonly],
+input[type=time].ic-Input[disabled],
+input[type=time].ic-Input[readonly], input[type=week].ic-Input[disabled], input[type=week].ic-Input[readonly],
+input[type=number].ic-Input[disabled],
+input[type=number].ic-Input[readonly], input[type=email].ic-Input[disabled], input[type=email].ic-Input[readonly],
+input[type=url].ic-Input[disabled],
+input[type=url].ic-Input[readonly], input[type=search].ic-Input[disabled], input[type=search].ic-Input[readonly],
+input[type=tel].ic-Input[disabled],
+input[type=tel].ic-Input[readonly], input[type=color].ic-Input[disabled], input[type=color].ic-Input[readonly], .uneditable-input.ic-Input[disabled], .uneditable-input.ic-Input[readonly] {
+  cursor: not-allowed;
+  background-color: #f2f2f2;
+  opacity: 0.8;
+}
+select.ic-Input.ic-Input--has-error, .ic-Form-control--has-error select.ic-Input, textarea.ic-Input.ic-Input--has-error, .ic-Form-control--has-error textarea.ic-Input,
+input[type=text].ic-Input.ic-Input--has-error,
+.ic-Form-control--has-error input[type=text].ic-Input, input[type=password].ic-Input.ic-Input--has-error, .ic-Form-control--has-error input[type=password].ic-Input,
+input[type=datetime].ic-Input.ic-Input--has-error,
+.ic-Form-control--has-error input[type=datetime].ic-Input, input[type=datetime-local].ic-Input.ic-Input--has-error, .ic-Form-control--has-error input[type=datetime-local].ic-Input,
+input[type=date].ic-Input.ic-Input--has-error,
+.ic-Form-control--has-error input[type=date].ic-Input, input[type=month].ic-Input.ic-Input--has-error, .ic-Form-control--has-error input[type=month].ic-Input,
+input[type=time].ic-Input.ic-Input--has-error,
+.ic-Form-control--has-error input[type=time].ic-Input, input[type=week].ic-Input.ic-Input--has-error, .ic-Form-control--has-error input[type=week].ic-Input,
+input[type=number].ic-Input.ic-Input--has-error,
+.ic-Form-control--has-error input[type=number].ic-Input, input[type=email].ic-Input.ic-Input--has-error, .ic-Form-control--has-error input[type=email].ic-Input,
+input[type=url].ic-Input.ic-Input--has-error,
+.ic-Form-control--has-error input[type=url].ic-Input, input[type=search].ic-Input.ic-Input--has-error, .ic-Form-control--has-error input[type=search].ic-Input,
+input[type=tel].ic-Input.ic-Input--has-error,
+.ic-Form-control--has-error input[type=tel].ic-Input, input[type=color].ic-Input.ic-Input--has-error, .ic-Form-control--has-error input[type=color].ic-Input, .uneditable-input.ic-Input.ic-Input--has-error, .ic-Form-control--has-error .uneditable-input.ic-Input {
+  border-color: #EE0612;
+}
+select.ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error select.ic-Input:focus, textarea.ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error textarea.ic-Input:focus,
+input[type=text].ic-Input.ic-Input--has-error:focus,
+.ic-Form-control--has-error input[type=text].ic-Input:focus, input[type=password].ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error input[type=password].ic-Input:focus,
+input[type=datetime].ic-Input.ic-Input--has-error:focus,
+.ic-Form-control--has-error input[type=datetime].ic-Input:focus, input[type=datetime-local].ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error input[type=datetime-local].ic-Input:focus,
+input[type=date].ic-Input.ic-Input--has-error:focus,
+.ic-Form-control--has-error input[type=date].ic-Input:focus, input[type=month].ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error input[type=month].ic-Input:focus,
+input[type=time].ic-Input.ic-Input--has-error:focus,
+.ic-Form-control--has-error input[type=time].ic-Input:focus, input[type=week].ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error input[type=week].ic-Input:focus,
+input[type=number].ic-Input.ic-Input--has-error:focus,
+.ic-Form-control--has-error input[type=number].ic-Input:focus, input[type=email].ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error input[type=email].ic-Input:focus,
+input[type=url].ic-Input.ic-Input--has-error:focus,
+.ic-Form-control--has-error input[type=url].ic-Input:focus, input[type=search].ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error input[type=search].ic-Input:focus,
+input[type=tel].ic-Input.ic-Input--has-error:focus,
+.ic-Form-control--has-error input[type=tel].ic-Input:focus, input[type=color].ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error input[type=color].ic-Input:focus, .uneditable-input.ic-Input.ic-Input--has-error:focus, .ic-Form-control--has-error .uneditable-input.ic-Input:focus {
+  border-color: #EE0612;
+  outline-color: rgba(238, 6, 18, 0.2);
+}
+select.ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning select.ic-Input, textarea.ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning textarea.ic-Input,
+input[type=text].ic-Input.ic-Input--has-warning,
+.ic-Form-control--has-warning input[type=text].ic-Input, input[type=password].ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning input[type=password].ic-Input,
+input[type=datetime].ic-Input.ic-Input--has-warning,
+.ic-Form-control--has-warning input[type=datetime].ic-Input, input[type=datetime-local].ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning input[type=datetime-local].ic-Input,
+input[type=date].ic-Input.ic-Input--has-warning,
+.ic-Form-control--has-warning input[type=date].ic-Input, input[type=month].ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning input[type=month].ic-Input,
+input[type=time].ic-Input.ic-Input--has-warning,
+.ic-Form-control--has-warning input[type=time].ic-Input, input[type=week].ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning input[type=week].ic-Input,
+input[type=number].ic-Input.ic-Input--has-warning,
+.ic-Form-control--has-warning input[type=number].ic-Input, input[type=email].ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning input[type=email].ic-Input,
+input[type=url].ic-Input.ic-Input--has-warning,
+.ic-Form-control--has-warning input[type=url].ic-Input, input[type=search].ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning input[type=search].ic-Input,
+input[type=tel].ic-Input.ic-Input--has-warning,
+.ic-Form-control--has-warning input[type=tel].ic-Input, input[type=color].ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning input[type=color].ic-Input, .uneditable-input.ic-Input.ic-Input--has-warning, .ic-Form-control--has-warning .uneditable-input.ic-Input {
+  border-color: #FC5E13;
+}
+select.ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning select.ic-Input:focus, textarea.ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning textarea.ic-Input:focus,
+input[type=text].ic-Input.ic-Input--has-warning:focus,
+.ic-Form-control--has-warning input[type=text].ic-Input:focus, input[type=password].ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning input[type=password].ic-Input:focus,
+input[type=datetime].ic-Input.ic-Input--has-warning:focus,
+.ic-Form-control--has-warning input[type=datetime].ic-Input:focus, input[type=datetime-local].ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning input[type=datetime-local].ic-Input:focus,
+input[type=date].ic-Input.ic-Input--has-warning:focus,
+.ic-Form-control--has-warning input[type=date].ic-Input:focus, input[type=month].ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning input[type=month].ic-Input:focus,
+input[type=time].ic-Input.ic-Input--has-warning:focus,
+.ic-Form-control--has-warning input[type=time].ic-Input:focus, input[type=week].ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning input[type=week].ic-Input:focus,
+input[type=number].ic-Input.ic-Input--has-warning:focus,
+.ic-Form-control--has-warning input[type=number].ic-Input:focus, input[type=email].ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning input[type=email].ic-Input:focus,
+input[type=url].ic-Input.ic-Input--has-warning:focus,
+.ic-Form-control--has-warning input[type=url].ic-Input:focus, input[type=search].ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning input[type=search].ic-Input:focus,
+input[type=tel].ic-Input.ic-Input--has-warning:focus,
+.ic-Form-control--has-warning input[type=tel].ic-Input:focus, input[type=color].ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning input[type=color].ic-Input:focus, .uneditable-input.ic-Input.ic-Input--has-warning:focus, .ic-Form-control--has-warning .uneditable-input.ic-Input:focus {
+  border-color: #FC5E13;
+  outline-color: rgba(252, 94, 19, 0.2);
+}
+select.ic-Input.ic-Input--has-success, .ic-Form-control--has-success select.ic-Input, textarea.ic-Input.ic-Input--has-success, .ic-Form-control--has-success textarea.ic-Input,
+input[type=text].ic-Input.ic-Input--has-success,
+.ic-Form-control--has-success input[type=text].ic-Input, input[type=password].ic-Input.ic-Input--has-success, .ic-Form-control--has-success input[type=password].ic-Input,
+input[type=datetime].ic-Input.ic-Input--has-success,
+.ic-Form-control--has-success input[type=datetime].ic-Input, input[type=datetime-local].ic-Input.ic-Input--has-success, .ic-Form-control--has-success input[type=datetime-local].ic-Input,
+input[type=date].ic-Input.ic-Input--has-success,
+.ic-Form-control--has-success input[type=date].ic-Input, input[type=month].ic-Input.ic-Input--has-success, .ic-Form-control--has-success input[type=month].ic-Input,
+input[type=time].ic-Input.ic-Input--has-success,
+.ic-Form-control--has-success input[type=time].ic-Input, input[type=week].ic-Input.ic-Input--has-success, .ic-Form-control--has-success input[type=week].ic-Input,
+input[type=number].ic-Input.ic-Input--has-success,
+.ic-Form-control--has-success input[type=number].ic-Input, input[type=email].ic-Input.ic-Input--has-success, .ic-Form-control--has-success input[type=email].ic-Input,
+input[type=url].ic-Input.ic-Input--has-success,
+.ic-Form-control--has-success input[type=url].ic-Input, input[type=search].ic-Input.ic-Input--has-success, .ic-Form-control--has-success input[type=search].ic-Input,
+input[type=tel].ic-Input.ic-Input--has-success,
+.ic-Form-control--has-success input[type=tel].ic-Input, input[type=color].ic-Input.ic-Input--has-success, .ic-Form-control--has-success input[type=color].ic-Input, .uneditable-input.ic-Input.ic-Input--has-success, .ic-Form-control--has-success .uneditable-input.ic-Input {
+  border-color: #00AC18;
+}
+select.ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success select.ic-Input:focus, textarea.ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success textarea.ic-Input:focus,
+input[type=text].ic-Input.ic-Input--has-success:focus,
+.ic-Form-control--has-success input[type=text].ic-Input:focus, input[type=password].ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success input[type=password].ic-Input:focus,
+input[type=datetime].ic-Input.ic-Input--has-success:focus,
+.ic-Form-control--has-success input[type=datetime].ic-Input:focus, input[type=datetime-local].ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success input[type=datetime-local].ic-Input:focus,
+input[type=date].ic-Input.ic-Input--has-success:focus,
+.ic-Form-control--has-success input[type=date].ic-Input:focus, input[type=month].ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success input[type=month].ic-Input:focus,
+input[type=time].ic-Input.ic-Input--has-success:focus,
+.ic-Form-control--has-success input[type=time].ic-Input:focus, input[type=week].ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success input[type=week].ic-Input:focus,
+input[type=number].ic-Input.ic-Input--has-success:focus,
+.ic-Form-control--has-success input[type=number].ic-Input:focus, input[type=email].ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success input[type=email].ic-Input:focus,
+input[type=url].ic-Input.ic-Input--has-success:focus,
+.ic-Form-control--has-success input[type=url].ic-Input:focus, input[type=search].ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success input[type=search].ic-Input:focus,
+input[type=tel].ic-Input.ic-Input--has-success:focus,
+.ic-Form-control--has-success input[type=tel].ic-Input:focus, input[type=color].ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success input[type=color].ic-Input:focus, .uneditable-input.ic-Input.ic-Input--has-success:focus, .ic-Form-control--has-success .uneditable-input.ic-Input:focus {
+  border-color: #00AC18;
+  outline-color: rgba(0, 172, 24, 0.2);
+}
+
+select.ic-Input, input[type=file].ic-Input {
+  padding: 0 0 0 12px;
+}
+
+textarea.ic-Input {
+  height: auto;
+  resize: vertical;
+}
+
+select.ic-Input {
+  background-color: #FFFFFF;
+  background-image: url("/dist/images/forms/ic-icon-arrow-down-0a55c3d1bf.svg");
+  background-repeat: no-repeat;
+  background-size: 10px 5.667px;
+  background-position: calc(100% - 8px) 50%;
+  padding: 0 24px 0 12px;
+}
+
+@supports (-ms-accelerator: true) {
+  select.ic-Input {
+    background-color: #FFFFFF;
+    background-image: url("/dist/images/forms/ic-icon-arrow-down-0a55c3d1bf.svg");
+    background-repeat: no-repeat;
+    background-size: 10px 5.667px;
+    background-position: 99% 50%;
+    padding: 0 24px 0 12px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .ic-Form-group.ic-Form-group--inline {
+    display: flex;
+    align-items: flex-end;
+  }
+  .ic-Form-group.ic-Form-group--inline .ic-Form-actions {
+    margin-top: 0;
+    border: none;
+    padding: 0 0 0 12px;
+    background: transparent;
+  }
+  .ic-Form-group.ic-Form-group--inline .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio),
+.ic-Form-group.ic-Form-group--inline .ic-Checkbox-group {
+    flex: 1;
+    margin: 0 6px;
+  }
+  .ic-Form-group.ic-Form-group--inline .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio):first-child,
+.ic-Form-group.ic-Form-group--inline .ic-Checkbox-group:first-child {
+    margin-left: 0;
+  }
+  .ic-Form-group.ic-Form-group--inline .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio):last-child,
+.ic-Form-group.ic-Form-group--inline .ic-Checkbox-group:last-child {
+    margin-right: 0;
+  }
+  .ic-Form-group.ic-Form-group--inline .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) .ic-Form-message,
+.ic-Form-group.ic-Form-group--inline .ic-Checkbox-group .ic-Form-message {
+    margin-left: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) > .ic-Label {
+    margin-bottom: 0;
+    flex: 0 0 192px;
+    padding-right: 24px;
+  }
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) > .ic-Input,
+.ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) > .ic-Input-group,
+.ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) > .ic-Multi-input,
+.ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) > .ic-Forms-component {
+    flex: 1;
+  }
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) > .ic-Form-message {
+    display: block;
+    margin-left: 0;
+    width: 100%;
+  }
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) > .ic-Form-message .ic-Form-message__Layout {
+    margin-left: 204px;
+    display: inline-flex;
+  }
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio) > .ic-Form-help-text {
+    padding-left: 192px;
+  }
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Form-control:not(.ic-Form-control--checkbox):not(.ic-Form-control--radio):not(.ic-Form-control--top-align-label) {
+    align-items: center;
+  }
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Form-control.ic-Form-control--top-align-label > .ic-Label {
+    transform: translateY(2px);
+  }
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Fieldset--radio-checkbox {
+    position: relative;
+    padding-left: 192px;
+    min-height: 30px;
+  }
+  .ic-Form-group.ic-Form-group--horizontal > .ic-Fieldset--radio-checkbox > .ic-Legend {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 168px;
+    margin-bottom: 0;
+  }
+}
+
+.ic-Form-message {
+  display: inline-block;
+  margin-left: 12px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s cubic-bezier(0, 1, 0.5, 1);
+  box-sizing: border-box;
+}
+.ic-Form-message.ic-Form-message--error .ic-Form-message__Layout {
+  background: #EE0612;
+}
+.ic-Form-message.ic-Form-message--error .ic-Form-message__Layout:before {
+  background: #d50510;
+  border-right: 1px solid #b2040d;
+}
+.ic-Form-message.ic-Form-message--error .ic-Form-message__Layout:after {
+  border-bottom-color: #d50510;
+}
+.ic-Form-message.ic-Form-message--success .ic-Form-message__Layout {
+  background: #00AC18;
+}
+.ic-Form-message.ic-Form-message--success .ic-Form-message__Layout:before {
+  background: #009314;
+  border-right: 1px solid #006f0f;
+}
+.ic-Form-message.ic-Form-message--success .ic-Form-message__Layout:after {
+  border-bottom-color: #009314;
+}
+.ic-Form-message.ic-Form-message--warning .ic-Form-message__Layout {
+  background: #FC5E13;
+}
+.ic-Form-message.ic-Form-message--warning .ic-Form-message__Layout:before {
+  background: #f25003;
+  border-right: 1px solid #cf4403;
+}
+.ic-Form-message.ic-Form-message--warning .ic-Form-message__Layout:after {
+  border-bottom-color: #f25003;
+}
+
+.ic-Form-group:not(.ic-Form-group--horizontal) [class^=ic-Super-toggle--] + .ic-Form-message {
+  display: block;
+  margin-left: 0;
+}
+.ic-Form-group:not(.ic-Form-group--horizontal) [class^=ic-Super-toggle--] + .ic-Form-message .ic-Form-message__Layout {
+  display: inline-flex;
+}
+
+.ic-Input-group + .ic-Form-message {
+  margin-left: 0;
+}
+
+.ic-Form-message__Layout {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px 8px 8px 0;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  color: #FFFFFF;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+.ic-Form-message__Layout:before {
+  content: "";
+  width: 32px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+}
+.ic-Form-message__Layout:after {
+  bottom: 100%;
+  left: 16px;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-width: 6px;
+  margin-left: -6px;
+  box-sizing: border-box;
+}
+.ic-Form-message__Layout a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+.ic-Form-message__Layout a:hover, .ic-Form-message__Layout a:focus {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.ic-Form-message__Layout i[class*=icon-], .ic-Form-message__Layout i[class^=icon-] {
+  width: 32px;
+  height: auto;
+  flex: 0 0 32px;
+  line-height: 1;
+  margin-right: 8px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form.ic-Form-group {
+  margin: 0;
+}
+
+.ic-Form-control {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 18px;
+  position: relative;
+  display: block;
+}
+.ic-Form-control .ic-Form-control--radio {
+  margin-bottom: 0;
+}
+.ic-Form-control.ic-Form-control--checkbox-inline, .ic-Form-control.ic-Form-control--radio-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ic-Form-control.ic-Form-control--checkbox-inline .ic-Form-message__Layout:after, .ic-Form-control.ic-Form-control--radio-inline .ic-Form-message__Layout:after {
+  display: none;
+}
+.ic-Form-control.ic-Form-control--checkbox-inline.ic-Form-control--checkbox,
+.ic-Form-control.ic-Form-control--checkbox-inline .ic-Radio, .ic-Form-control.ic-Form-control--radio-inline.ic-Form-control--checkbox,
+.ic-Form-control.ic-Form-control--radio-inline .ic-Radio {
+  padding-right: 18px;
+}
+.ic-Form-control.ic-Form-control--has-error .ic-Label,
+.ic-Form-control.ic-Form-control--has-error .ic-Input-group__add-on {
+  color: #EE0612;
+}
+.ic-Form-control.ic-Form-control--has-warning .ic-Label,
+.ic-Form-control.ic-Form-control--has-warning .ic-Input-group__add-on {
+  color: #FC5E13;
+}
+.ic-Form-control.ic-Form-control--has-success .ic-Label,
+.ic-Form-control.ic-Form-control--has-success .ic-Input-group__add-on {
+  color: #00AC18;
+}
+
+@media only screen and (min-width: 500px) {
+  .ic-Multi-input {
+    display: flex;
+    align-items: center;
+  }
+  .ic-Multi-input > .ic-Input,
+.ic-Multi-input > .ic-Input-group {
+    margin: 0 4px;
+    flex: 1;
+  }
+  .ic-Multi-input > .ic-Input:first-child,
+.ic-Multi-input > .ic-Input-group:first-child {
+    margin-left: 0;
+  }
+  .ic-Multi-input > .ic-Input:last-child,
+.ic-Multi-input > .ic-Input-group:last-child {
+    margin-right: 0;
+  }
+}
+
+.ic-Label {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+          user-select: none;
+  margin: 0 0 6px;
+  display: block;
+  line-height: 1.3;
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.ic-Form-actions {
+  box-sizing: border-box;
+  margin-top: 12px;
+  border: 1px solid #C7CDD1;
+  padding: 12px;
+  text-align: right;
+  background: #f7f7f7;
+  white-space: nowrap;
+}
+
+.ic-Fieldset {
+  box-sizing: border-box;
+  margin: 0 0 18px;
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+.ic-Fieldset.ic-Fieldset--radio-checkbox {
+  margin-bottom: 21px;
+}
+.ic-Fieldset.ic-Fieldset--radio-checkbox .ic-Legend {
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 1rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.ic-Fieldset.ic-Fieldset--radio-checkbox .ic-Form-control--radio {
+  margin-bottom: 0;
+}
+
+.ic-Legend {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  padding: 0 0 6px;
+  margin: 0 0 24px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  color: var(--ic-brand-font-color-dark);
+  border-bottom: 1px solid #C7CDD1;
+}
+
+.ic-Radio {
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+.ic-Radio .ic-Label {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  padding: 4px 0 4px 22px;
+  font-weight: normal;
+  display: inline-block;
+}
+.ic-Radio .ic-Label:before {
+  transition: all 0.2s ease-out;
+  content: "";
+  box-sizing: border-box;
+  border-radius: 100%;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #d8e0e6;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background: #FFFFFF;
+}
+.ic-Radio ~ .ic-Form-message {
+  margin-left: 22px;
+}
+.ic-Radio input[type=radio] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ic-Radio input[type=radio] ~ .ic-Label {
+  vertical-align: baseline;
+}
+.ic-Radio input[type=radio]:not([disabled]):hover ~ .ic-Label:before {
+  border-color: var(--ic-brand-primary);
+}
+.ic-Radio input[type=radio]:checked ~ .ic-Label:before {
+  border-color: var(--ic-brand-primary);
+  box-shadow: inset 0 0 0 3px #FFFFFF;
+  background: var(--ic-brand-primary);
+}
+.ic-Radio input[type=radio]:focus ~ .ic-Label:before {
+  box-shadow: inset 0 0 0 2px var(--ic-brand-primary-lightened-15), inset 0 0 0 4px #FFFFFF;
+  background: var(--ic-brand-primary);
+}
+.ic-Radio input[type=radio][disabled] ~ .ic-Label {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.ic-Radio.ic-Radio--icon-only {
+  height: 2.75rem;
+}
+.ic-Radio.ic-Radio--icon-only .ic-Label {
+  transition: all 0.2s;
+  padding: 0.5rem;
+  background-color: #FFFFFF;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  color: var(--ic-brand-font-color-dark);
+}
+.ic-Radio.ic-Radio--icon-only .ic-Label:hover {
+  border-color: #C7CDD1;
+}
+.ic-Radio.ic-Radio--icon-only .ic-Label:before {
+  display: none;
+}
+.ic-Radio.ic-Radio--icon-only .ic-Label > svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.ic-Radio.ic-Radio--icon-only input[type=radio]:checked ~ .ic-Label {
+  border-color: var(--ic-brand-primary);
+  color: var(--ic-brand-primary);
+}
+.ic-Radio.ic-Radio--icon-only input[type=radio]:focus ~ .ic-Label {
+  box-shadow: inset 0 0 0 3px var(--ic-brand-primary-lightened-15);
+}
+
+@media only screen and (min-width: 768px) {
+  .ic-Checkbox-group.ic-Checkbox-group--inline {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ic-Checkbox-group.ic-Checkbox-group--inline .ic-Form-control.ic-Form-control--checkbox {
+    margin-right: 18px;
+  }
+  .ic-Checkbox-group.ic-Checkbox-group--inline .ic-Form-message {
+    display: block;
+  }
+}
+
+.ic-Form-control.ic-Form-control--checkbox {
+  line-height: 1;
+  margin-bottom: 0;
+}
+.ic-Form-control.ic-Form-control--checkbox.ic-Form-control--has-error .ic-Label, .ic-Form-control.ic-Form-control--checkbox.ic-Form-control--has-success .ic-Label, .ic-Form-control.ic-Form-control--checkbox.ic-Form-control--has-warning .ic-Label {
+  display: block;
+}
+.ic-Form-control.ic-Form-control--checkbox .ic-Label {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+  padding: 4px 0 4px 22px;
+  font-weight: normal;
+  display: inline-block;
+}
+.ic-Form-control.ic-Form-control--checkbox .ic-Label:before {
+  content: "";
+  transition: border-color 0.2s ease-out, outline-offset 0.2s ease-out, outline-color 0.2s ease-out;
+  box-sizing: border-box;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: url("/dist/images/forms/ic-checkbox-bg-0a15011a47.svg") no-repeat center bottom #FFFFFF;
+  background-size: 16px 48px;
+  border: 1px solid #d8e0e6;
+  outline: 2px solid transparent;
+  outline-offset: -12px;
+}
+.ic-Form-control.ic-Form-control--checkbox .ic-Form-message {
+  margin-left: 22px;
+  vertical-align: middle;
+}
+.ic-Form-control.ic-Form-control--checkbox input[type=checkbox] {
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ic-Form-control.ic-Form-control--checkbox input[type=checkbox]:not([disabled]):hover ~ .ic-Label:before {
+  border-color: var(--ic-brand-primary);
+}
+.ic-Form-control.ic-Form-control--checkbox input[type=checkbox]:focus ~ .ic-Label:before {
+  border-color: var(--ic-brand-primary);
+  outline-offset: -3px;
+  outline-color: var(--ic-brand-primary-lightened-15);
+}
+.ic-Form-control.ic-Form-control--checkbox input[type=checkbox]:checked ~ .ic-Label:before {
+  background-color: var(--ic-brand-primary);
+  background-position: center -1px;
+  border-color: var(--ic-brand-primary);
+}
+.ic-Form-control.ic-Form-control--checkbox input[type=checkbox]:checked:focus ~ .ic-Label:before {
+  outline-color: rgba(255, 255, 255, 0.35);
+}
+.ic-Form-control.ic-Form-control--checkbox input[type=checkbox][disabled] ~ .ic-Label {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ic-Input-group {
+  display: flex;
+  box-sizing: border-box;
+}
+.ic-Action-header__Primary .ic-Input-group {
+  flex: 1;
+}
+.ic-Input-group .ic-Input {
+  width: auto;
+  flex: 1;
+}
+.ic-Input-group .ic-Input:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ic-Input-group .ic-Input:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ic-Input-group .Button:first-child, .ic-Input-group .ui-button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ic-Input-group .Button:first-child:not(.Button--primary):not(.Button--secondary):not(.Button--success):not(.Button--warning):not(.Button--danger), .ic-Input-group .ui-button:first-child:not(.Button--primary):not(.Button--secondary):not(.Button--success):not(.Button--warning):not(.Button--danger) {
+  border-right: none;
+}
+.ic-Input-group .Button:last-child, .ic-Input-group .ui-button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ic-Input-group .Button:last-child:not(.Button--primary):not(.Button--secondary):not(.Button--success):not(.Button--warning):not(.Button--danger), .ic-Input-group .ui-button:last-child:not(.Button--primary):not(.Button--secondary):not(.Button--success):not(.Button--warning):not(.Button--danger) {
+  border-left: none;
+}
+.ic-Input-group .ic-Input-group__add-on,
+.ic-Input-group .ic-Label {
+  height: 38px;
+  background: #FFFFFF;
+  border: 1px solid #d8e0e6;
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+}
+.ic-Input-group .ic-Input-group__add-on:first-child,
+.ic-Input-group .ic-Label:first-child {
+  border-right: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.ic-Input-group .ic-Input-group__add-on:last-child,
+.ic-Input-group .ic-Label:last-child {
+  border-left: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.ic-Input-group .ic-Input-group__add-on {
+  color: var(--ic-brand-font-color-dark-lightened-15);
+  box-sizing: border-box;
+}
+.ic-Input-group .ic-Label {
+  margin-bottom: 0;
+}
+
+.ic-Action-header {
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.ic-Action-header.ic-Action-header--before-item-groups {
+  margin-bottom: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #C7CDD1;
+}
+@media only screen and (min-width: 768px) {
+  .ic-Action-header {
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .ic-Action-header .ic-Action-header__Primary {
+    flex-grow: 1;
+    margin-bottom: 0;
+    box-sizing: border-box;
+  }
+  .ic-Action-header .ic-Action-header__Secondary {
+    box-sizing: border-box;
+    text-align: right;
+  }
+  .ic-Action-header .ic-Action-header__Secondary--auto {
+    flex: 0 0 auto;
+  }
+  .ic-Action-header .ic-Action-header__Secondary > .Button,
+.ic-Action-header .ic-Action-header__Secondary > .btn,
+.ic-Action-header .ic-Action-header__Secondary > .ui-button {
+    margin-left: 3px;
+  }
+  .ic-Action-header .ic-Action-header__Primary + .ic-Action-header__Secondary {
+    padding-left: 24px;
+  }
+}
+
+.ic-Action-header__Heading {
+  margin: 0;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  word-break: break-all;
+}
+
+.ic-Action-header__Primary {
+  margin-bottom: 6px;
+}
+
+.ic-Form-action-box {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+@media only screen and (min-width: 992px) {
+  .ic-Form-action-box {
+    margin-bottom: 12px;
+  }
+}
+.ic-Form-action-box .ic-Form-control {
+  margin-bottom: 6px;
+}
+@media only screen and (min-width: 992px) {
+  .ic-Form-action-box .ic-Form-control {
+    margin: 0 4px;
+    flex: 1;
+  }
+  .ic-Form-action-box .ic-Form-control:first-child {
+    margin-left: 0;
+  }
+  .ic-Form-action-box .ic-Form-control:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.ic-Form-action-box__Form {
+  flex: 1;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 992px) {
+  .ic-Form-action-box__Form {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.ic-Form-action-box__Actions {
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 992px) {
+  .ic-Form-action-box__Actions {
+    padding-left: 48px;
+  }
+}
+
+.ic-Form-help-text {
+  font-size: 12px;
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 6px;
+  color: var(--ic-brand-font-color-dark-lightened-15);
+  width: 100%;
+  line-height: 1.5;
+}
+
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+@styleguide Buttons
+
+## The Basic Button
+
+```html
+<button class="Button" type="button">My Awesome Button</button>
+```
+## Button Styles
+
+By adding on a modifier class, you can get the style of the button you need.
+
+<table class="ic-Table">
+  <thead>
+    <th>Class</th>
+    <th>Normal State</th>
+    <th>Active State</th>
+    <th>Disabled State</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default</td>
+      <td><button class="Button" type="button">.Button</button></td>
+      <td><button class="Button Button--active" type="button" style="pointer-events: none">&.Button--active</button></td>
+      <td><button class="Button" type="button" disabled>&[disabled]</button></td>
+    </tr>
+    <tr>
+      <td>.Button--primary</td>
+      <td><button class="Button Button--primary" type="button">.Button--primary</button></td>
+      <td><button class="Button Button--primary Button--active" type="button" style="pointer-events: none">&.Button--active</button></td>
+      <td><button class="Button Button--primary" type="button" disabled>&[disabled]</button></td>
+    </tr>
+    <tr>
+      <td>.Button--secondary</td>
+      <td><button class="Button Button--secondary" type="button">.Button--secondary</button></td>
+      <td><button class="Button Button--secondary Button--active" type="button" style="pointer-events: none">&.Button--active</button></td>
+      <td><button class="Button Button--secondary" type="button" disabled>&[disabled]</button></td>
+    </tr>
+    <tr>
+      <td>.Button--success</td>
+      <td><button class="Button Button--success" type="button">.Button--success</button></td>
+      <td><button class="Button Button--success Button--active" type="button" style="pointer-events: none">&.Button--active</button></td>
+      <td><button class="Button Button--success" type="button" disabled>&[disabled]</button></td>
+    </tr>
+    <tr>
+      <td>.Button--warning</td>
+      <td><button class="Button Button--warning" type="button">.Button--warning</button></td>
+      <td><button class="Button Button--warning Button--active" type="button" style="pointer-events: none">&.Button--active</button></td>
+      <td><button class="Button Button--warning" type="button" disabled>&[disabled]</button></td>
+    </tr>
+    <tr>
+      <td>.Button--danger</td>
+      <td><button class="Button Button--danger" type="button">.Button--danger</button></td>
+      <td><button class="Button Button--danger Button--active" type="button" style="pointer-events: none">&.Button--active</button></td>
+      <td><button class="Button Button--danger" type="button" disabled>&[disabled]</button></td>
+    </tr>
+    <tr>
+      <td>.Button--link</td>
+      <td><button class="Button Button--link" type="button">.Button--link</button></td>
+      <td><button class="Button Button--link Button--active" type="button" style="pointer-events: none">&.Button--active</button></td>
+      <td><button class="Button Button--link" type="button" disabled>&[disabled]</button></td>
+    </tr>
+    <tr>
+      <td>.Button--icon-action</td>
+      <td><button class="Button Button--icon-action" type="button"><i class="icon-edit"></i></button></td>
+      <td><button class="Button Button--icon-action Button--active" type="button" style="pointer-events: none"><i class="icon-trash"></i></button></td>
+      <td><button class="Button Button--icon-action" type="button" disabled><i class="icon-x"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+
+```html
+<button class="Button Button--primary" type="button">Hey, I have a blue button!</button>
+```
+
+## Button Sizes
+
+If you need to change a button's size, you can do so by adding the appropriate class
+
+<table class="ic-Table">
+  <thead>
+    <th>Class</th>
+    <th>Size</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default</td>
+      <td><button class="Button" type="button">Default</button></td>
+    </tr>
+    <tr>
+      <td>.Button.Button--large</td>
+      <td><button class="Button Button--large" type="button">Large</button></td>
+    </tr>
+    <tr>
+      <td>.Button.Button--small</td>
+      <td><button class="Button Button--small" type="button">Small</button></td>
+    </tr>
+    <tr>
+      <td>.Button.Button--mini</td>
+      <td><button class="Button Button--mini" type="button">Mini</button></td>
+    </tr>
+  </tbody>
+</table>
+*/
+.btn,
+.Button,
+.ui-button {
+  background: #F5F5F5;
+  color: #2D3B45;
+  border: 1px solid;
+  border-color: #C7CDD1;
+  border-radius: 3px;
+  transition: background-color 0.2s ease-in-out;
+  display: inline-block;
+  position: relative;
+  padding: 8px 14px;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+  text-shadow: none;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.btn:focus,
+.Button:focus,
+.ui-button:focus {
+  color: #2D3B45;
+}
+.btn:hover,
+.Button:hover,
+.ui-button:hover {
+  background: #e8e8e8;
+  color: #2D3B45;
+}
+.btn:hover.ui-state-hover,
+.Button:hover.ui-state-hover,
+.ui-button:hover.ui-state-hover {
+  background: #e8e8e8;
+  color: #2D3B45;
+  border-color: #cfcfcf;
+}
+.btn.active, .btn.Button--active, .btn:active,
+.Button.active,
+.active.ui-button,
+.Button.Button--active,
+.Button--active.ui-button,
+.ui-button.ui-state-active:hover,
+.ui-button.ui-state-active,
+.Button:active,
+.ui-button:active {
+  box-shadow: none;
+}
+.btn.active, .btn.Button--active,
+.Button.active,
+.active.ui-button,
+.Button.Button--active,
+.Button--active.ui-button,
+.ui-button.ui-state-active:hover,
+.ui-button.ui-state-active {
+  background: dimgray;
+  border-color: #4f4f4f;
+  color: #FFFFFF;
+}
+.btn:focus,
+.Button:focus,
+.ui-button:focus {
+  box-shadow: inset 0 0 0 2px var(--ic-link-color);
+}
+.btn.ui-state-focus.ui-state-active:focus,
+.Button.ui-state-focus.ui-state-active:focus,
+.ui-state-focus.ui-state-active.ui-button:focus {
+  box-shadow: inset 0 0 0 2px #FFFFFF;
+}
+.btn:active,
+.Button:active,
+.ui-button:active {
+  background: #e1e1e1;
+}
+.btn:focus, .btn--focus,
+.Button:focus,
+.ui-button:focus,
+.Button--focus,
+.ui-button.ui-state-focus {
+  text-decoration: none;
+  outline: none;
+  outline: none;
+}
+.btn:hover, .btn--hover,
+.Button:hover,
+.ui-button:hover,
+.Button--hover,
+.ui-button.ui-state-hover {
+  text-decoration: none;
+}
+.btn.disabled, .btn[disabled],
+.Button.disabled,
+.disabled.ui-button,
+.ui-button.ui-state-disabled,
+.Button[disabled],
+[disabled].ui-button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn-large,
+.Button--large {
+  padding: 11px 19px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  border-radius: 6px;
+}
+.btn-large [class^=icon-], .btn-large [class*=" icon-"],
+.Button--large [class^=icon-],
+.Button--large [class*=" icon-"] {
+  margin-top: 2px;
+}
+
+.btn-small,
+.Button--small {
+  padding: 2px 8px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.btn-small [class^=icon-], .btn-small [class*=" icon-"],
+.Button--small [class^=icon-],
+.Button--small [class*=" icon-"] {
+  margin-top: 0;
+}
+
+.btn-mini,
+.Button--mini {
+  padding: 1px 6px;
+  font-size: 10px;
+  font-size: 0.625rem;
+  border-radius: 1px;
+}
+
+.btn-block,
+.Button--block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+.btn-block + .btn-block, .Button--block + .Button--block {
+  margin-top: 6px;
+}
+
+input[type=submit].btn-block, input[type=submit].Button--block,
+input[type=reset].btn-block,
+input[type=reset].Button--block,
+input[type=button].btn-block,
+input[type=button].Button--block {
+  width: 100%;
+}
+
+.btn-primary,
+.Button--primary {
+  background: var(--ic-brand-button--primary-bgd);
+  color: var(--ic-brand-button--primary-text);
+  border: 1px solid;
+  border-color: var(--ic-brand-button--primary-bgd-darkened-15);
+}
+.btn-primary:focus,
+.Button--primary:focus {
+  color: var(--ic-brand-button--primary-text);
+}
+.btn-primary:hover,
+.Button--primary:hover {
+  background: var(--ic-brand-button--primary-bgd-darkened-5);
+  color: var(--ic-brand-button--primary-text);
+}
+.btn-primary:hover.ui-state-hover,
+.Button--primary:hover.ui-state-hover {
+  background: var(--ic-brand-button--primary-bgd-darkened-5);
+  color: var(--ic-brand-button--primary-text);
+  border-color: var(--ic-brand-button--primary-bgd-darkened-15);
+}
+.btn-primary:focus,
+.Button--primary:focus {
+  box-shadow: inset 0 0 0 2px #FFFFFF;
+}
+.btn-primary.active, .btn-primary.Button--active, .btn-primary.ui-button.ui-state-active, .btn-primary:active,
+.Button--primary.active,
+.Button--primary.Button--active,
+.Button--primary.ui-button.ui-state-active,
+.Button--primary:active {
+  background: var(--ic-brand-button--primary-bgd-darkened-5);
+  box-shadow: none;
+}
+
+.btn-warning,
+.Button--warning {
+  background: #FC5E13;
+  color: #FFFFFF;
+  border: 1px solid;
+  border-color: #c03f02;
+}
+.btn-warning:focus,
+.Button--warning:focus {
+  color: #FFFFFF;
+}
+.btn-warning:hover,
+.Button--warning:hover {
+  background: #f25003;
+  color: #FFFFFF;
+}
+.btn-warning:hover.ui-state-hover,
+.Button--warning:hover.ui-state-hover {
+  background: #f25003;
+  color: #FFFFFF;
+  border-color: #c03f02;
+}
+.btn-warning:focus,
+.Button--warning:focus {
+  box-shadow: inset 0 0 0 2px #FFFFFF;
+}
+.btn-warning.active, .btn-warning.Button--active, .btn-warning.ui-button.ui-state-active, .btn-warning:active,
+.Button--warning.active,
+.Button--warning.Button--active,
+.Button--warning.ui-button.ui-state-active,
+.Button--warning:active {
+  background: #f25003;
+  box-shadow: none;
+}
+
+.btn-danger,
+.Button--danger {
+  background: #EE0612;
+  color: #FFFFFF;
+  border: 1px solid;
+  border-color: #a3040c;
+}
+.btn-danger:focus,
+.Button--danger:focus {
+  color: #FFFFFF;
+}
+.btn-danger:hover,
+.Button--danger:hover {
+  background: #d50510;
+  color: #FFFFFF;
+}
+.btn-danger:hover.ui-state-hover,
+.Button--danger:hover.ui-state-hover {
+  background: #d50510;
+  color: #FFFFFF;
+  border-color: #a3040c;
+}
+.btn-danger:focus,
+.Button--danger:focus {
+  box-shadow: inset 0 0 0 2px #FFFFFF;
+}
+.btn-danger.active, .btn-danger.Button--active, .btn-danger.ui-button.ui-state-active, .btn-danger:active,
+.Button--danger.active,
+.Button--danger.Button--active,
+.Button--danger.ui-button.ui-state-active,
+.Button--danger:active {
+  background: #d50510;
+  box-shadow: none;
+}
+
+.btn-success,
+.Button--success {
+  background: #00AC18;
+  color: #FFFFFF;
+  border: 1px solid;
+  border-color: #00600d;
+}
+.btn-success:focus,
+.Button--success:focus {
+  color: #FFFFFF;
+}
+.btn-success:hover,
+.Button--success:hover {
+  background: #009314;
+  color: #FFFFFF;
+}
+.btn-success:hover.ui-state-hover,
+.Button--success:hover.ui-state-hover {
+  background: #009314;
+  color: #FFFFFF;
+  border-color: #00600d;
+}
+.btn-success:focus,
+.Button--success:focus {
+  box-shadow: inset 0 0 0 2px #FFFFFF;
+}
+.btn-success.active, .btn-success.Button--active, .btn-success.ui-button.ui-state-active, .btn-success:active,
+.Button--success.active,
+.Button--success.Button--active,
+.Button--success.ui-button.ui-state-active,
+.Button--success:active {
+  background: #009314;
+  box-shadow: none;
+}
+
+.btn-info,
+.Button--secondary {
+  background: var(--ic-brand-button--secondary-bgd);
+  color: var(--ic-brand-button--secondary-text);
+  border: 1px solid;
+  border-color: var(--ic-brand-button--secondary-bgd-darkened-15);
+}
+.btn-info:focus,
+.Button--secondary:focus {
+  color: var(--ic-brand-button--secondary-text);
+}
+.btn-info:hover,
+.Button--secondary:hover {
+  background: var(--ic-brand-button--secondary-bgd-darkened-5);
+  color: var(--ic-brand-button--secondary-text);
+}
+.btn-info:hover.ui-state-hover,
+.Button--secondary:hover.ui-state-hover {
+  background: var(--ic-brand-button--secondary-bgd-darkened-5);
+  color: var(--ic-brand-button--secondary-text);
+  border-color: var(--ic-brand-button--secondary-bgd-darkened-15);
+}
+.btn-info:focus,
+.Button--secondary:focus {
+  box-shadow: inset 0 0 0 2px #FFFFFF;
+}
+.btn-info.active, .btn-info.Button--active, .btn-info.ui-button.ui-state-active, .btn-info:active,
+.Button--secondary.active,
+.Button--secondary.Button--active,
+.Button--secondary.ui-button.ui-state-active,
+.Button--secondary:active {
+  background: var(--ic-brand-button--secondary-bgd-darkened-5);
+  box-shadow: none;
+}
+
+.btn-link, .btn-link:active, .btn-link[disabled],
+.Button--link, .Button--link:active, .Button--link[disabled] {
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+.btn-link,
+.Button--link {
+  border-color: transparent;
+  cursor: pointer;
+  color: var(--ic-link-color);
+}
+body.Underline-All-Links__enabled .btn-link,
+body.Underline-All-Links__enabled .Button--link {
+  text-decoration: underline;
+}
+.btn-link:hover,
+.Button--link:hover {
+  color: var(--ic-link-color-darkened-10);
+  text-decoration: underline;
+  background: transparent;
+}
+body.Underline-All-Links__enabled .btn-link:hover,
+body.Underline-All-Links__enabled .Button--link:hover {
+  text-decoration: none;
+}
+.btn-link:hover:focus,
+.Button--link:hover:focus {
+  color: var(--ic-link-color);
+}
+.btn-link:focus,
+.Button--link:focus {
+  color: var(--ic-link-color);
+}
+.btn-link.active, .btn-link.Button--active, .btn-link.ui-button.ui-state-active, .btn-link:active,
+.Button--link.active,
+.Button--link.Button--active,
+.Button--link.ui-button.ui-state-active,
+.Button--link:active {
+  background: rgba(45, 59, 69, 0.05);
+  box-shadow: none;
+  border-color: transparent;
+  color: var(--ic-link-color);
+}
+.btn-link.disabled, .btn-link.ui-button.ui-state-disabled, .btn-link[disabled],
+.Button--link.disabled,
+.Button--link.ui-button.ui-state-disabled,
+.Button--link[disabled] {
+  color: var(--ic-brand-font-color-dark);
+  background: transparent;
+}
+.btn-link i[class*=icon-], .btn-link i[class^=icon-],
+.Button--link i[class*=icon-],
+.Button--link i[class^=icon-] {
+  margin-right: 3px;
+}
+
+.Button--link--has-divider {
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid #C7CDD1;
+  color: #2D3B45;
+  padding: 12px;
+}
+
+.Button--icon-action, .Button--icon-action-rev {
+  transition: color 0.2s;
+  background: transparent;
+  border: none;
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: var(--ic-brand-font-color-dark-lightened-30);
+  outline: none;
+}
+.Button--icon-action:hover, .Button--icon-action-rev:hover, .Button--icon-action:focus, .Button--icon-action-rev:focus {
+  background: transparent;
+  color: var(--ic-brand-font-color-dark-lightened-15);
+}
+.Button--icon-action:focus, .Button--icon-action-rev:focus {
+  box-shadow: inset 0 0 0 2px var(--ic-link-color);
+}
+.Button--icon-action.active, .active.Button--icon-action-rev, .Button--icon-action.Button--active, .Button--icon-action.ui-button.ui-state-active, .Button--active.Button--icon-action-rev, .Button--icon-action-rev.ui-button.ui-state-active, .Button--icon-action:active, .Button--icon-action-rev:active {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+  color: var(--ic-link-color);
+}
+
+.Button--icon-action-rev {
+  color: #FFFFFF;
+}
+.Button--icon-action-rev:hover, .Button--icon-action-rev:focus {
+  color: #FFFFFF;
+}
+.Button--icon-action-rev:focus {
+  box-shadow: inset 0 0 0 2px #FFFFFF;
+}
+
+.ui-button {
+  position: relative;
+}
+.Button--theme-editor-apply {
+  text-decoration: none;
+}
+
+.btn-beta,
+.Button--beta {
+  background-image: url(/dist/images/beta-tag-e140c4d6fd.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: auto 80%;
+  padding-right: 20px;
+}
+.btn-beta:hover,
+.Button--beta:hover {
+  background-image: url(/dist/images/beta-tag-e140c4d6fd.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: auto 80%;
+}
+
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+.hide-till-hover {
+  opacity: 0;
+}
+.touch .hide-till-hover, .hover-container:hover .hide-till-hover, .hover-container:focus .hide-till-hover {
+  opacity: 0.6;
+}
+.hide-till-hover:focus, .hide-till-hover:hover {
+  opacity: 1 !important;
+}
+
+.dim-till-hover {
+  opacity: 0.6;
+}
+.dim-till-hover:hover, .dim-till-hover:focus {
+  opacity: 1;
+}
+
+.screenreader-only, .screenreader-only-tool {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  transform: translatez(0);
+}
+
+.screenreader-only-tool {
+  margin-top: 0px;
+  position: relative;
+  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+}
+
+/*
+ * Copyright (C) 2013 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+.registration-dialog {
+  margin: 2em 0;
+  font-size: 1.1em;
+}
+.registration-dialog .registration-dialog .spinner {
+  width: 100px;
+}
+.registration-dialog .ic-Label {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.terms-of-service__register {
+  display: flex;
+  flex-direction: row;
+  line-height: 1;
+}
+.terms-of-service__register .terms-of-service__link {
+  button: 14px !important;
+}
+
+.terms-of-service__link {
+  padding-left: 4px;
+}
+
+.pairing-code-text {
+  display: flex;
+  justify-content: space-between;
+}
+.pairing-code-text a {
+  font-size: 14px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+  height: 100%;
+  background: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  color: var(--ic-brand-font-color-dark);
+  font-weight: normal;
+  font-size: 16px;
+  font-size: 1rem;
+  font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  min-width: auto !important;
+}
+
+#f1_container {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+#f1_card {
+  width: 296px;
+  height: 100%;
+}
+
+.mobileLogin-Header {
+  z-index: 1;
+  background-image: url("/dist/images/mobile_login/canvas_logo_login-b28b9ab358.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 156px 108px;
+  min-height: 156px;
+}
+
+.face {
+  margin-top: 15px;
+}
+
+.face.back {
+  display: none;
+}
+
+.flipped .face.back {
+  display: block;
+}
+
+.flipped .face.front {
+  display: none;
+}
+
+p {
+  margin: 15px 0;
+}
+
+.flip-to-back, .flip-to-front {
+  margin: 0;
+}
+
+.forgotBlock {
+  color: var(--ic-brand-primary);
+  margin: 24px auto 0;
+  text-align: center;
+}
+
+input[type=text], [type=email], [type=password] {
+  padding: 0px 12px;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+input::-webkit-input-placeholder {
+  color: #73818C;
+}
+
+.error {
+  color: #EE0612;
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin: 12px 0;
+  padding: 6px;
+  text-align: center;
+}
+
+.icon_url {
+  display: none;
+}
+
+.button_box .Button, .button_box .ui-button {
+  padding-bottom: 6px;
+}
+
+.enrollment_link {
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.ic-Login__banner-title {
+  font-size: 0.9em;
+}
+
+.ic-Login__banner-subtitle {
+  font-size: 0.95em;
+  font-weight: 600;
+}

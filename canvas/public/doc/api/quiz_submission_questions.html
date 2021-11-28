@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Quiz Submission Questions - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="current" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Quiz Submission Questions API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for answering and flagging questions in a quiz-taking session.</p>
+
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="QuizSubmissionQuestion">A QuizSubmissionQuestion object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // The ID of the QuizQuestion this answer is for.
+  &quot;id&quot;: 1,
+  // Whether this question is flagged.
+  &quot;flagged&quot;: true,
+  // The provided answer (if any) for this question. The format of this parameter
+  // depends on the type of the question, see the Appendix for more information.
+  &quot;answer&quot;: null,
+  // The possible answers for this question when those possible answers are
+  // necessary.  The presence of this parameter is dependent on permissions.
+  &quot;answers&quot;: null
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.quizzes/quiz_submission_questions.index' data-subtopic='Quiz Submission Questions'>
+    <a name='method.quizzes/quiz_submission_questions.index' href='#method.quizzes/quiz_submission_questions.index'>
+      Get all quiz submission questions.
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_submission_questions_controller.rb">Quizzes::QuizSubmissionQuestionsController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/quiz_submissions/:quiz_submission_id/questions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/quiz_submissions/:quiz_submission_id/questions</code>
+  </div>
+
+
+<p>Get a list of all the question records for this quiz submission.</p>
+
+<p><strong>200 OK</strong> response code is returned if the request was successful.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>include[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Associations to include with the quiz submission question.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>quiz_question</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;quiz_submission_questions&quot;: [QuizSubmissionQuestion]
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.quizzes/quiz_submission_questions.answer' data-subtopic='Quiz Submission Questions'>
+    <a name='method.quizzes/quiz_submission_questions.answer' href='#method.quizzes/quiz_submission_questions.answer'>
+      Answering questions
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_submission_questions_controller.rb">Quizzes::QuizSubmissionQuestionsController#answer</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/quiz_submissions/:quiz_submission_id/questions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/quiz_submissions/:quiz_submission_id/questions</code>
+  </div>
+
+
+<p>Provide or update an answer to one or more QuizQuestions.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>attempt</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The attempt number of the quiz submission being taken. Note that this must be the latest attempt index, as questions for earlier attempts can not be modified.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>validation_token</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The unique validation token you received when the Quiz Submission was created.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>access_code</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Access code for the Quiz, if any.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>quiz_questions[]</td>
+      <td>
+        
+      </td>
+      <td>QuizSubmissionQuestion</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set of question IDs and the answer value.</p>
+
+<p>See <a href="quiz_submission_questions.html#Question+Answer+Formats-appendix" title="Appendix: Question Answer Formats">Appendix: Question Answer Formats</a> for the accepted answer formats for each question type.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">{
+  &quot;attempt&quot;: 1,
+  &quot;validation_token&quot;: &quot;YOUR_VALIDATION_TOKEN&quot;,
+  &quot;access_code&quot;: null,
+  &quot;quiz_questions&quot;: [{
+    &quot;id&quot;: &quot;1&quot;,
+    &quot;answer&quot;: &quot;Hello World!&quot;
+  }, {
+    &quot;id&quot;: &quot;2&quot;,
+    &quot;answer&quot;: 42.0
+  }]
+}</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='quiz_submission_questions.html#QuizSubmissionQuestion'>QuizSubmissionQuestions</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.quizzes/quiz_submission_questions.formatted_answer' data-subtopic='Quiz Submission Questions'>
+    <a name='method.quizzes/quiz_submission_questions.formatted_answer' href='#method.quizzes/quiz_submission_questions.formatted_answer'>
+      Get a formatted student numerical answer.
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_submission_questions_controller.rb">Quizzes::QuizSubmissionQuestionsController#formatted_answer</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/quiz_submissions/:quiz_submission_id/questions/:id/formatted_answer
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/quiz_submissions/:quiz_submission_id/questions/:id/formatted_answer</code>
+  </div>
+
+
+<p>Matches the intended behavior of the UI when a numerical answer is entered and returns the resulting formatted number</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>answer</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>Numeric</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-js">{
+  &quot;formatted_answer&quot;: 12.1234
+}</code></pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.quizzes/quiz_submission_questions.flag' data-subtopic='Quiz Submission Questions'>
+    <a name='method.quizzes/quiz_submission_questions.flag' href='#method.quizzes/quiz_submission_questions.flag'>
+      Flagging a question.
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_submission_questions_controller.rb">Quizzes::QuizSubmissionQuestionsController#flag</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/quiz_submissions/:quiz_submission_id/questions/:id/flag
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/quiz_submissions/:quiz_submission_id/questions/:id/flag</code>
+  </div>
+
+
+<p>Set a flag on a quiz question to indicate that you want to return to it later.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>attempt</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The attempt number of the quiz submission being taken. Note that this must be the latest attempt index, as questions for earlier attempts can not be modified.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>validation_token</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The unique validation token you received when the Quiz Submission was created.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>access_code</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Access code for the Quiz, if any.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">{
+  &quot;attempt&quot;: 1,
+  &quot;validation_token&quot;: &quot;YOUR_VALIDATION_TOKEN&quot;,
+  &quot;access_code&quot;: null
+}</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.quizzes/quiz_submission_questions.unflag' data-subtopic='Quiz Submission Questions'>
+    <a name='method.quizzes/quiz_submission_questions.unflag' href='#method.quizzes/quiz_submission_questions.unflag'>
+      Unflagging a question.
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_submission_questions_controller.rb">Quizzes::QuizSubmissionQuestionsController#unflag</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/quiz_submissions/:quiz_submission_id/questions/:id/unflag
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/quiz_submissions/:quiz_submission_id/questions/:id/unflag</code>
+  </div>
+
+
+<p>Remove the flag that you previously set on a quiz question after you&#39;ve returned to it.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>attempt</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The attempt number of the quiz submission being taken. Note that this must be the latest attempt index, as questions for earlier attempts can not be modified.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>validation_token</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The unique validation token you received when the Quiz Submission was created.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>access_code</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Access code for the Quiz, if any.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">{
+  &quot;attempt&quot;: 1,
+  &quot;validation_token&quot;: &quot;YOUR_VALIDATION_TOKEN&quot;,
+  &quot;access_code&quot;: null
+}</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+<div class="appendix">
+  <h2>Appendixes</h2>
+
+  
+    <div class="appendix_entry">
+      <h3 id="Question+Answer+Formats-appendix">Appendix: Question Answer Formats</h3>
+
+<p><style>
+  .appendix_entry th { text-align: left; }
+  .appendix_entry th,
+  .appendix_entry td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .appendix_entry div.syntaxhighlighter {
+    border: none;
+    padding: 0;
+  }
+
+  .appendix_entry div.syntaxhighlighter table {
+    width: 100%;
+  }
+
+  .appendix_entry h4 {
+    color: green;
+  }
+</style>
+
+<h4 id="essay-questions">Essay Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>essay_question</code></li>
+<li>Parameter type: <strong><code>Text</code></strong></li>
+<li>Parameter synopsis: <code>{ &quot;answer&quot;: &quot;Answer text.&quot; }</code></li>
+</ul>
+
+<p><strong>Example request</strong></p>
+
+<pre class="code javascript"><code class="javascript">{
+  &quot;answer&quot;: &quot;&lt;h2&gt;My essay&lt;/h2&gt;\n\n&lt;p&gt;This is a long article.&lt;/p&gt;&quot;
+}
+</code></pre>
+
+<p><strong>Possible errors</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP RC</th>
+      <th>Error Message</th>
+      <th>Cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Text is too long.</code></td>
+      <td>The answer text is larger than the allowed limit of 16 kilobytes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="fill-in-multiple-blanks-questions">Fill In Multiple Blanks Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>fill_in_multiple_blanks_question</code></li>
+<li>Parameter type: <strong><code>Hash{String =&gt; String}</code></strong></li>
+<li>Parameter synopsis: <code>{ &quot;answer&quot;: { &quot;variable&quot;: &quot;Answer string.&quot; } }</code></li>
+</ul>
+
+<p><strong>Example request</strong></p>
+
+<p>Given that the question accepts answers to two variables, <code>color1</code> and <code>color2</code>:</p>
+
+<pre class="code javascript"><code class="javascript">{
+  &quot;answer&quot;: {
+    &quot;color1&quot;: &quot;red&quot;,
+    &quot;color2&quot;: &quot;green&quot;
+  }
+}
+</code></pre>
+
+<p><strong>Possible errors</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP RC</th>
+      <th>Error Message</th>
+      <th>Cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Unknown variable 'var'.</code></td>
+      <td>The answer map contains a variable that is not accepted by the question.</td>
+    </tr>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Text is too long.</code></td>
+      <td>The answer text is larger than the allowed limit of 16 kilobytes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="fill-in-the-blank-questions">Fill In The Blank Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>short_answer_question</code></li>
+<li>Parameter type: <strong><code>String</code></strong></li>
+<li>Parameter synopsis: <code>{ &quot;answer&quot;: &quot;Some sentence.&quot; }</code></li>
+</ul>
+
+<p><strong>Example request</strong></p>
+
+<pre class="code javascript"><code class="javascript">{
+  &quot;answer&quot;: &quot;Hello World!&quot;
+}
+</code></pre>
+
+<p><strong>Possible errors</strong></p>
+
+<p>Similar to the errors produced by <a href="#essay-questions">Essay Questions</a>.</p>
+
+<p><a class="bookmark" id="formula-questions"></a></p>
+
+<h4 id="formula-questions">Formula Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>calculated_question</code></li>
+<li>Parameter type: <strong><code>Decimal</code></strong></li>
+<li>Parameter synopsis: <code>{ &quot;answer&quot;: decimal }</code> where <code>decimal</code> is either a rational
+number, or a literal version of it (String)</li>
+</ul>
+
+<p><strong>Example request</strong></p>
+
+<p>With an exponent:</p>
+
+<pre class="code javascript"><code class="javascript">{
+  &quot;answer&quot;: 2.3e-6
+}
+</code></pre>
+
+<p>With a string for a number:</p>
+
+<pre class="code javascript"><code class="javascript">{
+  &quot;answer&quot;: &quot;13.4&quot;
+}
+</code></pre>
+
+<p><strong>Possible errors</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP RC</th>
+      <th>Error Message</th>
+      <th>Cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Parameter must be a valid decimal.</code></td>
+      <td>The specified value could not be processed as a decimal.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="matching-questions">Matching Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>matching_question</code></li>
+<li>Parameter type: <strong><code>Array&lt;Hash&gt;</code></strong></li>
+<li>Parameter synopsis: <code>{ &quot;answer&quot;: [{ &quot;answer_id&quot;: id, &quot;match_id&quot;: id }] }</code> where
+the IDs must identify answers and matches accepted by the question.</li>
+</ul>
+
+<p><strong>Example request</strong></p>
+
+<p>Given that the question accepts 3 answers with IDs <code>[ 3, 6, 9 ]</code> and 6 matches
+with IDs: <code>[ 10, 11, 12, 13, 14, 15 ]</code>:</p>
+
+<pre class="code javascript"><code class="javascript">{
+  &quot;answer&quot;: [{
+    &quot;answer_id&quot;: 6,
+    &quot;match_id&quot;: 10
+  }, {
+    &quot;answer_id&quot;: 3,
+    &quot;match_id&quot;: 14
+  }]
+}
+</code></pre>
+
+<p>The above request:</p>
+
+<ul>
+<li>pairs <code>answer#6</code> with <code>match#10</code></li>
+<li>pairs <code>answer#3</code> with <code>match#14</code></li>
+<li>leaves <code>answer#9</code> <em>un-matched</em></li>
+</ul>
+
+<p><strong>Possible errors</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP RC</th>
+      <th>Error Message</th>
+      <th>Cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Answer must be of type Array.</code></td>
+      <td>The match-pairings set you supplied is not an array.</td>
+    </tr>
+
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Answer entry must be of type Hash, got '...'.</code></td>
+      <td>One of the entries of the match-pairings set is not a valid hash.</td>
+    </tr>
+
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Missing parameter 'answer_id'.</code></td>
+      <td>One of the entries of the match-pairings does not specify an <code>answer_id</code>.</td>
+    </tr>
+
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Missing parameter 'match_id'.</code></td>
+      <td>One of the entries of the match-pairings does not specify an <code>match_id</code>.</td>
+    </tr>
+
+
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Parameter must be of type Integer.</code></td>
+      <td>
+        One of the specified <code>answer_id</code> or <code>match_id</code>
+        is not an integer.
+      </td>
+    </tr>
+
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Unknown answer '123'.</code></td>
+      <td>An <code>answer_id</code> you supplied does not identify a valid answer
+      for that question.</td>
+    </tr>
+
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Unknown match '123'.</code></td>
+      <td>A <code>match_id</code> you supplied does not identify a valid match
+      for that question.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a class="bookmark" id="multiple-choice-questions"></a></p>
+
+<h4 id="multiple-choice-questions">Multiple Choice Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>multiple_choice_question</code></li>
+<li>Parameter type: <strong><code>Integer</code></strong></li>
+<li>Parameter synopsis: <code>{ &quot;answer&quot;: answer_id }</code> where <code>answer_id</code> is an ID of
+one of the question&#39;s answers.</li>
+</ul>
+
+<p><strong>Example request</strong></p>
+
+<p>Given an answer with an ID of 5:</p>
+
+<pre class="code javascript"><code class="javascript">{
+  &quot;answer&quot;: 5
+}
+</code></pre>
+
+<p><strong>Possible errors</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP RC</th>
+      <th>Error Message</th>
+      <th>Cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Parameter must be of type Integer.</code></td>
+      <td>The specified `answer_id` is not an integer.</td>
+    </tr>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Unknown answer '123'</code></td>
+      <td>The specified `answer_id` is not a valid answer.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="multiple-dropdowns-questions">Multiple Dropdowns Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>multiple_dropdowns_question</code></li>
+<li>Parameter type: <strong><code>Hash{String =&gt; Integer}</code></strong></li>
+<li>Parameter synopsis: <code>{ &quot;answer&quot;: { &quot;variable&quot;: answer_id } }</code> where the keys
+are variables accepted by the question, and their values are IDs of answers
+provided by the question.</li>
+</ul>
+
+<p><strong>Example request</strong></p>
+
+<p>Given that the question accepts 3 answers to a variable named <code>color</code> with the
+ids <code>[ 3, 6, 9 ]</code>:</p>
+
+<pre class="code javascript"><code class="javascript">{
+  &quot;answer&quot;: {
+    &quot;color&quot;: 6
+  }
+}
+</code></pre>
+
+<p><strong>Possible errors</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP RC</th>
+      <th>Error Message</th>
+      <th>Cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Unknown variable 'var'.</code></td>
+      <td>The answer map you supplied contains a variable that is not accepted
+        by the question.</td>
+    </tr>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Unknown answer '123'.</code></td>
+      <td>An <code>answer_id</code> you supplied does not identify a valid answer
+      for that question.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="multiple-answers-questions">Multiple Answers Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>multiple_answers_question</code></li>
+<li>Parameter type: <strong><code>Array&lt;Integer&gt;</code></strong></li>
+<li>Parameter synopsis: <code>{ &quot;answer&quot;: [ answer_id ] }</code> where the array items are
+IDs of answers accepted by the question.</li>
+</ul>
+
+<p><strong>Example request</strong></p>
+
+<p>Given that the question accepts 3 answers with the ids <code>[ 3, 6, 9 ]</code> and we
+want to select the answers <code>3</code> and <code>6</code>:</p>
+
+<pre class="code javascript"><code class="javascript">{
+  &quot;answer&quot;: [ 3, 6 ]
+}
+</code></pre>
+
+<p><strong>Possible errors</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP RC</th>
+      <th>Error Message</th>
+      <th>Cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Selection must be of type Array.</code></td>
+      <td>The selection set you supplied is not an array.</td>
+    </tr>
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Parameter must be of type Integer.</code></td>
+      <td>One of the answer IDs you supplied is not a valid ID.</td>
+    </tr>
+
+    <tr>
+      <td>400 Bad Request</td>
+      <td><code>Unknown answer '123'.</code></td>
+      <td>An answer ID you supplied in the selection set does not identify a
+        valid answer for that question.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="numerical-questions">Numerical Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>numerical_question</code></li>
+</ul>
+
+<p>This is similar to <a href="#formula-questions">Formula Questions</a>.</p>
+
+<p><a class="bookmark" id="essay-questions"></a></p>
+
+<h4 id="true-false-questions">True/False Questions</h4>
+
+<ul>
+<li>Question parametric type: <code>true_false_question</code></li>
+</ul>
+
+<p>The rest is similar to <a href="#multiple-choice-questions">Multiple Choice questions</a>.</p>
+
+
+
+
+    </div>
+  
+  
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:12 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

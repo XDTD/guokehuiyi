@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Pages - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="current" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Pages API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>Pages are rich content associated with Courses and Groups in Canvas.
+The Pages API allows you to create, retrieve, update, and delete pages.</p>
+
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Page">A Page object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // the unique locator for the page
+  &quot;url&quot;: &quot;my-page-title&quot;,
+  // the title of the page
+  &quot;title&quot;: &quot;My Page Title&quot;,
+  // the creation date for the page
+  &quot;created_at&quot;: &quot;2012-08-06T16:46:33-06:00&quot;,
+  // the date the page was last updated
+  &quot;updated_at&quot;: &quot;2012-08-08T14:25:20-06:00&quot;,
+  // (DEPRECATED) whether this page is hidden from students (note: this is always
+  // reflected as the inverse of the published value)
+  &quot;hide_from_students&quot;: false,
+  // roles allowed to edit the page; comma-separated list comprising a combination
+  // of &#39;teachers&#39;, &#39;students&#39;, &#39;members&#39;, and/or &#39;public&#39; if not supplied, course
+  // defaults are used
+  &quot;editing_roles&quot;: &quot;teachers,students&quot;,
+  // the User who last edited the page (this may not be present if the page was
+  // imported from another system)
+  &quot;last_edited_by&quot;: null,
+  // the page content, in HTML (present when requesting a single page; omitted
+  // when listing pages)
+  &quot;body&quot;: &quot;&lt;p&gt;Page Content&lt;/p&gt;&quot;,
+  // whether the page is published (true) or draft state (false).
+  &quot;published&quot;: true,
+  // whether this page is the front page for the wiki
+  &quot;front_page&quot;: false,
+  // Whether or not this is locked for the user.
+  &quot;locked_for_user&quot;: false,
+  // (Optional) Information for the user about the lock. Present when
+  // locked_for_user is true.
+  &quot;lock_info&quot;: null,
+  // (Optional) An explanation of why this is locked for the user. Present when
+  // locked_for_user is true.
+  &quot;lock_explanation&quot;: &quot;This page is locked until September 1 at 12:00am&quot;
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="PageRevision">A PageRevision object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // an identifier for this revision of the page
+  &quot;revision_id&quot;: 7,
+  // the time when this revision was saved
+  &quot;updated_at&quot;: &quot;2012-08-07T11:23:58-06:00&quot;,
+  // whether this is the latest revision or not
+  &quot;latest&quot;: true,
+  // the User who saved this revision, if applicable (this may not be present if
+  // the page was imported from another system)
+  &quot;edited_by&quot;: null,
+  // the following fields are not included in the index action and may be omitted
+  // from the show action via summary=1 the historic url of the page
+  &quot;url&quot;: &quot;old-page-title&quot;,
+  // the historic page title
+  &quot;title&quot;: &quot;Old Page Title&quot;,
+  // the historic page contents
+  &quot;body&quot;: &quot;&lt;p&gt;Old Page Content&lt;/p&gt;&quot;
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.wiki_pages_api.show_front_page' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.show_front_page' href='#method.wiki_pages_api.show_front_page'>
+      Show front page
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#show_front_page</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/front_page
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/front_page</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/front_page
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/front_page</code>
+  </div>
+
+
+<p>Retrieve the content of the front page</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+     https://&lt;canvas&gt;/api/v1/courses/123/front_page</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='pages.html#Page'>Page</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.duplicate' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.duplicate' href='#method.wiki_pages_api.duplicate'>
+      Duplicate page
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#duplicate</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/pages/:url/duplicate
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/pages/:url/duplicate</code>
+  </div>
+
+
+<p>Duplicate a wiki page</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X POST -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+https://&lt;canvas&gt;/api/v1/courses/123/pages/14/duplicate</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='pages.html#Page'>Page</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.update_front_page' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.update_front_page' href='#method.wiki_pages_api.update_front_page'>
+      Update/create front page
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#update_front_page</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/front_page
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/front_page</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id/front_page
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/groups/:group_id/front_page</code>
+  </div>
+
+
+<p>Update the title or contents of the front page</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>wiki_page[title]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The title for the new page. NOTE: changing a page&#39;s title will change its url. The updated url will be returned in the result.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[body]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The content for the new page.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[editing_roles]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Which user roles are allowed to edit this page. Any combination of these roles is allowed (separated by commas).</p>
+<dl class="rdoc-list note-list"><dt>“teachers”
+<dd>
+<p>Allows editing by teachers in the course.</p>
+</dd><dt>“students”
+<dd>
+<p>Allows editing by students in the course.</p>
+</dd><dt>“members”
+<dd>
+<p>For group wikis, allows editing by members of the group.</p>
+</dd><dt>“public”
+<dd>
+<p>Allows editing by any user.</p>
+</dd></dl>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>teachers</code>, <code class=enum>students</code>, <code class=enum>members</code>, <code class=enum>public</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[notify_of_update]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether participants should be notified when this page changes.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[published]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether the page is published (true) or draft state (false).</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X PUT -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+https://&lt;canvas&gt;/api/v1/courses/123/front_page \
+-d wiki_page[body]=Updated+body+text</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='pages.html#Page'>Page</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.index' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.index' href='#method.wiki_pages_api.index'>
+      List pages
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/pages
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/pages</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/pages
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/pages</code>
+  </div>
+
+
+<p>A paginated list of the wiki pages associated with a course or group</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>sort</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Sort results by this field.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>title</code>, <code class=enum>created_at</code>, <code class=enum>updated_at</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>order</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The sorting order. Defaults to &#39;asc&#39;.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>asc</code>, <code class=enum>desc</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>search_term</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The partial title of the pages to match and return.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>published</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If true, include only published paqes. If false, exclude published pages. If not present, do not filter on published status.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+     https://&lt;canvas&gt;/api/v1/courses/123/pages?sort=title&amp;order=asc</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='pages.html#Page'>Pages</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.create' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.create' href='#method.wiki_pages_api.create'>
+      Create page
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/pages
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/pages</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups/:group_id/pages
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/groups/:group_id/pages</code>
+  </div>
+
+
+<p>Create a new wiki page</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>wiki_page[title]</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The title for the new page.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[body]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The content for the new page.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[editing_roles]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Which user roles are allowed to edit this page. Any combination of these roles is allowed (separated by commas).</p>
+<dl class="rdoc-list note-list"><dt>“teachers”
+<dd>
+<p>Allows editing by teachers in the course.</p>
+</dd><dt>“students”
+<dd>
+<p>Allows editing by students in the course.</p>
+</dd><dt>“members”
+<dd>
+<p>For group wikis, allows editing by members of the group.</p>
+</dd><dt>“public”
+<dd>
+<p>Allows editing by any user.</p>
+</dd></dl>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>teachers</code>, <code class=enum>students</code>, <code class=enum>members</code>, <code class=enum>public</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[notify_of_update]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether participants should be notified when this page changes.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[published]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether the page is published (true) or draft state (false).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[front_page]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set an unhidden page as the front page (if true)</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X POST -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+https://&lt;canvas&gt;/api/v1/courses/123/pages \
+-d wiki_page[title]=New+page
+-d wiki_page[body]=New+body+text</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='pages.html#Page'>Page</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.show' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.show' href='#method.wiki_pages_api.show'>
+      Show page
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/pages/:url
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/pages/:url</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/pages/:url
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/pages/:url</code>
+  </div>
+
+
+<p>Retrieve the content of a wiki page</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+     https://&lt;canvas&gt;/api/v1/courses/123/pages/my-page-url</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='pages.html#Page'>Page</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.update' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.update' href='#method.wiki_pages_api.update'>
+      Update/create page
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/pages/:url
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/courses/:course_id/pages/:url</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id/pages/:url
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/groups/:group_id/pages/:url</code>
+  </div>
+
+
+<p>Update the title or contents of a wiki page</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>wiki_page[title]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The title for the new page. NOTE: changing a page&#39;s title will change its url. The updated url will be returned in the result.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[body]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The content for the new page.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[editing_roles]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Which user roles are allowed to edit this page. Any combination of these roles is allowed (separated by commas).</p>
+<dl class="rdoc-list note-list"><dt>“teachers”
+<dd>
+<p>Allows editing by teachers in the course.</p>
+</dd><dt>“students”
+<dd>
+<p>Allows editing by students in the course.</p>
+</dd><dt>“members”
+<dd>
+<p>For group wikis, allows editing by members of the group.</p>
+</dd><dt>“public”
+<dd>
+<p>Allows editing by any user.</p>
+</dd></dl>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>teachers</code>, <code class=enum>students</code>, <code class=enum>members</code>, <code class=enum>public</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[notify_of_update]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether participants should be notified when this page changes.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[published]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Whether the page is published (true) or draft state (false).</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>wiki_page[front_page]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Set an unhidden page as the front page (if true)</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X PUT -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+https://&lt;canvas&gt;/api/v1/courses/123/pages/the-page-url \
+-d &#39;wiki_page[body]=Updated+body+text&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='pages.html#Page'>Page</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.destroy' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.destroy' href='#method.wiki_pages_api.destroy'>
+      Delete page
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/courses/:course_id/pages/:url
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/courses/:course_id/pages/:url</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/groups/:group_id/pages/:url
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/groups/:group_id/pages/:url</code>
+  </div>
+
+
+<p>Delete a wiki page</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X DELETE -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+https://&lt;canvas&gt;/api/v1/courses/123/pages/the-page-url</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='pages.html#Page'>Page</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.revisions' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.revisions' href='#method.wiki_pages_api.revisions'>
+      List revisions
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#revisions</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/pages/:url/revisions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/pages/:url/revisions</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/pages/:url/revisions
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/pages/:url/revisions</code>
+  </div>
+
+
+<p>A paginated list of the revisions of a page. Callers must have update rights on the page in order to see page history.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+https://&lt;canvas&gt;/api/v1/courses/123/pages/the-page-url/revisions</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='pages.html#PageRevision'>PageRevisions</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.show_revision' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.show_revision' href='#method.wiki_pages_api.show_revision'>
+      Show revision
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#show_revision</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/pages/:url/revisions/latest
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/pages/:url/revisions/latest</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/pages/:url/revisions/latest
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/pages/:url/revisions/latest</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/pages/:url/revisions/:revision_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/courses/:course_id/pages/:url/revisions/:revision_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/pages/:url/revisions/:revision_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/groups/:group_id/pages/:url/revisions/:revision_id</code>
+  </div>
+
+
+<p>Retrieve the metadata and optionally content of a revision of the page. Note that retrieving historic versions of pages requires edit rights.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>summary</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If set, exclude page content from results</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+https://&lt;canvas&gt;/api/v1/courses/123/pages/the-page-url/revisions/latest</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+https://&lt;canvas&gt;/api/v1/courses/123/pages/the-page-url/revisions/4</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='pages.html#PageRevision'>PageRevision</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.wiki_pages_api.revert' data-subtopic='Pages'>
+    <a name='method.wiki_pages_api.revert' href='#method.wiki_pages_api.revert'>
+      Revert to revision
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/wiki_pages_api_controller.rb">WikiPagesApiController#revert</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/pages/:url/revisions/:revision_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/courses/:course_id/pages/:url/revisions/:revision_id</code>
+  </div>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups/:group_id/pages/:url/revisions/:revision_id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/groups/:group_id/pages/:url/revisions/:revision_id</code>
+  </div>
+
+
+<p>Revert a page to a prior revision.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>revision_id</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The revision to revert to (use the <a href="pages.html#method.wiki_pages_api.revisions" title="List Revisions API">List Revisions API</a> to see available revisions)</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -X POST -H &#39;Authorization: Bearer &lt;token&gt;&#39; \
+https://&lt;canvas&gt;/api/v1/courses/123/pages/the-page-url/revisions/6</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='pages.html#PageRevision'>PageRevision</a>
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:11 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

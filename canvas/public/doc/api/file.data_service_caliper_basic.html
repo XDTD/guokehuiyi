@@ -1,0 +1,3376 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Basic
+ - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="" class="current">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div id='filecontents'><h1 id="basic">Basic</h1>
+
+<h2 id="assignment_created">assignment_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new assignment is created by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new assignment is created in a course.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:59.579Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:3f672715-6aa8-4293-b62a-3b3319ff5701&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:assignment:21070000000000371&quot;,
+        &quot;type&quot;: &quot;AssignableDigitalResource&quot;,
+        &quot;name&quot;: &quot;add_new_assignment_3&quot;,
+        &quot;description&quot;: &quot;&lt;p&gt;test assignment&lt;/p&gt;&quot;,
+        &quot;dateCreated&quot;: &quot;2018-10-03T14:50:31.000Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;lock_at&quot;: &quot;2018-10-01T05:59:59.000Z&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000371&quot;
+          }
+        },
+        &quot;dateToShow&quot;: &quot;2018-09-24T06:00:00.000Z&quot;,
+        &quot;dateToSubmit&quot;: &quot;2018-10-01T05:59:59.000Z&quot;,
+        &quot;maxScore&quot;: 100
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:11.323Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:Instructor:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/565/assignments&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].lock_at</strong></td>
+<td>The lock date (assignment is locked after this date)</td>
+</tr>
+</tbody></table>
+
+<h2 id="assignment_override_created">assignment_override_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime an assignment override is created by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when an assignment override is created.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:08:59.579Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:3f672715-6aa8-4293-b62a-3b3319ff5701&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:assignment_override:21070000000000371&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;lock_at&quot;: &quot;2018-10-01T05:59:59.000Z&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000371&quot;,
+            &quot;assignment_id&quot;: &quot;1035&quot;,
+            &quot;all_day&quot;: false,
+            &quot;all_day_date&quot;: &quot;2018-10-01T05:59:59.000Z&quot;,
+            &quot;type&quot;: &quot;ADHOC&quot;,
+            &quot;workflow_state&quot;: &quot;active&quot;
+          }
+        },
+        &quot;dateToShow&quot;: &quot;2018-09-24T06:00:00.000Z&quot;,
+        &quot;dateToSubmit&quot;: &quot;2018-10-01T05:59:59.000Z&quot;
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:11.323Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:Instructor:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/565/assignments&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].assignment_id</strong></td>
+<td>The Canvas id of the assignment linked to the override.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].all_day</strong></td>
+<td>The overridden all_day flag, or nil if not overridden.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].all_day_date</strong></td>
+<td>The overridden all_day_date, or nil if not overridden.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].lock_at</strong></td>
+<td>The overridden lock_at timestamp, or nil if not overridden.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].type</strong></td>
+<td>Override type - <code>ADHOC</code> (list of Students), <code>CourseSection</code>, or <code>Group</code>.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].course_section_id</strong></td>
+<td>(if <code>type=&#39;CourseSection&#39;</code>) Canvas section id that this override applies to.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].group_id</strong></td>
+<td>(if <code>type=&#39;Group&#39;</code>) Canvas group id that this override applies to.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].workflow_state</strong></td>
+<td>Workflow state of the override. (active, deleted)</td>
+</tr>
+</tbody></table>
+
+<h2 id="assignment_override_updated">assignment_override_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime an assignment override is updated by an end user or API request. Only changes to the fields included in the body of the event payload will emit the <code>updated</code> event.</p>
+
+<p><strong>Trigger:</strong> Triggered when an assignment override has been modified.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:00.554Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:0a2a8c4d-0ebc-4200-ab6f-095b3b16852d&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Modified&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:assignment_override:21070000000000371&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;lock_at&quot;: &quot;2018-10-01T05:59:59.000Z&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000371&quot;,
+            &quot;assignment_id&quot;: &quot;1035&quot;,
+            &quot;all_day&quot;: false,
+            &quot;all_day_date&quot;: &quot;2018-10-01T05:59:59.000Z&quot;,
+            &quot;type&quot;: &quot;ADHOC&quot;,
+            &quot;workflow_state&quot;: &quot;active&quot;
+          }
+        },
+        &quot;dateToShow&quot;: &quot;2018-09-24T06:00:00.000Z&quot;,
+        &quot;dateToSubmit&quot;: &quot;2018-10-01T05:59:59.000Z&quot;
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:14.005Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000001279362&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000001279362&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000001279362:Instructor:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000001279362&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/1279362/assignments/2030605&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].assignment_id</strong></td>
+<td>The Canvas id of the assignment linked to the override.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].all_day</strong></td>
+<td>The overridden all_day flag, or nil if not overridden.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].all_day_date</strong></td>
+<td>The overridden all_day_date, or nil if not overridden.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].lock_at</strong></td>
+<td>The overridden lock_at timestamp, or nil if not overridden.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].type</strong></td>
+<td>Override type - <code>ADHOC</code> (list of Students), <code>CourseSection</code>, or <code>Group</code>.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].course_section_id</strong></td>
+<td>(if <code>type=&#39;CourseSection&#39;</code>) Canvas section id that this override applies to.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].group_id</strong></td>
+<td>(if <code>type=&#39;Group&#39;</code>) Canvas group id that this override applies to.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].workflow_state</strong></td>
+<td>Workflow state of the override. (active, deleted)</td>
+</tr>
+</tbody></table>
+
+<h2 id="assignment_updated">assignment_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime an assignment is updated by an end user or API request. Only changes to the fields included in the body of the event payload will emit the <code>updated</code> event.</p>
+
+<p><strong>Trigger:</strong> Triggered when an assignment has been modified.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:00.554Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:0a2a8c4d-0ebc-4200-ab6f-095b3b16852d&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Modified&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:assignment:21070000002030605&quot;,
+        &quot;type&quot;: &quot;AssignableDigitalResource&quot;,
+        &quot;name&quot;: &quot;A New Assignment For Today&quot;,
+        &quot;description&quot;: &quot;&lt;h3&gt;Assignment Description&lt;h3/&gt; This is your tasks, students:...&quot;,
+        &quot;dateModified&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;lock_at&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+            &quot;workflow_state&quot;: &quot;published&quot;,
+            &quot;entity_id&quot;: &quot;21070000002030605&quot;
+          }
+        },
+        &quot;dateToShow&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+        &quot;dateToSubmit&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+        &quot;maxScore&quot;: 100
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:14.005Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000001279362&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000001279362&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000001279362:Instructor:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000001279362&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/1279362/assignments/2030605&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].lock_at</strong></td>
+<td>The lock date (assignment is locked after this date)</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].workflow_state</strong></td>
+<td>1. Workflow state of the assignment when used in the assignment context (deleted, duplicating, failed_to_import, failed_to_duplicate, failed_to_migrate, importing, published, unpublished) - 2. Workflow state of the enrollment when used in the enrollment context (active, completed, creation_pending, deleted, inactive, invited)</td>
+</tr>
+</tbody></table>
+
+<h2 id="attachment_created">attachment_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new file is uploaded by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered anytime a file is uploaded into a course or user file directory.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:00.877Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:fd1fb7f0-405b-4487-a47d-3d5c0161061d&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:210700001234567&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;210700001234567&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:attachment:21070000000000632&quot;,
+        &quot;type&quot;: &quot;Document&quot;,
+        &quot;name&quot;: &quot;enrollments (1).csv&quot;,
+        &quot;dateCreated&quot;: &quot;2018-10-09T20:44:45.000Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_id&quot;: &quot;21070000000002329&quot;,
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;filename&quot;: &quot;enrollments+%281%29.csv&quot;,
+            &quot;folder_id&quot;: &quot;21070000000001359&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000632&quot;
+          }
+        },
+        &quot;mediaType&quot;: &quot;text/csv&quot;
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:00.830Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000002329&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000002329&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000002329:user:210700001234567&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:210700001234567&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000002329&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/files/capture&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].context_id</strong></td>
+<td>The Canvas id of the current context</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>The type of context where the event happened</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].filename</strong></td>
+<td>The file name of the attachment. NOTE: This field will be truncated to only include the first 8192 characters.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].folder_id</strong></td>
+<td>The id of the folder where the attachment was saved</td>
+</tr>
+</tbody></table>
+
+<h2 id="attachment_deleted">attachment_deleted</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a file is removed by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered anytime a file is deleted from a course or user file directory.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:01.199Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:00ea719b-38ea-4beb-934c-758ffa2cf1ea&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000123456&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000123456&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Deleted&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:attachment:21070000000000606&quot;,
+        &quot;type&quot;: &quot;Document&quot;,
+        &quot;name&quot;: &quot;enrollments.csv&quot;,
+        &quot;dateModified&quot;: &quot;2018-10-11T20:32:48.000Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_id&quot;: &quot;21070000000000565&quot;,
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;filename&quot;: &quot;enrollments.csv&quot;,
+            &quot;folder_id&quot;: &quot;21070000000001344&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000606&quot;
+          }
+        },
+        &quot;mediaType&quot;: &quot;text/csv&quot;
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T04:00:46.918Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/files&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:user:21070000000123456&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000123456&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/files/606&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].context_id</strong></td>
+<td>The Canvas id of the current context</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>The type of context where the event happened</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].filename</strong></td>
+<td>The file name of the attachment. NOTE: This field will be truncated to only include the first 8192 characters.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].folder_id</strong></td>
+<td>The id of the folder where the attachment was saved</td>
+</tr>
+</tbody></table>
+
+<h2 id="attachment_updated">attachment_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a file is updated by an end user or API request. Only changes to the fields included in the body of the event payload will emit the <code>updated</code> event.</p>
+
+<p><strong>Trigger:</strong> Triggered anytime a file is updated in a course or user file directory.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:01.502Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:0d4f85b5-f541-4c14-a405-d6a01e578d32&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000123456&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000123456&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Modified&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:attachment:21070000000000606&quot;,
+        &quot;type&quot;: &quot;Document&quot;,
+        &quot;name&quot;: &quot;enrollments.csv&quot;,
+        &quot;dateModified&quot;: &quot;2018-10-11T20:32:48.000Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_id&quot;: &quot;21070000000000565&quot;,
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;filename&quot;: &quot;enrollments.csv&quot;,
+            &quot;folder_id&quot;: &quot;21070000000001344&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000606&quot;
+          }
+        },
+        &quot;mediaType&quot;: &quot;text/csv&quot;
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:18.234Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/files&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:user:21070000000123456&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000123456&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/files/606&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].context_id</strong></td>
+<td>The Canvas id of the current context</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>The type of context where the event happened</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].filename</strong></td>
+<td>The file name of the attachment. NOTE: This field will be truncated to only include the first 8192 characters.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].folder_id</strong></td>
+<td>The id of the folder where the attachment was saved</td>
+</tr>
+</tbody></table>
+
+<h2 id="course_created">course_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new course is created by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new course is created (or copied).</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:02.437Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:79d0955f-d697-4293-b361-6f420c8f254b&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000056&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;name&quot;: &quot;Linear Algebra&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;entity_id&quot;: &quot;21070000000000056&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/accounts/438/courses&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+</tbody></table>
+
+<h2 id="course_updated">course_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a course is updated by an end user or API request. Examples of updates include publishing a course, updating a course name, or changing a course&#39;s configuration.</p>
+
+<p><strong>Trigger:</strong> Triggered when a course is updated.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:02.437Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:79d0955f-d697-4293-b361-6f420c8f254b&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Modified&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000056&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;name&quot;: &quot;Linear Algebra&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;entity_id&quot;: &quot;21070000000000056&quot;,
+            &quot;workflow_state&quot;: &quot;available&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/21070000000000056&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/accounts/438/courses&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].workflow_state</strong></td>
+<td>The workflow state of the the course. Can be one of created or claimed (unpublished course), available (published course), completed, or deleted.</td>
+</tr>
+</tbody></table>
+
+<h2 id="enrollment_created">enrollment_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new enrollment is added to a course by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new course enrollment is created.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:05.296Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:1145bf32-0ada-462d-9c97-7acd5b513472&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:enrollment:21070000000046825&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;dateCreated&quot;: &quot;2018-10-09T21:07:33.000Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;course_id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+            &quot;course_section_id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:section:21070000000004811&quot;,
+            &quot;limit_privileges_to_course_section&quot;: false,
+            &quot;type&quot;: &quot;StudentEnrollment&quot;,
+            &quot;user_id&quot;: &quot;urn:instructure:canvas:user:21070000000020064&quot;,
+            &quot;user_name&quot;: &quot;Isaac Newton&quot;,
+            &quot;workflow_state&quot;: &quot;invited&quot;,
+            &quot;entity_id&quot;: &quot;21070000000046825&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2018-10-09T21:07:33.000Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:section:21070000000004811&quot;,
+        &quot;type&quot;: &quot;CourseSection&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:section:21070000000004811:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:section:21070000000004811&quot;,
+          &quot;type&quot;: &quot;CourseSection&quot;,
+          &quot;subOrganizationOf&quot;: {
+            &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+            &quot;type&quot;: &quot;CourseOffering&quot;
+          }
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/sections/4811/enrollments?enrollment[user_id]=20064&amp;amp;enrollment[type]=StudentEnrollment&amp;amp;enrollment[enrollment_state]=invited&amp;amp;enrollment[limit_privileges_to_course_section]=true&amp;amp;enrollment[notify]=true&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].course_id</strong></td>
+<td>The Canvas id of the course for this enrollment</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].course_section_id</strong></td>
+<td>The id of the section of the course for the new enrollment</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].limit_privileges_to_course_section</strong></td>
+<td>Whether students can only talk to students within their course section</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].type</strong></td>
+<td>The type of enrollment; e.g. StudentEnrollment, TeacherEnrollment, ObserverEnrollment, etc.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].user_id</strong></td>
+<td>The Canvas id of the currently logged in user</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].user_name</strong></td>
+<td>The user first and last name</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].workflow_state</strong></td>
+<td>1. Workflow state of the assignment when used in the assignment context (deleted, duplicating, failed_to_import, failed_to_duplicate, failed_to_migrate, importing, published, unpublished) - 2. Workflow state of the enrollment when used in the enrollment context (active, completed, creation_pending, deleted, inactive, invited)</td>
+</tr>
+</tbody></table>
+
+<h2 id="enrollment_state_created">enrollment_state_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new enrollment record is added to a course.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new course enrollment is created with a new workflow_state.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:05.617Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:0b3800ce-e9c5-4566-8b5f-72ea469a07b7&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:enrollment:21070000000000143&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;access_is_current&quot;: true,
+            &quot;restricted_access&quot;: false,
+            &quot;state&quot;: &quot;pending_invited&quot;,
+            &quot;state_is_current&quot;: true,
+            &quot;state_valid_until&quot;: &quot;2019-11-05T13:38:00.218Z&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000143&quot;
+          }
+        },
+        &quot;startedAtTime&quot;: &quot;2019-10-05T13:38:00.000Z&quot;
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:09.910Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/accounts/1?enrollment_term_id=83&amp;search_term=hsw&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/565/enroll_users&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].access_is_current</strong></td>
+<td>Indicates if the enrollment_state is up to date</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].restricted_access</strong></td>
+<td>Indicates whether enrollment access is restricted, set to &#39;TRUE&#39; if enrollment state is restricted</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].state_is_current</strong></td>
+<td>Indicates if this enrollment_state is up to date</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].state</strong></td>
+<td>The state of the enrollment</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].state_valid_until</strong></td>
+<td>The time at which this enrollment is no longer valid</td>
+</tr>
+</tbody></table>
+
+<h2 id="enrollment_state_updated">enrollment_state_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime an enrollment record workflow state changes.</p>
+
+<p><strong>Trigger:</strong> Triggered when a course enrollment workflow_state changes.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-21T23:47:22.555Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:89c8b4b1-1caf-4af1-a391-c4d6da12eb09&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000012&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;applications.admin&quot;,
+            &quot;user_sis_id&quot;: &quot;applications.admin&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000012&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Modified&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:enrollment:21070000000001999&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;access_is_current&quot;: true,
+            &quot;restricted_access&quot;: false,
+            &quot;state&quot;: &quot;deleted&quot;,
+            &quot;state_is_current&quot;: true,
+            &quot;entity_id&quot;: &quot;21070000000001999&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:18.125Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:user:21070000000000012&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000012&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Somebot/12.0&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instrucvture.com/api/v1/courses/565/enrollments/1999?task=delete&amp;access_token=1~fHJKsdaHK423KGHFJDAS32hkgfdaks342423jfKJKj33hjlklkgjkl2jkljlk34j&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].access_is_current</strong></td>
+<td>Indicates if the enrollment_state is up to date</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].restricted_access</strong></td>
+<td>Indicates whether enrollment access is restricted, set to &#39;TRUE&#39; if enrollment state is restricted</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].state_is_current</strong></td>
+<td>Indicates if this enrollment_state is up to date</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].state</strong></td>
+<td>The state of the enrollment</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].state_valid_until</strong></td>
+<td>The time at which this enrollment is no longer valid</td>
+</tr>
+</tbody></table>
+
+<h2 id="enrollment_updated">enrollment_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime an enrollment record is updated by an end user or API request. Only changes to the fields included in the body of the event payload will emit the <code>updated</code> event.</p>
+
+<p><strong>Trigger:</strong> Triggered when a course enrollment is modified.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-21T23:47:22.832Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:7205050c-95ed-4c5f-9ecf-2998c7d3a02c&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000987&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana&quot;,
+            &quot;user_sis_id&quot;: &quot;ABC123&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000987&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Modified&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:enrollment:21070000000549222&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;dateCreated&quot;: &quot;2019-10-11T13:16:23.000Z&quot;,
+        &quot;dateModified&quot;: &quot;2019-11-01T19:11:18.000Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;course_id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+            &quot;course_section_id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:section:21070000000509348&quot;,
+            &quot;limit_privileges_to_course_section&quot;: false,
+            &quot;type&quot;: &quot;StudentEnrollment&quot;,
+            &quot;user_id&quot;: &quot;urn:instructure:canvas:user:21070000000093482&quot;,
+            &quot;user_name&quot;: &quot;Isaac Newton&quot;,
+            &quot;workflow_state&quot;: &quot;invited&quot;,
+            &quot;entity_id&quot;: &quot;21070000000549222&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:19.407Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/users&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:section:21070000000509348&quot;,
+        &quot;type&quot;: &quot;CourseSection&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:section:21070000000509348:Instructor:21070000000000987&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000987&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:section:21070000000509348&quot;,
+          &quot;type&quot;: &quot;CourseSection&quot;,
+          &quot;subOrganizationOf&quot;: {
+            &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+            &quot;type&quot;: &quot;CourseOffering&quot;
+          }
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/565/enroll_users&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].course_id</strong></td>
+<td>The Canvas id of the course for this enrollment</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].course_section_id</strong></td>
+<td>The id of the section of the course for the new enrollment</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].limit_privileges_to_course_section</strong></td>
+<td>Whether students can only talk to students within their course section</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].type</strong></td>
+<td>The type of enrollment; e.g. StudentEnrollment, TeacherEnrollment, ObserverEnrollment, etc.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].user_id</strong></td>
+<td>The Canvas id of the currently logged in user</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].user_name</strong></td>
+<td>The user first and last name</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].workflow_state</strong></td>
+<td>1. Workflow state of the assignment when used in the assignment context (deleted, duplicating, failed_to_import, failed_to_duplicate, failed_to_migrate, importing, published, unpublished) - 2. Workflow state of the enrollment when used in the enrollment context (active, completed, creation_pending, deleted, inactive, invited)</td>
+</tr>
+</tbody></table>
+
+<h2 id="group_category_created">group_category_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new group category is added to a course group by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new group category is created.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:07.206Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:709bdb27-b1e4-4d48-a207-38d71250264f&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:groupCategory:21070000000000049&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;name&quot;: &quot;Live_events_Group1&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;entity_id&quot;: &quot;21070000000000049&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T15:06:48.462Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/assignments/7655/edit&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:565:Instructor:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/565/group_categories&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+</tbody></table>
+
+<h2 id="group_created">group_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new group is added to a course by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new group is created.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:07.890Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:6405114f-2664-4f87-b5d5-67c1f4e4c030&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000000051&quot;,
+        &quot;type&quot;: &quot;Group&quot;,
+        &quot;name&quot;: &quot;Group 1&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;entity_id&quot;: &quot;21070000000000051&quot;
+          }
+        },
+        &quot;isPartOf&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:groupCategory:21070000000001149&quot;,
+          &quot;type&quot;: &quot;Entity&quot;,
+          &quot;name&quot;: &quot;Live_events_Group1&quot;
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T00:08:52.795Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/groups&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/group_categories/1149/groups&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+</tbody></table>
+
+<h2 id="group_membership_created">group_membership_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new member is added to a course group by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new user is added to a group.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:08.260Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:ee8e1bb5-baf2-44db-873c-5ca52d8bf5a5&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:groupMembership:21070000000123460&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000047&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:group:21070000000000051&quot;,
+          &quot;type&quot;: &quot;Group&quot;,
+          &quot;name&quot;: &quot;Group 1&quot;,
+          &quot;extensions&quot;: {
+            &quot;com.instructure.canvas&quot;: {
+              &quot;entity_id&quot;: &quot;21070000000123460&quot;
+            }
+          },
+          &quot;isPartOf&quot;: {
+            &quot;id&quot;: &quot;urn:instructure:canvas:groupCategory:21070000000049012&quot;,
+            &quot;type&quot;: &quot;Entity&quot;,
+            &quot;name&quot;: &quot;Live_events_Group1&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:21.467Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/135519/groups&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/group_categories/30575/clone_with_name&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+</tbody></table>
+
+<h2 id="submission_created">submission_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime an end user or API request submits an assignment.</p>
+
+<p><strong>Trigger:</strong> Triggered when a submission gets updated and has not yet been submitted.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:14.293Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:bd9dedcf-6fd9-4605-82d6-325c4e2adaf6&quot;,
+      &quot;type&quot;: &quot;AssignableEvent&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000014012&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000014012&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Submitted&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:submission:21070000012345567&quot;,
+        &quot;type&quot;: &quot;Attempt&quot;,
+        &quot;dateCreated&quot;: &quot;2019-11-01T19:11:21.419Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;submission_type&quot;: &quot;online_text_entry&quot;,
+            &quot;url&quot;: &quot;https://test.submission.net&quot;,
+            &quot;entity_id&quot;: &quot;21070000012345567&quot;
+          }
+        },
+        &quot;assignee&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000014012&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;assignable&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:assignment:21070000001234012&quot;,
+          &quot;type&quot;: &quot;AssignableDigitalResource&quot;
+        },
+        &quot;count&quot;: 12,
+        &quot;body&quot;: &quot;Test Submission Data&quot;
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:21.419Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/lti/v1/tools/453919/grade_passback&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].submission_type</strong></td>
+<td>The types of submission (basic_lti_launch, discussion_topic, media_recording, online_quiz, online_text_entry, online_upload, online_url)</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].url</strong></td>
+<td>The URL of the request that triggered the event. Only present in user-generated events</td>
+</tr>
+</tbody></table>
+
+<h2 id="submission_updated">submission_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime an end user or API request re-submits an assignment.</p>
+
+<p><strong>Trigger:</strong> Triggered when a submission gets updated and has previously been submitted.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-21T22:25:55.856Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:77516df0-a8bb-49ae-a859-0471e9269378&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000054321&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana&quot;,
+            &quot;user_sis_id&quot;: &quot;a10000&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;3298d98d938298kjasdgfklsdfj48348gJGJDASG&quot;,
+            &quot;root_account_uuid&quot;: &quot;398DFJSAFJDfgkhdsahk439849GJSDKGJSAFKG99&quot;,
+            &quot;entity_id&quot;: &quot;21070000000054321&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Modified&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:submission:21070000002947931&quot;,
+        &quot;type&quot;: &quot;Attempt&quot;,
+        &quot;dateModified&quot;: &quot;2019-11-06T16:46:46.000Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;submission_type&quot;: &quot;online_upload&quot;,
+            &quot;entity_id&quot;: &quot;21070000002947931&quot;
+          }
+        },
+        &quot;assignee&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000098765&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;assignable&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:assignment:21070000000012345&quot;,
+          &quot;type&quot;: &quot;AssignableDigitalResource&quot;
+        },
+        &quot;count&quot;: 1
+      },
+      &quot;eventTime&quot;: &quot;2019-11-06T16:46:46.446Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/gradebook&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:Instructor:21070000000054321&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000054321&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:b5e43107370d071208e098b098a09845&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;129b89de-293c-4201-3201-09a90b039e09&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/565/assignments/12345/submissions/98765&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].submission_type</strong></td>
+<td>The types of submission (basic_lti_launch, discussion_topic, media_recording, online_quiz, online_text_entry, online_upload, online_url)</td>
+</tr>
+</tbody></table>
+
+<h2 id="syllabus_updated">syllabus_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a syllabus is changed in a course by an end user or API request. Only changes to the fields included in the body of the event payload will emit the <code>updated</code> event.</p>
+
+<p><strong>Trigger:</strong> Triggered when a course syllabus gets updated.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:14.936Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:fcca5cae-cff1-41b3-b944-79013e30cbec&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Modified&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;Document&quot;,
+        &quot;name&quot;: &quot;Syllabus&quot;,
+        &quot;creators&quot;: [
+          {
+            &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+            &quot;type&quot;: &quot;Person&quot;
+          }
+        ],
+        &quot;body&quot;: &quot;&lt;p&gt;&lt;iframe style=\&quot;width: 800px; height: 880px;\&quot; src=\&quot;/courses/565/external_tools/retrieve?display=borderless&amp;amp;url=https%3A%2F%2Foxana.instructuremedia.com%2F...&quot;
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:14.519Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/assignments/syllabus&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        }
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/courses/565&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="user_account_association_created">user_account_association_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a user is created in an account.</p>
+
+<p><strong>Trigger:</strong> Triggered when a user is added to an account.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-21T23:47:23.110Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:97224c19-0b41-4d49-b6f6-1c4762ac9ed4&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000987&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana&quot;,
+            &quot;user_sis_id&quot;: &quot;OXANA123&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000987&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:account:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Entity&quot;,
+        &quot;dateCreated&quot;: &quot;2019-11-01T19:11:00.000Z&quot;,
+        &quot;dateModified&quot;: &quot;2019-11-01T19:11:00.000Z&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;is_admin&quot;: false,
+            &quot;user_id&quot;: &quot;urn:instructure:canvas:user:21070000000042342&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:00.890Z&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Somebot/1.0&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/accounts/566/users&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].is_admin</strong></td>
+<td>Indicates whether a user has an administrator role</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].user_id</strong></td>
+<td>The Canvas id of the currently logged in user</td>
+</tr>
+</tbody></table>
+
+<h2 id="wiki_page_created">wiki_page_created</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a new wiki page is created by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a new wiki page is created.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-21T23:47:23.376Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:c6fd66af-c89a-4554-bb03-aa35b3e75525&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000333&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana&quot;,
+            &quot;user_sis_id&quot;: &quot;OXANA123&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000333&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000333&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Created&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:wikiPage:21070000000048392&quot;,
+        &quot;type&quot;: &quot;Page&quot;,
+        &quot;name&quot;: &quot;Great new wiki page&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;body&quot;: &quot;This is the text of a simply awesome new wiki page!&quot;,
+            &quot;entity_id&quot;: &quot;21070000000048392&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:12.455Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/modules&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:Instructor:21070000000000333&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000333&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/565/modules/items/982711/duplicate&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].body</strong></td>
+<td>The body of the new page. NOTE: This field will be truncated to only include the first 8192 characters.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+</tbody></table>
+
+<h2 id="wiki_page_deleted">wiki_page_deleted</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a wiki page is deleted by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when a wiki page is deleted.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-16T02:09:16.608Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:646628ff-d21b-4fb9-a672-56d94a8a7b73&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana@example.com&quot;,
+            &quot;user_sis_id&quot;: &quot;456-T45&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000001&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Deleted&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:wikiPage:21070000000000009&quot;,
+        &quot;type&quot;: &quot;Page&quot;,
+        &quot;name&quot;: &quot;Page 1 Updated&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;entity_id&quot;: &quot;21070000000000009&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:13.729Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/1013182/pages/ccs-online-logo-instructions?module_item_id=9653761&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:Instructor:21070000000000001&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000000001&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Instructor&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/1499839/pages/ccs-online-logo-instructions&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].body</strong></td>
+<td>The body of the new page. NOTE: This field will be truncated to only include the first 8192 characters.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+</tbody></table>
+
+<h2 id="wiki_page_updated">wiki_page_updated</h2>
+
+<p><strong>Definition:</strong> The event is emitted anytime a wiki page is altered by an end user or API request.</p>
+
+<p><strong>Trigger:</strong> Triggered when title or body of wiki page is altered.</p>
+
+<h3 id="payload-example">Payload Example:</h3>
+
+<pre class="code json"><code class="json">{
+  &quot;sensor&quot;: &quot;http://oxana.instructure.com/&quot;,
+  &quot;sendTime&quot;: &quot;2019-11-21T23:47:23.652Z&quot;,
+  &quot;dataVersion&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;@context&quot;: &quot;http://purl.imsglobal.org/ctx/caliper/v1p1&quot;,
+      &quot;id&quot;: &quot;urn:uuid:3e59b9f1-426f-4b84-b18d-e984647a38d0&quot;,
+      &quot;type&quot;: &quot;Event&quot;,
+      &quot;actor&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000009876&quot;,
+        &quot;type&quot;: &quot;Person&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;user_login&quot;: &quot;oxana&quot;,
+            &quot;root_account_id&quot;: &quot;21070000000000001&quot;,
+            &quot;root_account_lti_guid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs.oxana.instructure.com&quot;,
+            &quot;root_account_uuid&quot;: &quot;VicYj3cu5BIFpoZhDVU4DZumnlBrWi1grgJEzADs&quot;,
+            &quot;entity_id&quot;: &quot;21070000000009876&quot;
+          }
+        }
+      },
+      &quot;action&quot;: &quot;Modified&quot;,
+      &quot;object&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:wikiPage:72270000000674553&quot;,
+        &quot;type&quot;: &quot;Page&quot;,
+        &quot;name&quot;: &quot;A great wiki page&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;body&quot;: &quot;This is wiki page text&quot;,
+            &quot;entity_id&quot;: &quot;72270000000674553&quot;
+          }
+        }
+      },
+      &quot;eventTime&quot;: &quot;2019-11-01T19:11:17.869Z&quot;,
+      &quot;referrer&quot;: &quot;https://oxana.instructure.com/courses/565/pages/collaborative-project-team-sign-up/edit&quot;,
+      &quot;edApp&quot;: {
+        &quot;id&quot;: &quot;http://oxana.instructure.com/&quot;,
+        &quot;type&quot;: &quot;SoftwareApplication&quot;
+      },
+      &quot;group&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+        &quot;type&quot;: &quot;CourseOffering&quot;,
+        &quot;extensions&quot;: {
+          &quot;com.instructure.canvas&quot;: {
+            &quot;context_type&quot;: &quot;Course&quot;,
+            &quot;entity_id&quot;: &quot;21070000000000565&quot;
+          }
+        }
+      },
+      &quot;membership&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565:Learner:21070000000009876&quot;,
+        &quot;type&quot;: &quot;Membership&quot;,
+        &quot;member&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:user:21070000000009876&quot;,
+          &quot;type&quot;: &quot;Person&quot;
+        },
+        &quot;organization&quot;: {
+          &quot;id&quot;: &quot;urn:instructure:canvas:course:21070000000000565&quot;,
+          &quot;type&quot;: &quot;CourseOffering&quot;
+        },
+        &quot;roles&quot;: [
+          &quot;Learner&quot;
+        ]
+      },
+      &quot;session&quot;: {
+        &quot;id&quot;: &quot;urn:instructure:canvas:session:ef686f8ed684abf78cbfa1f6a58112b5&quot;,
+        &quot;type&quot;: &quot;Session&quot;
+      },
+      &quot;extensions&quot;: {
+        &quot;com.instructure.canvas&quot;: {
+          &quot;hostname&quot;: &quot;oxana.instructure.com&quot;,
+          &quot;request_id&quot;: &quot;1dd9dc6f-2fb0-4c19-a6c5-7ee1bf3ed295&quot;,
+          &quot;user_agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;,
+          &quot;client_ip&quot;: &quot;93.184.216.34&quot;,
+          &quot;request_url&quot;: &quot;https://oxana.instructure.com/api/v1/courses/565/pages/collaborative-project-team-sign-up&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="event-body-schema">Event Body Schema</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].context_type</strong></td>
+<td>Canvas context type where the action took place e.g context_type = Course.</td>
+</tr>
+<tr>
+<td><strong>data[0].group.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas context ID</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].body</strong></td>
+<td>The body of the new page. NOTE: This field will be truncated to only include the first 8192 characters.</td>
+</tr>
+<tr>
+<td><strong>data[0].object.extensions[&quot;com.instructure.canvas&quot;].entity_id</strong></td>
+<td>Canvas global ID of the object affected by the event</td>
+</tr>
+</tbody></table>
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:12:58 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

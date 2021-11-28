@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Roles - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="current" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Roles API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for managing account- and course-level roles, and their associated permissions.</p>
+
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="RolePermissions">A RolePermissions object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // Whether the role has the permission
+  &quot;enabled&quot;: true,
+  // Whether the permission is locked by this role
+  &quot;locked&quot;: false,
+  // Whether the permission applies to the account this role is in. Only present
+  // if enabled is true
+  &quot;applies_to_self&quot;: true,
+  // Whether the permission cascades down to sub accounts of the account this role
+  // is in. Only present if enabled is true
+  &quot;applies_to_descendants&quot;: false,
+  // Whether the permission can be modified in this role (i.e. whether the
+  // permission is locked by an upstream role).
+  &quot;readonly&quot;: false,
+  // Whether the value of enabled is specified explicitly by this role, or
+  // inherited from an upstream role.
+  &quot;explicit&quot;: true,
+  // The value that would have been inherited from upstream if the role had not
+  // explicitly set a value. Only present if explicit is true.
+  &quot;prior_default&quot;: false
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Role">A Role object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // The label of the role.
+  &quot;label&quot;: &quot;New Role&quot;,
+  // The label of the role. (Deprecated alias for &#39;label&#39;)
+  &quot;role&quot;: &quot;New Role&quot;,
+  // The role type that is being used as a base for this role. For account-level
+  // roles, this is &#39;AccountMembership&#39;. For course-level roles, it is an
+  // enrollment type.
+  &quot;base_role_type&quot;: &quot;AccountMembership&quot;,
+  // JSON representation of the account the role is in.
+  &quot;account&quot;: {&quot;id&quot;:1019,&quot;name&quot;:&quot;CGNU&quot;,&quot;parent_account_id&quot;:73,&quot;root_account_id&quot;:1,&quot;sis_account_id&quot;:&quot;cgnu&quot;},
+  // The state of the role: &#39;active&#39;, &#39;inactive&#39;, or &#39;built_in&#39;
+  &quot;workflow_state&quot;: &quot;active&quot;,
+  // A dictionary of permissions keyed by name (see permissions input parameter in
+  // the &#39;Create a role&#39; API).
+  &quot;permissions&quot;: {&quot;read_course_content&quot;:{&quot;enabled&quot;:true,&quot;locked&quot;:false,&quot;readonly&quot;:false,&quot;explicit&quot;:true,&quot;prior_default&quot;:false},&quot;read_course_list&quot;:{&quot;enabled&quot;:true,&quot;locked&quot;:true,&quot;readonly&quot;:true,&quot;explicit&quot;:false},&quot;read_question_banks&quot;:{&quot;enabled&quot;:false,&quot;locked&quot;:true,&quot;readonly&quot;:false,&quot;explicit&quot;:true,&quot;prior_default&quot;:false},&quot;read_reports&quot;:{&quot;enabled&quot;:true,&quot;locked&quot;:false,&quot;readonly&quot;:false,&quot;explicit&quot;:false}}
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.role_overrides.api_index' data-subtopic='Roles'>
+    <a name='method.role_overrides.api_index' href='#method.role_overrides.api_index'>
+      List roles
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb">RoleOverridesController#api_index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/roles
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/roles</code>
+  </div>
+
+
+<p>A paginated list of the roles available to an account.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>account_id</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the account to retrieve roles for.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>state[]</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Filter by role state. If this argument is omitted, only &#39;active&#39; roles are returned.</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>active</code>, <code class=enum>inactive</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>show_inherited</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If this argument is true, all roles inherited from parent accounts will be included.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+  Returns a list of 
+
+<a href='roles.html#Role'>Roles</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.role_overrides.show' data-subtopic='Roles'>
+    <a name='method.role_overrides.show' href='#method.role_overrides.show'>
+      Get a single role
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb">RoleOverridesController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/roles/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/roles/:id</code>
+  </div>
+
+
+<p>Retrieve information about a single role</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>account_id</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The id of the account containing the role</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>role_id</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The unique identifier for the role</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>role</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name for the role</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+  Returns a 
+
+<a href='roles.html#Role'>Role</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.role_overrides.add_role' data-subtopic='Roles'>
+    <a name='method.role_overrides.add_role' href='#method.role_overrides.add_role'>
+      Create a new role
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb">RoleOverridesController#add_role</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/accounts/:account_id/roles
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/accounts/:account_id/roles</code>
+  </div>
+
+
+<p>Create a new course-level or account-level role.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>label</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Label for the role.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>role</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Deprecated alias for label.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>base_role_type</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>Specifies the role type that will be used as a base for the permissions granted to this role.</p>
+
+<p>Defaults to &#39;AccountMembership&#39; if absent</p>
+
+        
+        <p class="param-values">
+          <span class="allowed">Allowed values:</span> <code class=enum>AccountMembership</code>, <code class=enum>StudentEnrollment</code>, <code class=enum>TeacherEnrollment</code>, <code class=enum>TaEnrollment</code>, <code class=enum>ObserverEnrollment</code>, <code class=enum>DesignerEnrollment</code>
+        </p>
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>permissions[&lt;X&gt;][explicit]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>permissions[&lt;X&gt;][enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If explicit is 1 and enabled is 1, permission &lt;X&gt; will be explicitly granted to this role. If explicit is 1 and enabled has any other value (typically 0), permission &lt;X&gt; will be explicitly denied to this role. If explicit is any other value (typically 0) or absent, or if enabled is absent, the value for permission &lt;X&gt; will be inherited from upstream. Ignored if permission &lt;X&gt; is locked upstream (in an ancestor account).</p>
+
+<p>May occur multiple times with unique values for &lt;X&gt;. Recognized permission names for &lt;X&gt; are:</p>
+
+<pre class="code ruby"><code class="ruby">[For Account-Level Roles Only]
+become_user                      -- Users - act as
+import_sis                       -- SIS Data - import
+manage_account_memberships       -- Admins - add / remove
+manage_account_settings          -- Account-level settings - manage
+manage_alerts                    -- Global announcements - add / edit / delete
+manage_catalog                   -- Catalog - manage
+Manage Course Templates granular permissions
+    add_course_template          -- Course Templates - add
+    delete_course_template       -- Course Templates - delete
+    edit_course_template         -- Course Templates - edit
+manage_courses_add               -- Courses - add
+manage_courses_admin             -- Courses - manage / update
+manage_developer_keys            -- Developer keys - manage
+manage_feature_flags             -- Feature Previews - enable / disable
+manage_master_courses            -- Blueprint Courses - add / edit / associate / delete
+manage_role_overrides            -- Permissions - manage
+manage_storage_quotas            -- Storage Quotas - manage
+manage_sis                       -- SIS data - manage
+manage_user_logins               -- Users - manage login details
+manage_user_observers            -- Users - manage observers
+moderate_user_content            -- Users - moderate content
+read_course_content              -- Course Content - view
+read_course_list                 -- Courses - view list
+view_course_changes              -- Courses - view change logs
+view_feature_flags               -- Feature Previews - view
+view_grade_changes               -- Grades - view change logs
+view_notifications               -- Notifications - view
+view_quiz_answer_audits          -- Quizzes - view submission log
+view_statistics                  -- Statistics - view
+undelete_courses                 -- Courses - undelete
+
+[For both Account-Level and Course-Level roles]
+ Note: Applicable enrollment types for course-level roles are given in brackets:
+       S = student, T = teacher (instructor), A = TA, D = designer, O = observer.
+       Lower-case letters indicate permissions that are off by default.
+       A missing letter indicates the permission cannot be enabled for the role
+       or any derived custom roles.
+allow_course_admin_actions       -- [ Tad ] Users - allow administrative actions in courses
+create_collaborations            -- [STADo] Student Collaborations - create
+create_conferences               -- [STADo] Web conferences - create
+create_forum                     -- [STADo] Discussions - create
+generate_observer_pairing_code   -- [ tado] Users - Generate observer pairing codes for students
+import_outcomes                  -- [ TaDo] Learning Outcomes - import
+lti_add_edit                     -- [ TAD ] LTI - add / edit / delete
+manage_account_banks             -- [ td  ] Item Banks - manage account
+manage_assignments               -- [ TADo] Assignments and Quizzes - add / edit / delete (deprecated)
+Manage Assignments and Quizzes granular permissions
+    manage_assignments_add       -- [ TADo] Assignments and Quizzes - add
+    manage_assignments_edit      -- [ TADo] Assignments and Quizzes - edit / manage
+    manage_assignments_delete    -- [ TADo] Assignments and Quizzes - delete
+manage_calendar                  -- [sTADo] Course Calendar - add / edit / delete
+manage_content                   -- [ TADo] Course Content - add / edit / delete
+manage_course_visibility         -- [ TAD ] Course - change visibility
+Manage Courses granular permissions
+    manage_courses_conclude      -- [ TaD ] Courses - conclude
+    manage_courses_delete        -- [ TaD ] Courses - delete
+    manage_courses_publish       -- [ TaD ] Courses - publish
+    manage_courses_reset         -- [ TaD ] Courses - reset
+Manage Files granular permissions
+    manage_files_add             -- [ TADo] Course Files - add
+    manage_files_edit            -- [ TADo] Course Files - edit
+    manage_files_delete          -- [ TADo] Course Files - delete
+manage_grades                    -- [ TA  ] Grades - edit
+Manage Groups granular permissions
+    manage_groups_add            -- [ TAD ] Groups - add
+    manage_groups_delete         -- [ TAD ] Groups - delete
+    manage_groups_manage         -- [ TAD ] Groups - manage
+manage_interaction_alerts        -- [ Ta  ] Alerts - add / edit / delete
+manage_outcomes                  -- [sTaDo] Learning Outcomes - add / edit / delete
+manage_proficiency_calculations  -- [ t d ] Outcome Proficiency Calculations - add / edit / delete
+manage_proficiency_scales        -- [ t d ] Outcome Proficiency/Mastery Scales - add / edit / delete
+Manage Sections granular permissions
+    manage_sections_add          -- [ TaD ] Course Sections - add
+    manage_sections_edit         -- [ TaD ] Course Sections - edit
+    manage_sections_delete       -- [ TaD ] Course Sections - delete
+manage_students                  -- [ TAD ] Users - manage students in courses
+manage_user_notes                -- [ TA  ] Faculty Journal - manage entries
+manage_rubrics                   -- [ TAD ] Rubrics - add / edit / delete
+Manage Pages granular permissions
+    manage_wiki_create           -- [ TADo] Pages - create
+    manage_wiki_delete           -- [ TADo] Pages - delete
+    manage_wiki_update           -- [ TADo] Pages - update
+moderate_forum                   -- [sTADo] Discussions - moderate
+post_to_forum                    -- [STADo] Discussions - post
+read_announcements               -- [STADO] Announcements - view
+read_email_addresses             -- [sTAdo] Users - view primary email address
+read_forum                       -- [STADO] Discussions - view
+read_question_banks              -- [ TADo] Question banks - view and link
+read_reports                     -- [ TAD ] Courses - view usage reports
+read_roster                      -- [STADo] Users - view list
+read_sis                         -- [sTa  ] SIS Data - read
+select_final_grade               -- [ TA  ] Grades - select final grade for moderation
+send_messages                    -- [STADo] Conversations - send messages to individual course members
+send_messages_all                -- [sTADo] Conversations - send messages to entire class
+Users - Teacher granular permissions
+    add_teacher_to_course        -- [ Tad ] Add a teacher enrollment to a course
+    remove_teacher_from_course   -- [ Tad ] Remove a Teacher enrollment from a course
+Users - TA granular permissions
+    add_ta_to_course             -- [ Tad ] Add a TA enrollment to a course
+    remove_ta_from_course        -- [ Tad ] Remove a TA enrollment from a course
+Users - Designer granular permissions
+    add_designer_to_course       -- [ Tad ] Add a designer enrollment to a course
+    remove_designer_from_course  -- [ Tad ] Remove a designer enrollment from a course
+Users - Observer granular permissions
+    add_observer_to_course       -- [ Tad ] Add an observer enrollment to a course
+    remove_observer_from_course  -- [ Tad ] Remove an observer enrollment from a course
+Users - Student granular permissions
+    add_student_to_course        -- [ Tad ] Add a student enrollment to a course
+    remove_student_from_course   -- [ Tad ] Remove a student enrollment from a course
+view_all_grades                  -- [ TAd ] Grades - view all grades
+view_analytics                   -- [sTA  ] Analytics - view pages
+view_audit_trail                 -- [ t   ] Grades - view audit trail
+view_group_pages                 -- [sTADo] Groups - view all student groups
+view_user_logins                 -- [ TA  ] Users - view login IDs
+</code></pre>
+
+<p>Some of these permissions are applicable only for roles on the site admin account, on a root account, or for course-level roles with a particular base role type; if a specified permission is inapplicable, it will be ignored.</p>
+
+<p>Additional permissions may exist based on installed plugins.</p>
+
+<p>A comprehensive list of all permissions are available:</p>
+
+<p>Course Permissions PDF: <a href="http://bit.ly/cnvs-course-permissions">bit.ly/cnvs-course-permissions</a></p>
+
+<p>Account Permissions PDF: <a href="http://bit.ly/cnvs-acct-permissions">bit.ly/cnvs-acct-permissions</a></p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>permissions[&lt;X&gt;][locked]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If the value is 1, permission &lt;X&gt; will be locked downstream (new roles in subaccounts cannot override the setting). For any other value, permission &lt;X&gt; is left unlocked. Ignored if permission &lt;X&gt; is already locked upstream. May occur multiple times with unique values for &lt;X&gt;.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>permissions[&lt;X&gt;][applies_to_self]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If the value is 1, permission &lt;X&gt; applies to the account this role is in. The default value is 1. Must be true if applies_to_descendants is false. This value is only returned if enabled is true.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>permissions[&lt;X&gt;][applies_to_descendants]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If the value is 1, permission &lt;X&gt; cascades down to sub accounts of the account this role is in. The default value is 1.  Must be true if applies_to_self is false.This value is only returned if enabled is true.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/roles.json&#39; \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
+     -F &#39;label=New Role&#39; \
+     -F &#39;permissions[read_course_content][explicit]=1&#39; \
+     -F &#39;permissions[read_course_content][enabled]=1&#39; \
+     -F &#39;permissions[read_course_list][locked]=1&#39; \
+     -F &#39;permissions[read_question_banks][explicit]=1&#39; \
+     -F &#39;permissions[read_question_banks][enabled]=0&#39; \
+     -F &#39;permissions[read_question_banks][locked]=1&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='roles.html#Role'>Role</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.role_overrides.remove_role' data-subtopic='Roles'>
+    <a name='method.role_overrides.remove_role' href='#method.role_overrides.remove_role'>
+      Deactivate a role
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb">RoleOverridesController#remove_role</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/accounts/:account_id/roles/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/accounts/:account_id/roles/:id</code>
+  </div>
+
+
+<p>Deactivates a custom role.  This hides it in the user interface and prevents it from being assigned to new users.  Existing users assigned to the role will continue to function with the same permissions they had previously. Built-in roles cannot be deactivated.</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>role_id</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The unique identifier for the role</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>role</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name for the role</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+  Returns a 
+
+<a href='roles.html#Role'>Role</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.role_overrides.activate_role' data-subtopic='Roles'>
+    <a name='method.role_overrides.activate_role' href='#method.role_overrides.activate_role'>
+      Activate a role
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb">RoleOverridesController#activate_role</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/accounts/:account_id/roles/:id/activate
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/accounts/:account_id/roles/:id/activate</code>
+  </div>
+
+
+<p>Re-activates an inactive role (allowing it to be assigned to new users)</p>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>role_id</td>
+      <td>
+        
+        Required
+        
+      </td>
+      <td>integer</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The unique identifier for the role</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>role</td>
+      <td>
+        
+      </td>
+      <td>Deprecated</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The name for the role</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+  Returns a 
+
+<a href='roles.html#Role'>Role</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.role_overrides.update' data-subtopic='Roles'>
+    <a name='method.role_overrides.update' href='#method.role_overrides.update'>
+      Update a role
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/role_overrides_controller.rb">RoleOverridesController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/accounts/:account_id/roles/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/accounts/:account_id/roles/:id</code>
+  </div>
+
+
+<p>Update permissions for an existing role.</p>
+
+<p>Recognized roles are:</p>
+<ul><li>
+<p>TeacherEnrollment</p>
+</li><li>
+<p>StudentEnrollment</p>
+</li><li>
+<p>TaEnrollment</p>
+</li><li>
+<p>ObserverEnrollment</p>
+</li><li>
+<p>DesignerEnrollment</p>
+</li><li>
+<p>AccountAdmin</p>
+</li><li>
+<p>Any previously created custom role</p>
+</li></ul>
+
+<h4>Request Parameters:</h4>
+<table class="request-params">
+  <thead>
+    <tr>
+      <th class="param-name">Parameter</th>
+      <th class="param-req"></th>
+      <th class="param-type">Type</th>
+      
+      <th class="param-desc">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="request-param ">
+      <td>label</td>
+      <td>
+        
+      </td>
+      <td>string</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>The label for the role. Can only change the label of a custom role that belongs directly to the account.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>permissions[&lt;X&gt;][explicit]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>no description</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>permissions[&lt;X&gt;][enabled]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>These arguments are described in the documentation for the <a href="roles.html#method.role_overrides.add_role" title="add_role method">add_role method</a>.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>permissions[&lt;X&gt;][applies_to_self]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If the value is 1, permission &lt;X&gt; applies to the account this role is in. The default value is 1. Must be true if applies_to_descendants is false. This value is only returned if enabled is true.</p>
+
+        
+      </td>
+    </tr>
+    
+    <tr class="request-param ">
+      <td>permissions[&lt;X&gt;][applies_to_descendants]</td>
+      <td>
+        
+      </td>
+      <td>boolean</td>
+
+      
+
+      <td class="param-desc">
+        
+<p>If the value is 1, permission &lt;X&gt; cascades down to sub accounts of the account this role is in. The default value is 1.  Must be true if applies_to_self is false.This value is only returned if enabled is true.</p>
+
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl https://&lt;canvas&gt;/api/v1/accounts/:account_id/roles/2 \
+  -X PUT \
+  -H &#39;Authorization: Bearer &lt;access_token&gt;&#39; \
+  -F &#39;label=New Role Name&#39; \
+  -F &#39;permissions[manage_groups][explicit]=1&#39; \
+  -F &#39;permissions[manage_groups][enabled]=1&#39; \
+  -F &#39;permissions[manage_groups][locked]=1&#39; \
+  -F &#39;permissions[send_messages][explicit]=1&#39; \
+  -F &#39;permissions[send_messages][enabled]=0&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='roles.html#Role'>Role</a>
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:12 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

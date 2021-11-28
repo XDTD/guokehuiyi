@@ -1,0 +1,1008 @@
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/* Legacy variables. Discontinue to use these: */
+/*
+ * Copyright (C) 2017 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2014 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
+ * Convert font-size from px to rem with px fallback
+ * @param $size - the value in pixel you want to convert
+ * e.g. p {@include fontSize(12px);}
+ * courtesy of https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_fontSize.scss
+ */
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+.RangeInput {
+  width: 100%;
+}
+.RangeInput * {
+  box-sizing: border-box;
+}
+.RangeInput input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+.RangeInput input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ic-brand-primary);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.RangeInput input[type=range]::-webkit-slider-thumb:hover {
+  background: var(--ic-brand-primary-darkened-10);
+}
+.RangeInput input[type=range]::-ms-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ic-brand-primary);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.RangeInput input[type=range]::-ms-thumb:hover {
+  background: var(--ic-brand-primary-darkened-10);
+}
+.RangeInput input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ic-brand-primary);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.RangeInput input[type=range]::-moz-range-thumb:hover {
+  background: var(--ic-brand-primary-darkened-10);
+}
+.RangeInput input[type=range]::-webkit-slider-thumb {
+  margin-top: -5px;
+}
+.RangeInput input[type=range]:focus, .RangeInput input[type=range]:active {
+  outline: none;
+}
+.RangeInput input[type=range]:focus::-webkit-slider-thumb, .RangeInput input[type=range]:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 4px var(--ic-brand-primary);
+}
+.RangeInput input[type=range]:focus::-ms-thumb, .RangeInput input[type=range]:active::-ms-thumb {
+  box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 4px var(--ic-brand-primary);
+}
+.RangeInput input[type=range]:focus::-moz-range-thumb, .RangeInput input[type=range]:active::-moz-range-thumb {
+  box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 4px var(--ic-brand-primary);
+}
+.RangeInput input[type=range]::-moz-focus-inner, .RangeInput input[type=range]::-moz-focus-outer {
+  border: 0;
+  outline: none;
+}
+.RangeInput input[type=range]::-webkit-slider-runnable-track {
+  height: 10px;
+  border-radius: 5px;
+  background: #e6e6e6;
+  border-color: transparent;
+  color: transparent;
+  cursor: pointer;
+  animate: 0.2s;
+}
+.RangeInput input[type=range]::-moz-range-track {
+  height: 10px;
+  border-radius: 5px;
+  background: #e6e6e6;
+  border-color: transparent;
+  color: transparent;
+  cursor: pointer;
+  animate: 0.2s;
+}
+.RangeInput input[type=range]::-ms-track {
+  height: 10px;
+  border-radius: 5px;
+  background: #e6e6e6;
+  border-color: transparent;
+  color: transparent;
+  cursor: pointer;
+  animate: 0.2s;
+}
+.RangeInput input[type=range]::-ms-track {
+  background: transparent;
+  border-width: 20px 0;
+}
+.RangeInput input[type=range]::-ms-fill-upper, .RangeInput input[type=range]::-ms-fill-lower {
+  background: #e6e6e6;
+  border-radius: 10px;
+}
+.RangeInput input[type=range]::-ms-tooltip {
+  display: none;
+}
+.RangeInput .RangeInput__label {
+  margin: 0 0 6px;
+  display: block;
+  line-height: 1.3;
+  color: var(--ic-brand-font-color-dark);
+}
+.RangeInput .RangeInput__control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.RangeInput .RangeInput__input {
+  flex: auto;
+}
+.RangeInput .RangeInput__value {
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  background: #2D3B45;
+  padding: 5px 10px;
+  margin-left: 7px;
+}
+.RangeInput .RangeInput__value:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -6px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #2D3B45;
+  border-bottom: 7px solid transparent;
+}
+
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+.progress-bar__bar-container {
+  height: 10px;
+  margin: 12px 0;
+  border: solid var(--ic-brand-primary) 1px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+.progress-bar__bar-container.almost-done {
+  border: solid #00AC18 1px;
+}
+
+.progress-bar__bar {
+  transition: width 0.1s;
+  background: var(--ic-brand-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+}
+.progress-bar__bar.almost-done {
+  background: #00AC18;
+}
+
+.te-Flex {
+  display: flex;
+}
+.te-Flex .te-Flex__block {
+  flex: 1;
+}
+.te-Flex .te-Flex__end {
+  align-self: flex-end;
+}
+.te-Flex.te-Flex--v-middle {
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow: visible;
+}
+@media only screen and (min-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+.ic-Layout-columns {
+  height: 100%;
+  max-width: 100% !important;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.Theme__container {
+  margin: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.2s;
+}
+
+@media only screen and (min-width: 768px) {
+  .Theme__layout {
+    display: flex;
+    height: calc(100vh - 72px);
+    overflow: hidden;
+  }
+}
+.Theme__layout.Theme__layout--is-active-theme {
+  border: 4px solid #00AC18;
+  border-bottom: none;
+}
+
+.Theme__editor {
+  background: #F5F5F5;
+  position: relative;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (min-width: 768px) {
+  .Theme__editor {
+    flex: 0 0 300px;
+    overflow-y: auto;
+  }
+}
+
+.Theme__preview {
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .Theme__preview {
+    flex: 1;
+    position: static;
+  }
+}
+
+.Theme__preview-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: calc(100% - 72px);
+  z-index: 8000;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+}
+@media only screen and (min-width: 768px) {
+  .Theme__preview-overlay {
+    width: calc(100% - 300px);
+    left: 300px;
+  }
+}
+.Theme__layout--is-active-theme .Theme__preview-overlay {
+  top: 4px;
+  left: 304px;
+  height: calc(100% - 76px);
+  width: calc(100% - 308px);
+}
+.Theme__preview-overlay .Button {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+.Theme__preview-button-text {
+  padding-left: 12px;
+}
+
+.Theme__preview iframe {
+  border: none;
+  width: 100%;
+  height: 100vh;
+}
+@media only screen and (min-width: 768px) {
+  .Theme__preview iframe {
+    padding-bottom: 72px;
+  }
+}
+
+.Theme__header {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #394b58;
+  color: #FFFFFF;
+  z-index: 8001;
+}
+@media only screen and (min-width: 768px) {
+  .Theme__header {
+    z-index: auto;
+  }
+}
+.Theme__header .Button {
+  border-color: #29363f;
+}
+.Theme__header.Theme__header--is-active-theme {
+  background: #00AC18;
+}
+.Theme__header.Theme__header--is-active-theme .Button {
+  border-color: #008312;
+}
+
+.Theme__header-layout {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+}
+
+.Theme__header-primary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.Theme__header-theme-name {
+  font-size: 16px;
+  font-size: 1rem;
+  margin: 0 0 0 18px;
+}
+
+.Theme__editor-shared-themes {
+  text-align: center;
+  color: #FFFFFF;
+  background: #394b58;
+  padding: 12px;
+  border-bottom: 1px solid #C7CDD1;
+}
+
+.Theme__editor-tabs {
+  background: #394b58;
+}
+.Theme__editor-tabs .Theme__editor-tabs_item {
+  color: #FFFFFF;
+  padding: 12px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin: 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+.Theme__editor-tabs .Theme__editor-tabs_item:hover, .Theme__editor-tabs .Theme__editor-tabs_item:focus {
+  color: #e6e6e6;
+}
+.Theme__editor-tabs .Theme__editor-tabs_input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.Theme__editor-tabs #te-editor:checked ~ .Theme__editor-tab-label-layout #te-editor-tab,
+.Theme__editor-tabs #te-upload:checked ~ .Theme__editor-tab-label-layout #te-upload-tab {
+  position: relative;
+  cursor: default;
+}
+.Theme__editor-tabs #te-editor:checked ~ .Theme__editor-tab-label-layout #te-editor-tab:before,
+.Theme__editor-tabs #te-upload:checked ~ .Theme__editor-tab-label-layout #te-upload-tab:before {
+  content: "";
+  border: 8px transparent solid;
+  width: 0;
+  height: 0;
+  border-bottom-color: #FFFFFF;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.Theme__editor-tabs #te-editor:checked ~ .Theme__editor-tab-label-layout #te-editor-tab:hover,
+.Theme__editor-tabs #te-upload:checked ~ .Theme__editor-tab-label-layout #te-upload-tab:hover {
+  color: #FFFFFF;
+}
+.Theme__editor-tabs #te-editor:checked ~ #te-upload-panel,
+.Theme__editor-tabs #te-upload:checked ~ #te-editor-panel {
+  display: none;
+}
+.Theme__editor-tabs .Theme__editor-tabs_item ~ .Theme__editor-tabs_panel {
+  border: none;
+}
+
+.Theme__editor-tab-label-layout {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.Theme__editor-upload-overrides {
+  background-color: #FFFFFF;
+  color: var(--ic-brand-font-color-dark);
+  width: 300px;
+}
+.Theme__editor-upload-overrides .Theme__editor-upload-overrides_header {
+  padding: 10px;
+  border-top: 1px solid #C7CDD1;
+}
+
+.Theme__editor-upload-warning {
+  padding: 12px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  background: #FFFFFF;
+  display: flex;
+  align-items: flex-start;
+}
+.Theme__editor-upload-warning .Theme__editor-upload-warning_icon {
+  width: 60px;
+  text-align: center;
+}
+.Theme__editor-upload-warning .Theme__editor-upload-warning_icon i {
+  color: #FC5E13;
+}
+.Theme__editor-upload-warning p {
+  margin: 0;
+}
+.Theme__editor-upload-warning .Theme__editor-upload-warning_text-emphasis {
+  padding-bottom: 12px;
+}
+
+.ThemeEditorFileUpload {
+  padding: 12px;
+  width: 100%;
+}
+
+.ThemeEditorFileUpload__file-chooser {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+.ThemeEditorFileUpload__file-chooser input[type=file] {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  opacity: 0;
+}
+
+.ThemeEditorFileUpload__fake-input {
+  color: var(--ic-brand-font-color-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  cursor: default;
+}
+input[type=file]:focus ~ .ThemeEditorFileUpload__fake-input {
+  border-color: var(--ic-brand-primary);
+}
+
+.ThemeEditorFileUpload__reset-button {
+  min-width: 44px;
+  cursor: pointer;
+  justify-content: center;
+  outline: none;
+}
+.ThemeEditorFileUpload__reset-button:disabled {
+  cursor: default;
+}
+
+.ThemeEditorFileUpload__view-file {
+  float: right;
+  font-weight: normal;
+}
+
+.Theme__editor-accordion.ui-accordion .ui-accordion-header {
+  border: none;
+  background: #F5F5F5;
+  border-radius: 0;
+  color: var(--ic-brand-font-color-dark);
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header:not(:first-child) {
+  border-top: 1px solid #C7CDD1;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default {
+  background: #F5F5F5;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #C7CDD1;
+  border-radius: 0;
+  padding: 8px 12px;
+  margin-top: 0;
+  color: var(--ic-brand-font-color-dark);
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default .Theme__editor-accordion-icon {
+  transform: rotate(-90deg);
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default:last-child {
+  border-bottom: none;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default a {
+  color: var(--ic-brand-font-color-dark);
+  transition: color 0.2s;
+  border-radius: 0;
+  transition: padding 0.2s;
+  padding: 6px 0;
+  font-weight: bold;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default a:hover {
+  color: #FFFFFF;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-hover {
+  background: #2D3B45;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-hover,
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-hover a:hover, .Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-hover.ui-state-hover a:hover, .Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-hover.ui-state-hover a {
+  color: #FFFFFF;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-hover .Theme__editor-accordion-icon {
+  transform: rotate(90deg);
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-focus {
+  background: #2D3B45;
+  border: none;
+  outline: none;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-focus a {
+  color: #FFFFFF;
+  box-shadow: none;
+  outline: none;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-focus .Theme__editor-accordion-icon {
+  transform: rotate(90deg);
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active {
+  border: none;
+  background: #F5F5F5;
+  border-color: #FFFFFF;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active, .Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active.ui-state-hover, .Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active.ui-state-hover a:hover, .Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active.ui-state-hover a {
+  color: var(--ic-brand-font-color-dark);
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active.ui-state-focus a, .Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active.ui-state-focus a:hover {
+  box-shadow: none;
+  outline: none;
+  color: var(--ic-brand-font-color-dark);
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active .Theme__editor-accordion-icon {
+  transform: rotate(90deg);
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-header.ui-state-default > span {
+  display: none;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-content {
+  background: #FFFFFF;
+  padding: 0 12px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0;
+}
+.Theme__editor-accordion.ui-accordion .ui-accordion-content.ui-accordion-content-active {
+  overflow: visible !important;
+  border-radius: 0;
+  box-shadow: inset 0px 0 4px #e6e6e6;
+}
+
+.Theme__editor-accordion_element {
+  padding: 12px 0;
+  margin: 0;
+}
+
+.Theme__editor-form--color {
+  display: flex;
+  align-items: center;
+}
+.Theme__editor-form--color .Theme__editor-color-label {
+  padding: 0;
+  margin: 0;
+}
+
+.Theme__editor-color_title {
+  flex: 1 80px;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: var(--ic-brand-font-color-dark);
+}
+
+.Theme__editor-color-block {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.Theme__editor-color-block .Theme__editor-color-block_input {
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.Theme__editor-color-block .Theme__editor-color-block_input-text {
+  width: 75px;
+  height: 30px;
+  margin: 0 12px 0 0;
+  padding: 0 6px;
+  color: var(--ic-brand-font-color-dark);
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+}
+.Theme__editor-color-block .Theme__editor-color-block_label-sample {
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.Theme__editor-color-block .Theme__editor-color-block_input-sample {
+  visibility: hidden;
+  display: block;
+  width: 30px;
+  height: 30px;
+  box-shadow: none;
+}
+.Theme__editor-color-block input[type=text].Theme__editor-color-block_input--has-error, .Theme__editor-color-block input[type=text].Theme__editor-color-block_input--has-error:focus {
+  border-color: #EE0612;
+}
+.Theme__editor-color-block .ic-Form-message.ic-Form-message--error {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  left: auto;
+  height: auto;
+  width: auto;
+}
+.Theme__editor-color-block .ic-Form-message.ic-Form-message--error .ic-Form-message__Layout {
+  flex-direction: row;
+  max-width: 200px;
+}
+.Theme__editor-color-block .ic-Form-message.ic-Form-message--error .ic-Form-message__Layout span {
+  box-sizing: border-box;
+  align-self: stretch;
+  display: block;
+  flex: 0 0 150px;
+}
+.Theme__editor-color-block .ic-Form-message.ic-Form-message--error .ic-Form-message__Layout:after {
+  right: 16px;
+  left: auto;
+}
+
+.Theme__editor-upload .Theme__editor-form--upload {
+  width: 100%;
+}
+.Theme__editor-upload .Theme__editor-form__header {
+  display: flex;
+}
+.Theme__editor-upload .Theme__editor-upload_title {
+  font-size: 14px;
+  color: var(--ic-brand-font-color-dark);
+  margin: 0;
+}
+.Theme__editor-upload .Theme__editor-image_upload {
+  flex: 100%;
+}
+.Theme__editor-upload .Theme__editor-upload_restrictions {
+  color: var(--ic-brand-font-color-dark);
+  font-style: italic;
+  display: block;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: normal;
+  padding-top: 6px;
+}
+.Theme__editor-upload .Theme__editor_preview-img-container {
+  padding: 12px;
+  border: 1px solid rgba(230, 230, 230, 0.2);
+  background: #e6e6e6;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Theme__editor-upload .Theme__editor_preview-img-container .Theme__editor_preview-img {
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  height: 75px;
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Theme__editor-upload .Theme__editor_preview-img-container .Theme__editor_preview-img img {
+  max-height: 100%;
+}
+.Theme__editor-upload .Theme__editor_preview-img-container.Theme__editor_preview-img-container--ic-brand-header-image {
+  background: var(--ic-brand-global-nav-logo-bgd);
+}
+.Theme__editor-upload .Theme__editor_preview-img-container.Theme__editor_preview-img-container--ic-brand-favicon {
+  background: #ffffff;
+}
+.Theme__editor-upload .Theme__editor_preview-img-container.Theme__editor_preview-img-container--ic-brand-mobile-global-nav-logo {
+  background: #ffffff;
+}
+.Theme__editor-upload .Theme__editor_preview-img-container.Theme__editor_preview-img-container--ic-brand-apple-touch-icon {
+  background: #212121;
+}
+.Theme__editor-upload .Theme__editor_preview-img-container.Theme__editor_preview-img-container--ic-brand-apple-touch-icon .Theme__editor_preview-img img {
+  border-radius: 15px;
+}
+.Theme__editor-upload .Theme__editor_preview-img-container.Theme__editor_preview-img-container--ic-brand-msapplication-tile-square, .Theme__editor-upload .Theme__editor_preview-img-container.Theme__editor_preview-img-container--ic-brand-msapplication-tile-wide {
+  background: var(--ic-brand-msapplication-tile-color);
+}
+.Theme__editor-upload .Theme__editor-placeholder--main {
+  align-self: center;
+}
+.Theme__editor-upload .Theme__editor-image_upload {
+  margin: 0;
+  border: 1px solid #e6e6e6;
+  border-top: none;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Theme__editor-upload .Theme__editor-image_upload .Theme__editor-image_upload-label {
+  margin-bottom: 0;
+  position: relative;
+}
+.Theme__editor-upload .Theme__editor-image_upload .Theme__editor-input_upload {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  opacity: 0;
+}
+.Theme__editor-upload .Theme__editor-image_upload .Theme__editor-input_upload:focus + .Theme__editor-button_upload {
+  text-decoration: underline;
+  box-shadow: inset 0 0 0 2px var(--ic-link-color);
+}
+.Theme__editor-upload .Theme__editor-image_upload .Theme__editor-input_upload:active + .Theme__editor-button_upload {
+  background: rgba(45, 59, 69, 0.05);
+  box-shadow: none;
+}
+.Theme__editor-upload .Theme__editor-image_upload .Theme__editor-input_resets {
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+}
+
+.Theme-editor-progress-list-item {
+  margin: 0;
+  line-height: 1.2;
+  padding: 12px 0;
+  border-top: 1px solid #C7CDD1;
+  display: flex;
+  align-items: center;
+}
+.Theme-editor-progress-list-item:first-of-type {
+  border-top: none;
+}
+
+.Theme-editor-progress-list-item__title {
+  flex: 0 0 36%;
+  padding-right: 24px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Theme-editor-progress-list-item__bar {
+  flex: 1;
+}

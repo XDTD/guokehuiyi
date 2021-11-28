@@ -1,0 +1,14 @@
+(window["canvasWebpackJsonp"] = window["canvasWebpackJsonp"] || []).push([[3626],{
+
+/***/ "tYpR":
+/*!*******************************************************************!*\
+  !*** ./node_modules/mediaelement/build/lang/me-i18n-locale-en.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/*!\n * This is a i18n.locale language object.\n *\n * English; This can serve as a template for other languages to translate\n *\n * @author\n *   TBD\n *   Sascha Greuel (Twitter: @SoftCreatR)\n *\n * @see\n *   me-i18n.js\n *\n * @params\n *  - exports - CommonJS, window ..\n */\n(function (exports) {\n    \"use strict\";\n\n    if (exports.en === undefined) {\n        exports.en = {\n            \"mejs.plural-form\": 1,\n\n            // me-shim\n            \"mejs.download-file\": \"Download File\",\n\n            // mep-feature-contextmenu\n            \"mejs.fullscreen-off\": \"Turn off Fullscreen\",\n            \"mejs.fullscreen-on\": \"Go Fullscreen\",\n            \"mejs.download-video\": \"Download Video\",\n\n            // mep-feature-fullscreen\n            \"mejs.fullscreen\": \"Fullscreen\",\n\n            // mep-feature-jumpforward\n            \"mejs.time-jump-forward\": [\"Jump forward 1 second\", \"Jump forward %1 seconds\"],\n\n            // mep-feature-playpause\n            \"mejs.play\": \"Play\",\n            \"mejs.pause\": \"Pause\",\n\n            // mep-feature-postroll\n            \"mejs.close\": \"Close\",\n\n            // mep-feature-progress\n            \"mejs.time-slider\": \"Time Slider\",\n            \"mejs.time-help-text\": \"Use Left/Right Arrow keys to advance one second, Up/Down arrows to advance ten seconds.\",\n\n            // mep-feature-skipback\n            \"mejs.time-skip-back\": [\"Skip back 1 second\", \"Skip back %1 seconds\"],\n\n            // mep-feature-tracks\n            \"mejs.captions-subtitles\": \"Captions/Subtitles\",\n            \"mejs.none\": \"None\",\n\n            // mep-feature-volume\n            \"mejs.mute-toggle\": \"Mute Toggle\",\n            \"mejs.volume-help-text\": \"Use Up/Down Arrow keys to increase or decrease volume.\",\n            \"mejs.unmute\": \"Unmute\",\n            \"mejs.mute\": \"Mute\",\n            \"mejs.volume-slider\": \"Volume Slider\",\n\n            // mep-player\n            \"mejs.video-player\": \"Video Player\",\n            \"mejs.audio-player\": \"Audio Player\",\n\n            // mep-feature-ads\n            \"mejs.ad-skip\": \"Skip ad\",\n            \"mejs.ad-skip-info\": [\"Skip in 1 second\", \"Skip in %1 seconds\"],\n\n            // mep-feature-sourcechooser\n            \"mejs.source-chooser\": \"Source Chooser\"\n        };\n    }\n}(mejs.i18n.locale.strings));\n\n\n//# sourceURL=webpack:///./node_modules/mediaelement/build/lang/me-i18n-locale-en.js?");
+
+/***/ })
+
+}]);

@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Authentication Providers - Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/prettify.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+  // set up pretty-printing in static docs generated from .md files
+  $('pre.code.bash').addClass('prettyprint language-bash');
+  $('pre.code.html').addClass('prettyprint language-html');
+  $('pre.code.xml').addClass('prettyprint language-xml');
+  $('pre.code.json').addClass('prettyprint language-js');
+  $('pre.code.javascript').addClass('prettyprint language-js');
+  prettyPrint();
+});
+</script>
+
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.graphql.html" class="">GraphQL</a>
+  <a href="file.changelog.html" class="">API Change Log</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.throttling.html" class="">Throttling</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>OAuth2</h2>
+  <a href="file.oauth.html" class="">OAuth2 Overview</a>
+  <a href="file.oauth_endpoints.html" class="">OAuth2 Endpoints</a>
+  <a href="file.developer_keys.html" class="">Developer Keys</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="api_token_scopes.html">API Token Scopes</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="accounts_(lti).html">Accounts (LTI)</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="announcements.html">Announcements</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_extensions.html">Assignment Extensions</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="current" href="authentication_providers.html">Authentication Providers</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="blueprint_courses.html">Blueprint Courses</a>
+  
+    
+    <a class="" href="bookmarks.html">Bookmarks</a>
+  
+    
+    <a class="" href="brand_configs.html">Brand Configs</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="content_security_policy_settings.html">Content Security Policy Settings</a>
+  
+    
+    <a class="" href="content_shares.html">Content Shares</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="error_reports.html">Error Reports</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_periods.html">Grading Periods</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="history.html">History</a>
+  
+    
+    <a class="" href="image_search.html">Image Search</a>
+  
+    
+    <a class="" href="immersive_reader.html">Immersive Reader</a>
+  
+    
+    <a class="" href="inst_access_tokens.html">InstAccess tokens</a>
+  
+    
+    <a class="" href="jw_ts.html">JWTs</a>
+  
+    
+    <a class="" href="late_policy.html">Late Policy</a>
+  
+    
+    <a class="" href="line_items.html">Line Items</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="media_objects.html">Media Objects</a>
+  
+    
+    <a class="" href="moderated_grading.html">Moderated Grading</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="names_and_role.html">Names and Role</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="originality_reports.html">Originality Reports</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_imports.html">Outcome Imports</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="peer_reviews.html">Peer Reviews</a>
+  
+    
+    
+    
+    
+    <a class="" href="planner.html">Planner</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="proficiency_ratings.html">Proficiency Ratings</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="public_jwk.html">Public JWK</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_questions.html">Quiz Questions</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_events.html">Quiz Submission Events</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="result.html">Result</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="rubrics.html">Rubrics</a>
+  
+    
+    <a class="" href="sis_import_errors.html">SIS Import Errors</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="sis_integration.html">SIS Integration</a>
+  
+    
+    <a class="" href="score.html">Score</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="shared_brand_configs.html">Shared Brand Configs</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+    
+    
+    <a class="" href="e_pub_exports.html">ePub Exports</a>
+  
+  <h2>Outcomes</h2>
+  <a href="file.outcomes_csv.html" class="">Outcomes CSV Format</a>
+  <h2>Group Categories</h2>
+  <a href="file.group_category_csv.html" class="">Group Categories CSV Format</a>
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <td>
+    <li><h4>LTI</h4>
+      <a href="file.tools_intro.html" class="">Introduction</a>
+      <a href="file.lti_dev_key_config.html" class="">Configuring</a>
+      <a href="file.tools_variable_substitutions.html" class="">Variable Substitutions</a>
+      <a href="file.content_item.html" class="">Deep Linking</a>
+      <a href="file.assignment_tools.html" class="">Grading</a>
+      <a href="file.provisioning.html" class="">Provisioning</a>
+      <a href="file.lti_window_post_message.html" class="">window.PostMessage</a>
+        <ul><h4>Placements</h4>
+                <a href="file.navigation_tools.html" class="">Navigation</a>
+                <a href="file.homework_submission_placement.html" class="">Homework Submission</a>
+                <a href="file.editor_button_placement.html" class="">Editor Button</a>
+                <a href="file.migration_selection_placement.html" class="">Migration Selection</a>
+                <a href="file.link_selection_placement.html" class="">Link Selection (Modules)</a>
+                <a href="file.assignment_selection_placement.html" class="">Assignment Selection</a>
+                <a href="file.collaborations_placement.html" class="">Collaborations</a>
+        </ul >
+      <a href="file.xapi.html" class="">xAPI</a>
+    </li >
+    <li><h4>Plagiarism Detection Platform</h4>
+      <a href="file.plagiarism_platform.html" class="">Overview</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="plagiarism_detection_platform_assignments.html">Plagiarism Detection Platform Assignments</a>
+      
+        
+        <a class="" href="plagiarism_detection_platform_users.html">Plagiarism Detection Platform Users</a>
+      
+        
+        <a class="" href="plagiarism_detection_submissions.html">Plagiarism Detection Submissions</a>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="" href="webhooks_subscriptions_for_plagiarism_platform.html">Webhooks Subscriptions for Plagiarism Platform</a>
+      
+        
+      <a href="file.jwt_access_tokens.html" class="">JWT Access Tokens</a>
+    </li >
+  </td>
+  <h2>Data Services</h2>
+  <td>
+    <li>
+      <h4>Live Events</h4>
+      <ul>
+        <h4>Overview</h4>
+        <a href="file.data_service_introduction.html" class="">Introduction</a>
+        <a href="file.data_service_setup.html" class="">Setup</a>
+        <a href="file.data_service_canvas_event_metadata.html" class="">Metadata</a>
+      </ul>
+
+      <ul>
+        <h4>Event Format</h4>
+        <li>
+          <h4>Canvas</h4>
+          
+            <a href="file.data_service_canvas_account.html" class="">Account</a>
+          
+            <a href="file.data_service_canvas_asset.html" class="">Asset</a>
+          
+            <a href="file.data_service_canvas_assignment.html" class="">Assignment</a>
+          
+            <a href="file.data_service_canvas_attachment.html" class="">Attachment</a>
+          
+            <a href="file.data_service_canvas_content.html" class="">Content</a>
+          
+            <a href="file.data_service_canvas_conversation.html" class="">Conversation</a>
+          
+            <a href="file.data_service_canvas_course.html" class="">Course</a>
+          
+            <a href="file.data_service_canvas_discussion.html" class="">Discussion</a>
+          
+            <a href="file.data_service_canvas_enrollment.html" class="">Enrollment</a>
+          
+            <a href="file.data_service_canvas_grade.html" class="">Grade</a>
+          
+            <a href="file.data_service_canvas_group.html" class="">Group</a>
+          
+            <a href="file.data_service_canvas_learning.html" class="">Learning</a>
+          
+            <a href="file.data_service_canvas_logged.html" class="">Logged</a>
+          
+            <a href="file.data_service_canvas_module.html" class="">Module</a>
+          
+            <a href="file.data_service_canvas_outcome.html" class="">Outcome</a>
+          
+            <a href="file.data_service_canvas_plagiarism.html" class="">Plagiarism</a>
+          
+            <a href="file.data_service_canvas_quiz.html" class="">Quiz</a>
+          
+            <a href="file.data_service_canvas_sis.html" class="">Sis</a>
+          
+            <a href="file.data_service_canvas_submission.html" class="">Submission</a>
+          
+            <a href="file.data_service_canvas_syllabus.html" class="">Syllabus</a>
+          
+            <a href="file.data_service_canvas_user.html" class="">User</a>
+          
+            <a href="file.data_service_canvas_wiki.html" class="">Wiki</a>
+          
+        </li>
+        <li>
+          <h4>Caliper IMS 1.1</h4>
+          
+            <a href="file.data_service_caliper_assessment.html" class="">Assessment</a>
+          
+            <a href="file.data_service_caliper_basic.html" class="">Basic</a>
+          
+            <a href="file.data_service_caliper_forum.html" class="">Forum</a>
+          
+            <a href="file.data_service_caliper_grading.html" class="">Grading</a>
+          
+            <a href="file.data_service_caliper_navigation_events.html" class="">Navigation Events</a>
+          
+            <a href="file.data_service_caliper_session.html" class="">Session</a>
+          
+        </li>
+      </ul>
+    </li>
+  </td>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Authentication Providers API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="AuthenticationProvider">An AuthenticationProvider object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">{
+  // Valid for SAML providers.
+  &quot;identifier_format&quot;: &quot;urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress&quot;,
+  // Valid for all providers.
+  &quot;auth_type&quot;: &quot;saml&quot;,
+  // Valid for all providers.
+  &quot;id&quot;: 1649,
+  // Valid for SAML providers.
+  &quot;log_out_url&quot;: &quot;http://example.com/saml1/slo&quot;,
+  // Valid for SAML and CAS providers.
+  &quot;log_in_url&quot;: &quot;http://example.com/saml1/sli&quot;,
+  // Valid for SAML providers.
+  &quot;certificate_fingerprint&quot;: &quot;111222&quot;,
+  // Valid for SAML providers.
+  &quot;requested_authn_context&quot;: null,
+  // Valid for LDAP providers.
+  &quot;auth_host&quot;: &quot;127.0.0.1&quot;,
+  // Valid for LDAP providers.
+  &quot;auth_filter&quot;: &quot;filter1&quot;,
+  // Valid for LDAP providers.
+  &quot;auth_over_tls&quot;: null,
+  // Valid for LDAP and CAS providers.
+  &quot;auth_base&quot;: null,
+  // Valid for LDAP providers.
+  &quot;auth_username&quot;: &quot;username1&quot;,
+  // Valid for LDAP providers.
+  &quot;auth_port&quot;: null,
+  // Valid for all providers.
+  &quot;position&quot;: 1,
+  // Valid for SAML providers.
+  &quot;idp_entity_id&quot;: &quot;http://example.com/saml1&quot;,
+  // Valid for SAML providers.
+  &quot;login_attribute&quot;: &quot;nameid&quot;,
+  // Valid for SAML providers.
+  &quot;sig_alg&quot;: &quot;http://www.w3.org/2001/04/xmldsig-more#rsa-sha256&quot;,
+  // Just In Time provisioning. Valid for all providers except Canvas (which has
+  // the similar in concept self_registration setting).
+  &quot;jit_provisioning&quot;: null,
+  &quot;federated_attributes&quot;: null,
+  // If multi-factor authentication is required when logging in with this
+  // authentication provider. The account must not have MFA disabled.
+  &quot;mfa_required&quot;: null
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="SSOSettings">A SSOSettings object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">// Settings that are applicable across an account&#39;s authentication
+// configuration, even if there are multiple individual providers
+{
+  // The label used for unique login identifiers.
+  &quot;login_handle_name&quot;: &quot;Username&quot;,
+  // The url to redirect users to for password resets. Leave blank for default
+  // Canvas behavior
+  &quot;change_password_url&quot;: &quot;https://example.com/reset_password&quot;,
+  // If a discovery url is set, canvas will forward all users to that URL when
+  // they need to be authenticated. That page will need to then help the user
+  // figure out where they need to go to log in. If no discovery url is
+  // configured, the first configuration will be used to attempt to authenticate
+  // the user.
+  &quot;auth_discovery_url&quot;: &quot;https://example.com/which_account&quot;,
+  // If an unknown user url is set, Canvas will forward to that url when a service
+  // authenticates a user, but that user does not exist in Canvas. The default
+  // behavior is to present an error.
+  &quot;unknown_user_url&quot;: &quot;https://example.com/register_for_canvas&quot;
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="FederatedAttributesConfig">A FederatedAttributesConfig object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">// A mapping of Canvas attribute names to attribute names that a provider may
+// send, in order to update the value of these attributes when a user logs in.
+// The values can be a FederatedAttributeConfig, or a raw string corresponding
+// to the &quot;attribute&quot; property of a FederatedAttributeConfig. In responses, full
+// FederatedAttributeConfig objects are returned if JIT provisioning is enabled,
+// otherwise just the attribute names are returned.
+{
+  // A comma separated list of role names to grant to the user. Note that these
+  // only apply at the root account level, and not sub-accounts. If the attribute
+  // is not marked for provisioning only, the user will also be removed from any
+  // other roles they currently hold that are not still specified by the IdP.
+  &quot;admin_roles&quot;: null,
+  // The full display name of the user
+  &quot;display_name&quot;: null,
+  // The user&#39;s e-mail address
+  &quot;email&quot;: null,
+  // The first, or given, name of the user
+  &quot;given_name&quot;: null,
+  // The secondary unique identifier for SIS purposes
+  &quot;integration_id&quot;: null,
+  // The user&#39;s preferred locale/language
+  &quot;locale&quot;: null,
+  // The full name of the user
+  &quot;name&quot;: null,
+  // The unique SIS identifier
+  &quot;sis_user_id&quot;: null,
+  // The full name of the user for sorting purposes
+  &quot;sortable_name&quot;: null,
+  // The surname, or last name, of the user
+  &quot;surname&quot;: null,
+  // The user&#39;s preferred time zone
+  &quot;timezone&quot;: null
+}</code></pre>
+  </div>
+  
+
+
+
+  <div class='object_definition'>
+  <h3><a name="FederatedAttributeConfig">A FederatedAttributeConfig object looks like:</a></h3>
+  <pre class="example code prettyprint"><code class="language-js">// A single attribute name to be federated when a user logs in
+{
+  // The name of the attribute as it will be sent from the authentication provider
+  &quot;attribute&quot;: &quot;mail&quot;,
+  // If the attribute should be applied only when provisioning a new user, rather
+  // than all logins
+  &quot;provisioning_only&quot;: false
+}</code></pre>
+  </div>
+  
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.authentication_providers.index' data-subtopic='Authentication Providers'>
+    <a name='method.authentication_providers.index' href='#method.authentication_providers.index'>
+      List authentication providers
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_providers_controller.rb">AuthenticationProvidersController#index</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/authentication_providers
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/authentication_providers</code>
+  </div>
+
+
+<p>Returns a paginated list of authentication providers</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/authentication_providers&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='authentication_providers.html#AuthenticationProvider'>AuthenticationProviders</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.authentication_providers.create' data-subtopic='Authentication Providers'>
+    <a name='method.authentication_providers.create' href='#method.authentication_providers.create'>
+      Add authentication provider
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_providers_controller.rb">AuthenticationProvidersController#create</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/accounts/:account_id/authentication_providers
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:POST|/api/v1/accounts/:account_id/authentication_providers</code>
+  </div>
+
+
+<p>Add external authentication provider(s) for the account. Services may be Apple, CAS, Facebook, GitHub, Google, LDAP, LinkedIn, Microsoft, OpenID Connect, SAML, or Twitter.</p>
+
+<p>Each authentication provider is specified as a set of parameters as described below. A provider specification must include an &#39;auth_type&#39; parameter with a value of &#39;apple&#39;, &#39;canvas&#39;, &#39;cas&#39;, &#39;clever&#39;, &#39;facebook&#39;, &#39;github&#39;, &#39;google&#39;, &#39;ldap&#39;, &#39;linkedin&#39;, &#39;microsoft&#39;, &#39;openid_connect&#39;, &#39;saml&#39;, or &#39;twitter&#39;. The other recognized parameters depend on this auth_type; unrecognized parameters are discarded. Provider specifications not specifying a valid auth_type are ignored.</p>
+
+<p>You can set the &#39;position&#39; for any provider. The config in the 1st position is considered the default. You can set &#39;jit_provisioning&#39; for any provider besides Canvas. You can set &#39;mfa_required&#39; for any provider.</p>
+
+<p>For Apple, the additional recognized parameters are:</p>
+<ul><li>
+<p>client_id [Required]</p>
+
+<p>The developer’s client identifier, as provided by WWDR. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>login_attribute [Optional]</p>
+
+<p>The attribute to use to look up the user&#39;s login in Canvas. Either &#39;sub&#39; (the default), or &#39;email&#39;</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Valid provider attributes are &#39;email&#39;, &#39;firstName&#39;, &#39;lastName&#39;, and &#39;sub&#39;.</p>
+</li></ul>
+
+<p>For Canvas, the additional recognized parameter is:</p>
+<ul><li>
+<p>self_registration</p>
+
+<p>&#39;all&#39;, &#39;none&#39;, or &#39;observer&#39; - who is allowed to register as a new user</p>
+</li></ul>
+
+<p>For CAS, the additional recognized parameters are:</p>
+<ul><li>
+<p>auth_base</p>
+
+<p>The CAS server&#39;s URL.</p>
+</li><li>
+<p>log_in_url [Optional]</p>
+
+<p>An alternate SSO URL for logging into CAS. You probably should not set this.</p>
+</li></ul>
+
+<p>For Clever, the additional recognized parameters are:</p>
+<ul><li>
+<p>client_id [Required]</p>
+
+<p>The Clever application&#39;s Client ID. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>client_secret [Required]</p>
+
+<p>The Clever application&#39;s Client Secret. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>district_id [Optional]</p>
+
+<p>A district&#39;s Clever ID. Leave this blank to let Clever handle the details with its District Picker. This is required for Clever Instant Login to work in a multi-tenant environment.</p>
+</li><li>
+<p>login_attribute [Optional]</p>
+
+<p>The attribute to use to look up the user&#39;s login in Canvas. Either &#39;id&#39; (the default), &#39;sis_id&#39;, &#39;email&#39;, &#39;student_number&#39;, or &#39;teacher_number&#39;. Note that some fields may not be populated for all users at Clever.</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Valid provider attributes are &#39;id&#39;, &#39;sis_id&#39;, &#39;email&#39;, &#39;student_number&#39;, and &#39;teacher_number&#39;.</p>
+</li></ul>
+
+<p>For Facebook, the additional recognized parameters are:</p>
+<ul><li>
+<p>app_id [Required]</p>
+
+<p>The Facebook App ID. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>app_secret [Required]</p>
+
+<p>The Facebook App Secret. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>login_attribute [Optional]</p>
+
+<p>The attribute to use to look up the user&#39;s login in Canvas. Either &#39;id&#39; (the default), or &#39;email&#39;</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Valid provider attributes are &#39;email&#39;, &#39;first_name&#39;, &#39;id&#39;, &#39;last_name&#39;, &#39;locale&#39;, and &#39;name&#39;.</p>
+</li></ul>
+
+<p>For GitHub, the additional recognized parameters are:</p>
+<ul><li>
+<p>domain [Optional]</p>
+
+<p>The domain of a GitHub Enterprise installation. I.e. github.mycompany.com. If not set, it will default to the public github.com.</p>
+</li><li>
+<p>client_id [Required]</p>
+
+<p>The GitHub application&#39;s Client ID. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>client_secret [Required]</p>
+
+<p>The GitHub application&#39;s Client Secret. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>login_attribute [Optional]</p>
+
+<p>The attribute to use to look up the user&#39;s login in Canvas. Either &#39;id&#39; (the default), or &#39;login&#39;</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Valid provider attributes are &#39;email&#39;, &#39;id&#39;, &#39;login&#39;, and &#39;name&#39;.</p>
+</li></ul>
+
+<p>For Google, the additional recognized parameters are:</p>
+<ul><li>
+<p>client_id [Required]</p>
+
+<p>The Google application&#39;s Client ID. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>client_secret [Required]</p>
+
+<p>The Google application&#39;s Client Secret. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>hosted_domain [Optional]</p>
+
+<p>A Google Apps domain to restrict logins to. See <a href="https://developers.google.com/identity/protocols/OpenIDConnect?hl=en#hd-param">developers.google.com/identity/protocols/OpenIDConnect?hl=en#hd-param</a></p>
+</li><li>
+<p>login_attribute [Optional]</p>
+
+<p>The attribute to use to look up the user&#39;s login in Canvas. Either &#39;sub&#39; (the default), or &#39;email&#39;</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Valid provider attributes are &#39;email&#39;, &#39;family_name&#39;, &#39;given_name&#39;, &#39;locale&#39;, &#39;name&#39;, and &#39;sub&#39;.</p>
+</li></ul>
+
+<p>For LDAP, the additional recognized parameters are:</p>
+<ul><li>
+<p>auth_host</p>
+
+<p>The LDAP server&#39;s URL.</p>
+</li><li>
+<p>auth_port [Optional, Integer]</p>
+
+<p>The LDAP server&#39;s TCP port. (default: 389)</p>
+</li><li>
+<p>auth_over_tls [Optional]</p>
+
+<p>Whether to use TLS. Can be &#39;simple_tls&#39;, or &#39;start_tls&#39;. For backwards compatibility, booleans are also accepted, with true meaning simple_tls. If not provided, it will default to start_tls.</p>
+</li><li>
+<p>auth_base [Optional]</p>
+
+<p>A default treebase parameter for searches performed against the LDAP server.</p>
+</li><li>
+<p>auth_filter</p>
+
+<p>LDAP search filter. Use {{login}} as a placeholder for the username supplied by the user. For example: “(sAMAccountName={{login}})”.</p>
+</li><li>
+<p>identifier_format [Optional]</p>
+
+<p>The LDAP attribute to use to look up the Canvas login. Omit to use the username supplied by the user.</p>
+</li><li>
+<p>auth_username</p>
+
+<p>Username</p>
+</li><li>
+<p>auth_password</p>
+
+<p>Password</p>
+</li></ul>
+
+<p>For LinkedIn, the additional recognized parameters are:</p>
+<ul><li>
+<p>client_id [Required]</p>
+
+<p>The LinkedIn application&#39;s Client ID. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>client_secret [Required]</p>
+
+<p>The LinkedIn application&#39;s Client Secret. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>login_attribute [Optional]</p>
+
+<p>The attribute to use to look up the user&#39;s login in Canvas. Either &#39;id&#39; (the default), or &#39;emailAddress&#39;</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Valid provider attributes are &#39;emailAddress&#39;, &#39;firstName&#39;, &#39;id&#39;, &#39;formattedName&#39;, and &#39;lastName&#39;.</p>
+</li></ul>
+
+<p>For Microsoft, the additional recognized parameters are:</p>
+<ul><li>
+<p>application_id [Required]</p>
+
+<p>The application&#39;s ID.</p>
+</li><li>
+<p>application_secret [Required]</p>
+
+<p>The application&#39;s Client Secret (Password)</p>
+</li><li>
+<p>tenant [Optional]</p>
+
+<p>See <a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-v2-protocols">azure.microsoft.com/en-us/documentation/articles/active-directory-v2-protocols</a>/ Valid values are &#39;common&#39;, &#39;organizations&#39;, &#39;consumers&#39;, or an Azure Active Directory Tenant (as either a UUID or domain, such as contoso.onmicrosoft.com). Defaults to &#39;common&#39;</p>
+</li><li>
+<p>login_attribute [Optional]</p>
+
+<p>See <a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-v2-tokens/#idtokens">azure.microsoft.com/en-us/documentation/articles/active-directory-v2-tokens/#idtokens</a> Valid values are &#39;sub&#39;, &#39;email&#39;, &#39;oid&#39;, or &#39;preferred_username&#39;. Note that email may not always be populated in the user&#39;s profile at Microsoft. Oid will not be populated for personal Microsoft accounts. Defaults to &#39;sub&#39;</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Valid provider attributes are &#39;email&#39;, &#39;name&#39;, &#39;preferred_username&#39;, &#39;oid&#39;, and &#39;sub&#39;.</p>
+</li></ul>
+
+<p>For OpenID Connect, the additional recognized parameters are:</p>
+<ul><li>
+<p>client_id [Required]</p>
+
+<p>The application&#39;s Client ID.</p>
+</li><li>
+<p>client_secret [Required]</p>
+
+<p>The application&#39;s Client Secret.</p>
+</li><li>
+<p>authorize_url [Required]</p>
+
+<p>The URL for getting starting the OAuth 2.0 web flow</p>
+</li><li>
+<p>token_url [Required]</p>
+
+<p>The URL for exchanging the OAuth 2.0 authorization code for an Access Token and ID Token</p>
+</li><li>
+<p>scope [Optional]</p>
+
+<p>Space separated additional scopes to request for the token. Note that you need not specify the &#39;openid&#39; scope, or any scopes that can be automatically inferred by the rules defined at <a href="http://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims">openid.net/specs/openid-connect-core-1_0.html#ScopeClaims</a></p>
+</li><li>
+<p>end_session_endpoint [Optional]</p>
+
+<p>URL to send the end user to after logging out of Canvas. See <a href="https://openid.net/specs/openid-connect-session-1_0.html#RPLogout">openid.net/specs/openid-connect-session-1_0.html#RPLogout</a></p>
+</li><li>
+<p>userinfo_endpoint [Optional]</p>
+
+<p>URL to request additional claims from. If the initial ID Token received from the provider cannot be used to satisfy the login_attribute and all federated_attributes, this endpoint will be queried for additional information.</p>
+</li><li>
+<p>login_attribute [Optional]</p>
+
+<p>The attribute of the ID Token to look up the user&#39;s login in Canvas. Defaults to &#39;sub&#39;.</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Any value is allowed for the provider attribute names, but standard claims are listed at <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">openid.net/specs/openid-connect-core-1_0.html#StandardClaims</a></p>
+</li></ul>
+
+<p>For SAML, the additional recognized parameters are:</p>
+<ul><li>
+<p>metadata [Optional]</p>
+
+<p>An XML document to parse as SAML metadata, and automatically populate idp_entity_id, log_in_url, log_out_url, certificate_fingerprint, and identifier_format</p>
+</li><li>
+<p>metadata_uri [Optional]</p>
+
+<p>A URI to download the SAML metadata from, and automatically populate idp_entity_id, log_in_url, log_out_url, certificate_fingerprint, and identifier_format. This URI will also be saved, and the metadata periodically refreshed, automatically. If the metadata contains multiple entities, also supply idp_entity_id to distinguish which one you want (otherwise the only entity in the metadata will be inferred). If you provide the URI &#39;urn:mace:incommon&#39; or &#39;<a href="http://ukfederation.org.uk">ukfederation.org.uk</a>&#39;, the InCommon or UK Access Management Federation metadata aggregate, respectively, will be used instead, and additional validation checks will happen (including validating that the metadata has been properly signed with the appropriate key).</p>
+</li><li>
+<p>idp_entity_id</p>
+
+<p>The SAML IdP&#39;s entity ID</p>
+</li><li>
+<p>log_in_url</p>
+
+<p>The SAML service&#39;s SSO target URL</p>
+</li><li>
+<p>log_out_url [Optional]</p>
+
+<p>The SAML service&#39;s SLO target URL</p>
+</li><li>
+<p>certificate_fingerprint</p>
+
+<p>The SAML service&#39;s certificate fingerprint.</p>
+</li><li>
+<p>identifier_format</p>
+
+<p>The SAML service&#39;s identifier format. Must be one of:</p>
+<ul><li>
+<p>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</p>
+</li><li>
+<p>urn:oasis:names:tc:SAML:2.0:nameid-format:entity</p>
+</li><li>
+<p>urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos</p>
+</li><li>
+<p>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</p>
+</li><li>
+<p>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</p>
+</li><li>
+<p>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</p>
+</li><li>
+<p>urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName</p>
+</li><li>
+<p>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</p>
+</li></ul>
+</li><li>
+<p>requested_authn_context [Optional]</p>
+
+<p>The SAML AuthnContext</p>
+</li><li>
+<p>sig_alg [Optional]</p>
+
+<p>If set, <code>AuthnRequest</code>, <code>LogoutRequest</code>, and <code>LogoutResponse</code> messages are signed with the corresponding algorithm. Supported algorithms are:</p>
+<ul><li>
+<p><a href="http://www.w3.org/2000/09/xmldsig#rsa-sha1" target="_parent" title="http://www.w3.org/2000/09/xmldsig#rsa-sha1">http://www.w3.org/2000/09/xmldsig#rsa-sha1</a></p>
+</li><li>
+<p><a href="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" target="_parent" title="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256">http://www.w3.org/2001/04/xmldsig-more#rsa-sha256</a></p>
+</li></ul>
+
+<p>RSA-SHA1 and RSA-SHA256 are acceptable aliases.</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Any value is allowed for the provider attribute names.</p>
+</li></ul>
+
+<p>For Twitter, the additional recognized parameters are:</p>
+<ul><li>
+<p>consumer_key [Required]</p>
+
+<p>The Twitter Consumer Key. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>consumer_secret [Required]</p>
+
+<p>The Twitter Consumer Secret. Not available if configured globally for Canvas.</p>
+</li><li>
+<p>login_attribute [Optional]</p>
+
+<p>The attribute to use to look up the user&#39;s login in Canvas. Either &#39;user_id&#39; (the default), or &#39;screen_name&#39;</p>
+</li><li>
+<p>parent_registration [Optional] - DEPRECATED 2017-11-03</p>
+
+<p>Accepts a boolean value, true designates the authentication service for use on parent registrations.  Only one service can be selected at a time so if set to true all others will be set to false</p>
+</li><li>
+<p>federated_attributes [Optional]</p>
+
+<p>See FederatedAttributesConfig. Valid provider attributes are &#39;name&#39;, &#39;screen_name&#39;, &#39;time_zone&#39;, and &#39;user_id&#39;.</p>
+</li></ul>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash"># Create LDAP config
+curl &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/authentication_providers&#39; \
+     -F &#39;auth_type=ldap&#39; \
+     -F &#39;auth_host=ldap.mydomain.edu&#39; \
+     -F &#39;auth_filter=(sAMAccountName={{login}})&#39; \
+     -F &#39;auth_username=username&#39; \
+     -F &#39;auth_password=bestpasswordever&#39; \
+     -F &#39;position=1&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash"># Create SAML config
+curl &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/authentication_providers&#39; \
+     -F &#39;auth_type=saml&#39; \
+     -F &#39;idp_entity_id=&lt;idp_entity_id&gt;&#39; \
+     -F &#39;log_in_url=&lt;login_url&gt;&#39; \
+     -F &#39;log_out_url=&lt;logout_url&gt;&#39; \
+     -F &#39;certificate_fingerprint=&lt;fingerprint&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash"># Create CAS config
+curl &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/authentication_providers&#39; \
+     -F &#39;auth_type=cas&#39; \
+     -F &#39;auth_base=cas.mydomain.edu&#39; \
+     -F &#39;log_in_url=&lt;login_url&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='authentication_providers.html#AuthenticationProvider'>AuthenticationProvider</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.authentication_providers.update' data-subtopic='Authentication Providers'>
+    <a name='method.authentication_providers.update' href='#method.authentication_providers.update'>
+      Update authentication provider
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_providers_controller.rb">AuthenticationProvidersController#update</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/accounts/:account_id/authentication_providers/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/accounts/:account_id/authentication_providers/:id</code>
+  </div>
+
+
+<p>Update an authentication provider using the same options as the create endpoint. You can not update an existing provider to a new authentication type.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash"># update SAML config
+curl -XPUT &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/authentication_providers/&lt;id&gt;&#39; \
+     -F &#39;idp_entity_id=&lt;new_idp_entity_id&gt;&#39; \
+     -F &#39;log_in_url=&lt;new_url&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='authentication_providers.html#AuthenticationProvider'>AuthenticationProvider</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.authentication_providers.show' data-subtopic='Authentication Providers'>
+    <a name='method.authentication_providers.show' href='#method.authentication_providers.show'>
+      Get authentication provider
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_providers_controller.rb">AuthenticationProvidersController#show</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/authentication_providers/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/authentication_providers/:id</code>
+  </div>
+
+
+<p>Get the specified authentication provider</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/authentication_providers/&lt;id&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='authentication_providers.html#AuthenticationProvider'>AuthenticationProvider</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.authentication_providers.destroy' data-subtopic='Authentication Providers'>
+    <a name='method.authentication_providers.destroy' href='#method.authentication_providers.destroy'>
+      Delete authentication provider
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_providers_controller.rb">AuthenticationProvidersController#destroy</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/accounts/:account_id/authentication_providers/:id
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:DELETE|/api/v1/accounts/:account_id/authentication_providers/:id</code>
+  </div>
+
+
+<p>Delete the config</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -XDELETE &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/authentication_providers/&lt;id&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.authentication_providers.show_sso_settings' data-subtopic='Authentication Providers'>
+    <a name='method.authentication_providers.show_sso_settings' href='#method.authentication_providers.show_sso_settings'>
+      show account auth settings
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_providers_controller.rb">AuthenticationProvidersController#show_sso_settings</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/sso_settings
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:GET|/api/v1/accounts/:account_id/sso_settings</code>
+  </div>
+
+
+<p>The way to get the current state of each account level setting that&#39;s relevant to Single Sign On configuration</p>
+
+<p>You can list the current state of each setting with “update_sso_settings”</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -XGET &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/sso_settings&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='authentication_providers.html#SSOSettings'>SSOSettings</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.authentication_providers.update_sso_settings' data-subtopic='Authentication Providers'>
+    <a name='method.authentication_providers.update_sso_settings' href='#method.authentication_providers.update_sso_settings'>
+      update account auth settings
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/authentication_providers_controller.rb">AuthenticationProvidersController#update_sso_settings</a></span>
+    
+  </h2>
+
+  
+
+  
+  
+
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/accounts/:account_id/sso_settings
+  </h3>
+  <div>
+    <strong>Scope: </strong>
+    <code class="scope">url:PUT|/api/v1/accounts/:account_id/sso_settings</code>
+  </div>
+
+
+<p>For various cases of mixed SSO configurations, you may need to set some configuration at the account level to handle the particulars of your setup.</p>
+
+<p>This endpoint accepts a PUT request to set several possible account settings. All setting are optional on each request, any that are not provided at all are simply retained as is.  Any that provide the key but a null-ish value (blank string, null, undefined) will be UN-set.</p>
+
+<p>You can list the current state of each setting with “show_sso_settings”</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code prettyprint"><code class="language-bash">curl -XPUT &#39;https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/sso_settings&#39; \
+     -F &#39;sso_settings[auth_discovery_url]=&lt;new_url&gt;&#39; \
+     -F &#39;sso_settings[change_password_url]=&lt;new_url&gt;&#39; \
+     -F &#39;sso_settings[login_handle_name]=&lt;new_handle&gt;&#39; \
+     -H &#39;Authorization: Bearer &lt;token&gt;&#39;</code></pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='authentication_providers.html#SSOSettings'>SSOSettings</a>
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Mon Nov  8 20:13:07 2021<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>
