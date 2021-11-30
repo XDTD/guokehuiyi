@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>课堂直播</title>
+
+<!--可无视-->
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+
+<!--布局样式，意义不大-->
+<link rel="stylesheet" href="css/demo.css">
+
+<!--核心样式-->
+<link rel="stylesheet" href="dist/css/ckin.css">
+
+	<style>
+        .mainContainer {
+            display: block;
+            width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .urlInput {
+            display: block;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .centeredVideo {
+            display: block;
+            width: 100%;
+            height: 576px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+        }
+
+        .controls {
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            overflow:hidden；
+        }
+    </style>
+</head>
+<body>
+
+<section class="demo-section demo-section--light" id="demo">
+
+    <div class="container2">
+		
+		<video id="videoElement2" poster="ckin.jpg" data-ckin="default" data-overlay="1" data-title="PPT在此播放..."></video>
+		
+		
+		
+	</div>
+	<div class="container">
+		
+		<video id="videoElement" poster="ckin.jpg" data-ckin="default" data-overlay="1" data-title="直播即将开始..."></video>
+		<button onclick="flv_start()">开始</button>
+        <button onclick="flv_pause()">暂停</button>
+        <button onclick="flv_destroy()">停止</button>
+        <input style="width:100px" type="text" name="seekpoint" />
+        <button onclick="flv_seekto()">跳转</button>
+		
+		
+	</div>
+    <div class="controls">
+        <!--<button onclick="flv_load()">加载</button>-->
+        
+    </div>
+    
+</section>
+
+    <script src="./flv.js/flv.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/flv.js/1.5.0/flv.min.js"></script>
+
+	<script>
+        var player = document.getElementById('videoElement');
+        if (flvjs.isSupported()) {
+            var flvPlayer = flvjs.createPlayer({
+                type: 'flv',
+                "isLive": true,
+                url: 'http://127.0.0.1:7001/live/movie.flv',//<==自行修改
+
+            });
+            flvPlayer.attachMediaElement(videoElement);
+            flvPlayer.load(); //加载
+            flv_start();
+        }
+
+        function flv_start() {
+            player.play();
+        }
+
+        function flv_pause() {
+            player.pause();
+        }
+
+        function flv_destroy() {
+            player.pause();
+            player.unload();
+            player.detachMediaElement();
+            player.destroy();
+            player = null;
+        }
+
+        function flv_seekto() {
+            player.currentTime = parseFloat(document.getElementsByName('seekpoint')[0].value);
+        }
+	</script>
+
+
+<script src="dist/js/ckin.js"></script>
+
+</body>
+</html>
