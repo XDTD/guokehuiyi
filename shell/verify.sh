@@ -1,7 +1,7 @@
 # 确保环境生成
 sudo service postgresql start
 sudo service docker start
-sudo docker run -p 1935:1935 -p 7001:7001 -p 7002:7002 -p 8090:8090 -d gwuhaolin/livego
+sudo docker run -p 1935:1935 -p 7001:7001 -p 7002:7002 -p 8091:8090 -d gwuhaolin/livego
 # 保证数据库存在
 sudo -u postgres createdb -O canvas canvas
 
@@ -22,7 +22,7 @@ EOF
 # 推流
 url='rtmp://127.0.0.1:1935/live'
 video='/home/td/workspace/guokehuiyi/test/test.mp4'
-streamName=`curl  http://localhost:8090/control/get?room=course0 |  sed 's/,/\n/g' | grep 'data' | sed 's/:/\n/g' | sed '1d' | sed 's/}//g' | sed 's/\"//g'`
+streamName=`curl  http://localhost:8091/control/get?room=course0 |  sed 's/,/\n/g' | grep 'data' | sed 's/:/\n/g' | sed '1d' | sed 's/}//g' | sed 's/\"//g'`
 echo $streamName
 nohup ffmpeg -i ${video} -ar 44100 -vcodec libx264 -acodec aac -f flv ${url}/${streamName} >/home/td/workspace/guokehuiyi/test/ffmpeg.log 2>&1  &
 sleep 10
@@ -48,5 +48,12 @@ else
     echo "verify 1 failed, pdf hasn't been generated"
 fi
 # 删除生成的pdf
-rm $fileName
+# rm $fileName
 killall ffmpeg
+
+# 验证canvas
+fileNames=`find /home/td/workspace/guokehuiyi/canvas/spec   -name *.rb`
+for fileName in $fileNames; do
+    cd /home/td/workspace/guokehuiyi/canvas/
+    bundle exec rspec "$fileName" >> ~/testlog
+done
