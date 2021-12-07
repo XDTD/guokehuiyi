@@ -1,6 +1,11 @@
 
 
+<head>
 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+<meta charset="utf-8">
+</head>
 
 <%# 课程状态 %>
 <div id="course_show_secondary">
@@ -8,13 +13,13 @@
 
   <%#  初始化变量 %>
   <%# 获取channelkey %>
-  <% room = "http://localhost:8090/control/get?room=course"+ @context.id.to_s %>
+  <% room = "http://localhost:8091/control/get?room=course"+ @context.id.to_s %>
   <% roomName = "course" + @context.id.to_s  %>
   <% command = "curl " + room  %>
   <% channelkey = `#{command}` %>
   <% channelkey = JSON.parse(channelkey)%>
   <% liveConfirmContext = "请打开OBS软件开启直播，参数如下,\n服务器:rtmp://127.0.0.1:1935/live \n channelkey:" + channelkey["data"].to_s%>
-  <%# 直播链接 %>
+  <%# livego直播链接 %>
   <% roomUrl = "http://localhost:8080/course/" + roomName + ".html"%>
   <%# 初始化直播间 %>
   <% shellName = "/home/td/workspace/guokehuiyi/shell/htmlTouch.sh  " + roomName %>
@@ -24,13 +29,524 @@
 
   <%# 两个直播入口，分为老师的开直播和关直播 %>
   <% if @context_enrollment&.student? %>
-    <%# 学生的 %>
-  <h1><%= link_to "直播链接", roomUrl  %></h1>
+    <%# 学生的 %> 
+    <h1><%= link_to "线下直播链接", roomUrl  %></h1>
+    <h1><%="向教师询问直播间ID，加入线上直播"%></h1>
   <% else %>
-  <h1><%= link_to "开启直播", roomUrl,data: { confirm: liveConfirmContext } %></h1>
-  <% end%>
- 
+  <h1><%= link_to "线下直播", roomUrl,data: { confirm: liveConfirmContext } %></h1>
+  <h1><%=  "开启线上直播 "%></h1>
+  <h5><%="键入参数，下列参数即为会议必要参数"%></h5>
+  <% end %>
+  <body>
+		<div id="content">
+			<form id="bbb" action="#">
+				<table id="basic_form" >
+
+						<td><option id="server" value="https://zgx62313.top/bigbluebutton//api/"/></td>
+
+						<td><option type="text" size="60" id="salt" value="ewrm4R5FvGVIQyQM5ZeW9f6gXNXJc98tFSwgVjNYRc"/></td>
+
+          <tr>	
+						<td id="field">meetingID</td>
+						<td><input type="text"  size="60" id="meetingID" value=""/></td>
+          <tr>
+
+						<td><option type="text" size="60" id="meetingName" value="UCAS"></td>
+
+						<td><option type="text"  size="60" id="moderatorPW" value="mp"></td>
+
+						<td><option type="text"  size="60" id="attendeePW" value="ap"></td>
+
+				</table>
+			
+				<table id="user_form">
+					<tr>	
+						<td id="field">userName</td>
+						<td><input type="text"  size="60" id="userName" value=""/></td>
+					<tr>
+						
+						<td><option type="text"  size="60" id="userID" value=""></td>
+
+				</table>
+				<div id="buttons">
+					<button type="button" id="submit">确定</button> &nbsp;
+				</div>
+			</form>
+		
+		
+			<div id="links">
+			</div>
+		</div>
+		
+    <script>
+            /**
+        * jQuery SHA1 hash algorithm function
+        * 
+        * 	<code>
+        * 		Calculate the sha1 hash of a String 
+        * 		String $.sha1 ( String str )
+        * 	</code>
+        * 
+        * Calculates the sha1 hash of str using the US Secure Hash Algorithm 1.
+        * SHA-1 the Secure Hash Algorithm (SHA) was developed by NIST and is specified in the Secure Hash Standard (SHS, FIPS 180).
+        * This script is used to process variable length message into a fixed-length output using the SHA-1 algorithm. It is fully compatible with UTF-8 encoding.
+        * If you plan using UTF-8 encoding in your project don't forget to set the page encoding to UTF-8 (Content-Type meta tag).
+        * This function orginally get from the WebToolkit and rewrite for using as the jQuery plugin.
+        * 
+        * Example
+        * 	Code
+        * 		<code>
+        * 			$.sha1("I'm Persian."); 
+        * 		</code>
+        * 	Result
+        * 		<code>
+        * 			"1d302f9dc925d62fc859055999d2052e274513ed"
+        * 		</code>
+        * 
+        * @alias Muhammad Hussein Fattahizadeh < muhammad [AT] semnanweb [DOT] com >
+        * @link http://www.semnanweb.com/jquery-plugin/sha1.html
+        * @see http://www.webtoolkit.info/
+        * @license http://www.gnu.org/licenses/gpl.html [GNU General Public License]
+        * @param {jQuery} {sha1:function(string))
+        * @return string
+        */
+
+        (function($){
+          
+          var rotateLeft = function(lValue, iShiftBits) {
+            return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
+          }
+          
+          var lsbHex = function(value) {
+            var string = "";
+            var i;
+            var vh;
+            var vl;
+            for(i = 0;i <= 6;i += 2) {
+              vh = (value>>>(i * 4 + 4))&0x0f;
+              vl = (value>>>(i*4))&0x0f;
+              string += vh.toString(16) + vl.toString(16);
+            }
+            return string;
+          };
+          
+          var cvtHex = function(value) {
+            var string = "";
+            var i;
+            var v;
+            for(i = 7;i >= 0;i--) {
+              v = (value>>>(i * 4))&0x0f;
+              string += v.toString(16);
+            }
+            return string;
+          };
+          
+          var uTF8Encode = function(string) {
+            string = string.replace(/\x0d\x0a/g, "\x0a");
+            var output = "";
+            for (var n = 0; n < string.length; n++) {
+              var c = string.charCodeAt(n);
+              if (c < 128) {
+                output += String.fromCharCode(c);
+              } else if ((c > 127) && (c < 2048)) {
+                output += String.fromCharCode((c >> 6) | 192);
+                output += String.fromCharCode((c & 63) | 128);
+              } else {
+                output += String.fromCharCode((c >> 12) | 224);
+                output += String.fromCharCode(((c >> 6) & 63) | 128);
+                output += String.fromCharCode((c & 63) | 128);
+              }
+            }
+            return output;
+          };
+          
+          $.extend({
+            sha1: function(string) {
+              var blockstart;
+              var i, j;
+              var W = new Array(80);
+              var H0 = 0x67452301;
+              var H1 = 0xEFCDAB89;
+              var H2 = 0x98BADCFE;
+              var H3 = 0x10325476;
+              var H4 = 0xC3D2E1F0;
+              var A, B, C, D, E;
+              var tempValue;
+              string = uTF8Encode(string);
+              var stringLength = string.length;
+              var wordArray = new Array();
+              for(i = 0;i < stringLength - 3;i += 4) {
+                j = string.charCodeAt(i)<<24 | string.charCodeAt(i + 1)<<16 | string.charCodeAt(i + 2)<<8 | string.charCodeAt(i + 3);
+                wordArray.push(j);
+              }
+              switch(stringLength % 4) {
+                case 0:
+                  i = 0x080000000;
+                break;
+                case 1:
+                  i = string.charCodeAt(stringLength - 1)<<24 | 0x0800000;
+                break;
+                case 2:
+                  i = string.charCodeAt(stringLength - 2)<<24 | string.charCodeAt(stringLength - 1)<<16 | 0x08000;
+                break;
+                case 3:
+                  i = string.charCodeAt(stringLength - 3)<<24 | string.charCodeAt(stringLength - 2)<<16 | string.charCodeAt(stringLength - 1)<<8 | 0x80;
+                break;
+              }
+              wordArray.push(i);
+              while((wordArray.length % 16) != 14 ) wordArray.push(0);
+              wordArray.push(stringLength>>>29);
+              wordArray.push((stringLength<<3)&0x0ffffffff);
+              for(blockstart = 0;blockstart < wordArray.length;blockstart += 16) {
+                for(i = 0;i < 16;i++) W[i] = wordArray[blockstart+i];
+                for(i = 16;i <= 79;i++) W[i] = rotateLeft(W[i-3] ^ W[i-8] ^ W[i-14] ^ W[i-16], 1);
+                A = H0;
+                B = H1;
+                C = H2;
+                D = H3;
+                E = H4;
+                for(i = 0;i <= 19;i++) {
+                  tempValue = (rotateLeft(A, 5) + ((B&C) | (~B&D)) + E + W[i] + 0x5A827999) & 0x0ffffffff;
+                  E = D;
+                  D = C;
+                  C = rotateLeft(B, 30);
+                  B = A;
+                  A = tempValue;
+                }
+                for(i = 20;i <= 39;i++) {
+                  tempValue = (rotateLeft(A, 5) + (B ^ C ^ D) + E + W[i] + 0x6ED9EBA1) & 0x0ffffffff;
+                  E = D;
+                  D = C;
+                  C = rotateLeft(B, 30);
+                  B = A;
+                  A = tempValue;
+                }
+                for(i = 40;i <= 59;i++) {
+                  tempValue = (rotateLeft(A, 5) + ((B&C) | (B&D) | (C&D)) + E + W[i] + 0x8F1BBCDC) & 0x0ffffffff;
+                  E = D;
+                  D = C;
+                  C = rotateLeft(B, 30);
+                  B = A;
+                  A = tempValue;
+                }
+                for(i = 60;i <= 79;i++) {
+                  tempValue = (rotateLeft(A, 5) + (B ^ C ^ D) + E + W[i] + 0xCA62C1D6) & 0x0ffffffff;
+                  E = D;
+                  D = C;
+                  C = rotateLeft(B, 30);
+                  B = A;
+                  A = tempValue;
+                }
+                H0 = (H0 + A) & 0x0ffffffff;
+                H1 = (H1 + B) & 0x0ffffffff;
+                H2 = (H2 + C) & 0x0ffffffff;
+                H3 = (H3 + D) & 0x0ffffffff;
+                H4 = (H4 + E) & 0x0ffffffff;
+              }
+              var tempValue = cvtHex(H0) + cvtHex(H1) + cvtHex(H2) + cvtHex(H3) + cvtHex(H4);
+              return tempValue.toLowerCase();
+            }
+          });
+        })(jQuery);
+
+    </script>
+
+    <% if @context_enrollment&.teacher? %>
+		<script>	
+
+			$('#submit').click(function () {	
+				//Gets the variables
+        
+				var $server = $("#server").val()
+				var $salt = $("#salt").val();
+				var $meetingID = $.URLEncode( $("#meetingID").val() );
+				var $meetingName = $.URLEncode( $("#meetingName").val() );
+				var $moderatorPW = $.URLEncode( $("#moderatorPW").val() );
+				var $attendeePW = $.URLEncode( $("#attendeePW").val() );
+				var $userName = $.URLEncode( $("#userName").val() );
+				var $userID = $.URLEncode( $("#userID").val() );
+				
+				
+				var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW;
+				var $createURL = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
+
+				var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW + "&record=true";
+				var $createURLwithRecording = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
+				
+				
+				//Creates the URLs			
+				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW + "&fullName=" + $userName + "&userID=" + $userID;
+				var $joinModeratorURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
+				
+				$params = "meetingID=" + $meetingID + "&password=" + $attendeePW + "&fullName=" + $userName + "&userID=" + $userID;
+				var $joinAttendeeURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
+				
+				$params = "meetingID=" + $meetingID;
+				var $isMeetingRunningURL = $server + "isMeetingRunning?" + $params + "&checksum=" + $.sha1("isMeetingRunning" + $params + $salt);
+				
+				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW;
+				var $getMeetingInfoURL = $server + "getMeetingInfo?" + $params + "&checksum=" + $.sha1("getMeetingInfo" + $params + $salt);
+				
+				$params = "random=" + $meetingID;
+				var $getMeetingsURL = $server + "getMeetings?" + $params + "&checksum=" + $.sha1("getMeetings" + $params + $salt);
+				
+				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW;
+				var $endURL = $server + "end?" + $params + "&checksum=" + $.sha1("end" + $params + $salt);
+				
+				
+        
+				//Displays the links in a table
+				$("#links_table").remove();		//if the tables already exists it removes it
+				$("#links").append('<table id="links_table"></table>');
+				//<a href="http://www.itcast.cn" onClick="return showTime();">显示当前时间</a>
+				$("#links_table").append('<tr><td>Create</td> <td><a href="' + $createURL + '" target="_blank">' + "创建无记录会议" + '</a></td>');
+				$("#links_table").append('<tr><td>Create with recording</td> <td><a href="' + $createURLwithRecording  + '" target="_blank">'  + "创建有记录会议" + '</a></td>');
+				$("#links_table").append('<tr><td>Join as Moderator</td> <td><a href="' + $joinModeratorURL + '" target="_blank">' + "作为主持人加入会议" + '</a></td>');
+				$("#links_table").append('<tr><td>Join as Attendee</td> <td><a href="' + $joinAttendeeURL + '" target="_blank">' + "不记名邀请" + '</a></td>');
+				// $("#links_table").append('<tr><td>isMeetingRunning</td> <td><a href="' + $isMeetingRunningURL + '" target="_blank">' + $isMeetingRunningURL + '</a></td>');
+				// $("#links_table").append('<tr><td>getMeetingInfo</td> <td><a href="' + $getMeetingInfoURL + '" target="_blank">' + $getMeetingInfoURL + '</a></td>');
+				// $("#links_table").append('<tr><td>getMeetings</td> <td><a href="' + $getMeetingsURL + '" target="_blank">' + $getMeetingsURL + '</a></td>');
+				$("#links_table").append('<tr><td>end</td> <td><a href="' + $endURL + '" target="_blank">' + "结束会议" + '</a></td>');
+				
+				//alert('Handler for .submit() called.' + $server);
+				//return false;				
+			});
+
+			$.extend({
+				URLEncode:function(c){
+					var o='';var x=0;c=c.toString();
+					var r=/(^[a-zA-Z0-9_.]*)/;
+					while(x<c.length){
+						var m=r.exec(c.substr(x));
+						if(m!=null && m.length>1 && m[1]!=''){
+							o+=m[1];x+=m[1].length;
+						}else{
+							if(c[x]==' ')o+='+';
+							else{
+								var d=c.charCodeAt(x);
+								var h=d.toString(16);
+								o+='%'+(h.length<2?'0':'')+h.toUpperCase();
+							}
+							x++;
+						}
+					}
+					return o;
+				},
+				URLDecode:function(s){
+					var o=s;var binVal,t;
+					var r=/(%[^%]{2})/;
+					while((m=r.exec(o))!=null && m.length>1 && m[1]!=''){
+						b=parseInt(m[1].substr(1),16);
+						t=String.fromCharCode(b);o=o.replace(m[1],t);
+					}
+					return o;
+				}
+			});
+
+		</script>	
+    <%else%>
+    <script>	
+
+			$('#submit').click(function () {	
+				//Gets the variables
+        
+				var $server = $("#server").val()
+				var $salt = $("#salt").val();
+				var $meetingID = $.URLEncode( $("#meetingID").val() );
+				var $meetingName = $.URLEncode( $("#meetingName").val() );
+				var $moderatorPW = $.URLEncode( $("#moderatorPW").val() );
+				var $attendeePW = $.URLEncode( $("#attendeePW").val() );
+				var $userName = $.URLEncode( $("#userName").val() );
+				var $userID = $.URLEncode( $("#userID").val() );
+				
+				
+				var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW;
+				var $createURL = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
+
+				var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW + "&record=true";
+				var $createURLwithRecording = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
+				
+				
+				//Creates the URLs			
+				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW + "&fullName=" + $userName + "&userID=" + $userID;
+				var $joinModeratorURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
+				
+				$params = "meetingID=" + $meetingID + "&password=" + $attendeePW + "&fullName=" + $userName + "&userID=" + $userID;
+				var $joinAttendeeURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
+				
+				$params = "meetingID=" + $meetingID;
+				var $isMeetingRunningURL = $server + "isMeetingRunning?" + $params + "&checksum=" + $.sha1("isMeetingRunning" + $params + $salt);
+				
+				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW;
+				var $getMeetingInfoURL = $server + "getMeetingInfo?" + $params + "&checksum=" + $.sha1("getMeetingInfo" + $params + $salt);
+				
+				$params = "random=" + $meetingID;
+				var $getMeetingsURL = $server + "getMeetings?" + $params + "&checksum=" + $.sha1("getMeetings" + $params + $salt);
+				
+				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW;
+				var $endURL = $server + "end?" + $params + "&checksum=" + $.sha1("end" + $params + $salt);
+				
+				
+        
+				//Displays the links in a table
+				$("#links_table").remove();		//if the tables already exists it removes it
+				$("#links").append('<table id="links_table"></table>');
+				// //<a href="http://www.itcast.cn" onClick="return showTime();">显示当前时间</a>
+				// $("#links_table").append('<tr><td>Create</td> <td><a href="' + $createURL + '" target="_blank">' + "创建无记录会议" + '</a></td>');
+				// $("#links_table").append('<tr><td>Create with recording</td> <td><a href="' + $createURLwithRecording  + '" target="_blank">'  + "创建有记录会议" + '</a></td>');
+				// $("#links_table").append('<tr><td>Join as Moderator</td> <td><a href="' + $joinModeratorURL + '" target="_blank">' + "作为主持人加入会议" + '</a></td>');
+				$("#links_table").append('<tr><td>bbb会议链接</td> <td><a href="' + $joinAttendeeURL + '" target="_blank">' + "学生加入会议" + '</a></td>');
+				// $("#links_table").append('<tr><td>isMeetingRunning</td> <td><a href="' + $isMeetingRunningURL + '" target="_blank">' + $isMeetingRunningURL + '</a></td>');
+				// $("#links_table").append('<tr><td>getMeetingInfo</td> <td><a href="' + $getMeetingInfoURL + '" target="_blank">' + $getMeetingInfoURL + '</a></td>');
+				// $("#links_table").append('<tr><td>getMeetings</td> <td><a href="' + $getMeetingsURL + '" target="_blank">' + $getMeetingsURL + '</a></td>');
+				// $("#links_table").append('<tr><td>end</td> <td><a href="' + $endURL + '" target="_blank">' + "结束会议" + '</a></td>');
+				
+				//alert('Handler for .submit() called.' + $server);
+				//return false;				
+			});
+
+			$.extend({
+				URLEncode:function(c){
+					var o='';var x=0;c=c.toString();
+					var r=/(^[a-zA-Z0-9_.]*)/;
+					while(x<c.length){
+						var m=r.exec(c.substr(x));
+						if(m!=null && m.length>1 && m[1]!=''){
+							o+=m[1];x+=m[1].length;
+						}else{
+							if(c[x]==' ')o+='+';
+							else{
+								var d=c.charCodeAt(x);
+								var h=d.toString(16);
+								o+='%'+(h.length<2?'0':'')+h.toUpperCase();
+							}
+							x++;
+						}
+					}
+					return o;
+				},
+				URLDecode:function(s){
+					var o=s;var binVal,t;
+					var r=/(%[^%]{2})/;
+					while((m=r.exec(o))!=null && m.length>1 && m[1]!=''){
+						b=parseInt(m[1].substr(1),16);
+						t=String.fromCharCode(b);o=o.replace(m[1],t);
+					}
+					return o;
+				}
+			});
+
+		</script>	
+    <%end%>
+
+  </body>
+
+  <% if @context_enrollment&.teacher? %>
+
+<%# //二维码提示框 %>
+
+<button onclick="showWindow()">生成二维码</button>
+
+
+<!-- 遮罩层 -->
+<div id="cover" style="background: #000; position: absolute; left: 0px; top: 0px; width: 100%; filter: alpha(opacity=30); opacity: 0.3; display: none; z-index: 2 ">
+   
+</div>
+<!-- 弹窗 -->
+<div id="showdiv" style="width: 80%; margin: 0 auto; height: 29.5rem; border: 1px solid #999; display: none; position: absolute; top: 20%; left: 10%; z-index: 3; background: #fff">
+  <!-- 标题 -->
+  <div style="background: #F8F7F7; width: 100%; height: 2rem; font-size: 0.65rem; line-height: 2rem; border: 1px solid #999; text-align: center;" >
+    直播
+  </div>
+  <!-- 内容 text-indent: 350px;-->
+  <div style=" height: 4rem; font-size: 0.5rem; padding: 0.5rem; line-height: 1rem; left: 65%;">
+    
   
+  <input id="text" style="display:none"type="text" value="www.baidu.com" /><br />
+    </div>
+    
+    <div id="qrcode" style="position: absolute;
+    left: 67%;
+    margin: -15% 0 0 -25%;width:160px;height:160px;margin-top:15px;"></div>
+  <!-- 按钮 -->
+
+  <div style="text-indent: 350px; height: 4rem; font-size: 0.5rem; padding: 0.5rem; line-height: 1rem; left: 65%;">
+    <%channelkey%>
+    </div>
+  <div style="background: #418BCA; width: 30%; margin: 0 auto;top: 70%; height: 1.5rem; line-height: 1.5rem; text-align: center;color: #fff;margin-top: 20rem; -moz-border-radius: .128rem; -webkit-border-radius: .128rem; border-radius: .128rem;font-size: .59733rem;" onclick="closeWindow()">
+    确 定
+  </div>
+</div>
+
+<script>
+
+var $server = $("#server").val()
+				var $salt = $("#salt").val();
+				var $meetingID = $.URLEncode( $("#meetingID").val() );
+				var $meetingName = $.URLEncode( $("#meetingName").val() );
+				var $moderatorPW = $.URLEncode( $("#moderatorPW").val() );
+				var $attendeePW = $.URLEncode( $("#attendeePW").val() );
+				var $userName = $.URLEncode( $("#userName").val() );
+				var $userID = $.URLEncode( $("#userID").val() );
+				
+				
+				var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW;
+				var $createURL = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
+
+				var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW + "&record=true";
+				var $createURLwithRecording = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
+				
+				
+				//Creates the URLs			
+				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW + "&fullName=" + $userName + "&userID=" + $userID;
+				var $joinModeratorURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
+				
+				$params = "meetingID=" + $meetingID + "&password=" + $attendeePW + "&fullName=" + $userName + "&userID=" + $userID;
+				var $joinAttendeeURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
+
+function showWindow() {
+    $('#showdiv').show();  //显示弹窗
+    $('#cover').css('display','block'); //显示遮罩层
+    $('#cover').css('height',document.body.clientHeight+'px'); //设置遮罩层的高度为当前页面高度
+  }
+  // 关闭弹窗
+  function closeWindow() {
+    $('#showdiv').hide();  //隐藏弹窗
+    $('#cover').css('display','none');   //显示遮罩层
+  }
+
+  //生成二维码
+  var qrcode = new QRCode("qrcode");
+
+function makeCode () {      
+    var elText = document.getElementById("text");
+    
+    if (!elText.value) {
+        alert("Input a text");
+        elText.focus();
+        return;
+    }
+    
+    qrcode.makeCode($joinAttendeeURL);
+}
+
+makeCode();
+
+$("#text").
+on("blur", function () {
+    makeCode();
+}).
+on("keydown", function (e) {
+    if (e.keyCode == 13) {
+        makeCode();
+    }
+});
+
+</script>
+
+<% end%>
+
+
 
   <h1><% system 'echo "hello $HOSTNAME"'%></h1>
   <% @can_manage = can_do(@context, @current_user, :manage) %>
