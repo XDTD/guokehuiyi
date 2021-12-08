@@ -308,4 +308,112 @@ kill -9  pid
 bundle exec rails s -b 0.0.0.0 -p 3000
 ```
 
+# BBB与Canvas集成--BBB部署及配置文档
+*本文档记录及提供bbb服务器配置注意事项及部分问题解决方案，更多的问题解决方案建议参考项目开源社区。*
+## 安装前检查
+1. 服务器80、443端口空闲
+2. 用于配置SSL证书的解析到公网IP的域名。
+3. 服务器语言环境配置为"en_US.UTF-8"
+## BBB部署
+提供部署脚本"bbb-install.sh"
+`
+wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -w -a -v bionic-23 -s bbb.example.com -e info@example.com
+`
+此命令拉取最新版本的`bbb-install.sh`，将其发送到 Bash shell 解释器，并使用提供的参数安装 BigBlueButton。其中:
 
+- `-w` 安装简单防火墙 (UFW) 以限制对 TCP/IP 端口 22、80 和 443 以及范围 16384-32768 内的 UDP 端口的访问，
+- `-a` 安装 API 演示（可以轻松地在服务器上进行一些快速测试），
+- `-v bionic-23` 安装最新版本的 BigBlueButton 2.3.x，
+- `-s`将服务器的主机名设置为bbb.example.com，并且
+- `-e` 为 Let's Encrypt 提供一个电子邮件地址，以便为主机生成有效的 SSL 证书。
+  
+- (建议安装API演示，以检验各部分功能是否正常)
+- (执行`wget`命令部署BBB时，需要将`bbb.example.com`和`info@example.com`更改为自己的域名和邮箱，尤其是域名需要解析到服务器公网IP)
+- 检验BBB部署后，可以使用`sudo apt-get purge bbb-demo`卸载API演示
+
+## BBB开发
+1. Git 环境配置   
+- 克隆一个仓库
+- 创建一个分支
+- 将更改推送回存储库
+- (检查开源项目版本)
+2. 开发环境配置
+- 安装核心开发工具(java JDK)
+  - `sudo apt-get install git-core ant ant-contrib openjdk-8-jdk-headless`
+- 设置 JAVA_HOME变量
+  - `sudo vi ~/.profile`
+  - `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64`(在文件末尾添加)
+  - 重新加载配置文件`source ~/.profile`
+- 安装开发工具
+  - `curl -s "https://get.sdkman.io" | bash`
+  - 
+  - `source "$HOME/.sdkman/bin/sdkman-init.sh"`
+    
+  - `sdk install gradle 5.5.1`
+  - `sdk install grails 3.3.9`
+  - `sdk install sbt 1.2.8`
+  - `sdk install maven 3.5.0`
+(注意：开发测试前，将`/usr/share/bbb-web/WEB-INF/classes/application.yml`文件中的`secure: false`设置为`false`)
+3. HTML5客户端开发
+
+   BigBlueButton 中的 HTML5 客户端是使用框架Meteor构建的。需要安装下列组件。
+
+- 安装 `Meteor.js`
+  - `curl https://install.meteor.com/ | sh`
+- 打开文件位置`bigbluebutton-html5/`并设置适当的 Meteor 版本(需要在相应目录执行，不然后面会报错！！！)
+  - `meteor update --allow-superuser --release 1.10.2`
+- NginX 重定向到 Meteor
+  - 更改`/etc/bigbluebutton/nginx/bbb-html5.nginx`使用4100端口用于开发测试。
+- 更改设置以使得摄像头和屏幕共享正常使用
+  - `grep "wsUrl" /usr/share/meteor/bundle/programs/server/assets/app/config/settings.yml`(记录得到的数据内容)
+  - 将`/private/config/settings.yml`中的`wsUrl`值改为上一步中的值。
+- 修改代码及配置
+- 打包开发版本的 HTML5 客户端
+  - `sudo systemctl stop bbb-html5`先暂停生产版本的HTML5客户端
+  - 安装 npm 依赖
+    - `meteor npm install`
+  - 运行开发板程序
+    - `npm start`
+  - 注意：通过“npm start”启动开发HTML5客户端后，若在麦克风回声测试过程中可能会看到错误“呼叫超时（错误1006）”，需要将`bigbluebutton-html5/private/config/settings.yml`中的`sipjsHackViaWs`配置为`true`
+  - 运行部署脚本`bigbluebutton-html5/deploy_to_usr_share.sh`,本地部署BBB HTML5。(需要将上面步骤中的nginx端口修改回`poolhtml5servers`)
+- 生产版部署：
+  - `meteor build --server-only ~/dev/bigbluebutton/bigbluebutton-html5/meteorbundle`
+  - Meteor 会将开发版本构建为一个`.tar.gz`文件，因此我们需要将其解压缩并将其放置在正确的目录中bbb-html5以供使用。
+  - `sudo tar -xzvf ~/dev/bigbluebutton/bigbluebutton-html5/meteorbundle/*.tar.gz -C /usr/share/meteor`
+  - 开启HTML5服务`sudo systemctl start bbb-html5`
+
+4. BBB-Web 开发
+   
+- BigBlueButton 的一些组件需要 bbb-common-message。所以需要先构建这个。否则，您将遇到编译错误。
+  - 在`~/dev/bigbluebutton/bbb-common-message`路径下运行`./deploy.sh`
+- 在`~/dev/bigbluebutton/bigbluebutton-web/grails-app/conf/bigbluebutton.properties`文件中修改BBB服务器的地址和密钥。(查看方法：`sudo bbb-conf --secret`)
+- 授权用户上传文稿及写入日志
+  - `sudo chmod -R ugo+rwx /var/bigbluebutton`
+  - `sudo chmod -R ugo+rwx /var/log/bigbluebutton`
+- 创建文件`-p ~/.sbt/1.0`,并写入
+  - `resolvers += "Artima Maven Repository" at "https://repo.artima.com/releases"`
+  - `updateOptions := updateOptions.value.withCachedResolution(true)`
+- 在`~/dev/bigbluebutton/bigbluebutton-web/`中构建BBB Web
+  - 下载依赖库`./build.sh`
+  - 启动 grails 并告诉侦听端口 8090 `./run.sh`
+- run bbb-web 时会提示必须是bbb user才可以（解决：将run.sh中的判断语句改为自己的用户名）
+5. BBB Web部署
+
+- 将所有项目编译到一个单一的 war 
+  - `grails assemble`
+- 创建新目录并打开
+  - `mkdir exploded && cd exploded`
+- 解压新建目录下的war内容
+  - `jar -xvf ../build/libs/bigbluebutton-0.10.0.war`
+- 检查所有jar依赖项都列出后复制.`cp ../run-prod.sh .`
+- 为当前的生产版本复制一份。
+  - `sudo cp -R /usr/share/bbb-web /usr/share/bbb-web-old`
+- 删除所有我们需要复制用于生产的文件
+  - `sudo rm -rf /usr/share/bbb-web/assets/ /usr/share/bbb-web/META-INF/ /usr/share/bbb-web/org/ /usr/share/bbb-web/run-prod.sh  /usr/share/bbb-web/WEB-INF/`
+- 将编译好的文件复制到生产目录中
+  - `sudo cp -R . /usr/share/bbb-web/`
+- 配置权限
+  - `sudo chown bigbluebutton:bigbluebutton /usr/share/bbb-web`
+  - `sudo chown -R bigbluebutton:bigbluebutton /usr/share/bbb-web/assets/ /usr/share/bbb-web/META-INF/ /usr/share/bbb-web/org/ /usr/share/bbb-web/run-prod.sh /usr/share/bbb-web/WEB-INF/`
+- 运行BBB Web服务
+  - `sudo service bbb-web start`
