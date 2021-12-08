@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.8 (Ubuntu 12.8-1.pgdg18.04+1)
--- Dumped by pg_dump version 12.8 (Ubuntu 12.8-1.pgdg18.04+1)
+-- Dumped from database version 12.9 (Ubuntu 12.9-1.pgdg18.04+1)
+-- Dumped by pg_dump version 12.9 (Ubuntu 12.9-1.pgdg18.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -2081,24 +2081,6 @@ INHERITS (public.auditor_authentication_records);
 
 
 --
--- Name: auditor_authentication_records_2020_9; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.auditor_authentication_records_2020_9 (
-    id bigint DEFAULT nextval('public.auditor_authentication_records_id_seq'::regclass),
-    uuid character varying,
-    account_id bigint,
-    event_type character varying,
-    pseudonym_id bigint,
-    request_id character varying,
-    user_id bigint,
-    created_at timestamp without time zone,
-    CONSTRAINT auditor_authentication_records_2020_9_created_at_check CHECK (((created_at >= '2020-09-01 00:00:00'::timestamp without time zone) AND (created_at < '2020-10-01 00:00:00'::timestamp without time zone)))
-)
-INHERITS (public.auditor_authentication_records);
-
-
---
 -- Name: auditor_authentication_records_2021_1; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2148,6 +2130,24 @@ CREATE TABLE public.auditor_authentication_records_2021_11 (
     user_id bigint,
     created_at timestamp without time zone,
     CONSTRAINT auditor_authentication_records_2021_11_created_at_check CHECK (((created_at >= '2021-11-01 00:00:00'::timestamp without time zone) AND (created_at < '2021-12-01 00:00:00'::timestamp without time zone)))
+)
+INHERITS (public.auditor_authentication_records);
+
+
+--
+-- Name: auditor_authentication_records_2021_12; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.auditor_authentication_records_2021_12 (
+    id bigint DEFAULT nextval('public.auditor_authentication_records_id_seq'::regclass),
+    uuid character varying,
+    account_id bigint,
+    event_type character varying,
+    pseudonym_id bigint,
+    request_id character varying,
+    user_id bigint,
+    created_at timestamp without time zone,
+    CONSTRAINT auditor_authentication_records_2021_12_created_at_check CHECK (((created_at >= '2021-12-01 00:00:00'::timestamp without time zone) AND (created_at < '2022-01-01 00:00:00'::timestamp without time zone)))
 )
 INHERITS (public.auditor_authentication_records);
 
@@ -2398,27 +2398,6 @@ INHERITS (public.auditor_course_records);
 
 
 --
--- Name: auditor_course_records_2020_9; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.auditor_course_records_2020_9 (
-    id bigint DEFAULT nextval('public.auditor_course_records_id_seq'::regclass),
-    uuid character varying,
-    account_id bigint,
-    course_id bigint,
-    data text,
-    event_source character varying,
-    event_type character varying,
-    request_id character varying,
-    sis_batch_id bigint,
-    user_id bigint,
-    created_at timestamp without time zone,
-    CONSTRAINT auditor_course_records_2020_9_created_at_check CHECK (((created_at >= '2020-09-01 00:00:00'::timestamp without time zone) AND (created_at < '2020-10-01 00:00:00'::timestamp without time zone)))
-)
-INHERITS (public.auditor_course_records);
-
-
---
 -- Name: auditor_course_records_2021_1; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2477,6 +2456,27 @@ CREATE TABLE public.auditor_course_records_2021_11 (
     user_id bigint,
     created_at timestamp without time zone,
     CONSTRAINT auditor_course_records_2021_11_created_at_check CHECK (((created_at >= '2021-11-01 00:00:00'::timestamp without time zone) AND (created_at < '2021-12-01 00:00:00'::timestamp without time zone)))
+)
+INHERITS (public.auditor_course_records);
+
+
+--
+-- Name: auditor_course_records_2021_12; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.auditor_course_records_2021_12 (
+    id bigint DEFAULT nextval('public.auditor_course_records_id_seq'::regclass),
+    uuid character varying,
+    account_id bigint,
+    course_id bigint,
+    data text,
+    event_source character varying,
+    event_type character varying,
+    request_id character varying,
+    sis_batch_id bigint,
+    user_id bigint,
+    created_at timestamp without time zone,
+    CONSTRAINT auditor_course_records_2021_12_created_at_check CHECK (((created_at >= '2021-12-01 00:00:00'::timestamp without time zone) AND (created_at < '2022-01-01 00:00:00'::timestamp without time zone)))
 )
 INHERITS (public.auditor_course_records);
 
@@ -2690,29 +2690,6 @@ ALTER SEQUENCE public.auditor_feature_flag_records_id_seq OWNED BY public.audito
 
 
 --
--- Name: auditor_feature_flag_records_2021_10; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.auditor_feature_flag_records_2021_10 (
-    id bigint DEFAULT nextval('public.auditor_feature_flag_records_id_seq'::regclass),
-    uuid character varying,
-    feature_flag_id bigint,
-    root_account_id bigint,
-    context_type character varying,
-    context_id bigint,
-    feature_name character varying,
-    event_type character varying,
-    state_before character varying,
-    state_after character varying,
-    request_id character varying,
-    user_id bigint,
-    created_at timestamp without time zone,
-    CONSTRAINT auditor_feature_flag_records_2021_10_created_at_check CHECK (((created_at >= '2021-10-01 00:00:00'::timestamp without time zone) AND (created_at < '2021-11-01 00:00:00'::timestamp without time zone)))
-)
-INHERITS (public.auditor_feature_flag_records);
-
-
---
 -- Name: auditor_feature_flag_records_2021_11; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2731,6 +2708,29 @@ CREATE TABLE public.auditor_feature_flag_records_2021_11 (
     user_id bigint,
     created_at timestamp without time zone,
     CONSTRAINT auditor_feature_flag_records_2021_11_created_at_check CHECK (((created_at >= '2021-11-01 00:00:00'::timestamp without time zone) AND (created_at < '2021-12-01 00:00:00'::timestamp without time zone)))
+)
+INHERITS (public.auditor_feature_flag_records);
+
+
+--
+-- Name: auditor_feature_flag_records_2021_12; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.auditor_feature_flag_records_2021_12 (
+    id bigint DEFAULT nextval('public.auditor_feature_flag_records_id_seq'::regclass),
+    uuid character varying,
+    feature_flag_id bigint,
+    root_account_id bigint,
+    context_type character varying,
+    context_id bigint,
+    feature_name character varying,
+    event_type character varying,
+    state_before character varying,
+    state_after character varying,
+    request_id character varying,
+    user_id bigint,
+    created_at timestamp without time zone,
+    CONSTRAINT auditor_feature_flag_records_2021_12_created_at_check CHECK (((created_at >= '2021-12-01 00:00:00'::timestamp without time zone) AND (created_at < '2022-01-01 00:00:00'::timestamp without time zone)))
 )
 INHERITS (public.auditor_feature_flag_records);
 
@@ -2886,39 +2886,6 @@ INHERITS (public.auditor_grade_change_records);
 
 
 --
--- Name: auditor_grade_change_records_2020_9; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.auditor_grade_change_records_2020_9 (
-    id bigint DEFAULT nextval('public.auditor_grade_change_records_id_seq'::regclass),
-    uuid character varying,
-    account_id bigint,
-    root_account_id bigint,
-    assignment_id bigint,
-    context_id bigint,
-    context_type character varying,
-    event_type character varying,
-    excused_after boolean,
-    excused_before boolean,
-    grade_after character varying,
-    grade_before character varying,
-    graded_anonymously boolean,
-    grader_id bigint,
-    points_possible_after double precision,
-    points_possible_before double precision,
-    request_id character varying,
-    score_after double precision,
-    score_before double precision,
-    student_id bigint,
-    submission_id bigint,
-    submission_version_number integer,
-    created_at timestamp without time zone,
-    CONSTRAINT auditor_grade_change_records_2020_9_created_at_check CHECK (((created_at >= '2020-09-01 00:00:00'::timestamp without time zone) AND (created_at < '2020-10-01 00:00:00'::timestamp without time zone)))
-)
-INHERITS (public.auditor_grade_change_records);
-
-
---
 -- Name: auditor_grade_change_records_2021_1; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -3013,6 +2980,39 @@ CREATE TABLE public.auditor_grade_change_records_2021_11 (
     submission_version_number integer,
     created_at timestamp without time zone,
     CONSTRAINT auditor_grade_change_records_2021_11_created_at_check CHECK (((created_at >= '2021-11-01 00:00:00'::timestamp without time zone) AND (created_at < '2021-12-01 00:00:00'::timestamp without time zone)))
+)
+INHERITS (public.auditor_grade_change_records);
+
+
+--
+-- Name: auditor_grade_change_records_2021_12; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.auditor_grade_change_records_2021_12 (
+    id bigint DEFAULT nextval('public.auditor_grade_change_records_id_seq'::regclass),
+    uuid character varying,
+    account_id bigint,
+    root_account_id bigint,
+    assignment_id bigint,
+    context_id bigint,
+    context_type character varying,
+    event_type character varying,
+    excused_after boolean,
+    excused_before boolean,
+    grade_after character varying,
+    grade_before character varying,
+    graded_anonymously boolean,
+    grader_id bigint,
+    points_possible_after double precision,
+    points_possible_before double precision,
+    request_id character varying,
+    score_after double precision,
+    score_before double precision,
+    student_id bigint,
+    submission_id bigint,
+    submission_version_number integer,
+    created_at timestamp without time zone,
+    CONSTRAINT auditor_grade_change_records_2021_12_created_at_check CHECK (((created_at >= '2021-12-01 00:00:00'::timestamp without time zone) AND (created_at < '2022-01-01 00:00:00'::timestamp without time zone)))
 )
 INHERITS (public.auditor_grade_change_records);
 
@@ -7644,10 +7644,10 @@ ALTER SEQUENCE public.messages_id_seq OWNED BY public.messages.id;
 
 
 --
--- Name: messages_2021_45; Type: TABLE; Schema: public; Owner: -
+-- Name: messages_2021_48; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.messages_2021_45 (
+CREATE TABLE public.messages_2021_48 (
     id bigint DEFAULT nextval('public.messages_id_seq'::regclass),
     "to" text,
     "from" text,
@@ -7677,16 +7677,16 @@ CREATE TABLE public.messages_2021_45 (
     html_body text,
     root_account_id bigint,
     reply_to_name character varying(255),
-    CONSTRAINT messages_2021_45_created_at_check CHECK (((created_at >= '2021-11-08 00:00:00'::timestamp without time zone) AND (created_at < '2021-11-15 00:00:00'::timestamp without time zone)))
+    CONSTRAINT messages_2021_48_created_at_check CHECK (((created_at >= '2021-11-29 00:00:00'::timestamp without time zone) AND (created_at < '2021-12-06 00:00:00'::timestamp without time zone)))
 )
 INHERITS (public.messages);
 
 
 --
--- Name: messages_2021_46; Type: TABLE; Schema: public; Owner: -
+-- Name: messages_2021_49; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.messages_2021_46 (
+CREATE TABLE public.messages_2021_49 (
     id bigint DEFAULT nextval('public.messages_id_seq'::regclass),
     "to" text,
     "from" text,
@@ -7716,16 +7716,16 @@ CREATE TABLE public.messages_2021_46 (
     html_body text,
     root_account_id bigint,
     reply_to_name character varying(255),
-    CONSTRAINT messages_2021_46_created_at_check CHECK (((created_at >= '2021-11-15 00:00:00'::timestamp without time zone) AND (created_at < '2021-11-22 00:00:00'::timestamp without time zone)))
+    CONSTRAINT messages_2021_49_created_at_check CHECK (((created_at >= '2021-12-06 00:00:00'::timestamp without time zone) AND (created_at < '2021-12-13 00:00:00'::timestamp without time zone)))
 )
 INHERITS (public.messages);
 
 
 --
--- Name: messages_2021_47; Type: TABLE; Schema: public; Owner: -
+-- Name: messages_2021_50; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.messages_2021_47 (
+CREATE TABLE public.messages_2021_50 (
     id bigint DEFAULT nextval('public.messages_id_seq'::regclass),
     "to" text,
     "from" text,
@@ -7755,7 +7755,7 @@ CREATE TABLE public.messages_2021_47 (
     html_body text,
     root_account_id bigint,
     reply_to_name character varying(255),
-    CONSTRAINT messages_2021_47_created_at_check CHECK (((created_at >= '2021-11-22 00:00:00'::timestamp without time zone) AND (created_at < '2021-11-29 00:00:00'::timestamp without time zone)))
+    CONSTRAINT messages_2021_50_created_at_check CHECK (((created_at >= '2021-12-13 00:00:00'::timestamp without time zone) AND (created_at < '2021-12-20 00:00:00'::timestamp without time zone)))
 )
 INHERITS (public.messages);
 
@@ -8489,7 +8489,8 @@ CREATE TABLE public.outcome_imports (
     ended_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    data json
+    data json,
+    learning_outcome_group_id bigint
 );
 
 
@@ -9553,23 +9554,6 @@ ALTER SEQUENCE public.quiz_submission_events_id_seq OWNED BY public.quiz_submiss
 
 
 --
--- Name: quiz_submission_events_2021_10; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.quiz_submission_events_2021_10 (
-    id bigint DEFAULT nextval('public.quiz_submission_events_id_seq'::regclass),
-    attempt integer,
-    event_type character varying(255),
-    quiz_submission_id bigint,
-    event_data text,
-    created_at timestamp without time zone,
-    client_timestamp timestamp without time zone,
-    CONSTRAINT quiz_submission_events_2021_10_created_at_check CHECK (((created_at >= '2021-10-01 00:00:00'::timestamp without time zone) AND (created_at < '2021-11-01 00:00:00'::timestamp without time zone)))
-)
-INHERITS (public.quiz_submission_events);
-
-
---
 -- Name: quiz_submission_events_2021_11; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -9599,6 +9583,23 @@ CREATE TABLE public.quiz_submission_events_2021_12 (
     created_at timestamp without time zone,
     client_timestamp timestamp without time zone,
     CONSTRAINT quiz_submission_events_2021_12_created_at_check CHECK (((created_at >= '2021-12-01 00:00:00'::timestamp without time zone) AND (created_at < '2022-01-01 00:00:00'::timestamp without time zone)))
+)
+INHERITS (public.quiz_submission_events);
+
+
+--
+-- Name: quiz_submission_events_2022_1; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.quiz_submission_events_2022_1 (
+    id bigint DEFAULT nextval('public.quiz_submission_events_id_seq'::regclass),
+    attempt integer,
+    event_type character varying(255),
+    quiz_submission_id bigint,
+    event_data text,
+    created_at timestamp without time zone,
+    client_timestamp timestamp without time zone,
+    CONSTRAINT quiz_submission_events_2022_1_created_at_check CHECK (((created_at >= '2022-01-01 00:00:00'::timestamp without time zone) AND (created_at < '2022-02-01 00:00:00'::timestamp without time zone)))
 )
 INHERITS (public.quiz_submission_events);
 
@@ -13579,14 +13580,6 @@ ALTER TABLE ONLY public.auditor_authentication_records_2020_12
 
 
 --
--- Name: auditor_authentication_records_2020_9 auditor_authentication_records_2020_9_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_authentication_records_2020_9
-    ADD CONSTRAINT auditor_authentication_records_2020_9_pkey PRIMARY KEY (id);
-
-
---
 -- Name: auditor_authentication_records_2021_10 auditor_authentication_records_2021_10_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13600,6 +13593,14 @@ ALTER TABLE ONLY public.auditor_authentication_records_2021_10
 
 ALTER TABLE ONLY public.auditor_authentication_records_2021_11
     ADD CONSTRAINT auditor_authentication_records_2021_11_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auditor_authentication_records_2021_12 auditor_authentication_records_2021_12_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_authentication_records_2021_12
+    ADD CONSTRAINT auditor_authentication_records_2021_12_pkey PRIMARY KEY (id);
 
 
 --
@@ -13707,14 +13708,6 @@ ALTER TABLE ONLY public.auditor_course_records_2020_12
 
 
 --
--- Name: auditor_course_records_2020_9 auditor_course_records_2020_9_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_course_records_2020_9
-    ADD CONSTRAINT auditor_course_records_2020_9_pkey PRIMARY KEY (id);
-
-
---
 -- Name: auditor_course_records_2021_10 auditor_course_records_2021_10_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13728,6 +13721,14 @@ ALTER TABLE ONLY public.auditor_course_records_2021_10
 
 ALTER TABLE ONLY public.auditor_course_records_2021_11
     ADD CONSTRAINT auditor_course_records_2021_11_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auditor_course_records_2021_12 auditor_course_records_2021_12_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_course_records_2021_12
+    ADD CONSTRAINT auditor_course_records_2021_12_pkey PRIMARY KEY (id);
 
 
 --
@@ -13811,19 +13812,19 @@ ALTER TABLE ONLY public.auditor_course_records
 
 
 --
--- Name: auditor_feature_flag_records_2021_10 auditor_feature_flag_records_2021_10_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_feature_flag_records_2021_10
-    ADD CONSTRAINT auditor_feature_flag_records_2021_10_pkey PRIMARY KEY (id);
-
-
---
 -- Name: auditor_feature_flag_records_2021_11 auditor_feature_flag_records_2021_11_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.auditor_feature_flag_records_2021_11
     ADD CONSTRAINT auditor_feature_flag_records_2021_11_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auditor_feature_flag_records_2021_12 auditor_feature_flag_records_2021_12_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_feature_flag_records_2021_12
+    ADD CONSTRAINT auditor_feature_flag_records_2021_12_pkey PRIMARY KEY (id);
 
 
 --
@@ -13859,14 +13860,6 @@ ALTER TABLE ONLY public.auditor_grade_change_records_2020_12
 
 
 --
--- Name: auditor_grade_change_records_2020_9 auditor_grade_change_records_2020_9_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_grade_change_records_2020_9
-    ADD CONSTRAINT auditor_grade_change_records_2020_9_pkey PRIMARY KEY (id);
-
-
---
 -- Name: auditor_grade_change_records_2021_10 auditor_grade_change_records_2021_10_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13880,6 +13873,14 @@ ALTER TABLE ONLY public.auditor_grade_change_records_2021_10
 
 ALTER TABLE ONLY public.auditor_grade_change_records_2021_11
     ADD CONSTRAINT auditor_grade_change_records_2021_11_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auditor_grade_change_records_2021_12 auditor_grade_change_records_2021_12_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_grade_change_records_2021_12
+    ADD CONSTRAINT auditor_grade_change_records_2021_12_pkey PRIMARY KEY (id);
 
 
 --
@@ -14867,27 +14868,27 @@ ALTER TABLE ONLY public.mentions
 
 
 --
--- Name: messages_2021_45 messages_2021_45_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: messages_2021_48 messages_2021_48_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.messages_2021_45
-    ADD CONSTRAINT messages_2021_45_pkey PRIMARY KEY (id);
-
-
---
--- Name: messages_2021_46 messages_2021_46_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.messages_2021_46
-    ADD CONSTRAINT messages_2021_46_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.messages_2021_48
+    ADD CONSTRAINT messages_2021_48_pkey PRIMARY KEY (id);
 
 
 --
--- Name: messages_2021_47 messages_2021_47_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: messages_2021_49 messages_2021_49_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.messages_2021_47
-    ADD CONSTRAINT messages_2021_47_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.messages_2021_49
+    ADD CONSTRAINT messages_2021_49_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: messages_2021_50 messages_2021_50_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.messages_2021_50
+    ADD CONSTRAINT messages_2021_50_pkey PRIMARY KEY (id);
 
 
 --
@@ -15267,14 +15268,6 @@ ALTER TABLE ONLY public.quiz_statistics
 
 
 --
--- Name: quiz_submission_events_2021_10 quiz_submission_events_2021_10_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.quiz_submission_events_2021_10
-    ADD CONSTRAINT quiz_submission_events_2021_10_pkey PRIMARY KEY (id);
-
-
---
 -- Name: quiz_submission_events_2021_11 quiz_submission_events_2021_11_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -15288,6 +15281,14 @@ ALTER TABLE ONLY public.quiz_submission_events_2021_11
 
 ALTER TABLE ONLY public.quiz_submission_events_2021_12
     ADD CONSTRAINT quiz_submission_events_2021_12_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: quiz_submission_events_2022_1 quiz_submission_events_2022_1_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.quiz_submission_events_2022_1
+    ADD CONSTRAINT quiz_submission_events_2022_1_pkey PRIMARY KEY (id);
 
 
 --
@@ -15822,27 +15823,6 @@ CREATE INDEX auditor_authentication_records_2020_12_user_id_idx ON public.audito
 
 
 --
--- Name: auditor_authentication_records_2020_9_account_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX auditor_authentication_records_2020_9_account_id_idx ON public.auditor_authentication_records_2020_9 USING btree (account_id);
-
-
---
--- Name: auditor_authentication_records_2020_9_pseudonym_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX auditor_authentication_records_2020_9_pseudonym_id_idx ON public.auditor_authentication_records_2020_9 USING btree (pseudonym_id);
-
-
---
--- Name: auditor_authentication_records_2020_9_user_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX auditor_authentication_records_2020_9_user_id_idx ON public.auditor_authentication_records_2020_9 USING btree (user_id);
-
-
---
 -- Name: auditor_authentication_records_2021_10_account_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -15882,6 +15862,27 @@ CREATE INDEX auditor_authentication_records_2021_11_pseudonym_id_idx ON public.a
 --
 
 CREATE INDEX auditor_authentication_records_2021_11_user_id_idx ON public.auditor_authentication_records_2021_11 USING btree (user_id);
+
+
+--
+-- Name: auditor_authentication_records_2021_12_account_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX auditor_authentication_records_2021_12_account_id_idx ON public.auditor_authentication_records_2021_12 USING btree (account_id);
+
+
+--
+-- Name: auditor_authentication_records_2021_12_pseudonym_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX auditor_authentication_records_2021_12_pseudonym_id_idx ON public.auditor_authentication_records_2021_12 USING btree (pseudonym_id);
+
+
+--
+-- Name: auditor_authentication_records_2021_12_user_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX auditor_authentication_records_2021_12_user_id_idx ON public.auditor_authentication_records_2021_12 USING btree (user_id);
 
 
 --
@@ -16116,20 +16117,6 @@ CREATE INDEX auditor_course_records_2020_12_course_id_idx ON public.auditor_cour
 
 
 --
--- Name: auditor_course_records_2020_9_account_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX auditor_course_records_2020_9_account_id_idx ON public.auditor_course_records_2020_9 USING btree (account_id);
-
-
---
--- Name: auditor_course_records_2020_9_course_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX auditor_course_records_2020_9_course_id_idx ON public.auditor_course_records_2020_9 USING btree (course_id);
-
-
---
 -- Name: auditor_course_records_2021_10_account_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -16155,6 +16142,20 @@ CREATE INDEX auditor_course_records_2021_11_account_id_idx ON public.auditor_cou
 --
 
 CREATE INDEX auditor_course_records_2021_11_course_id_idx ON public.auditor_course_records_2021_11 USING btree (course_id);
+
+
+--
+-- Name: auditor_course_records_2021_12_account_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX auditor_course_records_2021_12_account_id_idx ON public.auditor_course_records_2021_12 USING btree (account_id);
+
+
+--
+-- Name: auditor_course_records_2021_12_course_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX auditor_course_records_2021_12_course_id_idx ON public.auditor_course_records_2021_12 USING btree (course_id);
 
 
 --
@@ -16284,27 +16285,6 @@ CREATE INDEX auditor_course_records_2021_9_course_id_idx ON public.auditor_cours
 
 
 --
--- Name: auditor_feature_flag_records_2021_10_feature_flag_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX auditor_feature_flag_records_2021_10_feature_flag_id_idx ON public.auditor_feature_flag_records_2021_10 USING btree (feature_flag_id);
-
-
---
--- Name: auditor_feature_flag_records_2021_10_root_account_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX auditor_feature_flag_records_2021_10_root_account_id_idx ON public.auditor_feature_flag_records_2021_10 USING btree (root_account_id);
-
-
---
--- Name: auditor_feature_flag_records_2021_10_uuid_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX auditor_feature_flag_records_2021_10_uuid_idx ON public.auditor_feature_flag_records_2021_10 USING btree (uuid);
-
-
---
 -- Name: auditor_feature_flag_records_2021_11_feature_flag_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -16323,6 +16303,27 @@ CREATE INDEX auditor_feature_flag_records_2021_11_root_account_id_idx ON public.
 --
 
 CREATE INDEX auditor_feature_flag_records_2021_11_uuid_idx ON public.auditor_feature_flag_records_2021_11 USING btree (uuid);
+
+
+--
+-- Name: auditor_feature_flag_records_2021_12_feature_flag_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX auditor_feature_flag_records_2021_12_feature_flag_id_idx ON public.auditor_feature_flag_records_2021_12 USING btree (feature_flag_id);
+
+
+--
+-- Name: auditor_feature_flag_records_2021_12_root_account_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX auditor_feature_flag_records_2021_12_root_account_id_idx ON public.auditor_feature_flag_records_2021_12 USING btree (root_account_id);
+
+
+--
+-- Name: auditor_feature_flag_records_2021_12_uuid_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX auditor_feature_flag_records_2021_12_uuid_idx ON public.auditor_feature_flag_records_2021_12 USING btree (uuid);
 
 
 --
@@ -16347,13 +16348,6 @@ CREATE INDEX auditor_grade_change_records_2020_12_assignment_id_idx ON public.au
 
 
 --
--- Name: auditor_grade_change_records_2020_9_assignment_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX auditor_grade_change_records_2020_9_assignment_id_idx ON public.auditor_grade_change_records_2020_9 USING btree (assignment_id);
-
-
---
 -- Name: auditor_grade_change_records_2020_root_account_id_grader_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -16372,6 +16366,13 @@ CREATE INDEX auditor_grade_change_records_2021_10_assignment_id_idx ON public.au
 --
 
 CREATE INDEX auditor_grade_change_records_2021_11_assignment_id_idx ON public.auditor_grade_change_records_2021_11 USING btree (assignment_id);
+
+
+--
+-- Name: auditor_grade_change_records_2021_12_assignment_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX auditor_grade_change_records_2021_12_assignment_id_idx ON public.auditor_grade_change_records_2021_12 USING btree (assignment_id);
 
 
 --
@@ -16441,518 +16442,518 @@ CREATE INDEX auditor_grade_change_records_2021_9_assignment_id_idx ON public.aud
 -- Name: auditor_grade_change_records_2021_root_account_id_grader_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_2021_root_account_id_grader_id_idx ON public.auditor_grade_change_records_2021_10 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_2021_root_account_id_grader_id_idx ON public.auditor_grade_change_records_2021_11 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_grader_id_idx1; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx1 ON public.auditor_grade_change_records_2021_11 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx1 ON public.auditor_grade_change_records_2021_12 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_grader_id_idx2; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx2 ON public.auditor_grade_change_records_2021_9 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx2 ON public.auditor_grade_change_records_2021_10 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_grader_id_idx3; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx3 ON public.auditor_grade_change_records_2021_8 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx3 ON public.auditor_grade_change_records_2021_9 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_grader_id_idx4; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx4 ON public.auditor_grade_change_records_2021_7 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx4 ON public.auditor_grade_change_records_2021_8 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_grader_id_idx5; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx5 ON public.auditor_grade_change_records_2021_6 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx5 ON public.auditor_grade_change_records_2021_7 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_grader_id_idx6; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx6 ON public.auditor_grade_change_records_2021_5 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx6 ON public.auditor_grade_change_records_2021_6 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_grader_id_idx7; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx7 ON public.auditor_grade_change_records_2021_4 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx7 ON public.auditor_grade_change_records_2021_5 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_grader_id_idx8; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx8 ON public.auditor_grade_change_records_2021_3 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx8 ON public.auditor_grade_change_records_2021_4 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_grader_id_idx9; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx9 ON public.auditor_grade_change_records_2021_2 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_grader_id_idx9 ON public.auditor_grade_change_records_2021_3 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_202_root_account_id_student_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_202_root_account_id_student_id_idx ON public.auditor_grade_change_records_2021_10 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_202_root_account_id_student_id_idx ON public.auditor_grade_change_records_2021_11 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_grader_id_idx10; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_grader_id_idx10 ON public.auditor_grade_change_records_2021_1 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_grader_id_idx10 ON public.auditor_grade_change_records_2021_2 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_grader_id_idx11; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_grader_id_idx11 ON public.auditor_grade_change_records_2020_11 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_grader_id_idx11 ON public.auditor_grade_change_records_2021_1 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_grader_id_idx12; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_grader_id_idx12 ON public.auditor_grade_change_records_2020_10 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_grader_id_idx12 ON public.auditor_grade_change_records_2020_11 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_grader_id_idx13; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_grader_id_idx13 ON public.auditor_grade_change_records_2020_9 USING btree (root_account_id, grader_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_grader_id_idx13 ON public.auditor_grade_change_records_2020_10 USING btree (root_account_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_student_id_idx1; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx1 ON public.auditor_grade_change_records_2021_11 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx1 ON public.auditor_grade_change_records_2021_12 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_student_id_idx2; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx2 ON public.auditor_grade_change_records_2021_9 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx2 ON public.auditor_grade_change_records_2021_10 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_student_id_idx3; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx3 ON public.auditor_grade_change_records_2021_8 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx3 ON public.auditor_grade_change_records_2021_9 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_student_id_idx4; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx4 ON public.auditor_grade_change_records_2021_7 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx4 ON public.auditor_grade_change_records_2021_8 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_student_id_idx5; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx5 ON public.auditor_grade_change_records_2021_6 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx5 ON public.auditor_grade_change_records_2021_7 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_student_id_idx6; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx6 ON public.auditor_grade_change_records_2021_5 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx6 ON public.auditor_grade_change_records_2021_6 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_student_id_idx7; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx7 ON public.auditor_grade_change_records_2021_4 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx7 ON public.auditor_grade_change_records_2021_5 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_student_id_idx8; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx8 ON public.auditor_grade_change_records_2021_3 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx8 ON public.auditor_grade_change_records_2021_4 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_20_root_account_id_student_id_idx9; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx9 ON public.auditor_grade_change_records_2021_2 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_20_root_account_id_student_id_idx9 ON public.auditor_grade_change_records_2021_3 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_2_root_account_id_student_id_idx10; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx10 ON public.auditor_grade_change_records_2021_1 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx10 ON public.auditor_grade_change_records_2021_2 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_2_root_account_id_student_id_idx11; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx11 ON public.auditor_grade_change_records_2020_12 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx11 ON public.auditor_grade_change_records_2021_1 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_2_root_account_id_student_id_idx12; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx12 ON public.auditor_grade_change_records_2020_11 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx12 ON public.auditor_grade_change_records_2020_12 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_2_root_account_id_student_id_idx13; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx13 ON public.auditor_grade_change_records_2020_10 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx13 ON public.auditor_grade_change_records_2020_11 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_2_root_account_id_student_id_idx14; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx14 ON public.auditor_grade_change_records_2020_9 USING btree (root_account_id, student_id);
+CREATE INDEX auditor_grade_change_records_2_root_account_id_student_id_idx14 ON public.auditor_grade_change_records_2020_10 USING btree (root_account_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assi_idx1; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx1 ON public.auditor_grade_change_records_2021_11 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx1 ON public.auditor_grade_change_records_2021_12 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assi_idx2; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx2 ON public.auditor_grade_change_records_2021_9 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx2 ON public.auditor_grade_change_records_2021_10 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assi_idx3; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx3 ON public.auditor_grade_change_records_2021_8 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx3 ON public.auditor_grade_change_records_2021_9 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assi_idx4; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx4 ON public.auditor_grade_change_records_2021_7 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx4 ON public.auditor_grade_change_records_2021_8 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assi_idx5; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx5 ON public.auditor_grade_change_records_2021_6 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx5 ON public.auditor_grade_change_records_2021_7 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assi_idx6; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx6 ON public.auditor_grade_change_records_2021_5 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx6 ON public.auditor_grade_change_records_2021_6 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assi_idx7; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx7 ON public.auditor_grade_change_records_2021_4 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx7 ON public.auditor_grade_change_records_2021_5 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assi_idx8; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx8 ON public.auditor_grade_change_records_2021_3 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx8 ON public.auditor_grade_change_records_2021_4 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assi_idx9; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx9 ON public.auditor_grade_change_records_2021_2 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assi_idx9 ON public.auditor_grade_change_records_2021_3 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_assig_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_assig_idx ON public.auditor_grade_change_records_2021_10 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_assig_idx ON public.auditor_grade_change_records_2021_11 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grad_idx1; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx1 ON public.auditor_grade_change_records_2021_11 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx1 ON public.auditor_grade_change_records_2021_12 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grad_idx2; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx2 ON public.auditor_grade_change_records_2021_9 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx2 ON public.auditor_grade_change_records_2021_10 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grad_idx3; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx3 ON public.auditor_grade_change_records_2021_8 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx3 ON public.auditor_grade_change_records_2021_9 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grad_idx4; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx4 ON public.auditor_grade_change_records_2021_7 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx4 ON public.auditor_grade_change_records_2021_8 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grad_idx5; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx5 ON public.auditor_grade_change_records_2021_6 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx5 ON public.auditor_grade_change_records_2021_7 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grad_idx6; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx6 ON public.auditor_grade_change_records_2021_5 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx6 ON public.auditor_grade_change_records_2021_6 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grad_idx7; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx7 ON public.auditor_grade_change_records_2021_4 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx7 ON public.auditor_grade_change_records_2021_5 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grad_idx8; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx8 ON public.auditor_grade_change_records_2021_3 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx8 ON public.auditor_grade_change_records_2021_4 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grad_idx9; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx9 ON public.auditor_grade_change_records_2021_2 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grad_idx9 ON public.auditor_grade_change_records_2021_3 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_grade_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_grade_idx ON public.auditor_grade_change_records_2021_10 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_grade_idx ON public.auditor_grade_change_records_2021_11 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stud_idx1; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx1 ON public.auditor_grade_change_records_2021_11 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx1 ON public.auditor_grade_change_records_2021_12 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stud_idx2; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx2 ON public.auditor_grade_change_records_2021_9 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx2 ON public.auditor_grade_change_records_2021_10 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stud_idx3; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx3 ON public.auditor_grade_change_records_2021_8 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx3 ON public.auditor_grade_change_records_2021_9 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stud_idx4; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx4 ON public.auditor_grade_change_records_2021_7 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx4 ON public.auditor_grade_change_records_2021_8 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stud_idx5; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx5 ON public.auditor_grade_change_records_2021_6 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx5 ON public.auditor_grade_change_records_2021_7 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stud_idx6; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx6 ON public.auditor_grade_change_records_2021_5 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx6 ON public.auditor_grade_change_records_2021_6 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stud_idx7; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx7 ON public.auditor_grade_change_records_2021_4 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx7 ON public.auditor_grade_change_records_2021_5 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stud_idx8; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx8 ON public.auditor_grade_change_records_2021_3 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx8 ON public.auditor_grade_change_records_2021_4 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stud_idx9; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx9 ON public.auditor_grade_change_records_2021_2 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stud_idx9 ON public.auditor_grade_change_records_2021_3 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records__context_type_context_id_stude_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records__context_type_context_id_stude_idx ON public.auditor_grade_change_records_2021_10 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records__context_type_context_id_stude_idx ON public.auditor_grade_change_records_2021_11 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_assi_idx10; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx10 ON public.auditor_grade_change_records_2021_1 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx10 ON public.auditor_grade_change_records_2021_2 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_assi_idx11; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx11 ON public.auditor_grade_change_records_2020_12 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx11 ON public.auditor_grade_change_records_2021_1 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_assi_idx12; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx12 ON public.auditor_grade_change_records_2020_11 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx12 ON public.auditor_grade_change_records_2020_12 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_assi_idx13; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx13 ON public.auditor_grade_change_records_2020_10 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx13 ON public.auditor_grade_change_records_2020_11 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_assi_idx14; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx14 ON public.auditor_grade_change_records_2020_9 USING btree (context_type, context_id, assignment_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_assi_idx14 ON public.auditor_grade_change_records_2020_10 USING btree (context_type, context_id, assignment_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_grad_idx10; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx10 ON public.auditor_grade_change_records_2021_1 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx10 ON public.auditor_grade_change_records_2021_2 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_grad_idx11; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx11 ON public.auditor_grade_change_records_2020_12 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx11 ON public.auditor_grade_change_records_2021_1 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_grad_idx12; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx12 ON public.auditor_grade_change_records_2020_11 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx12 ON public.auditor_grade_change_records_2020_12 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_grad_idx13; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx13 ON public.auditor_grade_change_records_2020_10 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx13 ON public.auditor_grade_change_records_2020_11 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_grad_idx14; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx14 ON public.auditor_grade_change_records_2020_9 USING btree (context_type, context_id, grader_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_grad_idx14 ON public.auditor_grade_change_records_2020_10 USING btree (context_type, context_id, grader_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_stud_idx10; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx10 ON public.auditor_grade_change_records_2021_1 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx10 ON public.auditor_grade_change_records_2021_2 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_stud_idx11; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx11 ON public.auditor_grade_change_records_2020_12 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx11 ON public.auditor_grade_change_records_2021_1 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_stud_idx12; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx12 ON public.auditor_grade_change_records_2020_11 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx12 ON public.auditor_grade_change_records_2020_12 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_stud_idx13; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx13 ON public.auditor_grade_change_records_2020_10 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx13 ON public.auditor_grade_change_records_2020_11 USING btree (context_type, context_id, student_id);
 
 
 --
 -- Name: auditor_grade_change_records_context_type_context_id_stud_idx14; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx14 ON public.auditor_grade_change_records_2020_9 USING btree (context_type, context_id, student_id);
+CREATE INDEX auditor_grade_change_records_context_type_context_id_stud_idx14 ON public.auditor_grade_change_records_2020_10 USING btree (context_type, context_id, student_id);
 
 
 --
@@ -17916,13 +17917,6 @@ CREATE UNIQUE INDEX index_auditor_authentication_records_2020_12_on_uuid ON publ
 
 
 --
--- Name: index_auditor_authentication_records_2020_9_on_uuid; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX index_auditor_authentication_records_2020_9_on_uuid ON public.auditor_authentication_records_2020_9 USING btree (uuid);
-
-
---
 -- Name: index_auditor_authentication_records_2021_10_on_uuid; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -17934,6 +17928,13 @@ CREATE UNIQUE INDEX index_auditor_authentication_records_2021_10_on_uuid ON publ
 --
 
 CREATE UNIQUE INDEX index_auditor_authentication_records_2021_11_on_uuid ON public.auditor_authentication_records_2021_11 USING btree (uuid);
+
+
+--
+-- Name: index_auditor_authentication_records_2021_12_on_uuid; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_auditor_authentication_records_2021_12_on_uuid ON public.auditor_authentication_records_2021_12 USING btree (uuid);
 
 
 --
@@ -18084,27 +18085,6 @@ CREATE UNIQUE INDEX index_auditor_course_records_2020_12_on_uuid ON public.audit
 
 
 --
--- Name: index_auditor_course_records_2020_9_on_sis_batch_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_auditor_course_records_2020_9_on_sis_batch_id ON public.auditor_course_records_2020_9 USING btree (sis_batch_id);
-
-
---
--- Name: index_auditor_course_records_2020_9_on_user_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_auditor_course_records_2020_9_on_user_id ON public.auditor_course_records_2020_9 USING btree (user_id);
-
-
---
--- Name: index_auditor_course_records_2020_9_on_uuid; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX index_auditor_course_records_2020_9_on_uuid ON public.auditor_course_records_2020_9 USING btree (uuid);
-
-
---
 -- Name: index_auditor_course_records_2021_10_on_sis_batch_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -18144,6 +18124,27 @@ CREATE INDEX index_auditor_course_records_2021_11_on_user_id ON public.auditor_c
 --
 
 CREATE UNIQUE INDEX index_auditor_course_records_2021_11_on_uuid ON public.auditor_course_records_2021_11 USING btree (uuid);
+
+
+--
+-- Name: index_auditor_course_records_2021_12_on_sis_batch_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_auditor_course_records_2021_12_on_sis_batch_id ON public.auditor_course_records_2021_12 USING btree (sis_batch_id);
+
+
+--
+-- Name: index_auditor_course_records_2021_12_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_auditor_course_records_2021_12_on_user_id ON public.auditor_course_records_2021_12 USING btree (user_id);
+
+
+--
+-- Name: index_auditor_course_records_2021_12_on_uuid; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_auditor_course_records_2021_12_on_uuid ON public.auditor_course_records_2021_12 USING btree (uuid);
 
 
 --
@@ -18364,17 +18365,17 @@ CREATE INDEX index_auditor_course_records_on_user_id ON public.auditor_course_re
 
 
 --
--- Name: index_auditor_feature_flag_records_2021_10_on_user_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_auditor_feature_flag_records_2021_10_on_user_id ON public.auditor_feature_flag_records_2021_10 USING btree (user_id);
-
-
---
 -- Name: index_auditor_feature_flag_records_2021_11_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_auditor_feature_flag_records_2021_11_on_user_id ON public.auditor_feature_flag_records_2021_11 USING btree (user_id);
+
+
+--
+-- Name: index_auditor_feature_flag_records_2021_12_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_auditor_feature_flag_records_2021_12_on_user_id ON public.auditor_feature_flag_records_2021_12 USING btree (user_id);
 
 
 --
@@ -18511,41 +18512,6 @@ CREATE UNIQUE INDEX index_auditor_grade_change_records_2020_12_on_uuid ON public
 
 
 --
--- Name: index_auditor_grade_change_records_2020_9_on_account_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_auditor_grade_change_records_2020_9_on_account_id ON public.auditor_grade_change_records_2020_9 USING btree (account_id);
-
-
---
--- Name: index_auditor_grade_change_records_2020_9_on_grader_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_auditor_grade_change_records_2020_9_on_grader_id ON public.auditor_grade_change_records_2020_9 USING btree (grader_id);
-
-
---
--- Name: index_auditor_grade_change_records_2020_9_on_student_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_auditor_grade_change_records_2020_9_on_student_id ON public.auditor_grade_change_records_2020_9 USING btree (student_id);
-
-
---
--- Name: index_auditor_grade_change_records_2020_9_on_submission_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_auditor_grade_change_records_2020_9_on_submission_id ON public.auditor_grade_change_records_2020_9 USING btree (submission_id);
-
-
---
--- Name: index_auditor_grade_change_records_2020_9_on_uuid; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX index_auditor_grade_change_records_2020_9_on_uuid ON public.auditor_grade_change_records_2020_9 USING btree (uuid);
-
-
---
 -- Name: index_auditor_grade_change_records_2021_10_on_account_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -18613,6 +18579,41 @@ CREATE INDEX index_auditor_grade_change_records_2021_11_on_submission_id ON publ
 --
 
 CREATE UNIQUE INDEX index_auditor_grade_change_records_2021_11_on_uuid ON public.auditor_grade_change_records_2021_11 USING btree (uuid);
+
+
+--
+-- Name: index_auditor_grade_change_records_2021_12_on_account_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_auditor_grade_change_records_2021_12_on_account_id ON public.auditor_grade_change_records_2021_12 USING btree (account_id);
+
+
+--
+-- Name: index_auditor_grade_change_records_2021_12_on_grader_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_auditor_grade_change_records_2021_12_on_grader_id ON public.auditor_grade_change_records_2021_12 USING btree (grader_id);
+
+
+--
+-- Name: index_auditor_grade_change_records_2021_12_on_student_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_auditor_grade_change_records_2021_12_on_student_id ON public.auditor_grade_change_records_2021_12 USING btree (student_id);
+
+
+--
+-- Name: index_auditor_grade_change_records_2021_12_on_submission_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_auditor_grade_change_records_2021_12_on_submission_id ON public.auditor_grade_change_records_2021_12 USING btree (submission_id);
+
+
+--
+-- Name: index_auditor_grade_change_records_2021_12_on_uuid; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_auditor_grade_change_records_2021_12_on_uuid ON public.auditor_grade_change_records_2021_12 USING btree (uuid);
 
 
 --
@@ -22281,6 +22282,13 @@ CREATE INDEX index_outcome_imports_on_context_type_and_context_id ON public.outc
 
 
 --
+-- Name: index_outcome_imports_on_learning_outcome_group_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_outcome_imports_on_learning_outcome_group_id ON public.outcome_imports USING btree (learning_outcome_group_id);
+
+
+--
 -- Name: index_outcome_imports_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -23960,150 +23968,150 @@ CREATE INDEX media_object_id_locale ON public.media_tracks USING btree (media_ob
 
 
 --
--- Name: messages_2021_45_communication_channel_id_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_48_communication_channel_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_45_communication_channel_id_idx ON public.messages_2021_45 USING btree (communication_channel_id);
-
-
---
--- Name: messages_2021_45_context_id_context_type_notification_name__idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_45_context_id_context_type_notification_name__idx ON public.messages_2021_45 USING btree (context_id, context_type, notification_name, "to", user_id);
+CREATE INDEX messages_2021_48_communication_channel_id_idx ON public.messages_2021_48 USING btree (communication_channel_id);
 
 
 --
--- Name: messages_2021_45_created_at_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_48_context_id_context_type_notification_name__idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_45_created_at_idx ON public.messages_2021_45 USING btree (created_at);
-
-
---
--- Name: messages_2021_45_notification_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_45_notification_id_idx ON public.messages_2021_45 USING btree (notification_id);
+CREATE INDEX messages_2021_48_context_id_context_type_notification_name__idx ON public.messages_2021_48 USING btree (context_id, context_type, notification_name, "to", user_id);
 
 
 --
--- Name: messages_2021_45_root_account_id_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_48_created_at_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_45_root_account_id_idx ON public.messages_2021_45 USING btree (root_account_id);
-
-
---
--- Name: messages_2021_45_sent_at_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_45_sent_at_idx ON public.messages_2021_45 USING btree (sent_at) WHERE (sent_at IS NOT NULL);
+CREATE INDEX messages_2021_48_created_at_idx ON public.messages_2021_48 USING btree (created_at);
 
 
 --
--- Name: messages_2021_45_user_id_to_email_dispatch_at_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_48_notification_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_45_user_id_to_email_dispatch_at_idx ON public.messages_2021_45 USING btree (user_id, to_email, dispatch_at);
-
-
---
--- Name: messages_2021_46_communication_channel_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_46_communication_channel_id_idx ON public.messages_2021_46 USING btree (communication_channel_id);
+CREATE INDEX messages_2021_48_notification_id_idx ON public.messages_2021_48 USING btree (notification_id);
 
 
 --
--- Name: messages_2021_46_context_id_context_type_notification_name__idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_48_root_account_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_46_context_id_context_type_notification_name__idx ON public.messages_2021_46 USING btree (context_id, context_type, notification_name, "to", user_id);
-
-
---
--- Name: messages_2021_46_created_at_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_46_created_at_idx ON public.messages_2021_46 USING btree (created_at);
+CREATE INDEX messages_2021_48_root_account_id_idx ON public.messages_2021_48 USING btree (root_account_id);
 
 
 --
--- Name: messages_2021_46_notification_id_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_48_sent_at_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_46_notification_id_idx ON public.messages_2021_46 USING btree (notification_id);
-
-
---
--- Name: messages_2021_46_root_account_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_46_root_account_id_idx ON public.messages_2021_46 USING btree (root_account_id);
+CREATE INDEX messages_2021_48_sent_at_idx ON public.messages_2021_48 USING btree (sent_at) WHERE (sent_at IS NOT NULL);
 
 
 --
--- Name: messages_2021_46_sent_at_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_48_user_id_to_email_dispatch_at_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_46_sent_at_idx ON public.messages_2021_46 USING btree (sent_at) WHERE (sent_at IS NOT NULL);
-
-
---
--- Name: messages_2021_46_user_id_to_email_dispatch_at_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_46_user_id_to_email_dispatch_at_idx ON public.messages_2021_46 USING btree (user_id, to_email, dispatch_at);
+CREATE INDEX messages_2021_48_user_id_to_email_dispatch_at_idx ON public.messages_2021_48 USING btree (user_id, to_email, dispatch_at);
 
 
 --
--- Name: messages_2021_47_communication_channel_id_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_49_communication_channel_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_47_communication_channel_id_idx ON public.messages_2021_47 USING btree (communication_channel_id);
-
-
---
--- Name: messages_2021_47_context_id_context_type_notification_name__idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_47_context_id_context_type_notification_name__idx ON public.messages_2021_47 USING btree (context_id, context_type, notification_name, "to", user_id);
+CREATE INDEX messages_2021_49_communication_channel_id_idx ON public.messages_2021_49 USING btree (communication_channel_id);
 
 
 --
--- Name: messages_2021_47_created_at_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_49_context_id_context_type_notification_name__idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_47_created_at_idx ON public.messages_2021_47 USING btree (created_at);
-
-
---
--- Name: messages_2021_47_notification_id_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_47_notification_id_idx ON public.messages_2021_47 USING btree (notification_id);
+CREATE INDEX messages_2021_49_context_id_context_type_notification_name__idx ON public.messages_2021_49 USING btree (context_id, context_type, notification_name, "to", user_id);
 
 
 --
--- Name: messages_2021_47_root_account_id_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_49_created_at_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_47_root_account_id_idx ON public.messages_2021_47 USING btree (root_account_id);
-
-
---
--- Name: messages_2021_47_sent_at_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX messages_2021_47_sent_at_idx ON public.messages_2021_47 USING btree (sent_at) WHERE (sent_at IS NOT NULL);
+CREATE INDEX messages_2021_49_created_at_idx ON public.messages_2021_49 USING btree (created_at);
 
 
 --
--- Name: messages_2021_47_user_id_to_email_dispatch_at_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: messages_2021_49_notification_id_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX messages_2021_47_user_id_to_email_dispatch_at_idx ON public.messages_2021_47 USING btree (user_id, to_email, dispatch_at);
+CREATE INDEX messages_2021_49_notification_id_idx ON public.messages_2021_49 USING btree (notification_id);
+
+
+--
+-- Name: messages_2021_49_root_account_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_49_root_account_id_idx ON public.messages_2021_49 USING btree (root_account_id);
+
+
+--
+-- Name: messages_2021_49_sent_at_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_49_sent_at_idx ON public.messages_2021_49 USING btree (sent_at) WHERE (sent_at IS NOT NULL);
+
+
+--
+-- Name: messages_2021_49_user_id_to_email_dispatch_at_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_49_user_id_to_email_dispatch_at_idx ON public.messages_2021_49 USING btree (user_id, to_email, dispatch_at);
+
+
+--
+-- Name: messages_2021_50_communication_channel_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_50_communication_channel_id_idx ON public.messages_2021_50 USING btree (communication_channel_id);
+
+
+--
+-- Name: messages_2021_50_context_id_context_type_notification_name__idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_50_context_id_context_type_notification_name__idx ON public.messages_2021_50 USING btree (context_id, context_type, notification_name, "to", user_id);
+
+
+--
+-- Name: messages_2021_50_created_at_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_50_created_at_idx ON public.messages_2021_50 USING btree (created_at);
+
+
+--
+-- Name: messages_2021_50_notification_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_50_notification_id_idx ON public.messages_2021_50 USING btree (notification_id);
+
+
+--
+-- Name: messages_2021_50_root_account_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_50_root_account_id_idx ON public.messages_2021_50 USING btree (root_account_id);
+
+
+--
+-- Name: messages_2021_50_sent_at_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_50_sent_at_idx ON public.messages_2021_50 USING btree (sent_at) WHERE (sent_at IS NOT NULL);
+
+
+--
+-- Name: messages_2021_50_user_id_to_email_dispatch_at_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX messages_2021_50_user_id_to_email_dispatch_at_idx ON public.messages_2021_50 USING btree (user_id, to_email, dispatch_at);
 
 
 --
@@ -24156,13 +24164,6 @@ CREATE INDEX quiz_questions_quiz_group_id ON public.quiz_questions USING btree (
 
 
 --
--- Name: quiz_submission_events_2021_10_created_at_idx; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX quiz_submission_events_2021_10_created_at_idx ON public.quiz_submission_events_2021_10 USING btree (created_at);
-
-
---
 -- Name: quiz_submission_events_2021_11_created_at_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -24180,21 +24181,28 @@ CREATE INDEX quiz_submission_events_2021_12_created_at_idx ON public.quiz_submis
 -- Name: quiz_submission_events_2021_1_quiz_submission_id_attempt_c_idx1; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX quiz_submission_events_2021_1_quiz_submission_id_attempt_c_idx1 ON public.quiz_submission_events_2021_11 USING btree (quiz_submission_id, attempt, created_at);
-
-
---
--- Name: quiz_submission_events_2021_1_quiz_submission_id_attempt_c_idx2; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX quiz_submission_events_2021_1_quiz_submission_id_attempt_c_idx2 ON public.quiz_submission_events_2021_12 USING btree (quiz_submission_id, attempt, created_at);
+CREATE INDEX quiz_submission_events_2021_1_quiz_submission_id_attempt_c_idx1 ON public.quiz_submission_events_2021_12 USING btree (quiz_submission_id, attempt, created_at);
 
 
 --
 -- Name: quiz_submission_events_2021_1_quiz_submission_id_attempt_cr_idx; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX quiz_submission_events_2021_1_quiz_submission_id_attempt_cr_idx ON public.quiz_submission_events_2021_10 USING btree (quiz_submission_id, attempt, created_at);
+CREATE INDEX quiz_submission_events_2021_1_quiz_submission_id_attempt_cr_idx ON public.quiz_submission_events_2021_11 USING btree (quiz_submission_id, attempt, created_at);
+
+
+--
+-- Name: quiz_submission_events_2022_1_created_at_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX quiz_submission_events_2022_1_created_at_idx ON public.quiz_submission_events_2022_1 USING btree (created_at);
+
+
+--
+-- Name: quiz_submission_events_2022_1_quiz_submission_id_attempt_cr_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX quiz_submission_events_2022_1_quiz_submission_id_attempt_cr_idx ON public.quiz_submission_events_2022_1 USING btree (quiz_submission_id, attempt, created_at);
 
 
 --
@@ -24565,14 +24573,6 @@ ALTER TABLE ONLY public.content_exports
 
 
 --
--- Name: auditor_course_records_2020_9 fk_rails_08dfb42857; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_course_records_2020_9
-    ADD CONSTRAINT fk_rails_08dfb42857 FOREIGN KEY (user_id) REFERENCES public.users(id);
-
-
---
 -- Name: late_policies fk_rails_09f671532d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -24770,6 +24770,14 @@ ALTER TABLE ONLY public.group_memberships
 
 ALTER TABLE ONLY public.auditor_course_records_2021_3
     ADD CONSTRAINT fk_rails_1434531bf8 FOREIGN KEY (account_id) REFERENCES public.accounts(id);
+
+
+--
+-- Name: auditor_grade_change_records_2021_12 fk_rails_14bade5938; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_grade_change_records_2021_12
+    ADD CONSTRAINT fk_rails_14bade5938 FOREIGN KEY (account_id) REFERENCES public.accounts(id);
 
 
 --
@@ -25085,14 +25093,6 @@ ALTER TABLE ONLY public.pace_plan_module_items
 
 
 --
--- Name: auditor_grade_change_records_2020_9 fk_rails_257be79fe6; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_grade_change_records_2020_9
-    ADD CONSTRAINT fk_rails_257be79fe6 FOREIGN KEY (assignment_id) REFERENCES public.assignments(id);
-
-
---
 -- Name: enrollment_states fk_rails_2583b53a28; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -25154,6 +25154,14 @@ ALTER TABLE ONLY public.context_external_tools
 
 ALTER TABLE ONLY public.content_migrations
     ADD CONSTRAINT fk_rails_27f5fdeb82 FOREIGN KEY (root_account_id) REFERENCES public.accounts(id);
+
+
+--
+-- Name: auditor_authentication_records_2021_12 fk_rails_280225919c; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_authentication_records_2021_12
+    ADD CONSTRAINT fk_rails_280225919c FOREIGN KEY (pseudonym_id) REFERENCES public.pseudonyms(id);
 
 
 --
@@ -25314,14 +25322,6 @@ ALTER TABLE ONLY public.assessment_questions
 
 ALTER TABLE ONLY public.pace_plan_module_items
     ADD CONSTRAINT fk_rails_2f95990776 FOREIGN KEY (module_item_id) REFERENCES public.content_tags(id);
-
-
---
--- Name: auditor_authentication_records_2020_9 fk_rails_300cc6fd4e; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_authentication_records_2020_9
-    ADD CONSTRAINT fk_rails_300cc6fd4e FOREIGN KEY (account_id) REFERENCES public.accounts(id);
 
 
 --
@@ -25525,6 +25525,14 @@ ALTER TABLE ONLY public.auditor_grade_change_records_2021_2
 
 
 --
+-- Name: auditor_grade_change_records_2021_12 fk_rails_383343135c; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_grade_change_records_2021_12
+    ADD CONSTRAINT fk_rails_383343135c FOREIGN KEY (student_id) REFERENCES public.users(id);
+
+
+--
 -- Name: canvadocs_annotation_contexts fk_rails_3852f56e03; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -25605,6 +25613,14 @@ ALTER TABLE ONLY public.discussion_topic_participants
 
 
 --
+-- Name: quiz_submission_events_2022_1 fk_rails_3b923538b6; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.quiz_submission_events_2022_1
+    ADD CONSTRAINT fk_rails_3b923538b6 FOREIGN KEY (quiz_submission_id) REFERENCES public.quiz_submissions(id);
+
+
+--
 -- Name: master_courses_migration_results fk_rails_3bc9928389; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -25666,14 +25682,6 @@ ALTER TABLE ONLY public.learning_outcome_question_results
 
 ALTER TABLE ONLY public.collaborations
     ADD CONSTRAINT fk_rails_3e8ae0af8a FOREIGN KEY (user_id) REFERENCES public.users(id);
-
-
---
--- Name: auditor_authentication_records_2020_9 fk_rails_3e913b8c75; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_authentication_records_2020_9
-    ADD CONSTRAINT fk_rails_3e913b8c75 FOREIGN KEY (pseudonym_id) REFERENCES public.pseudonyms(id);
 
 
 --
@@ -25989,14 +25997,6 @@ ALTER TABLE ONLY public.auditor_grade_change_records_2021_7
 
 
 --
--- Name: auditor_grade_change_records_2020_9 fk_rails_4c25ace354; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_grade_change_records_2020_9
-    ADD CONSTRAINT fk_rails_4c25ace354 FOREIGN KEY (root_account_id) REFERENCES public.accounts(id);
-
-
---
 -- Name: eportfolios fk_rails_4c2dbd440f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -26069,6 +26069,14 @@ ALTER TABLE ONLY public.user_observers
 
 
 --
+-- Name: auditor_course_records_2021_12 fk_rails_511b6b998a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_course_records_2021_12
+    ADD CONSTRAINT fk_rails_511b6b998a FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
 -- Name: auditor_grade_change_records_2021_5 fk_rails_518faf011a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -26125,6 +26133,14 @@ ALTER TABLE ONLY public.lti_results
 
 
 --
+-- Name: auditor_course_records_2021_12 fk_rails_525bacb5cb; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_course_records_2021_12
+    ADD CONSTRAINT fk_rails_525bacb5cb FOREIGN KEY (account_id) REFERENCES public.accounts(id);
+
+
+--
 -- Name: polling_poll_sessions fk_rails_52ebcb3ce8; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -26138,14 +26154,6 @@ ALTER TABLE ONLY public.polling_poll_sessions
 
 ALTER TABLE ONLY public.lti_line_items
     ADD CONSTRAINT fk_rails_5389b967c4 FOREIGN KEY (assignment_id) REFERENCES public.assignments(id);
-
-
---
--- Name: auditor_grade_change_records_2020_9 fk_rails_54354c65f1; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_grade_change_records_2020_9
-    ADD CONSTRAINT fk_rails_54354c65f1 FOREIGN KEY (submission_id) REFERENCES public.submissions(id);
 
 
 --
@@ -26165,27 +26173,11 @@ ALTER TABLE ONLY public.auditor_authentication_records_2021_6
 
 
 --
--- Name: auditor_grade_change_records_2020_9 fk_rails_54cca2101a; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_grade_change_records_2020_9
-    ADD CONSTRAINT fk_rails_54cca2101a FOREIGN KEY (account_id) REFERENCES public.accounts(id);
-
-
---
 -- Name: enrollments fk_rails_56c4ec50d6; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.enrollments
     ADD CONSTRAINT fk_rails_56c4ec50d6 FOREIGN KEY (sis_batch_id) REFERENCES public.sis_batches(id);
-
-
---
--- Name: auditor_feature_flag_records_2021_10 fk_rails_5716a48106; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_feature_flag_records_2021_10
-    ADD CONSTRAINT fk_rails_5716a48106 FOREIGN KEY (user_id) REFERENCES public.users(id);
 
 
 --
@@ -26557,14 +26549,6 @@ ALTER TABLE ONLY public.quiz_groups
 
 
 --
--- Name: quiz_submission_events_2021_10 fk_rails_675120a9c2; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.quiz_submission_events_2021_10
-    ADD CONSTRAINT fk_rails_675120a9c2 FOREIGN KEY (quiz_submission_id) REFERENCES public.quiz_submissions(id);
-
-
---
 -- Name: discussion_topics fk_rails_6791d1877c; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -26594,6 +26578,14 @@ ALTER TABLE ONLY public.microsoft_sync_user_mappings
 
 ALTER TABLE ONLY public.auditor_grade_change_records_2021_6
     ADD CONSTRAINT fk_rails_6971fac5a5 FOREIGN KEY (assignment_id) REFERENCES public.assignments(id);
+
+
+--
+-- Name: auditor_grade_change_records_2021_12 fk_rails_6998407d47; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_grade_change_records_2021_12
+    ADD CONSTRAINT fk_rails_6998407d47 FOREIGN KEY (root_account_id) REFERENCES public.accounts(id);
 
 
 --
@@ -26642,14 +26634,6 @@ ALTER TABLE ONLY public.auditor_grade_change_records_2021_11
 
 ALTER TABLE ONLY public.auditor_course_records_2021_1
     ADD CONSTRAINT fk_rails_6add06c1c7 FOREIGN KEY (user_id) REFERENCES public.users(id);
-
-
---
--- Name: auditor_authentication_records_2020_9 fk_rails_6bdd4bd118; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_authentication_records_2020_9
-    ADD CONSTRAINT fk_rails_6bdd4bd118 FOREIGN KEY (user_id) REFERENCES public.users(id);
 
 
 --
@@ -26802,14 +26786,6 @@ ALTER TABLE ONLY public.calendar_events
 
 ALTER TABLE ONLY public.auditor_course_records_2021_2
     ADD CONSTRAINT fk_rails_75ce8bdc1d FOREIGN KEY (course_id) REFERENCES public.courses(id);
-
-
---
--- Name: auditor_course_records_2020_9 fk_rails_760fd8461b; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_course_records_2020_9
-    ADD CONSTRAINT fk_rails_760fd8461b FOREIGN KEY (course_id) REFERENCES public.courses(id);
 
 
 --
@@ -27125,6 +27101,14 @@ ALTER TABLE ONLY public.auditor_course_records_2021_5
 
 
 --
+-- Name: auditor_course_records_2021_12 fk_rails_853303691b; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_course_records_2021_12
+    ADD CONSTRAINT fk_rails_853303691b FOREIGN KEY (course_id) REFERENCES public.courses(id);
+
+
+--
 -- Name: role_overrides fk_rails_8571d0f354; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -27397,6 +27381,14 @@ ALTER TABLE ONLY public.auditor_grade_change_records_2021_6
 
 
 --
+-- Name: auditor_grade_change_records_2021_12 fk_rails_941653344a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_grade_change_records_2021_12
+    ADD CONSTRAINT fk_rails_941653344a FOREIGN KEY (assignment_id) REFERENCES public.assignments(id);
+
+
+--
 -- Name: conditional_release_assignment_set_actions fk_rails_941f76f503; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -27418,6 +27410,14 @@ ALTER TABLE ONLY public.authentication_providers
 
 ALTER TABLE ONLY public.master_courses_child_subscriptions
     ADD CONSTRAINT fk_rails_95aad9cf8d FOREIGN KEY (child_course_id) REFERENCES public.courses(id);
+
+
+--
+-- Name: auditor_feature_flag_records_2021_12 fk_rails_96aada68a4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_feature_flag_records_2021_12
+    ADD CONSTRAINT fk_rails_96aada68a4 FOREIGN KEY (root_account_id) REFERENCES public.accounts(id);
 
 
 --
@@ -27765,6 +27765,14 @@ ALTER TABLE ONLY public.polling_poll_submissions
 
 
 --
+-- Name: auditor_feature_flag_records_2021_12 fk_rails_a344834715; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_feature_flag_records_2021_12
+    ADD CONSTRAINT fk_rails_a344834715 FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
 -- Name: eportfolio_entries fk_rails_a3aa9184de; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -28013,6 +28021,14 @@ ALTER TABLE ONLY public.pace_plans
 
 
 --
+-- Name: auditor_authentication_records_2021_12 fk_rails_ae2ba96c95; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_authentication_records_2021_12
+    ADD CONSTRAINT fk_rails_ae2ba96c95 FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
 -- Name: auditor_authentication_records_2020_12 fk_rails_aec5c2ed8e; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -28122,14 +28138,6 @@ ALTER TABLE ONLY public.conditional_release_rules
 
 ALTER TABLE ONLY public.gradebook_csvs
     ADD CONSTRAINT fk_rails_b4531da5e9 FOREIGN KEY (user_id) REFERENCES public.users(id);
-
-
---
--- Name: auditor_feature_flag_records_2021_10 fk_rails_b495d70d7b; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_feature_flag_records_2021_10
-    ADD CONSTRAINT fk_rails_b495d70d7b FOREIGN KEY (root_account_id) REFERENCES public.accounts(id);
 
 
 --
@@ -28701,6 +28709,14 @@ ALTER TABLE ONLY public.auditor_course_records_2021_10
 
 
 --
+-- Name: auditor_authentication_records_2021_12 fk_rails_d0986d2dca; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_authentication_records_2021_12
+    ADD CONSTRAINT fk_rails_d0986d2dca FOREIGN KEY (account_id) REFERENCES public.accounts(id);
+
+
+--
 -- Name: web_conferences fk_rails_d0b08135f9; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -28933,6 +28949,14 @@ ALTER TABLE ONLY public.discussion_topics
 
 
 --
+-- Name: auditor_grade_change_records_2021_12 fk_rails_daa51ba079; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_grade_change_records_2021_12
+    ADD CONSTRAINT fk_rails_daa51ba079 FOREIGN KEY (grader_id) REFERENCES public.users(id);
+
+
+--
 -- Name: auditor_grade_change_records_2020_11 fk_rails_dab4120ad8; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -28978,6 +29002,14 @@ ALTER TABLE ONLY public.auditor_grade_change_records_2020_11
 
 ALTER TABLE ONLY public.group_memberships
     ADD CONSTRAINT fk_rails_dddd8ff810 FOREIGN KEY (root_account_id) REFERENCES public.accounts(id);
+
+
+--
+-- Name: auditor_grade_change_records_2021_12 fk_rails_ddf1f21b02; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.auditor_grade_change_records_2021_12
+    ADD CONSTRAINT fk_rails_ddf1f21b02 FOREIGN KEY (grading_period_id) REFERENCES public.grading_periods(id);
 
 
 --
@@ -29293,14 +29325,6 @@ ALTER TABLE ONLY public.lti_message_handlers
 
 
 --
--- Name: auditor_course_records_2020_9 fk_rails_ec3dd8e4fb; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_course_records_2020_9
-    ADD CONSTRAINT fk_rails_ec3dd8e4fb FOREIGN KEY (account_id) REFERENCES public.accounts(id);
-
-
---
 -- Name: access_tokens fk_rails_ecb5f23187; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -29413,19 +29437,11 @@ ALTER TABLE ONLY public.auditor_grade_change_records_2021_1
 
 
 --
--- Name: auditor_grade_change_records_2020_9 fk_rails_f2b1fce6d8; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: auditor_grade_change_records_2021_12 fk_rails_f236922265; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.auditor_grade_change_records_2020_9
-    ADD CONSTRAINT fk_rails_f2b1fce6d8 FOREIGN KEY (grading_period_id) REFERENCES public.grading_periods(id);
-
-
---
--- Name: auditor_grade_change_records_2020_9 fk_rails_f2db3d8a14; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_grade_change_records_2020_9
-    ADD CONSTRAINT fk_rails_f2db3d8a14 FOREIGN KEY (grader_id) REFERENCES public.users(id);
+ALTER TABLE ONLY public.auditor_grade_change_records_2021_12
+    ADD CONSTRAINT fk_rails_f236922265 FOREIGN KEY (submission_id) REFERENCES public.submissions(id);
 
 
 --
@@ -29586,14 +29602,6 @@ ALTER TABLE ONLY public.assessment_question_banks
 
 ALTER TABLE ONLY public.courses
     ADD CONSTRAINT fk_rails_f9bb591b41 FOREIGN KEY (account_id) REFERENCES public.accounts(id);
-
-
---
--- Name: auditor_grade_change_records_2020_9 fk_rails_f9bff550f0; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.auditor_grade_change_records_2020_9
-    ADD CONSTRAINT fk_rails_f9bff550f0 FOREIGN KEY (student_id) REFERENCES public.users(id);
 
 
 --
@@ -30481,9 +30489,11 @@ INSERT INTO "public"."schema_migrations" (version) VALUES
 ('20210915181949'),
 ('20210917232626'),
 ('20210920100330'),
+('20210928151321'),
 ('20210928174754'),
 ('20210929204903'),
 ('20210930220416'),
+('20211008133526'),
 ('20211012125102'),
 ('839184435922331766'),
 ('839184435922331767');

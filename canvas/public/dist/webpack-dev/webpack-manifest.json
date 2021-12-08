@@ -1,6 +1,6 @@
 {
   "main": [
-    "main-e-c6f9cdeab0.js"
+    "main-e-1494a939ba.js"
   ],
   "moment/locale/af": [
     "moment/locale/af-c-5c686858c4.js"
@@ -434,13 +434,13 @@
     "42-c-2150eb547b.js",
     "46-c-1e442b958c.js",
     "50-c-9c7325887b.js",
-    "52-c-d13e7b16b7.js",
+    "52-c-486859487b.js",
     "55-c-b92ce67866.js",
     "56-c-8ba569aae7.js",
     "78-c-b808a079bd.js",
     "82-c-13b946df19.js",
     "107-c-23c38ffd05.js",
-    "account_admin_tools-c-c16e522903.js"
+    "account_admin_tools-c-15ab69758f.js"
   ],
   "account_course_user_search": [
     "2-c-2314bb8ab6.js",
@@ -550,7 +550,7 @@
     "32-c-2a089d0524.js",
     "33-c-dd89caac8a.js",
     "35-c-bdb71a9785.js",
-    "account_settings-c-79848235e0.js"
+    "account_settings-c-c520156eb2.js"
   ],
   "account_statistics": [
     "0-c-cdfaa88d48.js",
@@ -662,7 +662,7 @@
     "48-c-d138fd4524.js",
     "59-c-87da18fc14.js",
     "61-c-1b846b005b.js",
-    "assignment_edit-c-b6365e6ade.js"
+    "assignment_edit-c-4c3f6fe861.js"
   ],
   "assignment_grade_summary": [
     "2-c-2314bb8ab6.js",
@@ -719,11 +719,11 @@
     "53-c-9bad5819e6.js",
     "59-c-87da18fc14.js",
     "65-c-5f22b1252a.js",
-    "87-c-e4ec2b0baa.js",
-    "114-c-1faaa05c0c.js",
+    "87-c-856bd4b1e2.js",
+    "114-c-4414bbc3dd.js",
     "116-c-3929fcb361.js",
-    "128-c-da4c1c0a5a.js",
-    "assignment_index-c-756aafa851.js"
+    "128-c-047f18cddc.js",
+    "assignment_index-c-222b4893c1.js"
   ],
   "assignment_show": [
     "0-c-cdfaa88d48.js",
@@ -793,7 +793,7 @@
     "36-c-c9ae1bcec9.js",
     "40-c-ade98c083d.js",
     "41-c-cbe5169eff.js",
-    "assignments_show_student-c-3556d4eaaa.js"
+    "assignments_show_student-c-371dbfdbbf.js"
   ],
   "assignments_show_teacher": [
     "2-c-2314bb8ab6.js",
@@ -914,7 +914,7 @@
     "57-c-9cb444ff0e.js",
     "74-c-3d7513fbcd.js",
     "119-c-9bc1a9c4d7.js",
-    "calendar_appointment_group_edit-c-e839b05db3.js"
+    "calendar_appointment_group_edit-c-117da468aa.js"
   ],
   "calendar": [
     "0-c-cdfaa88d48.js",
@@ -946,7 +946,7 @@
     "48-c-d138fd4524.js",
     "60-c-adeddacc45.js",
     "62-c-61a4f00634.js",
-    "calendar-c-58f064d1a9.js"
+    "calendar-c-6e9353c77e.js"
   ],
   "change_password": [
     "change_password-c-3195177070.js"
@@ -965,7 +965,7 @@
     "12-c-0fa45a4837.js",
     "83-c-705aa17e84.js",
     "97-c-82cef26af4.js",
-    "collaborations-c-a7e78a557d.js"
+    "collaborations-c-c7d0ea57c2.js"
   ],
   "conferences": [
     "0-c-cdfaa88d48.js",
@@ -997,7 +997,7 @@
     "28-c-b5506d72f0.js",
     "29-c-ba2faa90dd.js",
     "30-c-c3b6831ff3.js",
-    "conferences-c-9fd70eb790.js"
+    "conferences-c-2be7392e72.js"
   ],
   "confetti": [
     "2-c-2314bb8ab6.js",
@@ -1022,14 +1022,14 @@
     "30-c-c3b6831ff3.js",
     "41-c-cbe5169eff.js",
     "44-c-2c8f38d861.js",
-    "52-c-d13e7b16b7.js",
+    "52-c-486859487b.js",
     "78-c-b808a079bd.js",
     "83-c-705aa17e84.js",
-    "87-c-e4ec2b0baa.js",
+    "87-c-856bd4b1e2.js",
     "107-c-23c38ffd05.js",
-    "136-c-9200a79e55.js",
-    "146-c-865ac4f5ba.js",
-    "content_migrations-c-a457b1c689.js"
+    "136-c-ee62f48bbe.js",
+    "146-c-dec6e7b443.js",
+    "content_migrations-c-0664214937.js"
   ],
   "content_notices": [
     "2-c-2314bb8ab6.js",
@@ -1076,8 +1076,8 @@
     "1-c-18dba299aa.js",
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
-    "52-c-d13e7b16b7.js",
-    "context_module_progressions-c-80c7d16450.js"
+    "52-c-486859487b.js",
+    "context_module_progressions-c-aa163dafbf.js"
   ],
   "context_modules": [
     "0-c-cdfaa88d48.js",
@@ -1109,7 +1109,7 @@
     "53-c-9bad5819e6.js",
     "66-c-b71db5304d.js",
     "65-c-5f22b1252a.js",
-    "context_modules-c-fa7362cd2b.js"
+    "context_modules-c-3489bd2a33.js"
   ],
   "context_roster_usage": [
     "context_roster_usage-c-d3a2e5d2b5.js"
@@ -1150,10 +1150,10 @@
     "12-c-0fa45a4837.js",
     "14-c-c23c629abd.js",
     "28-c-b5506d72f0.js",
-    "52-c-d13e7b16b7.js",
+    "52-c-486859487b.js",
     "97-c-82cef26af4.js",
-    "101-c-9b3fff5eb3.js",
-    "conversations-c-bf523505fa.js"
+    "101-c-2130a02d08.js",
+    "conversations-c-d26f82a6c2.js"
   ],
   "copy_course": [
     "0-c-cdfaa88d48.js",
@@ -1165,8 +1165,8 @@
     "30-c-c3b6831ff3.js",
     "41-c-cbe5169eff.js",
     "44-c-2c8f38d861.js",
-    "136-c-9200a79e55.js",
-    "copy_course-c-1e8e9e02df.js"
+    "136-c-ee62f48bbe.js",
+    "copy_course-c-d9ef8be057.js"
   ],
   "course_grading_standards": [
     "0-c-cdfaa88d48.js",
@@ -1298,7 +1298,7 @@
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
     "37-c-e15896e70e.js",
-    "course_statistics-c-1ff7d690de.js"
+    "course_statistics-c-c22ce44300.js"
   ],
   "course_wizard": [
     "course_wizard-c-e659625887.js"
@@ -1379,7 +1379,7 @@
     "1-c-18dba299aa.js",
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
-    "developer_keys-c-b15d6b2327.js"
+    "developer_keys-c-6dbebe08ef.js"
   ],
   "discussion_topic_edit_v2": [
     "discussion_topic_edit_v2-c-d0dc183eef.js"
@@ -1414,7 +1414,7 @@
     "47-c-78ed0b082a.js",
     "59-c-87da18fc14.js",
     "61-c-1b846b005b.js",
-    "discussion_topic_edit-c-fdcee38790.js"
+    "discussion_topic_edit-c-be7576daff.js"
   ],
   "discussion_topic": [
     "0-c-cdfaa88d48.js",
@@ -1440,10 +1440,10 @@
     "49-c-3936f86616.js",
     "53-c-9bad5819e6.js",
     "65-c-5f22b1252a.js",
-    "101-c-9b3fff5eb3.js",
+    "101-c-2130a02d08.js",
     "115-c-693b7e2c4a.js",
     "144-c-9192757d3b.js",
-    "discussion_topic-c-8883a1dcd0.js"
+    "discussion_topic-c-f6767e1693.js"
   ],
   "discussion_topics_index": [
     "2-c-2314bb8ab6.js",
@@ -1507,7 +1507,7 @@
     "26-c-a1e8dfb774.js",
     "28-c-b5506d72f0.js",
     "29-c-ba2faa90dd.js",
-    "discussion_topics_post-c-ac6933499d.js"
+    "discussion_topics_post-c-120142767a.js"
   ],
   "edit_calendar_event": [
     "0-c-cdfaa88d48.js",
@@ -1534,8 +1534,8 @@
     "40-c-ade98c083d.js",
     "117-c-e7c7889846.js",
     "150-c-cb42e34c4b.js",
-    "141-c-124c159d79.js",
-    "edit_calendar_event-c-79f3e1763c.js"
+    "141-c-19cd1f1ccc.js",
+    "edit_calendar_event-c-a12c3effe0.js"
   ],
   "edit_rubric": [
     "0-c-cdfaa88d48.js",
@@ -1563,11 +1563,11 @@
     "45-c-334823e2ac.js",
     "43-c-8c403d23e5.js",
     "48-c-d138fd4524.js",
-    "52-c-d13e7b16b7.js",
+    "52-c-486859487b.js",
     "54-c-813b489d8e.js",
-    "64-c-7fa1f73640.js",
+    "64-c-fd02dc0e7e.js",
     "77-c-4a44b739b6.js",
-    "edit_rubric-c-a60b81ed48.js"
+    "edit_rubric-c-79e3438cd8.js"
   ],
   "eportfolio": [
     "0-c-cdfaa88d48.js",
@@ -1631,7 +1631,7 @@
     "1-c-18dba299aa.js",
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
-    "102-c-37edd943fb.js",
+    "102-c-bfbae552eb.js",
     "external_tools_show-c-26523f40ef.js"
   ],
   "file_not_found": [
@@ -1683,11 +1683,11 @@
     "44-c-2c8f38d861.js",
     "48-c-d138fd4524.js",
     "49-c-3936f86616.js",
-    "52-c-d13e7b16b7.js",
+    "52-c-486859487b.js",
     "53-c-9bad5819e6.js",
     "66-c-b71db5304d.js",
     "76-c-e882bc1214.js",
-    "88-c-5acb354460.js",
+    "88-c-9f2b0874f0.js",
     "files-c-01b69d07e8.js"
   ],
   "grade_summary": [
@@ -1717,10 +1717,10 @@
     "59-c-87da18fc14.js",
     "57-c-9cb444ff0e.js",
     "68-c-cfbbf6840f.js",
-    "64-c-7fa1f73640.js",
+    "64-c-fd02dc0e7e.js",
     "69-c-af150ac73f.js",
     "73-c-49cc54745e.js",
-    "grade_summary-c-3cd3752589.js"
+    "grade_summary-c-875f563f85.js"
   ],
   "gradebook_history": [
     "2-c-2314bb8ab6.js",
@@ -1780,7 +1780,7 @@
     "55-c-b92ce67866.js",
     "56-c-8ba569aae7.js",
     "59-c-87da18fc14.js",
-    "gradebook-c-3c67d6d1a0.js"
+    "gradebook-c-6173639b05.js"
   ],
   "graphiql": [
     "4-c-2b2eebeaba.js",
@@ -1976,14 +1976,14 @@
     "23-c-507bbed1f1.js",
     "51-c-f5daa117f4.js",
     "67-c-8cccb7637f.js",
-    "64-c-7fa1f73640.js",
+    "64-c-fd02dc0e7e.js",
     "78-c-b808a079bd.js",
     "96-c-43c98ed704.js",
-    "101-c-9b3fff5eb3.js",
+    "101-c-2130a02d08.js",
     "122-c-15fe60af27.js",
     "121-c-3758a50a36.js",
-    "131-c-57235b7e78.js",
-    "learning_mastery-c-dfdaf4e3c4.js"
+    "131-c-8b197ce351.js",
+    "learning_mastery-c-88fe935ad2.js"
   ],
   "learning_outcomes": [
     "0-c-cdfaa88d48.js",
@@ -2002,13 +2002,13 @@
     "33-c-dd89caac8a.js",
     "35-c-bdb71a9785.js",
     "39-c-d395ebc365.js",
-    "52-c-d13e7b16b7.js",
+    "52-c-486859487b.js",
     "66-c-b71db5304d.js",
-    "64-c-7fa1f73640.js",
+    "64-c-fd02dc0e7e.js",
     "77-c-4a44b739b6.js",
-    "88-c-5acb354460.js",
-    "93-c-1b1360f5a0.js",
-    "learning_outcomes-c-aacff973f8.js"
+    "88-c-9f2b0874f0.js",
+    "93-c-168db7c405.js",
+    "learning_outcomes-c-2bb0d6fa77.js"
   ],
   "license_help": [
     "0-c-cdfaa88d48.js",
@@ -2031,7 +2031,7 @@
     "1-c-18dba299aa.js",
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
-    "111-c-ff151c4288.js",
+    "111-c-07c47fbb7e.js",
     "login-c-bb22507a45.js"
   ],
   "lti_collaborations": [
@@ -2078,8 +2078,8 @@
     "41-c-cbe5169eff.js",
     "46-c-1e442b958c.js",
     "50-c-9c7325887b.js",
-    "52-c-d13e7b16b7.js",
-    "manage_groups-c-45058f444f.js"
+    "52-c-486859487b.js",
+    "manage_groups-c-42115e2a27.js"
   ],
   "media_player_iframe_content": [
     "2-c-2314bb8ab6.js",
@@ -2114,14 +2114,14 @@
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
     "37-c-e15896e70e.js",
-    "messages-c-f1e248bcdb.js"
+    "messages-c-7ce3adecb3.js"
   ],
   "mobile_login": [
     "0-c-cdfaa88d48.js",
     "1-c-18dba299aa.js",
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
-    "111-c-ff151c4288.js",
+    "111-c-07c47fbb7e.js",
     "mobile_login-c-385099600a.js"
   ],
   "moderate_quiz": [
@@ -2155,7 +2155,7 @@
     "6-c-108a0a0ccf.js",
     "8-c-695a2871ff.js",
     "12-c-0fa45a4837.js",
-    "102-c-37edd943fb.js",
+    "102-c-bfbae552eb.js",
     "module_sequence_footer-c-b86a33324c.js"
   ],
   "nav_tourpoints": [
@@ -2287,7 +2287,7 @@
     "1-c-18dba299aa.js",
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
-    "page_views-c-6e26eade8f.js"
+    "page_views-c-16bd19af6a.js"
   ],
   "past_global_alert": [
     "7-c-c89e80b66d.js",
@@ -2366,7 +2366,7 @@
     "53-c-9bad5819e6.js",
     "66-c-b71db5304d.js",
     "65-c-5f22b1252a.js",
-    "prerequisites_lookup-c-097d35c2a2.js"
+    "prerequisites_lookup-c-75ce01fbb0.js"
   ],
   "profile_show": [
     "0-c-cdfaa88d48.js",
@@ -2377,7 +2377,7 @@
     "24-c-ca09b8da4e.js",
     "30-c-c3b6831ff3.js",
     "44-c-2c8f38d861.js",
-    "profile_show-c-329bb1bbaa.js"
+    "profile_show-c-a8d1a3c827.js"
   ],
   "profile": [
     "0-c-cdfaa88d48.js",
@@ -2409,7 +2409,7 @@
     "32-c-2a089d0524.js",
     "37-c-e15896e70e.js",
     "44-c-2c8f38d861.js",
-    "profile-c-cfb14827ba.js"
+    "profile-c-98526b784d.js"
   ],
   "progress_pill": [
     "progress_pill-c-b914663b60.js"
@@ -2438,13 +2438,13 @@
     "12-c-0fa45a4837.js",
     "33-c-dd89caac8a.js",
     "35-c-bdb71a9785.js",
-    "52-c-d13e7b16b7.js",
-    "64-c-7fa1f73640.js",
+    "52-c-486859487b.js",
+    "64-c-fd02dc0e7e.js",
     "77-c-4a44b739b6.js",
-    "88-c-5acb354460.js",
-    "93-c-1b1360f5a0.js",
+    "88-c-9f2b0874f0.js",
+    "93-c-168db7c405.js",
     "103-c-9bf5584a9f.js",
-    "question_bank-c-9b114771ae.js"
+    "question_bank-c-b43c42e724.js"
   ],
   "question_banks": [
     "0-c-cdfaa88d48.js",
@@ -2491,8 +2491,8 @@
     "53-c-9bad5819e6.js",
     "61-c-1b846b005b.js",
     "65-c-5f22b1252a.js",
-    "87-c-e4ec2b0baa.js",
-    "quiz_show-c-b3cd72a56c.js"
+    "87-c-856bd4b1e2.js",
+    "quiz_show-c-5d5b2c02ba.js"
   ],
   "quiz_statistics": [
     "2-c-2314bb8ab6.js",
@@ -2539,10 +2539,10 @@
     "49-c-3936f86616.js",
     "53-c-9bad5819e6.js",
     "65-c-5f22b1252a.js",
-    "114-c-1faaa05c0c.js",
-    "128-c-da4c1c0a5a.js",
+    "114-c-4414bbc3dd.js",
+    "128-c-047f18cddc.js",
     "159-c-eddf72944f.js",
-    "quizzes_index-c-78a4e7044c.js"
+    "quizzes_index-c-9fc965d8e3.js"
   ],
   "quizzes": [
     "0-c-cdfaa88d48.js",
@@ -2566,10 +2566,10 @@
     "99-c-3fbe9032e5.js",
     "112-c-feaa73e27f.js",
     "143-c-716a1ec8a2.js",
-    "141-c-124c159d79.js",
+    "141-c-19cd1f1ccc.js",
     "144-c-9192757d3b.js",
     "159-c-eddf72944f.js",
-    "quizzes-c-99c3dd65a2.js"
+    "quizzes-c-da59e057df.js"
   ],
   "registration_confirmation": [
     "0-c-cdfaa88d48.js",
@@ -2582,8 +2582,8 @@
     "1-c-18dba299aa.js",
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
-    "111-c-ff151c4288.js",
-    "registration-c-ce787cb78a.js"
+    "111-c-07c47fbb7e.js",
+    "registration-c-afac8dd15e.js"
   ],
   "release_notes_edit": [
     "5-c-b2807c8bb9.js",
@@ -2638,7 +2638,7 @@
     "43-c-8c403d23e5.js",
     "46-c-1e442b958c.js",
     "50-c-9c7325887b.js",
-    "roster-c-2e334637bf.js"
+    "roster-c-952d729593.js"
   ],
   "rubric_assessment": [
     "2-c-2314bb8ab6.js",
@@ -2693,17 +2693,17 @@
     "55-c-b92ce67866.js",
     "56-c-8ba569aae7.js",
     "59-c-87da18fc14.js",
-    "64-c-7fa1f73640.js",
+    "64-c-fd02dc0e7e.js",
     "78-c-b808a079bd.js",
     "75-c-460dd70ba7.js",
     "98-c-76b1652e32.js",
-    "101-c-9b3fff5eb3.js",
+    "101-c-2130a02d08.js",
     "122-c-15fe60af27.js",
     "121-c-3758a50a36.js",
     "117-c-e7c7889846.js",
-    "131-c-57235b7e78.js",
-    "147-c-9d76d0afbe.js",
-    "screenreader_gradebook-c-48f8f96965.js"
+    "131-c-8b197ce351.js",
+    "147-c-cac426b07a.js",
+    "screenreader_gradebook-c-ff7ff8dd89.js"
   ],
   "section": [
     "0-c-cdfaa88d48.js",
@@ -2733,7 +2733,7 @@
     "91-c-e8df48c06e.js",
     "94-c-a45594c335.js",
     "107-c-23c38ffd05.js",
-    "section-c-37a390c7bc.js"
+    "section-c-4a14e17abc.js"
   ],
   "select_content_dialog": [
     "0-c-cdfaa88d48.js",
@@ -2795,7 +2795,7 @@
     "27-c-610e2fe85b.js",
     "29-c-ba2faa90dd.js",
     "30-c-c3b6831ff3.js",
-    "speed_grader-c-6c5201a49b.js"
+    "speed_grader-c-89470c90be.js"
   ],
   "student_group_dialog": [
     "2-c-2314bb8ab6.js",
@@ -2902,8 +2902,8 @@
     "118-c-3b410ac7cb.js",
     "145-c-40558c8fd1.js",
     "153-c-376e93c145.js",
-    "146-c-865ac4f5ba.js",
-    "submit_assignment-c-bff76b3dbd.js"
+    "146-c-dec6e7b443.js",
+    "submit_assignment-c-b263a90eef.js"
   ],
   "syllabus_static": [
     "0-c-cdfaa88d48.js",
@@ -2928,7 +2928,7 @@
     "33-c-dd89caac8a.js",
     "35-c-bdb71a9785.js",
     "140-c-b31c6673eb.js",
-    "syllabus-c-d189cdd2b0.js"
+    "syllabus-c-120de186ce.js"
   ],
   "take_quiz": [
     "0-c-cdfaa88d48.js",
@@ -2943,7 +2943,7 @@
     "33-c-dd89caac8a.js",
     "35-c-bdb71a9785.js",
     "44-c-2c8f38d861.js",
-    "take_quiz-c-79f52562af.js"
+    "take_quiz-c-064a825dd5.js"
   ],
   "teacher_activity_report": [
     "teacher_activity_report-c-300bf668ee.js"
@@ -3025,8 +3025,8 @@
     "1-c-18dba299aa.js",
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
-    "52-c-d13e7b16b7.js",
-    "user_observees-c-73a6a1644e.js"
+    "52-c-486859487b.js",
+    "user_observees-c-790654b2ae.js"
   ],
   "user_outcome_results": [
     "user_outcome_results-c-d05a4d493f.js"
@@ -3074,10 +3074,10 @@
     "42-c-2150eb547b.js",
     "47-c-78ed0b082a.js",
     "61-c-1b846b005b.js",
-    "87-c-e4ec2b0baa.js",
+    "87-c-856bd4b1e2.js",
     "99-c-3fbe9032e5.js",
     "112-c-feaa73e27f.js",
-    "142-c-60795d311d.js",
+    "142-c-db6fd62510.js",
     "wiki_page_edit-c-c904df2f58.js"
   ],
   "wiki_page_index": [
@@ -3102,14 +3102,14 @@
     "35-c-bdb71a9785.js",
     "47-c-78ed0b082a.js",
     "49-c-3936f86616.js",
-    "52-c-d13e7b16b7.js",
+    "52-c-486859487b.js",
     "53-c-9bad5819e6.js",
     "65-c-5f22b1252a.js",
-    "87-c-e4ec2b0baa.js",
+    "87-c-856bd4b1e2.js",
     "99-c-3fbe9032e5.js",
-    "114-c-1faaa05c0c.js",
-    "142-c-60795d311d.js",
-    "wiki_page_index-c-a4fe95c7a9.js"
+    "114-c-4414bbc3dd.js",
+    "142-c-db6fd62510.js",
+    "wiki_page_index-c-b9009edb5f.js"
   ],
   "wiki_page_revisions": [
     "0-c-cdfaa88d48.js",
@@ -3117,7 +3117,7 @@
     "3-c-703290d79e.js",
     "12-c-0fa45a4837.js",
     "47-c-78ed0b082a.js",
-    "wiki_page_revisions-c-a33ca2f76a.js"
+    "wiki_page_revisions-c-5c44fdd2d6.js"
   ],
   "wiki_page_show": [
     "0-c-cdfaa88d48.js",
@@ -3149,14 +3149,14 @@
     "51-c-f5daa117f4.js",
     "49-c-3936f86616.js",
     "53-c-9bad5819e6.js",
-    "wiki_page_show-c-f05dfb5f65.js"
+    "wiki_page_show-c-698269691f.js"
   ],
   "mediaCommentRecordAsyncChunk": [
     "12-c-0fa45a4837.js",
     "37-c-e15896e70e.js",
     "71-c-3af24ffbee.js",
     "3642-c-3a11071d50.js",
-    "mediaCommentRecordAsyncChunk-c-300967cbdc.js"
+    "mediaCommentRecordAsyncChunk-c-8ec8352a68.js"
   ],
   "canvas-rce-async-chunk": [
     "5-c-b2807c8bb9.js",
