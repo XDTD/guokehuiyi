@@ -74,10 +74,10 @@ sudo apt-get -y install postgresql-12
 ```
 sudo service postgresql start
 ```
-
+更改数据库默认用户postgres的密码，yourpasswd即密码
 ```
 sudo su postgres
-psql -c "alter user postgres with password '19990923'"
+psql -c "alter user postgres with password 'yourpasswd'"
 
 
 ```
@@ -91,11 +91,10 @@ sudo -u postgres createuser $USER
 sudo -u postgres psql -c "alter user $USER with superuser" postgres 
 ```
 
-进入postsql改密码
+更改当前用户的密码，yourpasswd即密码
 
 ```
-sudo -u postgres psql
-ALTER USER td WITH PASSWORD '19990923';
+sudo -u postgres psql -c "alter user $USER with password 'yourpasswd'"
 \du
 ```
 
