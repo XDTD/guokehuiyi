@@ -252,9 +252,9 @@ bundle exec rails db:initial_setup
 会要求输入管理员的邮箱，密码和机构名称，后续依靠这一步输入的邮箱和密码登录canvas，**注意：在刚开始这个账户是登录canvas的唯一用户(相当于root)**，依靠这个用户登录后开放注册或者导入账号才能有其他账号
 
 ```
-test@qq.com
-19990923
-test
+example@qq.com
+examplePasswd
+exampleInstitution
 ```
 
 **canvas初始化**
