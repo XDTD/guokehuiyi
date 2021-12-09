@@ -1,4 +1,5 @@
 # guokehuiyi
+
 # canvas环境与配置
 
 - 操作系统:ubuntu18
@@ -309,12 +310,17 @@ bundle exec rails s -b 0.0.0.0 -p 3000
 ```
 
 # BBB与Canvas集成--BBB部署及配置文档
+
 *本文档记录及提供bbb服务器配置注意事项及部分问题解决方案，更多的问题解决方案建议参考项目开源社区。*
+
 ## 安装前检查
+
 1. 服务器80、443端口空闲
 2. 用于配置SSL证书的解析到公网IP的域名。
 3. 服务器语言环境配置为"en_US.UTF-8"
+
 ## BBB部署
+
 提供部署脚本"bbb-install.sh"
 `
 wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -w -a -v bionic-23 -s bbb.example.com -e info@example.com
@@ -326,18 +332,22 @@ wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -w -a -v 
 - `-v bionic-23` 安装最新版本的 BigBlueButton 2.3.x，
 - `-s`将服务器的主机名设置为bbb.example.com，并且
 - `-e` 为 Let's Encrypt 提供一个电子邮件地址，以便为主机生成有效的 SSL 证书。
-  
+
 - (建议安装API演示，以检验各部分功能是否正常)
 - (执行`wget`命令部署BBB时，需要将`bbb.example.com`和`info@example.com`更改为自己的域名和邮箱，尤其是域名需要解析到服务器公网IP)
 - 检验BBB部署后，可以使用`sudo apt-get purge bbb-demo`卸载API演示
 
 ## BBB开发
+
 1. Git 环境配置   
+
 - 克隆一个仓库
 - 创建一个分支
 - 将更改推送回存储库
 - (检查开源项目版本)
+
 2. 开发环境配置
+
 - 安装核心开发工具(java JDK)
   - `sudo apt-get install git-core ant ant-contrib openjdk-8-jdk-headless`
 - 设置 JAVA_HOME变量
@@ -348,12 +358,13 @@ wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -w -a -v 
   - `curl -s "https://get.sdkman.io" | bash`
   - 
   - `source "$HOME/.sdkman/bin/sdkman-init.sh"`
-    
+
   - `sdk install gradle 5.5.1`
   - `sdk install grails 3.3.9`
   - `sdk install sbt 1.2.8`
   - `sdk install maven 3.5.0`
-(注意：开发测试前，将`/usr/share/bbb-web/WEB-INF/classes/application.yml`文件中的`secure: false`设置为`false`)
+    (注意：开发测试前，将`/usr/share/bbb-web/WEB-INF/classes/application.yml`文件中的`secure: false`设置为`false`)
+
 3. HTML5客户端开发
 
    BigBlueButton 中的 HTML5 客户端是使用框架Meteor构建的。需要安装下列组件。
@@ -383,7 +394,7 @@ wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -w -a -v 
   - 开启HTML5服务`sudo systemctl start bbb-html5`
 
 4. BBB-Web 开发
-   
+
 - BigBlueButton 的一些组件需要 bbb-common-message。所以需要先构建这个。否则，您将遇到编译错误。
   - 在`~/dev/bigbluebutton/bbb-common-message`路径下运行`./deploy.sh`
 - 在`~/dev/bigbluebutton/bigbluebutton-web/grails-app/conf/bigbluebutton.properties`文件中修改BBB服务器的地址和密钥。(查看方法：`sudo bbb-conf --secret`)
@@ -397,6 +408,7 @@ wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -w -a -v 
   - 下载依赖库`./build.sh`
   - 启动 grails 并告诉侦听端口 8090 `./run.sh`
 - run bbb-web 时会提示必须是bbb user才可以（解决：将run.sh中的判断语句改为自己的用户名）
+
 5. BBB Web部署
 
 - 将所有项目编译到一个单一的 war 
@@ -417,3 +429,38 @@ wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -w -a -v 
   - `sudo chown -R bigbluebutton:bigbluebutton /usr/share/bbb-web/assets/ /usr/share/bbb-web/META-INF/ /usr/share/bbb-web/org/ /usr/share/bbb-web/run-prod.sh /usr/share/bbb-web/WEB-INF/`
 - 运行BBB Web服务
   - `sudo service bbb-web start`
+
+
+
+
+
+# 脚本相关参数
+
+pdfListen.sh需要填入postgresql的密码，地址，端口，用户等参数
+
+```
+result=`psql "host=127.0.0.1 port=5432 user=canvas  password=yourpassword dbname=canvas" << EOF
+select url from url_to_livego order by course_id;
+\q
+EOF `
+```
+
+以及果壳会议的路径
+
+```
+# path
+guokehuiyiPath="your guokehuiyi path"
+```
+
+verify.sh中也需要上述参数
+
+```
+psql "host=127.0.0.1 port=5432 user=canvas  password=yourpassword dbname=canvas" << EOF
+
+```
+
+```
+# path
+guokehuiyiPath="your guokehuiyi path"
+```
+
