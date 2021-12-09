@@ -1,12 +1,15 @@
 
 # 从数据库查询livego的链接
-result=`psql "host=127.0.0.1 port=5432 user=canvas  password=19990923 dbname=canvas" << EOF
+result=`psql "host=127.0.0.1 port=5432 user=canvas  password=yourpassword dbname=canvas" << EOF
 select url from url_to_livego order by course_id;
 \q
 EOF `
 
+# path
+guokehuiyiPath="your guokehuiyi path"
+
 # 提取sql中的url
-tmpFile='/home/td/workspace/guokehuiyi/test/temp.txt'
+tmpFile="${guokehuiyiPath}/test/temp.txt"
 echo $result | grep -o "rtmp.*" | sed 's/ /\n/g ' >> $tmpFile
 # 删除“n rows”这两行
 sed -i '$d' $tmpFile
@@ -41,7 +44,7 @@ for ((i=0; i<picNum; i++));do
         # -r 每秒截图n帧
         # -t 截图n秒
         # -ss n秒后开始截图
-        dirName="/home/td/workspace/guokehuiyi/test/out/course${j}"
+        dirName="${guokehuiyiPath}/test/out/course${j}"
         if [ ! -d $dirName ];then
             mkdir $dirName
         fi
@@ -53,7 +56,7 @@ done
 
 
 # 开始转pdf
-dirPath='/home/td/workspace/guokehuiyi/test/out'
+dirPath="${guokehuiyiPath}/test/out"
 paths=$(ls $dirPath)
 for path in $paths; do
     i=0
