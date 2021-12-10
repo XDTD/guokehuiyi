@@ -4,7 +4,7 @@
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
-<meta charset="utf-8">
+
 </head>
 
 <%# 课程状态 %>
@@ -42,9 +42,9 @@
 			<form id="bbb" action="#">
 				<table id="basic_form" >
 
-						<td><option id="server" value="https://zgx62313.top/bigbluebutton//api/"/></td>
+						<td><option id="server" value=""/></td>
 
-						<td><option type="text" size="60" id="salt" value="ewrm4R5FvGVIQyQM5ZeW9f6gXNXJc98tFSwgVjNYRc"/></td>
+						<td><option type="text" size="60" id="salt" value=""/></td>
 
           <tr>	
 						<td id="field">meetingID</td>
@@ -71,6 +71,7 @@
 				<div id="buttons">
 					<button type="button" id="submit">确定</button> &nbsp;
 				</div>
+        
 			</form>
 		
 		
@@ -251,7 +252,7 @@
 
     </script>
 
-    <% if @context_enrollment&.teacher? %>
+  <% if @context_enrollment&.teacher? %>
 		<script>	
 
 			$('#submit').click(function () {	
@@ -309,7 +310,8 @@
 				$("#links_table").append('<tr><td>end</td> <td><a href="' + $endURL + '" target="_blank">' + "结束会议" + '</a></td>');
 				
 				//alert('Handler for .submit() called.' + $server);
-				//return false;				
+				//return false;	
+        new QRCode(document.getElementById("qrcode"), $joinAttendeeURL);			
 			});
 
 			$.extend({
@@ -344,7 +346,7 @@
 			});
 
 		</script>	
-    <%else%>
+  <%else%>
     <script>	
 
 			$('#submit').click(function () {	
@@ -437,114 +439,57 @@
 			});
 
 		</script>	
-    <%end%>
+  <%end%>
 
-  </body>
-
+</body>
   <% if @context_enrollment&.teacher? %>
-
-<%# //二维码提示框 %>
-
-<button onclick="showWindow()">生成二维码</button>
+      <button onclick="showWindow()">生成二维码</button>
 
 
-<!-- 遮罩层 -->
-<div id="cover" style="background: #000; position: absolute; left: 0px; top: 0px; width: 100%; filter: alpha(opacity=30); opacity: 0.3; display: none; z-index: 2 ">
-   
-</div>
-<!-- 弹窗 -->
-<div id="showdiv" style="width: 80%; margin: 0 auto; height: 29.5rem; border: 1px solid #999; display: none; position: absolute; top: 20%; left: 10%; z-index: 3; background: #fff">
-  <!-- 标题 -->
-  <div style="background: #F8F7F7; width: 100%; height: 2rem; font-size: 0.65rem; line-height: 2rem; border: 1px solid #999; text-align: center;" >
-    直播
-  </div>
-  <!-- 内容 text-indent: 350px;-->
-  <div style=" height: 4rem; font-size: 0.5rem; padding: 0.5rem; line-height: 1rem; left: 65%;">
-    
+        <!-- 遮罩层 -->
+        <div id="cover" style="background: #000; position: absolute; left: 0px; top: 0px; width: 100%; filter: alpha(opacity=30); opacity: 0.3; display: none; z-index: 2 ">
+        
+        </div>
+        <!-- 弹窗 -->
+        <div id="showdiv" style="width: 25.5rem; margin: 0 auto; height: 25.5rem; border: 1px solid #999; display: none; position: absolute; top: 20%; left: 10%; z-index: 3; background: #fff">
+        <!-- 标题 -->
+        <div style="background: #F8F7F7; width: 100%; height: 2rem; font-size: 0.65rem; line-height: 2rem; border: 1px solid #999; text-align: center;" >
+          便捷直播
+        </div>
+        <!-- 内容 text-indent: 350px;-->
+        <div style=" height: 4rem; font-size: 0.5rem; padding: 0.5rem; line-height: 1rem; left: 50%;">
+          
+
   
-  <input id="text" style="display:none"type="text" value="www.baidu.com" /><br />
-    </div>
-    
-    <div id="qrcode" style="position: absolute;
-    left: 67%;
-    margin: -15% 0 0 -25%;width:160px;height:160px;margin-top:15px;"></div>
-  <!-- 按钮 -->
+          </div>
+          
+          <div id="qrcode" style="position: absolute;
+          left: 50%;
+          margin: -15% 0 0 -25%;width:160px;height:160px;margin-top:15px;"></div>
+        <!-- 按钮 -->
 
-  <div style="text-indent: 350px; height: 4rem; font-size: 0.5rem; padding: 0.5rem; line-height: 1rem; left: 65%;">
-    <%channelkey%>
-    </div>
-  <div style="background: #418BCA; width: 30%; margin: 0 auto;top: 70%; height: 1.5rem; line-height: 1.5rem; text-align: center;color: #fff;margin-top: 20rem; -moz-border-radius: .128rem; -webkit-border-radius: .128rem; border-radius: .128rem;font-size: .59733rem;" onclick="closeWindow()">
-    确 定
-  </div>
-</div>
+        <div style="text-indent: 350px; height: 4rem; font-size: 0.5rem; padding: 0.5rem; line-height: 1rem; left: 65%;">
+          </div>
+        <div style="background: #418BCA; width: 30%; margin: 0 auto;top: 70%; height: 1.5rem; line-height: 1.5rem; text-align: center;color: #fff;margin-top: 20rem; -moz-border-radius: .128rem; -webkit-border-radius: .128rem; border-radius: .128rem;font-size: .59733rem;" onclick="closeWindow()">
+          确 定
+        </div>
+        </div>
 
-<script>
+      <script>
 
-var $server = $("#server").val()
-				var $salt = $("#salt").val();
-				var $meetingID = $.URLEncode( $("#meetingID").val() );
-				var $meetingName = $.URLEncode( $("#meetingName").val() );
-				var $moderatorPW = $.URLEncode( $("#moderatorPW").val() );
-				var $attendeePW = $.URLEncode( $("#attendeePW").val() );
-				var $userName = $.URLEncode( $("#userName").val() );
-				var $userID = $.URLEncode( $("#userID").val() );
-				
-				
-				var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW;
-				var $createURL = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
+        function showWindow() {
+          $('#showdiv').show();  //显示弹窗
+          $('#cover').css('display','block'); //显示遮罩层
+          $('#cover').css('height',document.body.clientHeight+'px'); //设置遮罩层的高度为当前页面高度
+        }
+        function closeWindow() {
+          $('#showdiv').hide();  //隐藏弹窗
+          $('#cover').css('display','none');   //显示遮罩层
+        }
 
-				var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW + "&record=true";
-				var $createURLwithRecording = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
-				
-				
-				//Creates the URLs			
-				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW + "&fullName=" + $userName + "&userID=" + $userID;
-				var $joinModeratorURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
-				
-				$params = "meetingID=" + $meetingID + "&password=" + $attendeePW + "&fullName=" + $userName + "&userID=" + $userID;
-				var $joinAttendeeURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
 
-function showWindow() {
-    $('#showdiv').show();  //显示弹窗
-    $('#cover').css('display','block'); //显示遮罩层
-    $('#cover').css('height',document.body.clientHeight+'px'); //设置遮罩层的高度为当前页面高度
-  }
-  // 关闭弹窗
-  function closeWindow() {
-    $('#showdiv').hide();  //隐藏弹窗
-    $('#cover').css('display','none');   //显示遮罩层
-  }
-
-  //生成二维码
-  var qrcode = new QRCode("qrcode");
-
-function makeCode () {      
-    var elText = document.getElementById("text");
-    
-    if (!elText.value) {
-        alert("Input a text");
-        elText.focus();
-        return;
-    }
-    
-    qrcode.makeCode($joinAttendeeURL);
-}
-
-makeCode();
-
-$("#text").
-on("blur", function () {
-    makeCode();
-}).
-on("keydown", function (e) {
-    if (e.keyCode == 13) {
-        makeCode();
-    }
-});
-
-</script>
-
-<% end%>
+    </script>
+  <%end%>
 
 
 
