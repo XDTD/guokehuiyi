@@ -1,12 +1,12 @@
 
 # 从数据库查询livego的链接
-result=`psql "host=127.0.0.1 port=5432 user=canvas  password=yourpassword dbname=canvas" << EOF
+result=`psql "host=127.0.0.1 port=5432 user=canvas  password=19990923 dbname=canvas" << EOF
 select url from url_to_livego order by course_id;
 \q
 EOF `
 
 # path
-guokehuiyiPath="your guokehuiyi path"
+guokehuiyiPath="/home/td/workspace/guokehuiyi"
 
 # 提取sql中的url
 tmpFile="${guokehuiyiPath}/test/temp.txt"
@@ -66,7 +66,7 @@ for path in $paths; do
     for filename in $files; do
         convert $dirPath/$path/$filename "$dirPath/$path/out${i}.pdf"
         let i=i+1
-        rm $dirPath/$path/$filename
+        # rm $dirPath/$path/$filename
     done
 
 
@@ -76,11 +76,14 @@ for path in $paths; do
 
     outPdf="$path$curTime"
     # 合并
-    pdfunite $dirPath/$path/*.pdf "$dirPath/$path/$outPdf.pdf"
+    pdfunite $dirPath/$path/*.pdf "$dirPath/$path/record/$outPdf.pdf"
     # 合并之后删除之前的pdf
     for filename in $files; do
         rm $dirPath/$path/$filename
     done
+
+    # 移动到输出的文件夹
+
 done
 
 
