@@ -32,16 +32,19 @@ sleep 5
 
 # # 测试
 # # 先将之前测试生成的文件删掉
-rm  ${guokehuiyiPath}/test/out/course0/*.pdf
-bash ${guokehuiyiPath}/shell/pdfListen.sh 10 2 #执行10s,每2s截图一次
+rm  ${guokehuiyiPath}/test/out/room0/record/*.pdf
+totalTime=${1:-10} #总共截图多少秒，可接受参数，默认参数10s钟
+step=${2:-2}
+bash ${guokehuiyiPath}/shell/pdfListen.sh ${totalTime} ${step} #执行10s,每2s截图一次
+let expectPages=$totalTime/$step
 sleep 5
 # #检测pdf是否生成
-temp=$(ls ${guokehuiyiPath}/test/out/course0/record)
-fileName="${guokehuiyiPath}/test/out/course0/record/$temp"
+temp=$(ls ${guokehuiyiPath}/test/out/room0/record)
+fileName="${guokehuiyiPath}/test/out/room0/record/$temp"
 if [ -f $fileName ];then
     echo "verify 1 completed,pdf has been generated"
     pages=$(pdfinfo -rawdates $fileName | grep Pages  | tr -cd "[0-9]")
-    if  [ $pages -eq 5 ];then
+    if  [ $pages -eq ${expectPages} ];then
         echo "verify 2 completed,the pages of pdf is correct"
     else
         echo "verify 2 failed,the pages of pdf isn't correct"

@@ -44,7 +44,7 @@ for ((i=0; i<picNum; i++));do
         # -r 每秒截图n帧
         # -t 截图n秒
         # -ss n秒后开始截图
-        dirName="${guokehuiyiPath}/test/out/course${j}"
+        dirName="${guokehuiyiPath}/test/out/room${j}"
         if [ ! -d $dirName ];then
             mkdir $dirName
         fi
