@@ -13,14 +13,14 @@
 
   <%#  初始化变量 %>
   <%# 获取channelkey %>
-  <% room = "http://localhost:8091/control/get?room=course"+ @context.id.to_s %>
+  <% room = "http://localhost:8091/control/get?room=course"+ @context.id.to_s + "_PPT"%>
   <% roomName = "course" + @context.id.to_s  %>
   <% command = "curl " + room  %>
   <% channelkey = `#{command}` %>
   <% channelkey = JSON.parse(channelkey)%>
   <% liveConfirmContext = "请打开OBS软件开启直播，参数如下,\n服务器:rtmp://127.0.0.1:1935/live \n channelkey:" + channelkey["data"].to_s%>
   <%# livego直播链接 %>
-  <% roomUrl = "http://localhost:8080/course/" + roomName + ".html"%>
+  <% roomUrl = "http://localhost/livego/" + roomName + ".html"%>
   <%# 初始化直播间 %>
   <% shellName = "/home/td/workspace/guokehuiyi/shell/htmlTouch.sh  " + roomName %>
   <% result = `#{shellName}`   %>
