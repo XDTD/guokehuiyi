@@ -278,8 +278,8 @@ createdb canvas --owner=canvas
 
 ```
 mkdir ~/workspace; cd ~/workspace
-git clone https://github.com/instructure/canvas-lms.git canvas
-cd canvas
+git clone https://github.com/XDTD/guokehuiyi.git 
+cd guokehuiyi/canvas
 git checkout stable
 git fetch
 ```
