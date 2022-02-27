@@ -23,7 +23,7 @@
 **4.**   **直播功能**
 
 用户能够开启课堂直播/线上会议，并且在此过程中能够进行PPT播放、共享桌面、音视频交流、线上批注等。
-
+https://raw.githubusercontent.com/XDTD/ImgStg/main/clip_image006.jpg
 
 
 **5.**   **便捷共享**
